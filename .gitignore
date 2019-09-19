@@ -1,0 +1,5 @@
+Anciennes_colles/
+*.aux
+*.log
+*.gz
+.DS_store
