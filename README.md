@@ -7,4 +7,4 @@ Les exercices sont classés par thème dans des dossiers, contenant :
 - le code latex ;
 - le pdf généré ;
 - le dossier contenant les images et les figures ;
-- La correction si j'ai eu le temps de la faire :)
+- la correction si j'ai eu le temps de la faire :)
