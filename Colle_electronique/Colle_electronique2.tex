@@ -8,15 +8,22 @@
 
 \begin{document}
 
-\chapter{Association en cascade, AO en régime linéaire et saturé}
+\chapter*{Association en cascade, AO en régime linéaire et saturé}
 
+\newpage
 
-\section*{Exercice 2}
-On suppose d'abord que $R_{s}=0$ et $R_{e}=\infty$, et on suppose que le cadre en pointillés représente un quadripôle tel que : $V_{s}=GV_{e}$. Trouvez  une équation différentielle en $i(t)$.
+\section*{Exercice 1}
 
-Quel est la condition sur $G$ pour voir apparaître des oscillations sinusoïdales pures ? Donnez les valeurs les valeurs de $G$ et de $f_{0}$ la fréquence de ces oscillations.
+Le cadre en pointillé représente un quadripôle tel que : $u_{s}=Gu_{e}$.
 
-Comment cette condition change lorsque $R_{s}\neq 0$ et $R_{e}\neq\infty$?
+\begin{itemize}
+
+\item[•] On suppose d'abord que $R_{s}=0$ et $R_{e}=\infty$. Trouvez  une équation différentielle en $i(t)$. Quelle est la condition sur $G$ pour voir apparaître des oscillations ? Donnez alors la valeur $f_0$ des oscillations.
+
+\item[•] Comment cette condition change lorsque $R_{s}\neq 0$ et $R_{e}\neq\infty$?
+
+\end{itemize}
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{circuit_5.pdf}
@@ -24,63 +31,72 @@ Comment cette condition change lorsque $R_{s}\neq 0$ et $R_{e}\neq\infty$?
 
 \newpage
 
-\section*{Question de cours}
-Donnez le schéma de montage d'un \textbf{intégrateur} en précisant la fonction de transfert.
-\section*{Exercice 5}
-On suppose l'AO idéal : déterminez $U_{-}(t)$ et $U_{s}(t)$. \textit{Indication : Remarquez qu'il y a une rétroaction sur la borne $+$}.
+\section*{Exercice 2}
+
+On suppose l'AO idéal. 
+
+\begin{itemize}
+	\item[•] Comment se comporte t-il dans cette situation ? Pourquoi ?
+	\item[•] Déterminez l'évolution temporelle de  $U_{-}(t)$ et $U_{s}(t)$. 
+\end{itemize}
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{circuit_3.pdf}
 \end{figure}
-\section*{Question supplémentaire}
-Comment réaliser un générateur de courant idéal?
 
 \newpage
 
-\section*{Question de cours}
+\section*{Exercice 3}
 
-Quel est le lien entre la fonction de transfert d'un quadripôle et l'équation différentielle sur la tension d'entrée et de sortie?
-\section*{Exercice}
-Après avoir précisé le comportement du circuit en basse et haute fréquence, déterminez la fonction de transfert de ce filtre sous la forme canonique. Quel est le rôle de ce filtre? Tracez le diagramme de Bode correspondant.
+On considère le circuit ci-dessous :
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{circuit_1.pdf}
 \end{figure}
 
-\section*{Question supplémentaire}
-
-On réalise ce montage. Pour quelles valeurs de $R1$ et $R2$ voit-on apparaître des oscillations sur $U_{e}$?
+\begin{itemize}
+	\item[•] Après avoir précisé le comportement du circuit en basse et haute fréquence, déterminez la fonction de transfert de ce filtre sous la forme canonique. Quelle est l'allure de son diagramme de Bode ?
+	\item[•] On réalise ce désormais le montage avec l'AO. Pour quelles valeurs de $R_1$ et $R_2$ voit-on apparaître des oscillations sur $U_{e}$?
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\linewidth]{circuit_4.pdf}
 \end{figure}
 
+	\item[•] Pourquoi parle t-on de régime quasi-sinusoïdal ? Décrire l'évolution du signal si les oscillations apparaissent à partir du bruit de fond électronique.
+\end{itemize}
+
+
 \newpage
 
-\section*{Question de cours}
-Quel est le lien entre la fonction de transfert d'un quadripôle et l'équation différentielle sur la tension d'entrée et de sortie?
-\section*{Exercice 6}
-Après avoir précisé le comportement du circuit en basse et haute fréquence, déterminez la fonction de transfert de ce filtre sous la forme canonique.
-\textit{Indication : on s'évertuera à la mettre sous la forme suivante, en précisant les expressions de a, b etc ainsi que leurs dimensions : 
-\begin{equation}
-\underline{H}(j\omega)=\frac{1}{a+\frac{1}{bj\omega}+cj\omega}
-\end{equation}
-}
+\section*{Exercice 4}
+
+On considère le circuit ci-dessous :
+
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.4\linewidth]{circuit_7.pdf}
+\includegraphics[width=0.4\linewidth]{resonnateur.pdf}
 \end{figure}
 
-On envisage désormais le montage suivant : 
-\begin{figure}[!h]
+\begin{itemize}
+	\item[•]  Après avoir précisé le comportement du circuit en basse et haute fréquence, déterminez la fonction de transfert de ce filtre sous la forme canonique.
+	\item[•] A quelle condition a t-on des oscillations sur le circuit avec le montage ci-dessous ?
+	
+	\begin{figure}[!h]
 \centering
-\includegraphics[width=0.4\linewidth]{circuit_8.pdf}
+\includegraphics[width=0.4\linewidth]{resonnateur2.pdf}
 \end{figure}
 
-A quelle condition a t-on des oscillations sur le circuit?
+	\item[•] Pour éviter d'atteindre la saturation de l'AO en régime quasi-sinusoïdal, on suppose que $R_1$ est une thermorésistance, cad dont la résistance augmente proportionnellement avec la température. Expliquez comment cela permet d'éviter la saturation de l'AO.
 
-\section*{Exercice supplémentaire}
-Est-il possible d'avoir des oscillations sur un tel circuit si H est un passe-bas d'ordre 2? A quelles conditions? 
+\end{itemize}
+
+
+
+
+\subsection*{Exercice supplémentaire}
+Est-il possible d'avoir des oscillations sur un tel circuit si H est un passe-bas d'ordre 2 ? A quelles conditions ? 
 Même questions pour un passe haut d'ordre 2.
 \begin{figure}[!h]
 \centering
@@ -95,14 +111,14 @@ On considère ici un système de remplissage d'un réservoir d'hélium. Par éva
 
 Pour cela, une vanne (V) introduit de l'hélium dès que la tension à ses bornes est positive. Pour mesurer le niveau d'He, un transducteur (T) fournit une tension $e$ proportionnelle à la hauteur d'He : $e= \alpha h$. (P) est un potentiomètre dont la résistance varie de $0$ à $800\Omega$.
 
-\textit{Données : $R_{1} = 100k\Omega$, $R_{2}=R{3}=200\Omega$, $\alpha = 5V/m$. L'AO est supposé idéal.}
+\textit{Données : $R_{1} = 100$k$\Omega$, $R_{2}=R_{3}=200\Omega$, $\alpha = 5V/m$. L'AO est supposé idéal et sa tension de saturation est $V_{sat+}=10V$ et $V_{sat-}=0V.$}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\linewidth]{circuit_10.pdf}
 \end{figure}
 
-Comment fonctionne ce montage? Donnez la hauteur minimale $h_{min}$ et maximale $h_{max}$. Quel est le défaut de ce système?
+Comment fonctionne ce montage ? Donnez la hauteur minimale $h_{min}$ et maximale $h_{max}$. Quel est le défaut de ce système ?
 
 \subsection*{Seconde version}
 On introduit une rétroaction sur l'AO avec une résistance.
@@ -112,6 +128,6 @@ On introduit une rétroaction sur l'AO avec une résistance.
 \includegraphics[width=0.8\linewidth]{circuit_11.pdf}
 \end{figure}
 
-Comment fonctionne ce nouveau montage? Quel est son intérêt? Donnez la hauteur minimale $h_{min}$ et maximale $h_{max}$.
+Comment fonctionne ce nouveau montage ? Quel est son intérêt ? Donnez la hauteur minimale $h_{min}$ et maximale $h_{max}$.
 
 \end{document}
