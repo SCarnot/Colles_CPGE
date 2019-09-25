@@ -2,13 +2,13 @@
  
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}      
-\usepackage[top=3.5cm, bottom=3cm, left=4.0cm, right=4.0cm]{geometry}
+\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
 
-\chapter{Oscillateurs quasi-sinusoïdaux, AO en régime linéaire et saturé - corrigé}
+\chapter*{Oscillateurs quasi-sinusoïdaux, AO en régime linéaire et saturé - corrigé}
 
 \newpage
 
@@ -116,6 +116,55 @@ De même, si la vanne est initialement ouverte, celle-ci se ferme lorsque le niv
 	\end{equation}
 	
 	On a alors : $h_{min}=0,1$m et $h_{max}=1,1$m si $x=0$ et $h_{min}=0,5$m et $h_{max}=1,5$m si $x=1$. Le système ne s'ouvre et ferme plus en permanence.
+\end{itemize}
+
+\section*{Électrolyse du sulfate de Cobalt}
+
+\begin{itemize}
+	\item[•] Équation  bilan de cémentation : Fe + Cu$^{2+}\longrightarrow$ Cu + Fe$^{2+}$.
+	Pour Co/Co$^{2+}$, $E_C\sim-0,29-0,15=-0,44$V donc la réaction Fe + Co$^{2+}\longrightarrow$ Co + Fe$^{2+}$ est thermodynamiquement possible mais cinétiquement bloquée. Seul Cu$^{2+}$ réagit avec Fe, le Cobalt reste en solution.
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Chimie1.png}
+	\end{figure}
+
+	\item[•] Les espèces présentes sont : H$_2$O, Co$^{2+}$ et SO$_{4}^{2-}$.
+	
+	A l'anode on peut avoir :  
+	
+	H$_2$O $\longrightarrow\frac{1}{2}$O$_2$ + 2H$^+$ + 2e$^-$, avec $E_N=1,23-0,06$pH=1,05V
+	
+	A la cathode, on peut avoir : 
+	
+	 Co$^{2+}$+ 2e$^-\longrightarrow$ Co, avec $E_N=$-0,31V
+
+	 2H$^{+}$+ 2e$^-\longrightarrow$ 2H, avec $E_N=-0,06$pH=-0,18V
+	 
+	 Sans surtension, on réalise l'électrolyse de l'eau avec $\Delta E_{min}=1,23$V.
+	 
+	 \item[•] $E_{A1} =$ 1,05+0,7=1,75V, $E_{C1} =$ -0,18+0,4=-0,58V et $E_{C2} =$ -0,41V
+	 
+	 Avec les surtensions, les potentiels à la cathode sont inversés. On réalise l'électrolyse du cobalt. 
+	 \begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Chimie2.png}
+	\end{figure}
+
+	 \item[•] L'électrolyse est sous contrôle cinétique : 
+	 
+	 Co$^{2+}$ + H$_2$O $\longrightarrow\frac{1}{2}$O$_2$ + 2H$^+$ + Co
+	 \item[•] Il faut calculer $E_{N,Co/Co^{2+}}$ :
+	 Il y a 
+	 
+	 $n$(SO$_{4}^{2-}$, 7H$_2$O) = $m$(SO$_{4}^{2-}$, 7H$_2$O)$M$(SO$_{4}^{2-}$, 7H$_2$O)=0,18 mol.
+	 
+	 Comme c'est la quantité pour 1L, [Co$^{2+}$]=0,18 mol.L$^{-1}$. Alors $E_{N,Co/Co^{2+}}=-0,29+0.03\log$[Co$^{2+}$]=-0.31V.
+	  A courant nul, $\Delta E_{min}=1,75-0,41$=2,16V, avec la chute ohmique $\Delta E_{min}=3,26$ V.
+	  
+	  \item[•] La charge échangée en un jour est : $C=I\Delta t$=8,64$\cdot$10$^8$C, cad une quantité de $C/F=8953$ moles d'électrons échangés. Comme pour deux électrons consommés, il n'ya qu'un Co qui est crée :
+	  $n_{Co}=4477$ moles, cad 264kg de Co.
+	  \item[•] $\eta=0,97$. Il y a toujours une petite quantité d'H$_2$ qui est formée, au détriment du Co, à cause de la faible différence entre les potentiels.
+	  \item[•] On consomme $E= UI\Delta t$=3,02GJ. Il faut donc 11,8MJ pour créer 1kg de Co.
 \end{itemize}
 
 \end{document}

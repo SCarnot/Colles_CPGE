@@ -2,13 +2,13 @@
  
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}      
-\usepackage[top=3.5cm, bottom=3cm, left=4.0cm, right=4.0cm]{geometry}
+\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
 
-\chapter*{Association en cascade, AO en régime linéaire et saturé}
+\chapter*{Association en cascade, AO en régime linéaire et saturé, courbes intensité-potentiel}
 
 \newpage
 
@@ -129,5 +129,68 @@ On introduit une rétroaction sur l'AO avec une résistance.
 \end{figure}
 
 Comment fonctionne ce nouveau montage ? Quel est son intérêt ? Donnez la hauteur minimale $h_{min}$ et maximale $h_{max}$.
+
+\newpage
+
+\section*{Électrolyse du sulfate de cobalt}
+
+La solution a électrolyser renferme de l'acide sulfurique (considéré comme un diacide fort), du sulfate de cobalt et du sulfate de cuivre (qui seront supposé entièrement dissociés). 
+
+Avant de réaliser l'électrolyse proprement dite, le cuivre est éliminé par cémentation du cuivre par le fer (opération durant laquelle la solution est chauffée au contact de la poudre de fer sous agitation et contrôle du pH).
+
+L'électrolyse est réalisée dans une cuve en ciment revêtue de PVC, en maintenant une température constante entre une anode (A) en graphite et une cathode (C) en aluminium. Le pH de l'électrolyte est stabilisé à une valeur de 3.
+
+La solution initiale à électrolyser ne referme plus d'ions Fe$^{2+}$  et contient CoSO$_4$, 7H$_2$O à la concentration massique de 50g.L$^{-1}$. 
+
+\textit{Pour simplifier, les calculs de potentiels seront effectués dans les conditions standards à 25$^\circ$C, excepté pour les concentrations en $H_3O+$ et Co$^{2+}$ qui seront celles de l'électrolyse (ph=3).}
+
+\begin{itemize}
+	\item[•] Quelle est l'équation-bilan traduisant la cémentation ? En utilisant les données, justifier avec un tracé de courbes intensité-potentiel la possibilité d'éliminer seulement les ions Cu$^{2+}$. 
+	\item[•] Quelles sont les réactions les plus favorisées thermodynamiquement à l'anode et à la cathode ? Quelle tension minimum faut-il appliquer pour obtenir une électrolyse ? 
+	\item[•] Représenter schématiquement, en tenant compte des surtensions, l'allure des courbes intensité-potentiel correspondantes. Conclure
+	\item[•] Ecrire l'équation-bilan de l'électrolyse. Celle-ci est-elle sous contrôle thermodynamique ou cinétique ?
+\end{itemize}
+\textit{La chute ohmique relative aux électrodes et à l'électrolyte s'élève à 1,1V.}
+\begin{itemize}
+	\item[•] Déterminer la tension minimale de fonctionnement de la cuve d'électrolyse. 
+\end{itemize}
+\textit{L'électrolyse est réalisée sous une tension de 3,5V avec une intensité de 10kA, et une densité de courant de 400A.m$^2$.}
+\begin{itemize}
+	\item[•] Calculer la masse théorique de Co métal obtenue à l'issue d'un jour d'électrolyse. 
+\end{itemize}
+\textit{La masse de Co réellement obtenue sur une journée est de 256kg.}
+\begin{itemize}
+	\item[•] Définir puis calculer le rendement faradique. Expliquer pourquoi ce rendement ne peut atteindre 100$\%$.
+	\item[•] Déterminer la consommation massique d'énergie en kJ.kg$^{-1}$ (énergie nécessaire à la production d'un kg de Co).
+\end{itemize}
+
+\textit{Données}
+
+\vspace{0,2cm}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Couple & Co$^{2+}$/Co &  H$_3$O$^{+}$/H$_2$ & O$_2$H$_2$O & Cu$^{2+}$/Cu & Fe$^{2+}$/Fe\\
+\hline
+E$^\circ$(V) & -0,29 & 0,00 & 1,23 & 0,34 & -0,44\\
+\hline
+\end{tabular}
+
+Surtensions aux électrodes : 
+
+$\eta_C$(Co), sur Fe : -0,15V ;
+$\eta_C$(H$_2$), sur Al : -0,4V ;
+$\eta_C$(Co), sur Al : -0,1V ;
+$\eta_A$(O$_2$), sur graphite : 0,7V ;
+
+Constantes : 
+
+$RTln10/F=0,060$V (à 298K), constante de Faraday : 96500C.mol$^{-1}$.
+
+Masse molaire (en g.mol$^{-1}$) : M(H)=1,0 ; M(O)=16,0 ; M(S)=32,1 ; M(Co) = 58,9. 
+
+Numéros atomiques : Co : 27, N : 7 et H : 1
+
+
+
 
 \end{document}
