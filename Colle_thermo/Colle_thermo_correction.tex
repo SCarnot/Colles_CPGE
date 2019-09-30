@@ -1,0 +1,273 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{{figures/}{../figures}}
+
+\begin{document}
+
+\section*{Question de cours}
+
+\subsection*{Premier principe}
+
+\textit{A tout système thermodynamique fermé, est associé une équation d'état $E$ appelée énergie. Au cours d'une variation quelconque, la variation de $E$ est égale à l'énergie reçue.}
+
+Pour la plupart des transformations étudiées, $\Delta E = \Delta E_{méca}+\Delta U =  \Delta U $ car la variation d'énergie mécanique est faible durant la transformation (pour un gaz notamment).
+
+Le premier principe s'exprime :
+\begin{equation}
+	\Delta U = W+Q
+\end{equation}
+ou :
+\begin{equation}
+	d U = \delta W+ \delta Q
+\end{equation}
+Ce principe est extrêmement fondamental car il représente la conservation de l'énergie en physique.
+ 
+\section*{Exercice 1}
+\subsection*{Machine 1}
+\begin{itemize}
+	\item[•] 
+C'est un cycle moteur (sens horaire). Le cycle correspond au mouvement d'un cylindre avec une compression ($A\longrightarrow B$), une explosion ($B\longrightarrow C$), une détente  ($C\longrightarrow D$) et un refroidissement ($D\longrightarrow A$, ou évacuation des gaz de combustion puis remplacement par du gaz frais).
+	\item[•]
+Pour un cycle, $\Delta U = 0 = W + Q_c + Q_f$. On reconnait facilement que :
+\begin{equation}
+	Q_c = nC_{v,mol}(T_C-T_B)
+\end{equation}
+\begin{equation}
+	Q_f = nC_{v,mol}(T_A-T_D)
+\end{equation}
+Donc :
+$\eta = -\frac{W}{Q_c}=\frac{Q_c +Q_f}{Q_c}=\frac{T_C-T_B + T_A-T_D}{T_C-T_B}$
+Relations de gaz parfaits : $T_C=P_CV_{min}/nR$ et $T_D=P_DV_{max}/nR$
+
+Détente adiabatique réversible en $A\longrightarrow B$ et $C\longrightarrow D$ : $T_D = T_C\left( \frac{V_{max}}{V_{min}}\right)^{1-\gamma}$ et $T_A = T_B\left( \frac{V_{max}}{V_{min}}\right)^{1-\gamma}$
+
+Alors :
+\begin{equation}
+	\eta = 1-\left( \frac{V_{max}}{V_{min}}\right)^{\gamma -1}
+\end{equation}
+\item[•] La température de la source chaude est à priori $T_C$ car le gaz est au maximum de sa température en $C$. En effet, comme la transformation $C\longrightarrow D$ est réversible, elle est supposée très lente, donc on peut supposer que le gaz s'est thermalisé à la température de la source chaude en $C$. 
+
+Même chose pour la source froide avec $T_A$. 
+
+Rendement de Carnot :
+\begin{equation}
+	\eta_C = 1-\frac{T_f}{T_c} = 1-\frac{T_A}{T_C}
+\end{equation}
+
+\end{itemize}
+
+\subsection*{Machine 2}
+
+\newpage
+
+\section*{Exercice 2}
+
+\begin{itemize}
+
+	\item[•] Démonstration de la détente de Joule Thomson. On considère une tranche de $dn$ moles entrant en $x=x_1$ à l'instant $t$. Elle est caractérisée par $U_1$, $T_1$, $P_1$, $H_1$ et $v_1$. 
+	
+\begin{figure}[!h]
+
+\centering
+\includegraphics[width=0.4\linewidth]{tuyere1.png}
+
+\end{figure}	
+
+A l'instant $t+\Delta t$, elle est à l'abscisse $x$. Elle est caractérisée par $U(x)$, $T(x)$, $P(x)$, $H(x)$ et $v(x)$. 
+	
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.4\linewidth]{tuyere2.png}
+\end{figure}	
+
+On considère la tranche de gaz $ACA'C'$ à l'instant $t$. A l'instant $t'>t$, elle correspond à la tranche $BDB'D'$, comme le système est en régme permanent. 
+
+On applique le premier principe à la tranche $ACA'C'$. $Q=0$ comme les parois sont adiabatiques. 
+Il reçoit en $x=x_1$ un travail $V_{ABCD}P_1$ et en $x$ un travail $V_{A'B'C'D'}P(x)$.
+
+Le premier principe s'écrit alors :
+\begin{equation}
+	E_{c,BDB'D'} + U_{BDB'D'} - E_{c,ACA'C'} - U_{ACA'C'} = -V_{A'B'C'D'}P(x)+V_{ABCD}P_1
+\end{equation}
+
+Comme la partie centrale $BDA'C'$ reste complètement inchangée entre $t$ et $t'$, on a (on peut utiliser l'additivité de $E_c$ et $U$) : 
+\begin{equation}
+	E_{c,A'B'C'D'} + U_{A'B'C'D'} - E_{c,ABCD} - U_{ABCD}  = -V_{A'B'C'D'}P(x)+V_{ABCD}P_1
+\end{equation}
+
+Sa variation d'énergie cinétique est :
+ $\Delta E_c =  E_{c,A'B'C'D'} - E_{c,ABCD} = \frac{1}{2}Mdn\left(v(x)^2-v_1^2\right) $
+Et la variation d'énergie interne $U_{A'B'C'D'} - U_{ABCD}=(U_m(x) - U_m(x_1))dn$
+Donc : 
+	\begin{equation}
+	\frac{1}{2}Mdn\left(v(x)^2-v_1^2\right) + U_m(x)dn - U_m(x_1)dn = -V_{A'B'C'D'}P(x)+V_{ABCD}P_1
+\end{equation}
+Comme $H_m(x) = U_m(x)+P(x)V_m(x)$:
+	\begin{equation}
+	\frac{1}{2}M v(x)^2+ H_m(x)  =\frac{1}{2}M v^2(x_1) + H_m(x_1) = cst
+\end{equation}
+\item[•] Le gaz est parfait donc $H_m(x_1)-H_m(x_2)=\frac{R\gamma}{\gamma-1}(T_1-T_2)$. Cad : 
+\begin{equation}
+	v_2=\sqrt{\frac{2}{M}\frac{R\gamma}{\gamma-1}(T_1-T_2)}
+\end{equation}
+On trouve $v_2=301,5$m.s$^{-1}$.
+\item[•] Si on suppose que l'énergie cinétique du gaz est transmise en amont de la turbine lui est intégralement transmise :
+\begin{equation}
+	\frac{1}{2}Mv_2^2=W_{turbine} = \frac{R\gamma}{\gamma-1}(T_1-T_2)
+\end{equation}
+\end{itemize}
+
+\section*{Exercice 3}
+
+\subsection*{Premier principe}
+
+\subsection*{Second principe}
+
+\section*{Exercice 4}
+
+\begin{itemize}
+\item[•] La pression est constante durant la transformation donc le premier principe industriel peut s'écrire, pour une masse $dm$ de gaz (ou $dm_0$ d'eau) traversant l'échangeur : $dH=\delta Q$.
+
+Du point de vue du gaz, on a : $dH_{gaz}=dm c_P (T_3-T_1)$. 
+Du point de vue de l'eau : $dH_{eau}=dm_0 c_0 (t_1-t_0)$. 
+
+Comme l'ensemble est calorifugé : $dm c_P (T_3-T_1) + dm_0 c_0 (t_1-t_0)=0)$. 
+
+Comme $dm=d\times dt$ et $dm_0=Ddt$, on a donc :
+\begin{equation}
+	D=d\frac{c_P(T_3-T_1)}{c(t_0-t_1)}
+\end{equation}
+	\item[•]Lorsqu'une masse $dm$ passe de $T_4$ à $T_5$ dans la première canalisation, la même masse passe de $T_9$ à $T_{10}$ dans la seconde (car débit dans l'autre).
+	
+	Comme les échanges avec l'extérieur sont nuls, le premier principe impose :
+	\begin{equation}
+		dmc_P(T_5-T_4) + dmc_P(T_{10}-T_9)=0
+\end{equation}	 
+cad $ T_{10} + T_5=T_4+T_9$.
+
+Le second principe appliqué sur cette même masse de gaz s'écrit :
+$\Delta S = dm c_P\ln(T_5/T_4)+dm c_P\ln(T_{10}/T_9)=\delta S_e + \delta S_c$ et $\Delta S=0$ car il n'y a pas d'échanges avec l'extérieur et la transformation st réversible. Donc :
+\begin{equation}
+	T_5T_{10}=T_4T_9
+\end{equation}
+La résolution conduit à $T_9=T_5$et $T_{10}=T_4$ ou $T_{10}=T_5$et $T_9=T_4$. Seule la première est acceptable car sinon les gaz sortent à la même température.
+
+\item[•] Si la transformation est irréversible : $\Delta S = dm c_P\ln(T_5/T_4)+dm c_P\ln(T_{10}/T_9)= \delta S_c >0$, donc $T_5T_{10}>T_4T_9$.
+
+En supposant que $T_9>T_4$, on a alors : $T_9>T_5$et $T_{10}>T_4$, cad une perte d'efficacité du dispositif.
+
+\end{itemize}
+
+\section*{Exercice 5}
+
+\begin{itemize}
+	\item[•] Comme la relation liant $F$ et $L$ est affine, les transformations sont des lignes droites dans le diagramme de Clapeyron :
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.4\linewidth]{thermo5.png}
+\end{figure}	
+Les transformations $AB$ et $CD$ sont des isothermes et $BC$ et $DA$ sont des iso-longueur.
+
+\item[•] Pour trouver les expressions du travail (échange mécanique) et de la quantité chaleur reçue (échange thermique) sur une transformation, il faut appliquer le premier principe au 4 étapes du cycle, par exemple pour la transformation $AB$ : $\Delta U_A^B = W_A^B + Q_A^B$. 
+
+Le travail se calcul grâce à $W_A^B=\int_{R+a}^{R-A}dL F$, puis la chaleur $Q_A^B$ se déduit de l'expression de $\Delta U_A^B$ avec l'équation de premier principe. 
+
+\subsubsection*{Transformation AB}
+Pour le travail, on oublie pas de faire un dl à l'ordre 1 en $a$.
+\begin{equation}
+W_A^B=\int_{R+a}^{R-a}dL F = \int_{R+a}^{R-A}dL =-2a\left( F_0-\sigma(T_1-T_0)  \right) -2a\rho(R-L_0)
+\end{equation}
+
+Énergie interne, toujours avec un dl en $a$ : 
+$\Delta U_A^B = -2a(F_0-\sigma T_0)-2a\rho(R-L_0)$
+
+Donc la chaleur est $Q_A^B=\Delta U_A^B-W_A^B=-2a\sigma T_1$
+
+\subsubsection*{Transformation BC}
+Il n'y a pas de travail car pas de variation de longueur.
+
+L'énergie interne est : $\Delta U_B^C=C_L(T_2-T_1)$
+
+La quantité de chaleur est donc : $Q_B^C=\Delta U_B^C = C_L(T_2-T_1)$
+
+\subsubsection*{Transformation CD}
+Il suffit de remplacer $a\longleftarrow -a$ et $T_1\longleftarrow T_2$ pour les différents calculs de la transformation $AB$.
+
+Travail :
+\begin{equation}
+W_C^D=\int_{R-a}^{R+a}dL F = \int_{R+a}^{R-A}dL =2a\left( F_0-\sigma(T_2-T_0)  \right) +2a\rho(R-L_0)
+\end{equation}
+
+Énergie interne : $\Delta U_C^D = 2a(F_0-\sigma T_0)+2a\rho(R-L_0)$
+
+Quantité de chaleur : $Q_C^D=2a\sigma T_2$
+
+\subsubsection*{Transformation DA}
+Il n'y a pas de travail car pas de variation de longueur.
+
+L'énergie interne est : $\Delta U_D^A=C_L(T_1-T_2)$
+
+La quantité de chaleur est donc : $Q_D^A=\Delta U_D^A = C_L(T_1-T_2)$
+
+\subsubsection*{Bilan}
+Au final, sur le cycle : 
+$W=2a\sigma(T_2-T_1)$, $Q=2a\sigma(T_2-T_1)$ et $\Delta U=0$.
+
+\item[•]
+Le travail est moteur car $W<0$. Il faut bien noter que le sens est inversé par rapport à un diagramme "classique" car ici $\delta W = +FdL$ et non $\delta W = - pdV$.
+
+\item[•]
+
+Le rendement peut être alors défini comme : $\eta = \frac{-W}{Q_A^B + Q_D^A}$, car le fil reçoit de la chaleur par la source chaude pendant les transformations $AB$ et $DA$.
+
+Alors on trouve :
+\begin{equation}
+\eta = \frac{2a\sigma(T_1-T_2)}{2a\sigma T_1+C_L(T_1-T_2)}
+\end{equation}
+
+\end{itemize}
+
+\section*{Exercice 6}
+
+\begin{itemize}
+\item[•] Le système à définir est l'ensemble de la masse $M$, du piston et du gaz parfait contenu dans le cylindre. Son énergie totale $E$ s'écrit alors :$E = E_c + E_{pot} + U$. On s'intéresse à la situation $1$ (avant le lâcher de la masse) et à la situation 2 (après le lâcher de la masse, à l'équilibre).
+
+L'énergie cinétique est nulle pour ces situations car on est à l'équilibre. 
+
+Le premier principe s'écrit alors : $\Delta E_{pot} +\Delta U = W + Q$
+
+Comme la paroi est adiabatique, $Q$ est forcément nul. La pression extérieure étant constante et égale à $P_0$, il s'écrit : $W=-P_0(V_2-V_1)=-P_0S(h-a)$, si $h$ est la hauteur finale du piston.
+
+Comme le gaz est parfait, $\Delta U = c_V(T_2-T_1)$.
+
+On a donc :
+\begin{equation}
+	c_V(T_2-T_1) + mg(x-a) + mg(x-a-H)=-P_0S(h-a)
+\end{equation}
+On a supposé que la variation d'énergie potentiel du gaz était négligeable. 
+
+Comme le gaz est parfait, 
+\begin{equation}
+c_VT_1=\frac{nRT_1}{\gamma-1}=\frac{P_1Sa}{\gamma-1}=\frac{P_0Sa+mga}{\gamma-1}
+\end{equation}
+En utilisant la relation des pressions à l'équilibre : $P_1=P_0+mg/S$.
+
+De même : $c_VT_2=\frac{P_0Sa+(m+M)gx}{\gamma-1}$.
+On obtient donc à la fin :
+\begin{equation}
+	(P_0S+(m+M)g)x = \frac{\gamma-1}{\gamma}Mg(a+H)+(P_0S+mg)Sa
+\end{equation}
+
+\item[•] Pour retrouver $x=a$, il suffit juste résoudre l'équation en $H$ précédente si $x=a$. On trouve :
+\begin{equation}
+	H_C=\frac{a}{\gamma-1}
+\end{equation}
+
+\end{itemize}
+
+\end{document}
