@@ -85,7 +85,7 @@ Le gaz est utilisé à la sortie pour actionner une turbine. A l'entrée, il a u
 
 \subsection*{Premier principe}
 
-Une ampoule, dans laquelle règne le vide, est entourée d'air ambiant à la pression $P_{0} = 1$atm et à la température $T_{0}=20^{\circ}C$, qu'on assimile à un gaz parfait de coefficient $\gamma=1.4$. On perce un petit trou dans l'ampoule, l'air s'y engouffre et au bout d'une durée très courte, la pression dans l'ampoule est égale à la pression ambiante.
+Une ampoule de volume de $V_1$, dans laquelle règne le vide, est entourée d'air ambiant à la pression $P_{0} = 1$atm et à la température $T_{0}=20^{\circ}C$, qu'on assimile à un gaz parfait de coefficient $\gamma=1.4$. On perce un petit trou dans l'ampoule, l'air s'y engouffre et au bout d'une durée très courte, la pression dans l'ampoule est égale à la pression ambiante.
 
 Quel est la température $T_{1}$ dans l'ampoule une fois celle-ci remplie?
 
@@ -104,11 +104,14 @@ On suppose que la répartition des particules se fait selon la loi de Boltzmann 
 \begin{equation}
 \frac{n_{2}}{n_{1}}=exp\left( \frac{E_{2}-E_{1}}{k_{b}T}\right) 
 \end{equation}
+
+Cette distribution indique que les niveaux ont d'autant plus de chance d'être peuplés qu'ils n'ont pas une énergie élevée. D'autre part plus la température est élevée, plus les niveaux d'énergies élevées pourront être peuplés. 
+
 \begin{itemize}
 \item[-]Déterminez la différentielle de l'énergie interne du système en fonction de $n_{1}$ et $E_{2}-E_{1}$.
-\item[-]Exprimez la différentielle de l'entropie du système en fonction de $T$,$E_{2}-E_{1}$ et $n_{1}$. On utilisera de Stirling $\ln (N!)=N \ln (N)$ valable pour $N>>1$.
-\textit{Indication} : On utilisera la formule de Boltzmann : $S=k_{b}\ln \Omega$, où $\Omega$ est le nombre de configurations possibles pour le système.
-\item[-]Montrez que l'on retrouve l'identité thermodynamique.
+\item[-]On rappelle que l'entropie peut s'écrire comme $S=k_B\log\Omega$, où $\Omega$ est le nombre de configurations possibles pour le système.. Exprimez $S$ en fonction de $N$ et $n_1$. On utilisera la formule de Stirling $\ln (N!)=N \ln (N)$ valable pour $N>>1$.
+\item[-] Exprimez la différentielle de $S$ en fonction de $T$, $\Delta$ et $n_1$.
+\item[-] Montrez que l'on retrouve l'identité thermodynamique.
 \end{itemize}
 
 \newpage
@@ -206,6 +209,7 @@ A un certain moment, on fait tomber une masse $M$ sur le piston d'une hauteur $H
 \begin{itemize}
 \item[•] Calculez les paramètres internes du gaz au nouvel équilibre. 
 \item[•] Pour quelle hauteur de chute $H_C$ le piston se retrouve t-il exactement à la même hauteur initiale $a$ ?
+\item[•] Que se passe t-il si $M$ devient très lourde ?
 \end{itemize}
 
 \newpage

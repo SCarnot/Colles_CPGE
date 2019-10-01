@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}      
 \usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
@@ -125,7 +126,45 @@ On trouve $v_2=301,5$m.s$^{-1}$.
 
 \subsection*{Premier principe}
 
+Il faut considérer comme système {Vide + air qui va rentrer dans l'ampoule}. On note $V_0$ le volume de l'air qui va rentrer dans l'ampoule.
+
+Comme la transformation se fait à pression constante $P_0$, et que le volume balayé est la totalité de celui du gaz qui va rentrer dans l'ampoule, le travail subit par le gaz est $W = - P_0V_0$.
+
+On applique le premier principe : $\Delta U = W + Q$
+Comme il n'y a pas d'apport de chaleur, $Q=0$. 
+
+Alors : 
+$\Delta U = nc_V(T_1-T_0)=\frac{nR}{\gamma-1}(T_1-T_0) = -P_0V_0$
+
+Comme on a un gaz parfait : $P_0V_0=nrT_0$. 
+
+Alors : $\frac{P_0V_0}{(\gamma-1)T_0}(T_1-T_0)=P_0V_0$
+
+Et finalement :
+\begin{equation}
+T_1=\gamma T_0
+\end{equation}
+On trouve $T_1=410$ K.
+
+
 \subsection*{Second principe}
+
+\begin{itemize}
+\item[•] $U=n_1E_1+n_2U_2$. Donc $dU=E_1dn_1+E_2dn_2=-\Delta E dn_1$, car $dn_1=-dn_2$.
+\item[•] Pour réaliser le macroétat {($n_1, E_1$) ; ($n_2, E_2$)}, il y a $\dbinom{N}{n_1}$ possibilités, soit $\Omega=\dbinom{N}{n_1}$.
+
+Alors : $S=k_B\ln\left( \dbinom{N}{n_1}\right) =k_B\ln\frac{N!}{(N-n_1)!n_1!}$. Avec la relation de Stirling : 
+\begin{equation}
+S = k_B[N\ln N-n_1\ln n_1 - (N-n_1)\ln (N-n_1)]
+\end{equation}
+En différenciant :
+\begin{equation}
+dS=k_Bdn_1\ln\frac{N-n_1}{n_1}
+\end{equation}
+Or $\frac{N-n_1}{n_1}=\exp(\frac{-\Delta E}{k_BT})$, donc $dS=-\frac{\Delta E}{T}dn_1$.
+
+\item[•] En identifizant les résultats des 2 questions précédentes, on trouve bien $dU=TdS$
+\end{itemize}
 
 \section*{Exercice 4}
 
