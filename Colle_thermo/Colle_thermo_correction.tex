@@ -5,6 +5,7 @@
 \usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{calc}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
@@ -153,7 +154,7 @@ On trouve $T_1=410$ K.
 \item[•] $U=n_1E_1+n_2U_2$. Donc $dU=E_1dn_1+E_2dn_2=-\Delta E dn_1$, car $dn_1=-dn_2$.
 \item[•] Pour réaliser le macroétat {($n_1, E_1$) ; ($n_2, E_2$)}, il y a $\dbinom{N}{n_1}$ possibilités, soit $\Omega=\dbinom{N}{n_1}$.
 
-Alors : $S=k_B\ln\left( \dbinom{N}{n_1}\right) =k_B\ln\frac{N!}{(N-n_1)!n_1!}$. Avec la relation de Stirling : 
+Alors : $S=k_B\log dbinom{N}{n_1} =k_B\log\frac{N!}{(N-n_1)!n_1!}$. Avec la relation de Stirling : 
 \begin{equation}
 S = k_B[N\ln N-n_1\ln n_1 - (N-n_1)\ln (N-n_1)]
 \end{equation}
@@ -306,6 +307,55 @@ On obtient donc à la fin :
 \begin{equation}
 	H_C=\frac{a}{\gamma-1}
 \end{equation}
+
+\end{itemize}
+
+\section*{Exercice 7}
+
+\begin{itemize}
+	\item[•] Le gaz fuit dans $A$. Le piston avance jusqu'à être en équilibre de pression ($V_A<V_C$) ou s'écrase contre la paroi ($V_A>V_C$).
+	\item[•] On commence par calculer le travail reçu par le gaz dans le volume $B$. Comme la pression est constante : 
+	
+	$W = -P_0\int_1^2 dV_{balayé}=P_0(V_A+V_B-V_1)$, où$V_1$ est le volume final du gaz. 
+	
+	L'état final sera totalement décrit par les variables d'état $T_1$ et $P_1$. En appliquant le premier principe sur le système {A + B} (y compris le vide initial dans $A$), on obtient : 
+	$\Delta U = nc_V(T_1-T_0) = W$ car il n'y a pas d'échange de chaleur avec l'extérieur. Alors :
+	
+\begin{equation}
+	\frac{R}{\gamma-1}(T_1-T_0)=P_0(V_A+V_B-V_1)
+\end{equation}
+cad :
+\begin{equation}
+	\frac{R}{\gamma-1}(P_0V_1-P_0V_A)=P_0(V_A+V_B-V_1)
+\end{equation} 
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+On trouve alors : $V_1=V_A+\frac{\gamma-1}{\gamma}V_B$ et $T_1=\frac{P_0V_1}{R}=\frac{P_0}{R}\left(  V_A+\frac{\gamma-1}{\gamma}V_B\right) $
+}}
+
+Dans le cas décrit, $V_1>V_B$. Le cas limite est lorsque $V_1=V_B=V_C$ cad $ V_C=\gamma V_A$
+
+\item[•] La variation d'entropie s'écrit $\Delta S = S_e + S_c$.
+Or $\Delta S = nc_p\ln\frac{T_1}{T_0} - nR\ln\frac{P_1}{P_0}$. Comme $P_0=P_1$ :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\begin{equation}
+	\Delta S = \frac{\gamma R}{\gamma - 1}\ln\left(\frac{T_1}{T_0} \right) =\frac{\gamma R}{\gamma-1}\ln \left( 1+\frac{(\gamma-1)V_B}{\gamma V_A}\right) 
+\end{equation}
+}}
+
+On a bien $\Delta S =S_c>0$ ($S_e=0$ car il n'y a pas d'échanges avec l'extérieur.
+
+\item[•] Si $V_A>V_C$, à l'état final on a $V_A=V_1$. L'état final est donc déterminé par la pression $P_1$.
+
+Le premier principe donne : $\frac{R}{\gamma-1}(T_1-T_0)=P_0V_A$
+Avec la loi des gaz parfaits, on trouve :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\begin{equation}
+	P_1=\frac{\gamma P_0V_A}{V_B}
+\end{equation}
+}}
 
 \end{itemize}
 

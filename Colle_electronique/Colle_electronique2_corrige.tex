@@ -120,6 +120,17 @@ De même, si la vanne est initialement ouverte, celle-ci se ferme lorsque le niv
 
 \section*{Électrolyse du sulfate de Cobalt}
 
+\subsubsection*{Quelques rappels}
+
+Un réaction d'oxydo-réduction : $\alpha Ox + ne^-\longrightarrow \beta Red$.
+
+Potentiel de Nernst : $E_N=E_0+\frac{0,06}{n}\log\frac{a_{ox}^\alpha}{a_{red}^\beta}$
+
+Anode : $E_a>E_N$ siège de l'oxydation $\beta Red \longrightarrow \alpha Ox + ne^- $.
+Cathode : $E_c<E_N$ siège de la réduction $\alpha Ox + ne^-\longrightarrow \beta Red$
+
+\subsubsection*{Correction}
+
 \begin{itemize}
 	\item[•] Équation  bilan de cémentation : Fe + Cu$^{2+}\longrightarrow$ Cu + Fe$^{2+}$.
 	Pour Co/Co$^{2+}$, $E_C\sim-0,29-0,15=-0,44$V donc la réaction Fe + Co$^{2+}\longrightarrow$ Co + Fe$^{2+}$ est thermodynamiquement possible mais cinétiquement bloquée. Seul Cu$^{2+}$ réagit avec Fe, le Cobalt reste en solution.
@@ -153,12 +164,18 @@ De même, si la vanne est initialement ouverte, celle-ci se ferme lorsque le niv
 	 \item[•] L'électrolyse est sous contrôle cinétique : 
 	 
 	 Co$^{2+}$ + H$_2$O $\longrightarrow\frac{1}{2}$O$_2$ + 2H$^+$ + Co
-	 \item[•] Il faut calculer $E_{N,Co/Co^{2+}}$ :
-	 Il y a 
+	 \item[•] 
+	 
+	 On a : $\Delta E = E_{ohmique} + E_{N, O_2/H_2O} + \eta_{O_2/H_2O} - ( E_{N,Co/Co^{2+}} + \eta_{Co})$
+	 
+	$E_{N, O_2/H_2O}=1,23-0,06pH=1,05$V
+	 
+	 Il faut calculer $E_{N,Co/Co^{2+}}$ :
 	 
 	 $n$(SO$_{4}^{2-}$, 7H$_2$O) = $m$(SO$_{4}^{2-}$, 7H$_2$O)$M$(SO$_{4}^{2-}$, 7H$_2$O)=0,18 mol.
 	 
 	 Comme c'est la quantité pour 1L, [Co$^{2+}$]=0,18 mol.L$^{-1}$. Alors $E_{N,Co/Co^{2+}}=-0,29+0.03\log$[Co$^{2+}$]=-0.31V.
+	 
 	  A courant nul, $\Delta E_{min}=1,75-0,41$=2,16V, avec la chute ohmique $\Delta E_{min}=3,26$ V.
 	  
 	  \item[•] La charge échangée en un jour est : $C=I\Delta t$=8,64$\cdot$10$^8$C, cad une quantité de $C/F=8953$ moles d'électrons échangés. Comme pour deux électrons consommés, il n'ya qu'un Co qui est crée :

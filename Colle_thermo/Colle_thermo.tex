@@ -111,7 +111,7 @@ Cette distribution indique que les niveaux ont d'autant plus de chance d'être p
 \item[-]Déterminez la différentielle de l'énergie interne du système en fonction de $n_{1}$ et $E_{2}-E_{1}$.
 \item[-]On rappelle que l'entropie peut s'écrire comme $S=k_B\log\Omega$, où $\Omega$ est le nombre de configurations possibles pour le système.. Exprimez $S$ en fonction de $N$ et $n_1$. On utilisera la formule de Stirling $\ln (N!)=N \ln (N)$ valable pour $N>>1$.
 \item[-] Exprimez la différentielle de $S$ en fonction de $T$, $\Delta$ et $n_1$.
-\item[-] Montrez que l'on retrouve l'identité thermodynamique.
+\item[-] Montrez que l'on retrouve l'identité thermodynamique : $dU = TdS$
 \end{itemize}
 
 \newpage
@@ -176,13 +176,14 @@ On attache désormais le fil de caoutchouc en $CM$, où le cercle de centre $O$ 
 
 Le fil subit les transformations successives suivantes :
 \begin{itemize}
-\item[1-] Une transformation isotherme à $T_1$ lorsque le fil est dans la demi-partie supérieure (rouge)
-\item[2-] Lorsque le fil passe à l'horizontale (longueur $R-a$), il passe instantanément de $T_1$ à $T_2$
-\item[3-] Une transformation isotherme à $T_2$ lorsque le fil est dans la demi-partie inférieure (bleue)
-\item[4-] Lorsque le fil passe à l'horizontale (longueur $R+a$), il passe instantanément de $T_2$ à $T_1$
+\item[1 -] Une transformation isotherme à $T_1$ lorsque le fil est dans la demi-partie supérieure (rouge)
+\item[2 -] Lorsque le fil passe à l'horizontale (longueur $R-a$), il passe instantanément de $T_1$ à $T_2$
+\item[3 -] Une transformation isotherme à $T_2$ lorsque le fil est dans la demi-partie inférieure (bleue)
+\item[4 -] Lorsque le fil passe à l'horizontale (longueur $R+a$), il passe instantanément de $T_2$ à $T_1$
 \end{itemize}
 Questions : 
 \begin{itemize}
+\item[•] Comment s'écrit le travail reçu par le fil ?
 \item[•] Décrire le cycle dans un diagramme de Clapeyron.
 \item[•] Calculer les divers échanges mécaniques et thermiques au cours de ce cycle.
 \item[•] Le cycle proposé est-il moteur ?
@@ -213,62 +214,23 @@ A un certain moment, on fait tomber une masse $M$ sur le piston d'une hauteur $H
 \end{itemize}
 
 \newpage
-\section*{Question de cours}
-Énoncez le second principe de la thermodynamique.
 
-\section*{Exercice 1}
+\section*{Exercice 7}
 
-On souhaite régler la température d'un bungalow à la valeur $t_{2} = 20^{\circ}C$, celui-ci étant plongé dans une atmosphère à la température $t_{1}=37^{\circ}C$. Le bungalow est situé à coté d'un lac dont la température est $t_{3}=12^{\circ}C$. Un climatiseur va fonctionner entre le bungalow et l'air extérieur, et il va être alimenté en énergie par un moteur fonctionnant avec pour sources l'air extérieur et l'eau du lac.
-\\
-On suppose que le moteur et le réfrigérateur sont tous les deux réversibles.
-\begin{itemize}
-\item[-]Complétez le schéma en indiquant les différents types d'énergies échangés ainsi que le sens réel de ces échanges.
-\item[-]En considérant que seule la source chaude est onéreuse, exprimer l'efficacité $e_{T}$ du dispositif en fonction des températures des sources. AN.
-\end{itemize}
+On considère le dispositif ci-dessous. Le piston (gris, entouré de noir) et les parois (en gris) sont adiabatiques. La paroi interne séparant les espaces $A$ et $B$ est fixe et diatherme. Elle est percée d'un trou fermé par une fenêtre amovible. La pression extérieure est $P_0=1$ bar. Initialement, le volume $B$ est rempli d'une mole de gaz parfait $\gamma=1,4$, avec une pression $P_0=1$ bar, une température $T_0=300$K. Le volume $A$ est vide.
+
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.5\linewidth]{bungalow.pdf}
+\includegraphics[width=0.5\linewidth]{thermo1.pdf}
 \end{figure}
 
-\section*{Exercice 2}
-
-On considère une mole d'eau surfondue à la pression constante $P_{0}=1$ bar et à la température $T=-5^{\circ}C$. On fait cesser la métastabilité en introduisant par exemple un cristal de galce, la pression et la température étant maintenant constante durant toute la transformation.
 \begin{itemize}
-\item[-]Quel est l'état final?
-\item[-]Calculer la variation d'enthalpie libre de l'eau au cours de cette transformation. Conclure.
-\item[-]Calculer l'entropie créée et la relier à la variation d'enthalpie libre.
+\item[•] On ouvre la fenêtre. Décrire qualitativement ce qu'il se passe suivant le volume de $A$. En déduire l'existence d'un volume critique $V_C$ que l'on ne demande pas de calculer ici.
+
+\item[•] On suppose $V_A<V_C$. Déterminez l'état final du gaz en fonction de $(P_0, V_A, V_B)$. Calculer la création d'entropie. Quelle est la cause de la création d'entropie ? Déterminez $V_C$.
+
+\item[•] On suppose désormais que $V_A>V_C$. Quel est l'état final ?
+
 \end{itemize}
-\textit{Données : $C_{liq}=75J.L^{-1}.mol^{-1}$, $C_{sol}=38J.K^{-1}.mol{-1}$ et $L_{f} = 6050 J.mol^{-1}$}
-
-\newpage
-
-\section*{Question de cours}
-Quel est le rendement maximal d'un moteur? D'un réfrigérateur?
-
-\section*{Exercice 1}
-Un système thermodynamique fermé, monophasé, évolue par transfert thermique avec un thermostat de température $T_{0}$. Il est soumis aux seule forces de pression.
-
-\begin{itemize}
-\item[-] On suppose que le système évolue de manière isochore.
-
-Rappeler quel est le potentiel thermodynamique de ce système. Montrer, en écrivant $\left(  \frac{\partial F^{*}}{T}\right)_{V} = 0$ qu'une condition nécessaire d’équilibre du système avec le thermostat est $T_{système}=T_{0}$. 
-En déduire que la stabilité de l'équilibre impose à la capacité thermique isochore du système $C_{V}$  d'être positive.
-\item[-] On suppose maintenant que le sytème est un fluide en équilibre thermique avec le thermostat à $T$. Il échange un travail de forces de pression avec le milieu extérieur de pression $P_{0}$ constante.
-
-Quel est maintenant le potentiel thermodynamique approprié?
-Montrer qu'une condition nécessaire de l'équilibre est désormais $P_{système}=P_{0}$.
-
-En déduire que l'équilibre est stable si le coefficient de compressibilité isotherme du système, dont on rappellera l'expression, est positif.
-
-\section*{Question supplémentaire}
-
-Comment relier la vitesse du son dans l'air au coefficient $\gamma$?
-\end{itemize}
-
-\newpage
-
-\section*{Question de cours}
-Diagramme de Clapeyron pour l'équilibre liquide-vapeur; Pourquoi ne peut-on pas avoir de machine thermique monotherme?
-
 
 \end{document}
