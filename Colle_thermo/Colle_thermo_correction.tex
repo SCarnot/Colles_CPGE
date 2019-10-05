@@ -117,11 +117,42 @@ Comme $H_m(x) = U_m(x)+P(x)V_m(x)$:
 	v_2=\sqrt{\frac{2}{M}\frac{R\gamma}{\gamma-1}(T_1-T_2)}
 \end{equation}
 On trouve $v_2=301,5$m.s$^{-1}$.
-\item[•] Si on suppose que l'énergie cinétique du gaz est transmise en amont de la turbine lui est intégralement transmise :
-\begin{equation}
-	\frac{1}{2}Mv_2^2=W_{turbine} = \frac{R\gamma}{\gamma-1}(T_1-T_2)
-\end{equation}
+
 \end{itemize}
+
+\subsubsection*{Etude d'une tuyère}
+Si on suppose que l'énergie cinétique du gaz est transmise en amont de la turbine lui est intégralement transmise :
+\begin{equation}
+	\frac{1}{2}Mv_1^2=W_{turbine} = \frac{R\gamma}{\gamma-1}(T_1-T_2)
+\end{equation}
+
+\subsubsection*{Etude d'une fusée}
+Il faut calculer la force de poussée due à l'éjection de gaz. Dans le repère inertiel de la fusée à la vitesse $V$ à l'instant $t$, le système {gaz + fusée} de masse $M_f$ a une vitesse nulle. Dans le même repère, à $t+dt$, une masse $dm$ de gaz a été éjectée avec une vitesse $v_2$ (qu'on relie à la température $T_2$ avec les résultats précédents) et la fusée a acquis un supplément de vitesse $dV$.
+
+Comme on suppose le système isolé, la conservation de la quantité de mouvement donne : $(M_f(t) - dm)dV = dmv_2$, cad la quantité de mouvement due à l'éjection des gaz $dmv_2$ est égale à l'accroissement quantité de mouvement de la fusée $(M_f(t) - dm)dV$.
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+Donc à l'ordre 1 : $M_f(t)dV=v_2dm$}}
+
+(Classique de la poussée d'une fusée : $M_f(t)\frac{d}{dt}V(t)=v_2\frac{dm}{dt}$
+
+La vitesse $v_2$ est donnée par $v_2=\sqrt{\frac{2}{M}\frac{R\gamma}{\gamma-1}(T_1-T_2)}$
+
+On a donc : $dV=\frac{dm}{M_f}\sqrt{\frac{2}{M}\frac{R\gamma}{\gamma-1}(T_1-T_2)}$
+
+
+La vitesse acquise par la fusée tout au long de l'éjection du gaz est :
+A chaque fois qu'une masse $dm$ de gaz est éjectée, la fusée acquiert une vitesse $dV$. Initialement, la vitesse de la fusée est nulle et sa masse est $M_0+m_0$. Lorsque tout le réservoir est vidé, sa masse est $M_0$ et sa vitesse est l'intégrale des $dV$. Donc :
+\begin{equation}
+	V=v_2\int_0^{m_0}\frac{dm}{(M_0+m_0)-m}=v_2\ln\left(\frac{M_0+m_0}{M_0} \right) 
+\end{equation}
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+Alors :
+\begin{equation}
+	V=\sqrt{\frac{2}{M}\frac{R\gamma}{\gamma-1}(T_1-T_2)}\ln\left(\frac{M_0+m_0}{M_0} \right) 
+\end{equation}
+}}
 
 \section*{Exercice 3}
 
