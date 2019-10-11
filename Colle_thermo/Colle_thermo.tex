@@ -8,18 +8,38 @@
 
 \begin{document}
 
-\section*{Question de cours}
-Énoncez le premier principe de la thermodynamique. A quelle loi fondamentale de la physique se réfère t-il ?
-
 \section*{Exercice 1}
 
 \subsection*{Machine 1}
 
-On considère le cycle ci-dessous décrit par une mole de gaz parfait. Les transformations $A\rightarrow B$ et $C\rightarrow D$ sont des adiabatiques réversibles. On supposera que $\gamma$ est constant.
+On considère un moteur effectuant les transformations suivantes : 
 
 \begin{itemize}
-	\item[•] A quel type de machine a t-on affaire ? Décrivez chaque transformation.
-	\item[•] Calculez son rendement en fonction de $a$ et $\gamma$.
+\item[•]$A \rightarrow B$ : isotherme à la température $T_f$ (contact avec la source froide)
+\item[•]$B \rightarrow C$ : adiabatique réversible
+\item[•]$C \rightarrow D$ : isotherme isotherme à la température $T_c$ (contact avec la source chaude)
+\item[•]$D \rightarrow A$ : adiabatique réversible
+
+\end{itemize}
+
+Questions : 
+
+\begin{itemize}
+\item[1-] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$. 
+\item[2-] En déduire le rendement théorique.
+\item[3-] On suppose que la chaleur apportée par la source chaude est crée par de la combustion d'essence, de pouvoir calorifique de 35475kJ.L$^{-1}$. Estimer la quantité d'essence injectée à chaque cycle si le moteur est utilisé pour mouvoir une voiture individuelle.
+%\item[4-] Application numérique : calculer le rendement dans ce cas-là. On prendra $V_A/V_B=10$.
+\end{itemize}
+
+\subsection*{Machine 2}
+
+On considère désormais le moteur effectuant le cycle ci-dessous. De la même manière, on considèrera que la source de chaleur est la combustion d'une certaine quantité d'essence à chaque cycle, apportant une quantité $Q_c$ de chaleur. Le moteur se refroidit jusqu'à la température $T_f$ de la source froide lors de son refroidissement. Les transformations $A\rightarrow B$ et $C\rightarrow D$ sont des adiabatiques, réversibles. On supposera que $\gamma$ est constant. On posera $a=V_2/V_1$
+
+\begin{itemize}
+\item[1-] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$. 
+	\item[2-] Calculer son rendement en fonction de $a$ et $\gamma$.
+
+	\item[3-]  Comparer le rendement de ce moteur avec le rendement de Carnot. Conclure.
 	%\item[•] Comparez le rendement de ce moteur avec celui d'un moteur décrivant un cycle de Carnot. Commentez. 
 \end{itemize}
 
@@ -30,23 +50,7 @@ On considère le cycle ci-dessous décrit par une mole de gaz parfait. Les trans
 \includegraphics[width=0.3\linewidth]{cycle_beau_rochas.pdf}
 \end{figure}
 
-\subsection*{Machine 2}
 
-L'air enfermé dans un cylindre de volume $V=1L$ subit la suite de transformations réversibles suivantes :
-\begin{itemize}
-\item[•]$A \rightarrow B$ : isotherme
-\item[•]$B \rightarrow C$ : adiabatique
-\item[•]$C \rightarrow D$ : isotherme
-\item[•]$D \rightarrow A$ : adiabatique
-
-\end{itemize}
-On donne : $P_{A}=1$ bar, $V_{A} = 1L$, $T_{A}=300K$, $ P_{C}=50$ bar, $V_{B} = V_{A}/8$, $\gamma=1.4$
-
-\begin{itemize}
-\item[•] Calculez le travail fourni par le gaz sur le piston au cours d'un cycle et la chaleur fournie par la source chaude sur un cycle.
-\item[•] Calculez le rendement, et comparer avec le rendement théorique.
-\item[•] Calculez la puissance du moteur sachant que le fluide effectue 5000 cycles par minute. 
-\end{itemize}
 
 \newpage
 
@@ -120,15 +124,12 @@ Cette distribution indique que les niveaux ont d'autant plus de chance d'être p
 
 \begin{itemize}
 \item[-]Déterminez la différentielle de l'énergie interne du système en fonction de $n_{1}$ et $E_{2}-E_{1}$.
-\item[-]On rappelle que l'entropie peut s'écrire comme $S=k_B\log\Omega$, où $\Omega$ est le nombre de configurations possibles pour le système.. Exprimez $S$ en fonction de $N$ et $n_1$. On utilisera la formule de Stirling $\ln (N!)=N \ln (N)$ valable pour $N>>1$.
+\item[-]On rappelle que l'entropie peut s'écrire comme $S=k_B\ln\Omega$, où $\Omega$ est le nombre de configurations possibles pour le système. Exprimez $S$ en fonction de $N$ et $n_1$. On utilisera la formule de Stirling $\ln (N!)=N \ln (N)$ valable pour $N>>1$.
 \item[-] Exprimez la différentielle de $S$ en fonction de $T$, $\Delta$ et $n_1$.
 \item[-] Montrez que l'on retrouve l'identité thermodynamique : $dU = TdS$
 \end{itemize}
 
 \newpage
-
-\section*{Question de cours}
-Énoncez et démontrez l’inégalité de Clausius.
 
 \section*{Exercice 4}
 
