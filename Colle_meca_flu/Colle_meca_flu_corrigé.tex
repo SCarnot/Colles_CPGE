@@ -1,0 +1,54 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\graphicspath{{figures/}{../figures}}
+
+\begin{document}
+
+\section*{Exercice 1}
+
+\begin{itemize}
+	\item[•] Avec les hypothèses : $\eta\Delta \vec{v} = \vec{grad}P$. On néglige la variation due à la gravité à l'échelle de la taille de la sphère.  
+	\item[•] On cherche à connaitre le champ de pression pour connaitre la résultante des forces. 
+	Liquide incompressible donc $div \vec{v}=0$ et donc $\vec{rot}(\vec{rot}(\vec{v}))=\vec{grad} (div \vec{v})-\Delta \vec{v}=-\Delta \vec{v}$, donc le gradient de pression vaut l'opposé l'expression de la vitesse donné plus haut.
+	
+	En choisissant une projection sur $\vec{e_r}$ ou $\vec{e_\theta}$ (ce qui revient au même) :
+	\begin{equation}
+		\frac{\partial P}{\partial r} = 3\eta\frac{Rv_\infty}{r^3}\cos\theta 
+	\end{equation}
+	
+	\begin{equation}
+		P = -3\eta\frac{Rv_\infty}{2r^2}\cos\theta + P_\infty
+	\end{equation}
+En notant $P_\infty$ la pression qui est dans le liquide loin de la sphère.
+
+La résultante des forces de pression, selon l'axe $\vec{e_z}$, est $F_{p,z}=-P(M)d\vec{S}\vec{e_z}$. Alors :
+\begin{equation}
+	F_{p,z} = -\iint P_\infty R^2d\varphi \sin\theta d\theta \cos\theta + \iint 3\eta\frac{Rv_\infty}{2R^2}\cos^2\theta \sin\theta R^2d\theta d\varphi
+\end{equation}
+On trouve alors : $F_{p,z}=2\pi\eta v_\infty R$
+
+\item[•] La force de cisaillement correspond à la force de frottement due à la viscosité du fluide. Pour un élément de surface $\vec{dS}$ de la sphère, celle-ci s'écrit :
+\begin{equation}
+	d\vec{F_c}=\eta dS \frac{\partial v}{\partial r}\vec{e_\theta}
+\end{equation}
+La projection suivant $\vec{e_z}$ nous donne alors :
+\begin{equation}
+	F_{c,z}=\iint \eta \frac{\partial v}{\partial r}R^2\sin\theta d\theta d\varphi \sin\theta=\iint \eta\frac{3}{2}Rv_\infty \sin^3\theta d\theta d\varphi=4\pi\eta Rv_\infty
+\end{equation}
+L'intégrale sur $\theta$ vaut 4/3.
+
+\item[•] La force de trainée est la somme des deux forces précédentes. On a donc : $F_z = 6\pi\eta Rv_\infty$.
+\end{itemize}
+
+\section*{Exercice 2}
+
+\begin{itemize}
+	\item[1 - ] On suppose que le champ de vitesse est uniquement selon $\vec{e_z}$. Comme le fluide est incompressible, 
+\end{itemize}
+
+\end{document}
