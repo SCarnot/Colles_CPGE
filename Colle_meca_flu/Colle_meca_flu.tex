@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}      
 \usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
@@ -41,9 +42,94 @@ On considère un fluide d'épaisseur $h$ s'écoulant lentement sur un plan infin
 \begin{itemize}
 	\item[1 -] Quel est le profil de vitesse dans le fluide ? 
 	\item[2 -] En déduire le débit. 
-	\item[3 -] On observe avec des image satellite que la vitesse d'écoulement d'un glacier à sa surface est d'environ 100m/an. En déduire la viscosité d'un glacier de 100m d'épaisseur, d'un km de large. Quelle quantité de glace est charriée en une année ?
+	\item[3 -] On observe avec des images satellite que la vitesse d'écoulement d'un glacier à sa surface est d'environ 100m/an. En déduire la viscosité d'un glacier de 100m d'épaisseur, d'un kilomètre de large. Quelle quantité de glace est charriée en une année ?
 	\item[5 -] On place désormais une plaque au dessus du liquide, au niveau de $z=h$. Que deviennent les conditions aux limites ? Trouver le nouveau profil de vitesse. Comment s'appelle se type d'écoulement ?
 
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 3}
+
+On étudie un écoulement permanent d'un fluide incompressible de masse volumique $\mu$, dans un tuyau cylindrique horizontal d'axe $Oz$, de rayon $R$, et de longueur $L$. Le champ de pression appliqué le long du tube est noté $P(r,z)$. Par invariance, le champ de vitesse est supposé ne dépendre que de $r$ et $z$, et est dirigé selon $\vec{e_z}$. Il est noté $\vec{u}=u(r,z)\vec{e_z}$. On définit la vitesse de cisaillement par la quantité $\dot{\gamma}=-\frac{du}{dr}$. 
+
+\subsubsection*{Contrainte de cisaillement}
+
+On définit désormais la contrainte de cisaillement (ou force surfacique de cisaillement) entre deux couches adjacentes de fluide, comme la quantité : 
+\begin{align*}
+	\vec{\tau}=\frac{d\vec{F}}{dS}
+\end{align*}
+où $d\vec{F}$ est la force qui s'exerce mutuellement entre les couches adjacentes, et $dS$ la surface élémentaire de contact entre ces deux surfaces.
+
+\subsubsection*{Fluide de Bingham}
+
+Un fluide est dit de Bingham si les contraintes de cisaillements entre les couches obéissent à une loi de seuil : 
+\begin{align*}
+	\left\lbrace
+\begin{array}{ccc}
+\tau>\tau_s & : & \tau = \tau_s+\eta\dot{\gamma} \\
+\tau<\tau_s & : & \dot{\gamma}=0\\
+\end{array}\right.
+\end{align*}
+On supposera que le fluide que l'on étudie obéit à une telle loi. 
+
+\begin{itemize}
+	\item[1 - ] Montrer que $\vec{u}$ ne dépend que de $r$. En négligeant les actions de la pesanteur, déterminer la relation suivante : 
+	\begin{align*}
+		\frac{\partial P}{\partial z} + \frac{1}{r}\frac{\partial (r\tau)}{\partial r}=0
+	\end{align*}
+	\item[2 - ] Établir la relation :
+	\begin{align*}
+		\tau(r) = \tau_s\frac{r}{R_s}
+	\end{align*}
+	où $R_s$ est le rayon de seuil, défini par $R_s=2\tau_s L/\Delta P$, en notant $\Delta P = P(0)-P(L)$ la chute de pression entre l'entrée et la sortie du tuyau. Quel est le signe de $\Delta P$ ?
+
+	\item[3 - ] Pour quelle pression minimale $\Delta P_{min}$ commence t-on à voir un écoulement à travers le tube ?
+	
+	\item[4 - ] On suppose que $\Delta P>\Delta P_{min}$. Déterminer le champs de vitesse dans le tube. Tracer son allure et expliquer pourquoi l'écoulement présente une zone dite \textit{bouchon}.
+	
+	
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 4}
+
+\subsubsection*{Tuyau parabolique}
+
+Un fluide est en écoulement permanent dans une portion de tube à section parabolique, avec $Oz$ en axe de symétrie. Les lignes de courant s'écoulant dans le tube ont pour équation :
+\begin{align*}
+		\left\lbrace
+\begin{array}{ccc}
+z<0 & : & r=\lambda a \\
+z>0 & : & r=\lambda \left(a+\frac{z^2}{b} \right) \\
+\end{array}\right.
+\end{align*}
+où $\lambda$ est un nombre sans dimension, $a$ et $b$ des constantes. 
+
+\begin{center}
+	\includegraphics[scale=0.5]{meca_flu1.pdf}
+\end{center}
+
+Le fluide est incompressible et la composante axiale de $v_z$ de la vitesse est supposée uniforme sur une section perpendiculaire, cad $v_z$ ne dépend pas de $r$. On note $v_0$ la vitesse en $O$.
+
+\begin{itemize}
+	\item[1 - ] Déterminez la vitesse $\vec{v}$ en tout point.
+	\item[2 - ] Comment évolue un élément de fluide qui traverse le tuyau ? 
+	\item[3 - ] L'écoulement est-il potentiel ?
+\end{itemize}
+
+\subsubsection*{Écoulement entre deux lames}
+
+On considère deux plaques infinies de verres séparées d'une épaisseur $e$ où circule un fluide incompressible. Du fluide est injecté à un débit $D_e$ par un tuyau, et il peut ressortir à travers un autre tuyau identique. 
+
+\begin{center}
+	\includegraphics[scale=0.3]{plaque.pdf}
+\end{center}
+
+\begin{itemize}
+	\item[1 - ] Au vu des symétries et des données du problèmes, proposez une expression pour le champ de vitesse. 
+	\item[2 - ] Est-ce un écoulement potentiel ?
 \end{itemize}
 
 \end{document}

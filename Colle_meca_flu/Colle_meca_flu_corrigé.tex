@@ -122,4 +122,91 @@ C'est un écoulement de Poiseuille.
 
 \end{itemize}
 
+\newpage
+
+\section*{Exercice 3}
+
+\begin{itemize}
+	\item[1 - ] Dans l'énoncé, le problème est dit invariant en $\theta$ donc la vitesse ne dépend pas de $\theta$. D'autre part l'équation de conservation s'écrit, comme le fluide est incompressible : $div(\vec{v})=0$, cad $\partial u_z/\partial z=0$, cad $u_z$ ne dépend pas de $z$. Finalement, $\vec{u}$ ne dépend que de $r$.
+	
+	On effectue un bilan de force sur un petit volume en coordonnées cylindrique au point $M(r,\theta,z)$. On projette directement selon $z$ :
+	\begin{equation}
+		rd\theta drP(z) - rd\theta drP(z+dz) - \eta\tau(r+dr)(r+dr)d\theta dz+ \eta\tau(r)rd\theta dz =0
+	\end{equation}
+Attention, la définition de $\tau$ implique qu'il est opposé à la variation spatiale de la vitesse. Il y a donc un signe - par rapport aux force classique de cisaillement. 
+On obtient la relation voulue :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		\frac{\partial P}{\partial z} + \frac{1}{r}\frac{\partial (r\tau)}{\partial r}=0
+	\end{align*}}}
+
+	\item[2 -] On commence à intégrer selon $z$. Étant donné que $u$ ne dépend pas de $z$, $\dot{\gamma}$ non plus, et $\tau$ non plus. Dès lors :
+	\begin{align*}
+		\int_0^Ldz P(z) = P(L)-P(0)=-\Delta P =-\frac{L}{r}\frac{\partial r\tau}{\partial r}
+	\end{align*}
+	On obtient donc : $\Delta P =\frac{L}{r}\frac{\partial r\tau}{\partial r}$. On intègre désormais sur $r$, et on trouve la relation demandée. Attention, durant le calcul, on intègre un $r^2$ qui fait aparaître un facteur 1/2. 
+	
+	\item[3 - ] Pour qu'il y ait écoulement, il faut qu'il existe une valeur de $r$ telle que $\tau>\tau_s$ (car sinon $\dot{\gamma}=0$). La plus grande valeur de $r$ est le rayon $R$, on doit alors nécessairement avoir $R>R_s$ pour espérer voir un écoulement. On a alors $\tau_s = \tau_s R/R_s$.
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+	Cela correspond à une pression minimum de $\Delta P_{min}=\frac{2\tau_sL}{R}$.}}
+	
+	\item[4 - ] Comme $\Delta P > \Delta P_{min}$, on a forcément $R>R_s$. Donc pour $r>R_s$ :
+	\begin{align*}
+		-\frac{\partial u}{\partial r}=\frac{\tau_s}{\eta}\left( \frac{r}{R_s} - 1\right) 
+	\end{align*}
+	
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+	On trouve donc pour $r>R_s$ :
+	\begin{align*}
+		u(r) = \frac{\Delta P}{4L\eta}(R+r-2R_s)(R-r)
+	\end{align*}
+	Pour $r<r_s$, on a $\dot{\gamma}=0$ donc :
+	\begin{align*}
+	 u(r)=u(R_s)=\frac{\Delta P}{4L\eta}(R-R_s)^2
+	 \end{align*}	
+}}
+	Pour visualiser, l'effet, bouchon, il suffit de tracer la courbe de $u(r)$ en fonction de $r$. 
+	
+\end{itemize}
+
+\section*{Exercice 4}
+
+\begin{itemize}
+	\item[1 - ] Il y a deux cas : 
+	 
+	\begin{itemize}
+		\item[$z<0$ : ] Avec l'équation d'incompressibilité $div(\vec{v})=0$, on trouve $\frac{1}{r}\frac{\partial(r v_r}{\partial r}+\frac{\partial v_z}{\partial z} =0$. Comme dans cette partie, les lignes de courants sont parallèle à l'axe $Oz$, la vitesse es tnécessairement selon $e_z$ donc l'équation de conservation devient $\frac{\partial v_z}{\partial z} =0$, don c$v_z=cste=v_0$. Finalement,
+		\begin{align*}
+			\vec{v}=v_0\vec{e_z}
+		\end{align*}
+		
+		\item[$z>0$ : ] 	La conservation du débit impose que pour toute section du tube, on ait $\iint d\vec{S}\vec{v}= \pi r^2v_z(r,z)=cste$, car $v$ ne dépend pas de $r$. En l'occurrence, pour $z=0$, on a $\pi r^2v_z(r,z)=\pi \lambda^2a^2v_0$. On a donc : 
+\begin{align*}
+	v_z(r,z)=\frac{a^2}{\left(a+\frac{z^2}{b} \right)^2 }v_0
+\end{align*}	
+
+Les lignes de courant sont définies par $\vec{v}\wedge d\vec{l}$. Comme $d\vec{l}=dr\vec{e_r}+dz\vec{e_z}$, donc on a :
+\begin{align*}
+	v_rdz-v_zdr=0\Longrightarrow \frac{v_r}{v_z}=\frac{\partial r}{\partial z}
+\end{align*}
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+	On trouve alors :
+	\begin{align*}
+		\vec{v}=\frac{a^2}{\left(a+\frac{z^2}{b} \right)^2 }v_0\vec{e_z}+\frac{2rz}{ab\left( 1+\frac{z^2}{ab}\right)^3 }v_0\vec{e_r}
+	\end{align*}}}
+	
+	On peut vérifier que l'écoulement est bien incompressible. 
+	\end{itemize}
+
+\item[2 - ] Les lignes de courant s'écartent lors du passage dans la zone parabolique, l'élément de fluide se déforme de sorte à être plus fin pour respecter la conservation de la masse. 
+
+\item[3 - ] \begin{align*}
+\vec{\Omega}=\vec{rot}(\vec{v})=\left(\frac{\partial v_r}{\partial z}-\frac{\partial v_z}{\partial r} \right)\vec{e_\theta}=\frac{1-5z^2/ab}{\left( 1+z^2/ab\right)^4}\frac{2rv_0}{ab}\vec{e_\theta}\neq 0
+\end{align*}
+
+\end{itemize}
+
 \end{document}
