@@ -132,4 +132,36 @@ On considère deux plaques infinies de verres séparées d'une épaisseur $e$ o�
 	\item[2 - ] Est-ce un écoulement potentiel ?
 \end{itemize}
 
+\newpage
+
+\section*{Exercice 5}
+
+On considère un fluide incompressible, de viscosité $\eta$ contenu entre deux cylindres orientés verticalement, de même axe $O_z$, et de rayons respectifs $R_1$ et $R_2$ (avec $R_1<R_2$). La hauteur des cylindres $L$ est très grande devant les rayons : $L\gg R_1, R_2$. Les deux cylindres peuvent tourner autour de l'axe $Oz$. 
+
+Tout élément de ce fluide subit une force surfacique visqueuse (ou contrainte visqueuse) que l'on notera $\vec{\sigma}$. L'expression en coordonnées cylindrique de sa composante selon $\vec{e_\theta}$ s'écrit : 
+\begin{align*}
+	\sigma_\theta(r,\theta,z)=\eta\left(\frac{1}{r}\frac{\partial v_r}{\partial \theta}+ \frac{\partial v_\theta}{\partial r} - \frac{v_\theta}{r} \right)
+\end{align*}
+Il est possible de démontrer que, dans le cadre de ce problème, les autres composantes de $\vec{\sigma}$ sont nulles. Nous l'admettrons pour la suite du problème. 
+
+L'écoulement est supposé permanent, lent et laminaire : on suppose alors que $v_z=0$.
+
+\begin{itemize}
+	\item[1 - ] A partir des invariances du problèmes, montrer que $v$ ne dépend que de $r$.
+
+	\item[2 - ] En s'appuyant sur un bilan de matière, retrouver l'expression de l'équation de conservation. En déduire que le champ de vitesse s'écrit $\vec{v}=v_\theta (r)\vec{e_\theta}$.
+	
+	\item[3 - ] En faisant un bilan des moments selon $\vec{e_z}$, montrer que la vitesse vérifie la relation suivante : 
+	\begin{align*}
+		\frac{\partial}{\partial r}\left(r^3 \frac{\partial}{\partial r}\frac{v_\theta}{r} \right) =0
+	\end{align*}
+	
+	\item[4 - ] Le cylindre de rayon $R_1$ (resp. $R_2$) tourne à la vitesse angulaire $\Omega_1$ (resp. $\Omega_2$). En déduire l'expression du champs de vitesse. 
+	
+	\item[5 - ] On suppose que le cylindre intérieur (de rayon $R_1$) est maintenu fixe (cad $\Omega_1=0$) à l'aide d'un ressort de torsion qui exerce un moment $\vec{M}=k\theta\vec{e_z}$. Le cylindre intérieur tourne toujours à la vitesse $\Omega_2$. De quel angle $\theta$ tourne le ressort ? A quel quantité physique a t-on alors accès ?
+	
+	\item[6 - ] En étant toujours dans la situation $\Omega_2=0$, calculer la puissance mécanique dissipée dans le fluide.
+	
+\end{itemize}
+
 \end{document}

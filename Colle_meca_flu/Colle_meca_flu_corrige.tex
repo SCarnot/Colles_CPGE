@@ -209,4 +209,61 @@ Les lignes de courant sont définies par $\vec{v}\wedge d\vec{l}$. Comme $d\vec{
 
 \end{itemize}
 
+\newpage
+
+\section*{Exercice 5}
+
+\begin{itemize}
+
+\item[1 - ] Il y a invariance selon $\theta$ et selon $z$, mais aussi selon $t$ (écoulement permanent). $\vec{v}$ ne dépend donc que de $r$. 
+\item[2 - ] Le bilan de matière donne : 
+\begin{align*}
+	\frac{1}{r}\frac{\partial(rv_r)}{\partial r} + \frac{1}{r}\frac{\partial v_\theta}{\partial \theta}+\frac{\partial v_z}{\partial z}=0
+\end{align*}
+Les deux derniers termes de l'équation sont nuls à cause des invariances. En intégrant le premier terme, on trouve $v_r=\frac{cste}{r}$. Comme $v_r(R_1)=0$ par conservation du débit, $\forall r, v_r=0$.
+
+La vitesse ne dépend donc que de $r$ et a une composante uniquement selon $\vec{e_\theta}$ (d'après l'énoncé, $v_z=0$).
+
+\item[3 - ] Le plus simple est de faire un bilan des moments selon $\vec{e_z}$ à un élément de fluide (en coordonnées cylindriques) qui est un anneau (ou tore) compris entre $r$ et $r+dr$, d'épaisseur $dz$. Les forces visqueuses s'appliquent orthoradialement alors sur les surfaces internes et externe. 
+
+Le moment total exercé doit être nul de sorte que : 
+\begin{align*}
+	2\pi r dz \sigma_\theta(r)\times r - 2\pi (r+dr) dz \sigma_\theta(r+dr)\times (r+dr) = 0
+\end{align*}
+cad : $r^2 \sigma_\theta(r) - (r+dr)^2 \sigma_\theta(r+dr) = 0$. On en déduit que $\frac{\partial}{\partial r}r^2\sigma_\theta=0$.
+
+D'autre part, $\sigma_\theta=\eta\left(\frac{\partial v_\theta}{\partial r}-\frac{v_\theta}{r}\right) =\eta r \frac{\partial}{\partial r}\frac{v_\theta}{r} $. On trouve le résultant voulu :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+	\begin{align*}
+		\frac{\partial}{\partial r}\left(r^3 \frac{\partial}{\partial r}\frac{v_\theta}{r} \right) =0
+	\end{align*}}}
+	
+	\item[4 - ] On intègre la relaiton précédente et on trouve :
+	\begin{align*}
+		v_\theta = \frac{A}{r} + Br
+	\end{align*}
+	Les conditions aux limites sont : $v_\theta(r=R_{1,2})=R_{1,2}\Omega_{1,2}$. On obtient alors : 
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+	\begin{align*}
+		v_\theta  = \frac{\Omega_2R_2^2-\Omega_1R_1^2}{R_2^2-R_1^2}r+\frac{(\Omega_1-\Omega_2)R_2^2R_1^2}{R_2^2-R_1^2}\frac{1}{r}
+	\end{align*}}}
+
+\item[5 - ] Le couple exercé par le cylindre de rayon $R_1$ s'exprime comme la résultantes des contraintes de cisaillement dues à la viscosité :
+\begin{align*}
+	M_{\eta}(R_1)=\iint R_1d\theta dz R_1\sigma_\theta(R_1)= 2\pi R_1^2L\sigma_\theta(R_1)
+\end{align*}
+Or, $\sigma_\theta(R_1) = -2B\eta/R_1^2$ donc on trouve que :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\begin{align*}
+	M_{\eta}(R_1) = 4\pi\eta\frac{(\Omega_1-\Omega_2)R_2^2R_1^2}{R_2^2-R_1^2}
+\end{align*}}}
+
+L'angle du ressort est donc : $\theta = M_{\eta}(R_1)/k$. On peut donc mesurer la viscosité du fluide.
+
+\end{itemize}
+
+
 \end{document}
