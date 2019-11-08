@@ -51,15 +51,19 @@ On considère un fluide d'épaisseur $h$ s'écoulant lentement sur un plan infin
 
 \section*{Exercice 3}
 
-On étudie un écoulement permanent d'un fluide incompressible de masse volumique $\mu$, dans un tuyau cylindrique horizontal d'axe $Oz$, de rayon $R$, et de longueur $L$. Le champ de pression appliqué le long du tube est noté $P(r,z)$. Par invariance, le champ de vitesse est supposé ne dépendre que de $r$ et $z$, et est dirigé selon $\vec{e_z}$. Il est noté $\vec{u}=u(r,z)\vec{e_z}$. On définit la vitesse de cisaillement par la quantité $\dot{\gamma}=-\frac{du}{dr}$. 
+On étudie un écoulement permanent d'un fluide incompressible de masse volumique $\mu$, dans un tuyau cylindrique horizontal d'axe $Oz$, de rayon $R$, et de longueur $L$ (schéma de gauche). Le champ de pression appliqué le long du tube est noté $P(r,z)$. Par invariance, le champ de vitesse est supposé ne dépendre que de $r$ et $z$, et est dirigé selon $\vec{e_z}$. Il est noté $\vec{u}=u(r,z)\vec{e_z}$. On définit la vitesse de cisaillement par la quantité $\dot{\gamma}=-\frac{du}{dr}$. 
 
-\subsubsection*{Contrainte de cisaillement}
+\begin{center}
+	\includegraphics[scale=0.8]{meca_flu2.pdf}
+\end{center}
 
-On définit désormais la contrainte de cisaillement (ou force surfacique de cisaillement) entre deux couches adjacentes de fluide, comme la quantité : 
-\begin{align*}
-	\vec{\tau}=\frac{d\vec{F}}{dS}
-\end{align*}
-où $d\vec{F}$ est la force qui s'exerce mutuellement entre les couches adjacentes, et $dS$ la surface élémentaire de contact entre ces deux surfaces.
+On définit la force surfacique de viscosité $\vec{\tau}$, ou contrainte de cisaillement, entre deux couches adjacentes de fluide, la quantité : $\vec{\tau}=\frac{d\vec{F}}{dS}$.
+où $d\vec{F}$ est la force qui s'exerce mutuellement entre les couches adjacentes, et $dS$ la surface élémentaire de contact entre ces deux surfaces (schéma de droite).
+
+\begin{itemize}
+	\item[1 - ] Quelle est la relation entre la force de viscosité $\vec{\tau}$ et le champ de vitesse $u$ dans le cas d'un fluide classique (vu en cours), dit newtonien ? On pourra dans cette question se placer en coordonnées cartésiennes.
+	
+\end{itemize}
 
 \subsubsection*{Fluide de Bingham}
 
@@ -74,19 +78,21 @@ Un fluide est dit de Bingham si les contraintes de cisaillements entre les couch
 On supposera que le fluide que l'on étudie obéit à une telle loi. 
 
 \begin{itemize}
-	\item[1 - ] Montrer que $\vec{u}$ ne dépend que de $r$. En négligeant les actions de la pesanteur, déterminer la relation suivante : 
+	\item[2 - ] Quel est la différence entre un fluide classique et un fluide de Bingham ?
+
+	\item[3 - ] Montrer que $\vec{u}$ ne dépend que de $r$. En négligeant les actions de la pesanteur, déterminer la relation suivante : 
 	\begin{align*}
 		\frac{\partial P}{\partial z} + \frac{1}{r}\frac{\partial (r\tau)}{\partial r}=0
 	\end{align*}
-	\item[2 - ] Établir la relation :
+	\item[4 - ] Établir la relation :
 	\begin{align*}
 		\tau(r) = \tau_s\frac{r}{R_s}
 	\end{align*}
 	où $R_s$ est le rayon de seuil, défini par $R_s=2\tau_s L/\Delta P$, en notant $\Delta P = P(0)-P(L)$ la chute de pression entre l'entrée et la sortie du tuyau. Quel est le signe de $\Delta P$ ?
 
-	\item[3 - ] Pour quelle pression minimale $\Delta P_{min}$ commence t-on à voir un écoulement à travers le tube ?
+	\item[5 - ] Pour quelle pression minimale $\Delta P_{min}$ commence t-on à voir un écoulement à travers le tube ?
 	
-	\item[4 - ] On suppose que $\Delta P>\Delta P_{min}$. Déterminer le champs de vitesse dans le tube. Tracer son allure et expliquer pourquoi l'écoulement présente une zone dite \textit{bouchon}.
+	\item[6 - ] On suppose que $\Delta P>\Delta P_{min}$. Déterminer le champs de vitesse dans le tube. Tracer son allure et expliquer pourquoi l'écoulement présente une zone dite \textit{bouchon}.
 	
 	
 \end{itemize}
@@ -123,13 +129,19 @@ Le fluide est incompressible et la composante axiale de $v_z$ de la vitesse est 
 
 On considère deux plaques infinies de verres séparées d'une épaisseur $e$ où circule un fluide incompressible. Du fluide est injecté à un débit $D_e$ par le tuyau $A$, et il peut ressortir à travers le tuyau $B$ identique. 
 
+On suppose que l'écoulement dérive du potentiel :
+\begin{align*}
+	\phi(M) = av_0\ln\frac{r_A}{r_B}
+\end{align*}
+où $r_A$ (resp. $r_B$) est la distance d'un point $M$ du champ à la source $A$ (resp. $B$).
+
 \begin{center}
-	\includegraphics[scale=0.3]{plaque.pdf}
+	\includegraphics[scale=0.25]{plaque.pdf}
 \end{center}
 
 \begin{itemize}
-	\item[1 - ] Au vu des symétries et des données du problèmes, proposez une expression pour le champ de vitesse. 
-	\item[2 - ] Est-ce un écoulement potentiel ?
+	\item[1 - ] Déterminer le champ des vitesses. Comment relier $a$ et $v_0$ au débit des sources ? 
+	\item[2 - ] Est-ce un écoulement compressible ?
 \end{itemize}
 
 \newpage
@@ -137,6 +149,10 @@ On considère deux plaques infinies de verres séparées d'une épaisseur $e$ o�
 \section*{Exercice 5}
 
 On considère un fluide incompressible, de viscosité $\eta$ contenu entre deux cylindres orientés verticalement, de même axe $O_z$, et de rayons respectifs $R_1$ et $R_2$ (avec $R_1<R_2$). La hauteur des cylindres $L$ est très grande devant les rayons : $L\gg R_1, R_2$. Les deux cylindres peuvent tourner autour de l'axe $Oz$. 
+
+\begin{center}
+	\includegraphics[scale=0.8]{meca_flu3.pdf}
+\end{center}
 
 Tout élément de ce fluide subit une force surfacique visqueuse (ou contrainte visqueuse) que l'on notera $\vec{\sigma}$. L'expression en coordonnées cylindrique de sa composante selon $\vec{e_\theta}$ s'écrit : 
 \begin{align*}
@@ -149,7 +165,7 @@ L'écoulement est supposé permanent, lent et laminaire : on suppose alors que $
 \begin{itemize}
 	\item[1 - ] A partir des invariances du problèmes, montrer que $v$ ne dépend que de $r$.
 
-	\item[2 - ] En s'appuyant sur un bilan de matière, retrouver l'expression de l'équation de conservation. En déduire que le champ de vitesse s'écrit $\vec{v}=v_\theta (r)\vec{e_\theta}$.
+	\item[2 - ] En s'appuyant sur un bilan de matière, retrouver l'expression de l'équation de conservation. En déduire que le champ de vitesse s'écrit $\vec{v}=v_\theta (r)\vec{e_\theta}$. L'écoulement est-il rotationnel ?
 	
 	\item[3 - ] En faisant un bilan des moments selon $\vec{e_z}$, montrer que la vitesse vérifie la relation suivante : 
 	\begin{align*}
@@ -161,6 +177,12 @@ L'écoulement est supposé permanent, lent et laminaire : on suppose alors que $
 	\item[5 - ] On suppose que le cylindre intérieur (de rayon $R_1$) est maintenu fixe (cad $\Omega_1=0$) à l'aide d'un ressort de torsion qui exerce un moment $\vec{M}=k\theta\vec{e_z}$. Le cylindre intérieur tourne toujours à la vitesse $\Omega_2$. De quel angle $\theta$ tourne le ressort ? A quel quantité physique a t-on alors accès ?
 	
 	\item[6 - ] En étant toujours dans la situation $\Omega_2=0$, calculer la puissance mécanique dissipée dans le fluide.
+	
+\textit{NB} 
+\begin{align*}
+	\vec{rot}(\vec{v})=\left( \frac{1}{r}\frac{\partial v_z}{\partial\theta}-\frac{v_\theta}{\partial z}\right)\vec{e_r} + \left( \frac{\partial v_r}{\partial z}-\frac{\partial v_z}{\partial r}\right)\vec{e_\theta} + \frac{1}{r}\left( \frac{\partial (rv_\theta)}{\partial r}-\frac{\partial v_r}{\partial \theta}\right)\vec{e_z} 
+\end{align*}	
+	
 	
 \end{itemize}
 

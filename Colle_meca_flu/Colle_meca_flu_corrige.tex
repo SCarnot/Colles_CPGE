@@ -209,6 +209,47 @@ Les lignes de courant sont définies par $\vec{v}\wedge d\vec{l}$. Comme $d\vec{
 
 \end{itemize}
 
+\subsubsection*{Écoulement entre deux plaques}
+
+On peut raisonner en superposant les deux champs de vitesse comme en électromagnétisme. 
+
+Il faut séparer le $\ln$ en deux parties pour distinguer les deux vecteurs directeurs correspondant à l'écoulement. On introduit alors $r_0$ une longueur intermédiaire.
+\begin{align*}
+	\vec{grad}(\phi)=av_0\left(\vec{grad}\ln\frac{r_1}{r_0}-\vec{grad}\ln\frac{r_2}{r_0} \right) 
+\end{align*}
+On trouve :
+\begin{align*}
+\vec{v}=av_0\left(\frac{\vec{e_{r_A}}}{r_A}-\frac{\vec{e_{r_B}}}{r_B} \right) 
+\end{align*}
+
+Le champs de vitesse créé par la source en A, à une distance $r_A$ de cette source peut s'écrire sous la forme :
+\begin{align*}
+	\vec{v_A} = v_A(r_A,z)\vec{e_{r_A}}
+\end{align*} 
+En effet, par invariance, $\vec{v_A}$ ne peut dépendre de $\theta$. D'autre part, comme l'écoulement est lent, il ne pourra être dirigé que selon $\vec{e_{r_A}}$.
+
+Avec la conservation du débit, on a :
+\begin{align*}
+	D_e = 2\pi r_A\int_{-e/2}^{e/2}dz v(r_A,z)
+\end{align*}
+En notant $v_{moy}=\frac{1}{e}\int_{-e/2}^{e/2}dz v(r,z)$, qui correspond à la vitesse moyenne entre les deux plaques, on obtient :
+\begin{align*}
+	\vec{v_{moy}}(r_A) = \frac{D_e}{2\pi r e}\vec{e_{r_A}}
+\end{align*}
+La vitesse décroit en $1/r_A$. S'il n'ya pas de viscosité, on a bien $v_{moy}=v$.
+
+Même chose pour la source en B :
+\begin{align*}
+	\vec{v_{moy}}(r_B) = -\frac{D_e}{2\pi r e}\vec{e_{r_B}}
+\end{align*}
+
+Au final : 
+\begin{align*}
+	\vec{v_{moy}} = \frac{D_e}{2\pi e}\left( \frac{1}{r_A}\vec{e_{r_A}} - \frac{1}{r_B}\vec{e_{r_B}}\right) 
+\end{align*}
+
+Les champs de vitesses sont à divergence nulle donc incompressibles.
+
 \newpage
 
 \section*{Exercice 5}
