@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}      
 \usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{amsmath}
 \graphicspath{{figures/}{../figures}}
 
@@ -211,5 +212,67 @@ On donne :
 \begin{align*}
 	\vec{grad}U = \frac{\partial U}{\partial r}\vec{e}_{r} +\frac{1}{r}\frac{\partial U}{\partial\theta}\vec{e}_{\theta} + \frac{\partial U}{\partial z}\vec{e}_{z}
 \end{align*}
+
+\newpage
+
+\section*{Exercice 7}
+
+Le tube en "L" suivant a une section constante $s$, mais dont les dimensions longitudinales sont très grande devant le diamètre, on pourra considérer que l'écoulement est unidimensionnel. Le liquide est supposé idéal et incompressible.
+
+Dans l'état initial, la hauteur du liquide est $h_0$ et l'extrémité inférieur est bouchée. On ouvre le bouchon à $t=0$.
+
+\begin{center}
+	\includegraphics[scale=0.5]{meca_flu4.pdf}
+\end{center}
+
+\begin{itemize}
+
+\item[1 - ] Déterminez la vitesse d'éjection $v$ en fonction la hauteur $h$. Examiner le cas où $L\longrightarrow0$.
+
+\item[2 - ] Exprimer la pression $P(M,t)$ en tout point en fonction de $P_{atm}$, $\rho$, $g$, $L$ et $h(t)$. En quel point est-elle maximale ?
+
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 8}
+
+\begin{wrapfigure}[12]{r}{4cm}
+\includegraphics[width=4cm]{meca_flu5.png}
+\end{wrapfigure}
+
+On considère la Terre comme une sphère de rayon $R_T$ et de centre $O_T$. Le repère $R_G=(\vec{u_1},\vec{u_2},\vec{u_3})$ est fixe est considéré comme galiléen, avec $\vec{u_3}$ parallèle à l'axe Nord-Sud. Pour tout point $M$ de latitude $\lambda$ de la surface, on associe le repère $R_T=(\vec{e_x},\vec{e_y},\vec{e_z})$. Ce repère $R_T$ est donc en rotation $\vec{\Omega}=\Omega\vec{u_3}$ par rapport à $R_G$.
+
+
+On note $\vec{g}$ le champ de pesanteur terrestre. L'atmosphère est considéré comme une fine couche d'air, qui est un gaz parfait de masse molaire $M$, de masse volumique $\rho$, et dont les écoulements sont considérés comme parfaits. On notera $v(x,y,z)$ le champ des vitesses dans $R_T$, $P(x,y,z)$ le champ de pression.
+
+On cherche à étudier les vents dominants à la surface du globe, cad on se limite aux écoulements de grande échelle, réguliers dans le temps (stationnaires). 
+
+\begin{itemize}
+
+	\item[$\clubsuit$] Le référentiel $R_T$ n'étant pas galiléen, on admet que les forces volumiques d'inertie se réduisent au terme de Coriolis, qui s'écrit : $f_{vol, C}=-2\rho\vec{\Omega}\wedge\vec{v}$. Comment s'écrit la relation fondamentale de la dynamique ?
+	
+	\item[$\clubsuit$] En faisant l'hypothèse que l'atmosphère est isotherme, et en supposant que l'air était à l'équilibre (cad dans fixe par rapport à $R_T$), estimer l'épaisseur de l'atmosphère. On notera $P_{eq}(x,y,z)$ la pression correspondante. Que peut-on en déduire sur la partie verticale de la vitesse $v_z=\vec{v}\cdot\vec{e_z}$ ?
+	
+	\item[$\clubsuit$] En notant $p(x,y,z)=P(x,y,z)-P_{eq}(x,y,z)$, trouver la nouvelle relation vérifiée par $\vec{v}$ et $p(x,y,z)$
+	
+	\item[$\clubsuit$] On appelle nombre de Rossby (noté $Ro$) d'un écoulement le rapport entre le terme d'accélération particulaire et l'accélération lié à la froce de Coriolis. Estimer $Ro$ pour des mouvements atmosphériques où la vitesse typique est $U\simeq10$m.s$^{-1}$ et d'extension $L\simeq1000$km. Simplifier l'équation trouvée à la première question.
+	
+	\item[$\clubsuit$] Établir alors l'expression du champs de vitesse $\vec{v}$. Pourquoi seule la composante de $\vec{grad}(p)$ intervient dans l'expression de $\vec{v}$ ?
+	
+	\item[$\clubsuit$] La figure ci dessous donne la valeur moyenne de la pression atmosphérique $P$ au niveau du sol, le long d'un méridien quelconque. En déduire l'allure de la circulation des vents sur le globe, en fonction de la latitude $\lambda$.
+	
+\begin{center}
+	\includegraphics[scale=0.3]{meca_flu5bis.png}
+\end{center}	
+	
+	\item[$\clubsuit$] Estimer la valeur typique des de la vitesse vents dominants en Europe.
+	
+	
+	
+	
+	
+
+\end{itemize}
 
 \end{document}

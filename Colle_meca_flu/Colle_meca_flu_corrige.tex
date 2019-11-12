@@ -383,6 +383,155 @@ Pour une pression $P_0=$1bar, on a une vitesse maximale de $277$m.s$^{-1}$ ! Ce 
 
 \end{itemize}
 
+\newpage
 
+\section*{Exercice 7}
+
+\begin{itemize}
+
+	\item[1 - ] On a en tout point du tube $v=-\dot{h}$. L'écoulement n'est pas permanent ! Donc :
+	\begin{align*}
+		\rho\frac{\partial v}{\partial t} +\frac{\rho}{2}\vec{grad(}v^2)+\rho\cdot \vec{rot}(\vec{v})\wedge\vec{v} =\rho\vec{g}-\vec{grad}P
+	\end{align*}
+
+Soit $A$ et $B$ les points respectivement en haut du liquide et à la sortie du tuyau. On calcule la circulation entre les points $A$ et $B$ pour chaque terme :
+\begin{align*}
+	\int_A^B\rho\frac{\partial \vec{v}}{\partial t}\cdot d\vec{l}=-\ddot{h}(t)\rho(L+h(t))
+\end{align*}
+
+Les termes $\frac{\rho}{2}\vec{grad(}v^2)$ et $\rho\cdot \vec{rot}(\vec{v})\wedge\vec{v}$ sont nuls. 
+
+\begin{align*}
+	\int_A^B\rho\vec{g}d\vec{l}=g\rho h(t)
+\end{align*}
+
+La pression est égale à la pression atmosphérique à l'entrée et à la sortie du tuyau :
+\begin{align*}
+	\int_A^B\vec{grad}(P)d\vec{l}=P_1-P_2
+\end{align*}
+
+On en déduit :
+\begin{align*}
+	\ddot{h}=-\frac{gh}{L+h}
+\end{align*}
+
+En multipliant par $\dot{h}$ de chaque côté, on a :
+\begin{align*}
+	\dot{h}\ddot{h}=-g\left(\dot{h} - \frac{L\dot{h}}{L+h}\right) 
+\end{align*}
+
+En intégrant, on obtient : 
+\begin{align*}
+	\frac{\dot{h}^2}{2}=g(h_0-h)-gL\ln\left(\frac{h_0+L}{h+L} \right) 
+\end{align*}
+
+On obtient alors :
+\begin{align*}
+	v(h)=\sqrt{2g\left( h_0-h-L\ln\left(\frac{h_0+L}{h+L}  \right)\right)  }
+\end{align*}
+
+Pour $L\longrightarrow0$, $v^2\approx2g(h_0-h)$. Cela correspond à la colonne de liquide en chute libre.
+
+\item[2 - ] Dans la branche verticale, pour un point $M$ à une altitude $z$ :
+
+\begin{align*}
+	\int_A^M\rho\frac{\partial \vec{v}}{\partial t}\cdot d\vec{l}=-\ddot{h}(t)\rho(h(t)-z)
+\end{align*}
+
+\begin{align*}
+	\int_A^M\rho\vec{g}\cdot d\vec{l}=g\rho(h(t)-z)
+\end{align*}
+
+\begin{align*}
+	\int_A^M\vec{grad}(P)\cdot d\vec{l}=P_0-P(M,t)
+\end{align*}
+
+On a alors :
+\begin{align*}
+	P(M,t)=P_0+\rho\left[ h(t)-z \right] \left[g+\ddot{h} \right] 
+\end{align*}
+Soit :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\begin{align*}
+	P(M,t)=P_0+\rho g \frac{L\left[ h(t)-z \right]}{L+h(t)}
+\end{align*}}}
+
+Dans la branche horizontale, pour un point $M$ à la position $x$ :
+\begin{align*}
+	\int_M^B\rho\frac{\partial \vec{v}}{\partial t}\cdot d\vec{l}=-\ddot{h}(t)\rho(L-x)
+\end{align*}
+
+\begin{align*}
+	\int_M^B\rho\vec{g}\cdot d\vec{l}=0
+\end{align*}
+
+\begin{align*}
+	\int_M^B\vec{grad}(P)\cdot d\vec{l}=P(M,t)-P_0
+\end{align*}
+
+On a alors :
+\begin{align*}
+	P(M,t)=P_0+\rho\ddot{h}(L-x)
+\end{align*}
+Soit :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\begin{align*}
+	P(M,t)=P_0+\rho g \frac{h(t)\left[ L-x \right]}{L+h(t)}
+\end{align*}}}
+
+\end{itemize}
+
+\section*{Exercice 8}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] La relation fondamentale s'écrit :
+	\begin{align*}
+		\rho\frac{D\vec{v}}{Dt}=\rho\vec{g}-\vec{grad}P-2\rho\vec{\Omega}\wedge\vec{v}
+	\end{align*}
+Il n'y a pas de viscosité, car fluide parfait.
+
+	\item[$\clubsuit$] Si l'air est immobile, alors $\vec{v}=\vec{0}$, donc $\rho\vec{g}=\vec{grad}P$. Comme le gaz est parfait, $\rho=PM/RT$ et donc :
+	\begin{align*}
+		P_{eq}(z)=P_0\exp(-z/H)
+	\end{align*}
+	où $H=RT/Mg\approx8,5$km. L'atmosphère fait environ $5H$, soit 42km. Comme cette épaisseur est très petite par rapport au rayon de la terre, on considèrera que $v_z=0$.
+	
+	\item[$\clubsuit$] On a : $\rho\vec{g}-\vec{grad}P=\rho\vec{g}-\vec{grad}P_{eq}-\vec{grad}p$. L'équation de la dynamique devient alors :
+		\begin{align*}
+		\rho\frac{D\vec{v}}{Dt}=-\vec{grad}p-2\rho\vec{\Omega}\wedge\vec{v}
+	\end{align*}
+	
+	\item[$\clubsuit$] Le terme convectif peut s'estimer comme $U^2/L$ et le terme de coriolis $2U\Omega$. Le nombre de Rossby s'écrit donc :
+	\begin{align*}
+		Ro = \frac{U}{2L\Omega}
+	\end{align*}
+	On trouve $Ro=7\cdot10^{-2}$. Le terme de Coriolis est donc prépondérant. Alors : 
+			\begin{align*}
+		0=-\vec{grad}p-2\rho\vec{\Omega}\wedge\vec{v}
+	\end{align*}
+	
+	\item[$\clubsuit$] On a $\vec{\Omega}=(-\cos\lambda\vec{e_x}+\sin\lambda\vec{e_z})\Omega$. Alors : 
+	\begin{equation}
+		-2\rho\vec{\Omega}\wedge\vec{v}=-2\rho\Omega(-\sin\lambda v_y\vec{e_x}+\sin\lambda v_x\vec{e_y}-\cos\lambda v_y\vec{e_z})
+	\end{equation}
+	
+	Pour faire apparaître l'expression de la vitesse seule, on applique le produit vectoriel $\vec{e_z}\wedge$ :
+	\begin{equation}
+		-\vec{e_z}\wedge2\rho\vec{\Omega}\wedge\vec{v}=-2\rho\Omega(\sin\lambda v_x\vec{e_x}+\sin\lambda v_y\vec{e_y})=-2\rho\Omega \sin\lambda\vec{v}
+	\end{equation}
+	
+	Au final, on obtient : 
+		\begin{equation}
+		\vec{v}=\frac{\vec{e_z}\wedge\vec{grad}(p)}{2\rho\Omega\sin\lambda}
+	\end{equation}
+	
+	\item[$\clubsuit$] On retrouve facilement le sens des vents avec le gradient moyen de pression.
+	
+	\item[$\clubsuit$] On peut estimer le gradient de pression grâce à $\vec{grad}(p)=-\frac{1}{R_T}\frac{dP}{d\lambda}\vec{e_x}$.
+	
+\end{itemize}
 
 \end{document}
