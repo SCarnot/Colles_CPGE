@@ -183,7 +183,33 @@ L'écoulement est supposé permanent, lent et laminaire : on suppose alors que $
 	\vec{rot}(\vec{v})=\left( \frac{1}{r}\frac{\partial v_z}{\partial\theta}-\frac{v_\theta}{\partial z}\right)\vec{e_r} + \left( \frac{\partial v_r}{\partial z}-\frac{\partial v_z}{\partial r}\right)\vec{e_\theta} + \frac{1}{r}\left( \frac{\partial (rv_\theta)}{\partial r}-\frac{\partial v_r}{\partial \theta}\right)\vec{e_z} 
 \end{align*}	
 	
-	
 \end{itemize}
+
+\newpage
+
+\section*{Exercice 6}
+
+Une tornade assimilée à un écoulement parfait, permanent, incompressible de l'air, de masse volumique $\mu = 1.3$kg.m$^{-3}$, est caractérisé par un vecteur tourbillon $\vec{\Omega} = \Omega \vec{u_{z}}$, supposé uniforme à l'intérieur de la tornade ($r\leq a$) et nul à l'extérieur de la tornade. Cette dernière est modélisée par un cylindre d'axe ($Oz$) et de rayon $a=50$m. On se place en coordonnées cylindriques.
+
+\begin{itemize}
+
+	\item[1 - ] Donnez une expression intégrale de la vitesse $\vec{v}$ (on ne cherche pas à calculer cette intégrale à ce stage de l'exercice). A quel problème électrostatique la tornade est-elle assimilable ?
+	\item[2 - ] On se limite à des mouvements de l'air définis par $\vec{v} = v(r)\vec{u_{\theta}}$. Donner l'allure de $v(r)$.
+	\item[3 - ] Calculer le champ de pression. On rappelle que : 
+	\begin{align*}
+		(\vec{v}.\vec{grad})\vec{v} =\vec{grad}(v^{2}/2) + 2\vec{\Omega}\wedge \vec{v}
+	\end{align*}
+	\item[4 - ] Quelle est la vitesse maximale théorique que peut avoir une tornade ? Est-ce physiquement possible ?
+	\item[4 - ] Un toit de masse surfacique de $100$kg.m$^{-2}$, simplement posé et horizontal, peut être soulevé au passage de la tornade ? On suppose que la vitesse maximale de la tornade est $v_{max} = 180$km.h$^{-1}$.
+\end{itemize}
+
+On donne :
+
+\begin{align*}
+	div\vec{A} = \frac{1}{r}\frac{\partial(rA_{r})}{\partial r} +\frac{1}{r}\frac{\partial A_{\theta}}{\partial\theta} + \frac{\partial A_{z}}{\partial z}
+\end{align*}
+\begin{align*}
+	\vec{grad}U = \frac{\partial U}{\partial r}\vec{e}_{r} +\frac{1}{r}\frac{\partial U}{\partial\theta}\vec{e}_{\theta} + \frac{\partial U}{\partial z}\vec{e}_{z}
+\end{align*}
 
 \end{document}

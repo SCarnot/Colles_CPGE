@@ -306,5 +306,83 @@ L'angle du ressort est donc : $\theta = M_{\eta}(R_1)/k$. On peut donc mesurer l
 
 \end{itemize}
 
+\newpage
+
+\section{Exercice 6}
+
+\begin{itemize}
+
+	\item[1 - ] Comme $2\vec{\Omega}=\vec{rot}(\vec{v})$, le théorème de Stockes nous donne sur un cercle $C$ fermé de centre $O$ de rayon $r$ : 
+	\begin{align*}
+		\oint_C \vec{v}(r,\theta,z)\cdot rd\theta\vec{e_\theta}=2\iint_{S_C} d\vec{S}\cdot\vec{\Omega}
+	\end{align*}
+	
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+Pour $r<a$, on a :
+	\begin{align*}
+		\oint_C \vec{v}(r,\theta,z)\cdot rd\theta\vec{e_\theta}=2\pi r^2 \Omega
+	\end{align*}
+Pour $r>a$, on a :
+	\begin{align*}
+		\oint_C \vec{v}(r,\theta,z)\cdot rd\theta\vec{e_\theta}=2\pi a^2 \Omega
+	\end{align*}}}
+
+Il s'agit du même problème que celui du fil infini de rayon parcouru par une densité volumique de courant uniforme.
+
+\item[2 - ] Les intégrales précédentes permettent de trouver que :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+Pour $r<a$, on a :
+	\begin{align*}
+		\vec{v}(r)\vec{e_\theta}= r \Omega\vec{e_\theta}
+	\end{align*}
+Pour $r>a$, on a :
+	\begin{align*}
+		\vec{v}(r)\vec{e_\theta}= \frac{a^2}{r} \Omega\vec{e_\theta}
+	\end{align*}}}
+	
+\item[3 - ] 	
+	
+Pour $r<a$, l'équation de Navier-Stockes donne : 
+\begin{align*}
+\vec{grad}\frac{v^2}{2}+2\vec{\Omega}\wedge\vec{v}=-g\vec{e_z}-\frac{1}{\rho}\vec{grad}P
+\end{align*}
+	Le premier terme est l'accélération centrifuge et vaut $\Omega r^2\vec{e_r}$, le second vaut $-2\Omega r^2\vec{e_r}$. En projetant sur $r$ et $z$ et en intégrant la pression, on obtient :
+	\begin{align*}
+		P(r,z) = k + \frac{1}{2}\rho\Omega^2r^2-\rho g z
+	\end{align*}
+La constante $k$ sera à déterminer avec la continuité de la pression.
+
+
+Pour $r<a$, l'équation de Navier-Stockes donne : 
+\begin{align*}
+\vec{grad}\frac{v^2}{2}=-g\vec{e_z}-\frac{1}{\rho}\vec{grad}P
+\end{align*}
+	Le premier terme (l'accélération centrifuge) vaut $-\frac{a^4\Omega^2}{r^3}\vec{e_r}$. En projetant sur $r$ et $z$ et en intégrant la pression, on obtient :
+	\begin{align*}
+		P(r,z) = P_0 -\rho g z+ \frac{\rho a^4\Omega^2}{2r^2}
+	\end{align*}
+	On sait en effet que la pression pour $r\longrightarrow\infty$ est égale à la pression atmosphérique $P_0-\rho gz$.
+	
+La continuité de $P(r,z)$ en $a$ donne $k=P_0-\rho \Omega^2a^2$.
+
+Au final :
+\begin{align*}
+	\left\lbrace
+\begin{array}{ccc}
+r<a & : & P(r,z) = P_0 -\rho g z +\rho\Omega^2(\frac{r^2}{2} -a^2) \\
+ & & \\
+r>a & : & P(r,z) = P_0 -\rho g z+ \frac{\rho a^4\Omega^2}{2r^2} \\
+\end{array}\right.
+\end{align*}
+
+\item[4 - ] La pression est minimale en $r=0$, et surtout elle ne peut pas être négative. Dans le cas extrême où $P(r=0)=0$, on a $P_0-\rho\Omega^2a^2=0$, cad $a\Omega=\sqrt{P_0/\rho}=v(r=a)=v_{max}$.
+Pour une pression $P_0=$1bar, on a une vitesse maximale de $277$m.s$^{-1}$ ! Ce qui correspond à des vents de 1000km.h$^{-1}$, ce qui n'est pas observable. D'autre phénomènes interviennent avec la compressibilité de l'air, qui est négligée ici, avec des turbulences fortes.
+
+\item[5 - ] Avec le même raisonnement précédent, on a $a\Omega=$180km.h$^{-1}$=50m.s$^{-1}$. On suppose que lorsque la tornade passe sur le bâtiment, la pression à l'intérieur est restée à $P_0$. Il s'ne suit une différence de pression de : $\Delta P = P_0 -P_{min}=-\rho a^2\Omega^2$=3250Pa, cad une force de 325kg par m$^2$. Le toit s'envole.
+
+\end{itemize}
+
+
 
 \end{document}
