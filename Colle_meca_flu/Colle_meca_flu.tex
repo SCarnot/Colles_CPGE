@@ -161,10 +161,10 @@ Tout élément de ce fluide subit une force surfacique visqueuse (ou contrainte 
 \end{align*}
 Il est possible de démontrer que, dans le cadre de ce problème, les autres composantes de $\vec{\sigma}$ sont nulles. Nous l'admettrons pour la suite du problème. 
 
-L'écoulement est supposé permanent, lent et laminaire : on suppose alors que $v_z=0$.
+L'écoulement est supposé permanent. On suppose aussi que $v_z=0$.
 
 \begin{itemize}
-	\item[1 - ] A partir des invariances du problèmes, montrer que $v$ ne dépend que de $r$.
+	\item[1 - ] A partir des invariances du problèmes, montrer que $v$ ne dépend que de $r$. Quel est le nombre de Reynolds de cet écoulement ? En déduire le type d'écoulement. \textit{Données :} $R_1=40$cm, $R_2=60$cm, $\Omega_1\simeq\Omega_2=1$rad.s$^{-1}$, $\rho=960$kg.m$^{-3}$ et $\eta=120$ SI.
 
 	\item[2 - ] En s'appuyant sur un bilan de matière, retrouver l'expression de l'équation de conservation. En déduire que le champ de vitesse s'écrit $\vec{v}=v_\theta (r)\vec{e_\theta}$. L'écoulement est-il rotationnel ?
 	
@@ -241,7 +241,7 @@ Dans l'état initial, la hauteur du liquide est $h_0$ et l'extrémité inférieu
 \includegraphics[width=4cm]{meca_flu5.png}
 \end{wrapfigure}
 
-On considère la Terre comme une sphère de rayon $R_T$ et de centre $O_T$. Le repère $R_G=(\vec{u_1},\vec{u_2},\vec{u_3})$ est fixe est considéré comme galiléen, avec $\vec{u_3}$ parallèle à l'axe Nord-Sud. Pour tout point $M$ de latitude $\lambda$ de la surface, on associe le repère $R_T=(\vec{e_x},\vec{e_y},\vec{e_z})$. Ce repère $R_T$ est donc en rotation $\vec{\Omega}=\Omega\vec{u_3}$ par rapport à $R_G$.
+On considère la Terre comme une sphère de rayon $R_T$ et de centre $O_T$. Le repère $R_G=(\vec{u_1},\vec{u_2},\vec{u_3})$ est fixe et est considéré comme galiléen, avec $\vec{u_3}$ parallèle à l'axe Nord-Sud. Pour tout point $M$ de latitude $\lambda$ de la surface, on associe le repère $R_T=(\vec{e_x},\vec{e_y},\vec{e_z})$. Ce repère $R_T$ est donc en rotation $\vec{\Omega}=\Omega\vec{u_3}$ par rapport à $R_G$.
 
 
 On note $\vec{g}$ le champ de pesanteur terrestre. L'atmosphère est considéré comme une fine couche d'air, qui est un gaz parfait de masse molaire $M$, de masse volumique $\rho$, et dont les écoulements sont considérés comme parfaits. On notera $v(x,y,z)$ le champ des vitesses dans $R_T$, $P(x,y,z)$ le champ de pression.
@@ -252,13 +252,13 @@ On cherche à étudier les vents dominants à la surface du globe, cad on se lim
 
 	\item[$\clubsuit$] Le référentiel $R_T$ n'étant pas galiléen, on admet que les forces volumiques d'inertie se réduisent au terme de Coriolis, qui s'écrit : $f_{vol, C}=-2\rho\vec{\Omega}\wedge\vec{v}$. Comment s'écrit la relation fondamentale de la dynamique ?
 	
-	\item[$\clubsuit$] En faisant l'hypothèse que l'atmosphère est isotherme, et en supposant que l'air était à l'équilibre (cad dans fixe par rapport à $R_T$), estimer l'épaisseur de l'atmosphère. On notera $P_{eq}(x,y,z)$ la pression correspondante. Que peut-on en déduire sur la partie verticale de la vitesse $v_z=\vec{v}\cdot\vec{e_z}$ ?
+	\item[$\clubsuit$] En faisant l'hypothèse que l'atmosphère est isotherme, et en supposant que l'air est à l'équilibre (cad dans fixe par rapport à $R_T$), estimer l'épaisseur de l'atmosphère. On notera $P_{eq}(x,y,z)$ la pression correspondante. Que peut-on en déduire sur la partie verticale de la vitesse $v_z=\vec{v}\cdot\vec{e_z}$ ?
 	
 	\item[$\clubsuit$] En notant $p(x,y,z)=P(x,y,z)-P_{eq}(x,y,z)$, trouver la nouvelle relation vérifiée par $\vec{v}$ et $p(x,y,z)$
 	
-	\item[$\clubsuit$] On appelle nombre de Rossby (noté $Ro$) d'un écoulement le rapport entre le terme d'accélération particulaire et l'accélération lié à la froce de Coriolis. Estimer $Ro$ pour des mouvements atmosphériques où la vitesse typique est $U\simeq10$m.s$^{-1}$ et d'extension $L\simeq1000$km. Simplifier l'équation trouvée à la première question.
+	\item[$\clubsuit$] On appelle nombre de Rossby (noté $Ro$) d'un écoulement le rapport entre le terme d'accélération particulaire et l'accélération lié à la force de Coriolis. Estimer $Ro$ pour des mouvements atmosphériques où la vitesse typique est $U\simeq10$m.s$^{-1}$ et d'extension $L\simeq1000$km. Simplifier l'équation trouvée à la première question.
 	
-	\item[$\clubsuit$] Établir alors l'expression du champs de vitesse $\vec{v}$. Pourquoi seule la composante de $\vec{grad}(p)$ intervient dans l'expression de $\vec{v}$ ?
+	\item[$\clubsuit$] Établir alors l'expression du champs de vitesse $\vec{v}$. Pourquoi seule la composante horizontale de $\vec{grad}(p)$ intervient dans l'expression de $\vec{v}$ ?
 	
 	\item[$\clubsuit$] La figure ci dessous donne la valeur moyenne de la pression atmosphérique $P$ au niveau du sol, le long d'un méridien quelconque. En déduire l'allure de la circulation des vents sur le globe, en fonction de la latitude $\lambda$.
 	
@@ -266,13 +266,10 @@ On cherche à étudier les vents dominants à la surface du globe, cad on se lim
 	\includegraphics[scale=0.3]{meca_flu5bis.png}
 \end{center}	
 	
-	\item[$\clubsuit$] Estimer la valeur typique des de la vitesse vents dominants en Europe.
-	
-	
-	
-	
-	
+	\item[$\clubsuit$] Estimer la valeur typique de la vitesse des vents dominants en Europe.
 
 \end{itemize}
+
+\textit{Données} : $R_T=6370$km, $\Omega=2\pi/86164$rad.s$^{-1}$, $M=29$g.mol$^{-1}$.
 
 \end{document}
