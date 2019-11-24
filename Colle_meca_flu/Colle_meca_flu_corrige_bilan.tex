@@ -1,0 +1,234 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{calc}
+\graphicspath{{figures/}{../figures}}
+
+\begin{document}
+
+\section*{Exercice 1}
+
+\subsubsection*{Transfert d'une fusée d'une orbite terrestre à l'orbite lunaire}
+
+\begin{itemize}
+
+\item[$\clubsuit$] 
+
+Il faut calculer la force de poussée due à l'éjection de gaz. Dans le repère inertiel de la fusée à la vitesse $V$ à l'instant $t$, le système {gaz + fusée} de masse $M_f$ a une vitesse nulle. Dans le même repère, à $t+dt$, une masse $dm$ de gaz a été éjectée avec une vitesse $v_e$ (qu'on relie à la température $T_2$ avec les résultats précédents) et la fusée a acquis un supplément de vitesse $dV$.
+
+Comme on suppose le système isolé, la conservation de la quantité de mouvement donne : $(M_f(t) - dm)dV = dmv_e$, cad la quantité de mouvement due à l'éjection des gaz $dmv_e$ est égale à l'accroissement quantité de mouvement de la fusée $(M_f(t) - dm)dV$.
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+Donc à l'ordre 1 : $M_f(t)dV=v_edm$}}
+
+(Classique de la poussée d'une fusée : $M_f(t)\frac{d}{dt}V(t)=v_2\frac{dm}{dt}$
+
+On a donc : $dV=\frac{dm}{M_f}\sqrt{\frac{2}{M}\frac{R\gamma}{\gamma-1}(T_1-T_2)}$
+
+
+La vitesse acquise par la fusée tout au long de l'éjection du gaz est :
+A chaque fois qu'une masse $dm$ de gaz est éjectée, la fusée acquiert une vitesse $dV$. Initialement, la vitesse de la fusée est nulle et sa masse est $M_0+m_0$. Lorsque tout le réservoir est vidé, sa masse est $M_0$ et sa vitesse est l'intégrale des $dV$. Donc :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\begin{equation}
+	\Delta V=v_e\int_0^{m_0}\frac{dm}{(M_0+m_0)-m}=v_e\ln\left(\frac{M_0+m_0}{M_0} \right) 
+\end{equation}}}
+
+\item[$\clubsuit$]  Que ce soit à l'accélération ou la décélération, il faut une quantité $\Delta V$ de vitesse à modifier (dans le sens du mouvement pour l'accélération, l'inverse pour la décélération). Attention ! Lors de la phase d'accélération, il faut prendre en compte la masse d'ergol qui servira pour la décélération. On peut écrire la masse totale comme $m_0=m_1+m_2$, où $m_1$ est la masse nécessaire à l'accélération et $m_2$ pour la décélération. 
+
+Pour l'accélération, on peut considérer que la masse de la fusée est $M_1=M_0+m_2$ (on garde en réserve $m_2$). Alors en utilisant l'équation de Tsiolkovski :
+\begin{equation}
+	m_1=(M_0+m_2)\left(\exp\left(\frac{\Delta}{v_e} \right) -1 \right) 
+\end{equation}
+
+Même chose pour la décélération, sauf qu'il ne reste plus d'ergol à la fin :
+\begin{equation}
+	m_1=M_0\left(\exp\left(\frac{\Delta}{v_e} \right) -1 \right) 
+\end{equation}
+
+On trouve $m_2=10$t et $m_1=20$t soit 40t au total !
+\end{itemize}
+
+\subsubsection*{Condition de décollage d'une fusée}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] On reprend le bilan de quantité de mouvement, en ajoutant la gravitation :
+	\begin{equation}
+		P(t+dt)-P(t) = F_{grav.}dt = -M_f(t)gdt
+	\end{equation}
+	Or ces quantités de mouvement s'écrivent $P(t)=M_f(t)V(t)$ et $P(t+dt)=(M_f(t)-dm)V(t+dt) - v_edm$. 
+	On a donc :
+	\begin{equation}
+		M_f(t)\frac{dV}{dt}dt-v_edm=-M_f(t)gdt
+	\end{equation}
+C'est à dire :
+
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{equation}
+		M_f(t)\frac{dV}{dt}=-M_f(t)g+v_eD_m
+	\end{equation}}}
+	
+	La fusée décolle uniquement si son accélération à $t=0$ est positive, cad si : $ M_f(t=0)g=(M_0+m_0)g<v_eD_m$, cad :
+	
+\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{equation}
+		D_m > \frac{g}{u}(M_0+m_0)
+	\end{equation}}}
+
+	\item[$\clubsuit$] Le débit est constant, donc $M_f(t)=M_0+m_0-D_mt$. Alors :
+		\begin{equation}
+		\frac{dV}{dt}=\frac{D_mv_e}{M_0+m_0-D_mt}-g
+	\end{equation}
+	L'intégration donne : 	
+		\begin{equation}
+		V(t)=u\ln\left(\frac{M_0+m_0}{M_0+m_0-D_mt} \right)  -gt
+	\end{equation}
+		
+	La vitesse, à l'épuisement des réservoir, correspond à la situation où la masse $m_0$ a été totalement éjectée, cad $m_0= D_m\Delta t$ (avec $\Delta t$ le temps de combustion jusqu'à épuisement). On a alors :
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+		\begin{equation}
+		V(\Delta t)=u\ln\left(\frac{M_0+m_0}{M_0} \right)  -g\frac{m_0}{D_m}
+	\end{equation}}}
+	
+	Pour l'altitude, on intègre la vitesse au cours du temps, sachant que $\int_1^x \ln xdx=x(-1+\ln x) + 1$ :
+	
+	\begin{equation}
+		z(t)=u\frac{M_0+m_0}{D_m}\left[ \left( \frac{M_0+m_0-D_mt}{D_m}\right) \left( -1+\ln\frac{M_0+m_0-D_mt}{D_m} \right) +1 \right] -\frac{1}{2}gt^2
+	\end{equation}
+	
+	Lorsque le combustible sera totalement usé, l'altitude sera :
+
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+		\begin{equation}
+		z(t)=u\frac{M_0+m_0}{D_m}\left[ \left( \frac{M_0}{D_m}\right) \left( -1+\ln\frac{M_0}{D_m} \right) +1 \right] -\frac{1}{2}g\left( \frac{m_0}{D_m}\right) ^2
+	\end{equation}}}
+	
+\end{itemize}
+
+\section*{Exercice 2}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] On considère le système fermé constitué à $t$ de la masse d'eau en contact avec la turbine et d'une masse $dm_1$ d'eau entrant sur la turbine à la vitesse $\vec{v_1}$ mais pas encore en contact avec elle. A $t+dt$, ce système correspond à la masse d'eau en contact avec la turbine (qui n'a pas changé) et une masse $dm_2$ qui sort de la turbine à la vitesse $\vec{v_2}$. Par conservation du débit, on a forcément $dm_1=dm_2=dm$.
+	
+	Le moment cinétique à $t$ est $M(t)=J\omega(t) +dmav_1$, celui à $t+dt$ est $M(t+dt)=J\omega(t+dt) +dmav_2$
+	Le bilan de moment cinétique donne (comme le rotor exerce un couple résistif $-\Gamma$ :
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		\frac{dM}{dt} = J\frac{d\omega}{dt}+D_ma(v_2-v_1)=-\Gamma
+	\end{align*}}}
+	
+On fait la même chose avec un bilan d'énergie cinétique : $E_C(t)=\frac{1}{2}J\omega^2(t)+\frac{1}{2}dmv_1^2$ et $E_C(t+dt)=\frac{1}{2}J\omega^2(t+dt)+\frac{1}{2}dmv_2^2$. Le rotor exerce une puissance $-\Gamma\omega$. Le bilan donne alors :
+
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		\frac{dE_c}{dt} = J\omega\frac{d\omega}{dt}+\frac{1}{2} D_ma(v_2^2-v_1^2)=-\Gamma\omega
+	\end{align*}}}
+	
+	\item[$\spadesuit$] Il faut éliminer $v_2$ ($v_1$ est connu). On trouve d'abord avec les deux équations $v_1+v_2=2a\omega$. On trouve alors finalement 
+	
+		\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		J\frac{d\omega}{dt} - 2D_ma(v_1-a\omega)+\Gamma=0
+	\end{align*}}}
+En régime permanent, on a $\omega_P=\frac{v_1}{a}\left[1-\frac{\Gamma}{2D_mav_1} \right]$. Le mouvement est possible uniquement si $\Gamma$ reste inférieure à $2D_mav_1$, cad si la force nécessaire pour entrainer la roue est atteinte.
+
+	\item[$\spadesuit$] La puissance reçue par la turbine s'écrit $P=\omega_P\Gamma=\frac{v_1\Gamma}{a}\left[1-\frac{\Gamma}{2D_mav_1} \right]$. C'est une fonction parabolique qui s'annule pour $\Gamma=0$ et $\Gamma=2D_mav_1$. 
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	Elle est donc maximale pour $\Gamma_m=D_mav_1$, correspondant à une $\omega_P=\frac{v_1}{2a}$.}}
+
+Pour cette valeur de $\Gamma$ et $\omega$, on peut montrer que la vitesse $v_2$ est nécessairement nulle. Toute l'énergie cinétique du flux incident est transmise à la turbine.
+
+	\item[$\spadesuit$] Pour $\Gamma_m=D_mav_1$ et $\omega_P=\frac{v_1}{2a}$, l'équation différentielle obtenue devient :
+	\begin{align*}
+		J\frac{d\omega}{dt} - \frac{\omega-\omega_P}{\tau}=0
+	\end{align*}
+	avec $\tau=\frac{J}{2a^2D_m}$, qui est la durée caractéristique d'établissement du régime permanent. 
+	La solution est alors :
+	\begin{align*}
+		\omega(t)=\omega_P\left( 1-\exp\left(-\frac{t}{\tau}\right) \right) 
+	\end{align*}
+	
+	\item[$\spadesuit$] Le barrage est une retenue d'eau dont la pression est $P_0$ en haut, $P_0+\rho g\Delta z$ en bas. Avec Bernouilli, on peut en déduire que la vitesse de l'eau à la sortie du barrage (qui est mise à la pression $P_0$ atmosphérique) est $v_1=\sqrt{2\rho\Delta z}=44$m.s$^{-1}$.
+	
+	La puissance que l'on peut obtenir est donc $P_m=\Gamma_P\omega_P=\frac{D_mv_1^2}{2}=\frac{\rho D_vv_1^2}{2}=98$MW. Avec le rendement d'alternateur, on obtient 88MW.
+	
+	On retrouve aisément ce calcul en disant que la puissance d'une chute d'eau tombant d'une hauteur de 100m avec un débit de 100s$^3$/s correspond à une puissance de $P=D_v\rho\Delta z g$
+	
+	\item[$\spadesuit$] On suppose que toute la pluie tombée en France et qui ruisselle peut être utilisée pour des barrages hydroélectriques. Cela représente un débit de 30\%$\times6,43\cdot10^{11}=1,92\cdot10^{11}$m$^3$/an, à une altitude de 342m. Avec une rendement de 90\%, on peut donc en retirer une énergie de $161$TWh sur l'année. 
+	
+	C'est plus que la production actuelle actuelle, mais on suppose de manière très optimiste qu'on peut récupérer l'énergie hydraulique de sur toute la France, ce qui est une hypothèse très ardue. 
+	
+	D'autre part, cette production est très faible dans la consommation totale française.
+	
+\end{itemize}
+
+\section*{Exercice 3}
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] La conservation du débit donne $v_eS_e=v_1S=v_2S=v_SS_s$, donc $v_1=v_2$. Dans le cas d'une éolienne, l'hélice prend de l'énergie au fluide, il ralentit, donc $S_s>S_e$. Pour une hélice motrice, c'est l'inverse donc $S_s<S_e$.
+	
+	\item[$\clubsuit$] Le théorème de Bernoulli donne $2P_0+\rho v_e^2=2P_1+\rho v_1^2$ et $2P_2+\rho v_2^2=2P_2+\rho v_s^2$. On pourrait penser écrire $2P_0+\rho v_e^2=2P_0+\rho v_s^2$, ce qui conduit à $v_e=v_s$ (il ne se passe rien). Or on ne peut pas appliquer Bernoulli car l'écoulement est très turbulent dans la zone (2) ! Donc on a bien $v_s\neq v_e$.
+	
+	\item[$\clubsuit$] On considère comme système fermé à $t$ le fluide compris dans la zone (2) avec une masse $dm$ d'air juste avant et qui rentre dans la zone. A $t+dt$, ce système correspond à la masse d'air dans la zone (3) plus la masse $dm$ qui est sortie de la zone. 
+	
+	Alors $P(t)=P_3+dmv_1$ et $P(t+dt)=P_3+dmv_2$. Comme $v_1=v_2$ à cause de la conservation du débit, on trouve que $\frac{dP}{dt}=0$.  Or, les forces qui s'exercent sur l'air sont celles de pression et de l'hélice. On a alors :
+	\begin{align*}
+		0=S(P_1-P_2)+F
+	\end{align*}
+	Avec les relations de Bernoulli, on obtient :
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		F = \frac{1}{2}\rho S\left(v_s^2 - v_e^2 \right) 
+	\end{align*}}}
+	
+	\item[$\clubsuit$] On applique le théorème fondamental de la dynamique sur l'ensemble du tube. On a alors, en l'appliquant au système fermé contenu dans le tube d'air complet avec une petit masse $dm=\rho dV=\rho v_e dt S_e$ : $P(t)=P_1+P_2+P_3+\rho v_e S_e dtv_e$ et $P(t+dt)=P_1+P_2+P_3+\rho v_s S_s dtv_s$. Comme la pression à l'entrée et à la sortie est $P_0$, on a : 
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		F=\rho Sv_1(v_s-v_e)
+	\end{align*}}}
+	
+	On trouve alors :
+	\begin{align*}
+		v_1=v_2=\frac{v_e+v_s}{2}
+	\end{align*}
+	
+	\item[$\clubsuit$] On applique le théorème de l'énergie cinétique sur l'ensemble du tube. Raisonnement similaire à la question précédente : $E_C(t)=E_C1+E_C2+E_C3+\rho v_e S_e dtv_e^2$ et $P(t+dt)=P_1+P_2+P_3+\rho v_s S_s dtv_s^2$. Comme les forces de pressions ne travaillent pas, on a :
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		P=\frac{1}{2}\rho Sv_1(v_s^2-v_e^2)=Fv_1
+	\end{align*}}}
+	
+	\item[$\clubsuit$] La puissance peut s'écrire sous la forme :
+	\begin{align*}
+		P=\frac{1}{4}\rho S(v_e+v_s)(v_s^2-v_e^2)
+	\end{align*}	
+
+	La puissance incidente du vente est fixée : on ne la choisit pas. Par contre on peut régler la force $F$ du récepteur de sorte 	à choisir $v_s$ qui maximisera $P$. Il faut étudier P en fonction de $v_S$ :
+	\begin{align*}
+		\frac{dP}{dv_s}=\frac{1}{4}\rho S\left[2v_sv_e-v_e^3+v_s^3-v_e^2v_s \right] 
+	\end{align*}
+	En posant $x=v_s/v_e$, on résout l'équation du second degré pour trouver la valeur de$v_s$ à laquelle $P$ est maximale. On trouve une solution positive, $x=1/3$, soit $v_s=v_e/3$.
+	La puissance maximale est donc : $P_{max}=16/27\times1/2\times\rho Sv_e^3 $. Or l'énergie cinétique d'un "tube" d'air incident de longueur $x$ à la vitesse $v_e$ est $E_C1/2\times\rho Sxv_e^2$, sa puissance est donc $P_e=dE_C/dt=1/2\times\rho Sv_e^3$. On a donc :
+	
+	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+	\begin{align*}
+		\eta=\frac{P_{max}}{P_e}=\frac{16}{27}
+	\end{align*}}}
+	
+\end{itemize}
+
+\end{document}
