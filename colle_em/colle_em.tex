@@ -1,0 +1,180 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\begin{document}
+
+\section*{Exercice 1}
+
+On considère un fil unidimensionnel de section $\Sigma$ dirigé suivant l'axe $x$. Il est constitué d'atomes séparés d'une distance $a$, de charge $+e$  et d'autant d'électrons de conduction de charge $-e$ ; on suppose que atomes et électrons sont confondus sur l'axe $x$ et uniformément répartis à travers $\Sigma$. On impose un courant $I$ dans le fil, les électrons se déplacent alors avec une vitesse $\vec{v'}=v'\vec{e_{x}}$.
+
+Une particule de charge $q$ se déplace à la vitesse $\vec{v}=v\vec{e_{x}}$ à une distance $r$ de l'axe $x$, supérieure au rayon du fil.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.25]{cable.pdf}
+\end{figure}
+
+On s'intéresse aux forces électromagnétiques exercées par les charges du fil sur la particule de charge $q$ par deux approches différentes.
+
+\subsubsection*{Approche en mécanique classique}
+
+\begin{itemize}
+	\item[$\clubsuit$] Quelle est la densité de charge $\rho_{+}$ (respectivement $\rho_{-}$) due aux atomes (resp. aux électrons) dans le fil ? 
+	
+	\item[$\clubsuit$] Quel est la densité de courant $\vec{j}$ dans le fil ? Exprimer la vitesse $\vec{v'}$ des électrons de conduction en fonction de $I$.
+	
+	\item[$\clubsuit$] Quel est le champ électrique créé par la distribution de charges ? On pourra utiliser le théorème de Maxwell-Gauss : $\diver(\vec{E})=\frac{\rho}{\epsilon_0}$.
+	\item[$\clubsuit$] Quel est le champ magnétique créé par le courant $I$, sachant qu'il est sous la forme $\vec{B}=B(r)\vec{e_\theta}$ ? On pourra utiliser le théorème d'Ampère : $\oint_\Gamma \vec{B}\cdot \dif\vec{l}=\mu_0I$, où $\Gamma$ est le contour défini par le cercle d'axe normal $\vec{e_x}$ et de rayon $r$.
+		\item[$\clubsuit$] Quelle est la force totale s'exerçant alors sur la charge $+q$ ? Quels sont les contributions des forces électriques et magnétiques sur cette particule ?
+\end{itemize}
+
+\subsubsection*{Approche en mécanique relativiste}
+
+En relativité restreinte, tout objet se déplaçant relativement par rapport à un autre voit sa longueur contractée dans le sens du déplacement. Ainsi, Einstein a démontré en 1905 qu'un objet à la vitesse $v$ par rapport à un autre objet, voit la longueur de ce dernier contracté du facteur $\gamma=1/\sqrt{1-v^{2}/c^{2}}$ (où $c$ est la vitesse de la lumière). La charge $q$ voit donc la densité de charge des atomes $\rho_+$ et des électrons $\rho_-$ augmenter, mais pas dans les mêmes proportions. 
+	\begin{itemize}
+		\item[$\clubsuit$] Que deviennent les densités de charge $\rho_{+}$ et $\rho_{-}$ dans le référentiel de la particule $+q$ ? On admettra que les électrons se déplacent à la vitesse $v'-v$ dans le référentiel de $+q$. 
+		\item[$\clubsuit$] Déterminer le champ électrique créé par cette nouvelle distribution de charges. On admettra que le champ électrique se met sous la forme $\vec{E}=E(r)\vec{e_r}$ et on utilisera la forme intégrale de l'équation de Maxwell-Gauss (théorème de Gauss).
+		\item[$\clubsuit$] Quelle est la force électrique s'exerçant sur la particule $+q$ ? On supposera que $v'\ll v\ll c$.
+		\item[$\clubsuit$] Comparer avec le résultat trouvé en approche classique (non relativiste).
+	\end{itemize}
+			
+\textit{N.B.} : On rappelle que la vitesse de la lumière $c$ est définie comme $c^{2}=1/\epsilon_{0}\mu_{0}$, où $\epsilon_{0}$ et $\mu_{0}$ sont respectivement la permittivité électrique et la perméabilité magnétique du vide.
+
+\newpage
+
+\section*{Exercice 2}
+
+\subsubsection*{Corrosion uniforme du zinc en milieu acide}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] Donner l'allure de la courbe densité de courant - potentiel pour l'oxydation et la réduction du couple $Zn/Zn^{2+}$. Ce couple est rapide. Le potentiel standard du couple est -0,76V et on prendra une concentration initiale d'ions zinc II égale à 1 mol.L$^{-1}$.
+	
+	\item[$\clubsuit$] La courbe intensité-potentiel du couple $H^+/H_2$ dépend-elle du métal utilisé ? Expliquer pourquoi.
+	
+	\item[$\clubsuit$] On envisage la réduction du zinc par les ions $H^+$. Ecrire l'équation de la réaction. Que peut-on dire de cette oxydation par des considérations thermodynamiques ?
+
+\end{itemize}
+
+Pour des valeurs importantes de la valeur absolue de la densité de courant anodique $\mid j_a\mid$ (resp. cathodique $\mid j_c\mid$), on peut écrire : $j_a=A_a\exp(b_aE)$ et $j_c=-A_c\exp(-b_cE)$. La constante $b_a$ (resp. $b_c$) est positive et caractéristique de l'oxydant (resp. du réducteur). Les constantes $A_a$ et $A_c$ sont positives et dépendent des activités de l'oxydant et du réducteur.
+
+On envisage le phénomène de corrosion uniforme, observée lorsqu'une lame de zinc trempe dans la solution acide. On admet alors que les surfaces d'électrodes sont égales pour l'oxydation et la réduction. 
+
+\begin{itemize}
+
+	\item[$\clubsuit$] Quelle est la relation entre les intensités anodiques et cathodiques ? Que peut-on en déduire sur les densités de courants ?
+	
+	\item[$\clubsuit$] Une étude expérimentale a permis d'obtenir les lois suivantes, reliant la densité de courant et le potentiel d'électrode mesuré par rapport à l'ESH (les grandeurs sont en unités SI) :
+	\begin{itemize}
+		\item[-] Oxydation du zinc : $E=0,0774\log_{10}(j_a)-0,1956$
+		\item[-] Réduction de $H^+$ sur zinc : $E=-0,0780\log_{10}(\mid j_c\mid)-0,778$
+	\end{itemize}
+Calculer la densité de courant de corrosion uniforme $j_{corr}$ et le potentiel de corrosion $E_{corr}$.
+
+	\item[$\clubsuit$] La vitesse de corrosion est mesurée en $\mu$m par années. Exprimer littéralement $v_{corr}$ en fonction de $j_{corr}$, de la constante de Faraday $F$, de la masse atomique du zinc et de sa masse volumique. Application numérique : $M_{Zn}=65,4$g.mol$^{-1}$, $\rho_{Zn}=7140$kg.m$^{-3}$ et $F=96490$C.mol$^{-1}$.
+\end{itemize}
+
+\subsubsection*{Comparaison avec la corrosion du fer}
+
+\begin{itemize}
+	
+		\item[$\clubsuit$] On donne $E^0=-0,44$V pour le couple $Fe/Fe^{2+}$. A partir de considérations thermodynamiques, quel métal serait le plus corrodé par la même solution acide ?
+		
+	\item[$\clubsuit$] Une étude expérimentale, réalisée dans les mêmes conditions, a permis d'obtenir :
+	\begin{itemize}
+		\item[-] Oxydation du fer : $E=0,0760\log_{10}(j_a)-0,0348$
+		\item[-] Réduction de $H^+$ sur fer : $E=-0,0780\log_{10}(\mid j_c\mid)-0,476$
+	\end{itemize}
+	Calculer la densité de courant de corrosion uniforme du fer et conclure.
+		
+	\item[$\clubsuit$] Représenter grossièrement les graphes $E(\log j)$ pour l'oxydation du zinc, la réduction de $H^+$ sur zinc, l'oxydation du fer, la réduction de $H^+$ sur fer. On se limitera aux valeurs de $E$ comprises entre 0 et-1V et de $\log j$ comprises entre 0 et -5.
+	
+	\item[$\clubsuit$] Deux blocs, l'un de fer et l'autre de zinc de même surface et reliés électriquement, sont plongés dans la solution acide précédente. Décrire les phénomènes observés, indiquer quel métal sera le plus corrodé et calculer la densité de courant. Conclure. 
+	
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 3}
+
+En 1900, Paul Drude proposa un modèle permettant d'expliquer les propriétés de conduction électrique et thermique des métaux. Dans ce modèle, on considère que les électrons de conduction forment un gaz de particules classiques de masse $m$ et de charge $-e$, auquel on applique les méthodes issues de la théorie cinétique des gaz. Les électrons effectuent des collisions, considérées comme instantanées. Ils sont supposés indépendants (pas d'interaction électron-électron entre les collisions). Drude attribua les collisions aux chocs entre les électrons et les ions, plutôt qu'aux chocs entre les électrons entre eux comme pour un gaz ordinaire. À l'issue d'une collision, la vitesse de l'électron a une direction aléatoire (pas de direction privilégiée), et une valeur liée à la température à l'endroit où a lieu la collision.
+
+\subsubsection*{Temps de relaxation}
+
+Le paramètre fondamental du modèle de Drude est le temps de collision  $\tau$ ou temps de relaxation. Il représente la durée moyenne entre deux collisions. En d'autres termes, pour un électron donné, la probabilité de subir une collision pendant un intervalle de temps infinitésimal $dt$ est $dt/\tau$. On notera $N_0$ la population totale d'électrons.
+
+\begin{itemize}
+	
+	\item[$\spadesuit$]	 Montrer que pour un électron donné, observé à l'instant $t=0$, la probabilité de $P(t)$ de ne pas subir de collision est $\exp(-t/\tau)$. 
+	
+	\item[$\spadesuit$] On soumet le métal à un champ de force extérieur, et on note $\vec{F}(t)$ la force subie par chaque électron. Comment varie la quantité de mouvement de la totalité des électrons $\vec{P}(t)$ entre $t$ et $t+dt$ ?
+	
+	\item[$\spadesuit$] En déduire une équation différentielle vérifiée la vitesse moyenne d'un électron $\vec{v}=\vec{P}/(mN_0)$. Quel est l'effet moyen des collisions sur la trajectoire d'un électron ?
+	
+	\item[$\spadesuit$] On applique au métal un champ électrique uniforme de pulsation $\omega_0$, que l'on note en notation complexe : $\vec{E}(t)=E_0\exp(-i\omega_0t)$. En appliquant le résultat précédent, calculer la densité de courant $\vec{j}$ en fonction de $m$, $e$, $\tau$ et du nombre d'électrons par unité de volume $n$. En déduire l'expression de la conductivité $\gamma(\omega)$ du métal.
+	
+	\item[$\spadesuit$] En admettant que chaque atome du métal libère un électron de conduction, calculer un ordre de grandeur de $n$.
+	
+	\item[$\spadesuit$] La résistivité statique du cuivre est mesurée à 273K est $\rho=1,56\cdot10^{-8}\Omega$.m. Calculer le temps de relaxation $\tau$. 
+	
+	\item[$\spadesuit$] A $t=0$, on applique un champ $\vec{E}$ constant aux électrons du conducteur. Quelle est l'évolution de la vitesse moyenne au cours du temps ? 
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 4}
+
+On considère une plaque métallique de conductivité $\gamma$, infinie dans le plan $xy$ et d'épaisseur $e$ selon $z$. Cette plaque est connectée à deux fils de même métal (et donc de même conductivité $\gamma$) en $A$ et $B$, séparés l'un de l'autre de la distance $d$. Ces deux fils peuvent être assimilés à des cylindre de rayon $a$ et de longueur $l$. 
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.3]{plaque.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\heartsuit$] Quelle est la résistance de chaque fil ? On rappelle que $\vec{E}=\vec{\grad}V$.
+	
+	\item[$\heartsuit$] A l'aide des symétries du problème, proposez une expression pour la densité de courant à l'intérieur de la plaque. 
+	
+	\item[$\heartsuit$] En déduire la résistance équivalente entre les points $A$ et $B$. Quelle est la résistance totale du dispositif ?
+	
+	\item[$\heartsuit$] On considère désormais que les fils sont reliés ne sont plus reliés à une plaque mais à un volume du même métal, c'est-à-dire, $e\longrightarrow\infty$. Par le même raisonnement, en déduire la résistance équivalente. 
+
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 5}
+
+Lorsque le courant de foutre d'un impact direct sur un paratonnerre s'écoule par la prise de terre d'une installation, de fortes surtensions peuvent apparaître. La résistance de prise de terre ne doit pas dépasser 30$\Omega$. Considérons une prise de terre constituée d'une demi-sphère métallique pleine, de rayon $a$ et placée dans un sol de conductivité $\gamma\approx10^{-2}$S.m$^{-1}$. Le courant de foudre d'intensité $I$ arrive sur la tige paratonnerre fixée au centre $C$ de l'hémisphère.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=1.5]{EM1.pdf}
+\end{figure}
+
+\begin{itemize}
+	
+	\item[$\diamondsuit$] Quelle est la densité de courant $\vec{j}$ dans le sol pour $r>a$ ? Déterminer alors le potentiel $V(r)$, en supposnat que celui-ci est nul à l'infini. On donne : $\vec{E}=\vec{\grad}V$.
+	
+	\item[$\diamondsuit$] Déterminer la valeur du rayon $a$ pour laquelle la valeur de la résistance de la prise de terre ne dépasse pas 30$\Omega$.
+	
+	\item[$\diamondsuit$] La tension de pas est définie comme la différence de potentiel entre 2 points de la surface du sol distants de 1 mètre et situés sur la même droite issue du centre $C$ de l'hémisphère. Calculer cette tension de pas $V_p$ pour un courant de 50kA, à une distance de 10m puis de 100m.
+	
+	\item[$\diamondsuit$] Sachant que la résistance entre les deux pieds d'une personne est de l'ordre de 2500$\Omega$, et que l'intensité létale pour un corps humais est de 25mA, une personne est-elle en sécurité à 10m ? A 100m ? 
+	
+\end{itemize} 
+
+\end{document}

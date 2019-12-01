@@ -1,0 +1,183 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\begin{document}
+
+\section*{Exercice 1}
+
+\subsubsection*{Approche en mécanique classique}
+
+\begin{itemize}
+	\item[$\clubsuit$] Dans une volume $a\Sigma$, on a une charge $+e$ et une charge $-e$, comme celle-ci sont réparties uniformément. Les densités de charges sont donc respectivement $\rho_+=e/(a\Sigma)$ et $\rho_-=-e/(a\Sigma)$.
+	\item[$\clubsuit$] Par définition, $\vec{j}=\rho\vec{v}$. Comme seuls les électrons ont une vitesse non nulle, $\vec{j}=-v'\rho_-=-ev'/(a\Sigma)$. Et donc $I=\oiint_\Sigma\dif\vec{S}\vec{j}=-ev'/a$.
+	\item[$\clubsuit$] $\rho_{tot}=\rho_++\rho_-=0$ donc $\vec{E}=0$.
+	\item[$\clubsuit$] Avec le théorème d'Ampère appliqué uniquement en dehors du fil, on trouve :
+	\begin{align*}
+		\vec{B}=-\frac{\mu_0I}{2\pi r}\vec{e_\theta}
+	\end{align*}
+	(le signe - provient du fait que le sens du courant est opposé à celui des électrons)
+	La force qui s'exerce sur la charge $q$ est donc :
+	\begin{align*}
+		\vec{F}=-\frac{qv\mu_0I}{2\pi r}\vec{e_r}
+	\end{align*}
+\end{itemize}
+
+\subsubsection*{Approche en mécanique relativiste}
+
+	\begin{itemize}
+	
+		\item[$\clubsuit$] Ainsi, en se déplaçant à la vitesse $\vec{v}$, la charge $+q$ voit dans son référentiel la distance entre atomes réduite d'un facteur $\gamma_{+}=1/\sqrt{1-v^{2}/c^{2}}$ et la distance entre électrons de conduction d'un facteur $\gamma_{-}=1/\sqrt{1-(v-v')^{2}/c^{2}}$. 
+		On trouve donc que :
+		\begin{align*}
+			\rho_+=\frac{e}{a\Sigma}\frac{1}{\sqrt{1-v^{2}/c^{2}}}
+		\end{align*}
+		\begin{align*}
+			\rho_-=\frac{e}{a\Sigma}\frac{1}{\sqrt{1-(v-v')^{2}/c^{2}}}
+		\end{align*}		
+		Attention, l'hypothèse que la vitesse relative des électrons par rapport à la charge $q$ est $v'-v$ est une approximation. En mécanique relativiste, la vitesse relative serait :
+		\begin{equation}
+			v_{e_-/q}=\frac{v'-v}{1-\frac{vv'}{c^2}}
+		\end{equation}
+		
+	\item[$\clubsuit$] On trouve facilement avec le théorème dee Gauss que :
+	\begin{align*}
+		\vec{E}=\frac{\Sigma(\rho_++\rho_-)}{2\pi r\epsilon}
+	\end{align*}
+	
+	\item[$\clubsuit$] En développant à l'ordre 2, on trouve :
+	\begin{align*}
+		\rho_++\rho_-\approx \frac{e}{a\Sigma}\frac{vv'}{c^2}
+	\end{align*}
+	On trouve alors que :
+	\begin{align*}
+		\vec{E}=-\frac{I\mu_0 v}{2\pi r}\vec{e_r}
+	\end{align*}
+	La force de Lorentz associée est donc :
+	\begin{align*}
+		\vec{F}=-\frac{qI\mu_0 v}{2\pi r}\vec{e_r}
+	\end{align*}
+	
+	Cette expression est identique à celle trouvée par le calcul du champ magnétique en mécanique classique. Le champ magnétique est-il est une approximation à l'ordre 2 de la force de Coulomb ? 
+	\end{itemize}
+
+\section*{Exercice 3}
+
+\begin{itemize}
+	
+	\item[$\spadesuit$] On raisonne sur un ensemble d'électrons. On considère les évènements ayant eu lieu à partir de $t=0$. Il faut calculer d'abord le nombre d'électrons ayant subi une collision entre $t$ et $t+dt$. Ce nombre est $N(t)-N(t+dt)=N(t)/\tau$. On a donc $N(t)=N_0\exp(-t/\tau)$. Pour un électron donné, la probabilité de ne pas subir de collision est donc $P(t)=N(t)/N_0$. 
+	
+	\item[$\spadesuit$] Soit $N_0$ le nombre total d'électrons. Entre $t$ et $t+dt$, il y a eu $dtN_0/\tau$ qui ont subi une collision. La quantité de mouvement de tous ces électrons est donc perdue. D'autre part, entre $t$ et $t+dt$ chaque électron est soumis à la force $\vec{F}(t)$, faisant changer la quantité de mouvement totale de $N_0F(t)dt$. Finalement, il vient :
+	\begin{equation}
+		\vec{P}(t+dt)=\vec{P}(t)-\frac{dt}{\tau}\vec{P}(t)+N_0\vec{F}dt
+	\end{equation}
+	
+	\item[$\spadesuit$] On en déduit la vitesse moyenne d'un électron, définie par $\vec{v}(t)=\vec{P}/(mN_0)$ :
+	\begin{align*}
+		\frac{d\vec{v}}{dt}=\frac{\vec{v}}{\gamma}+\vec{F}(t)
+	\end{align*}
+	où $\gamma=m/\tau$.
+	
+	\item[$\spadesuit$] La force subie par les électrons est la force de Lorentz : $\vec{F}=-eE_0\exp(-i\omega t)$. L'équation précédente devient :
+	\begin{align*}
+		-i\omega\vec{v}=-\frac{e}{m}\vec{E_0}-\frac{\vec{v}}{\tau}
+	\end{align*}
+	On en déduit :
+	\begin{align*}
+		\vec{v}=\frac{e\tau}{m}\frac{E_0}{i\omega\tau-1}
+	\end{align*}
+	En introduisant la conductivité $\gamma$, $\vec{j}=\gamma \vec{E}$, où $\vec{j}=-ne\vec{v}$, on trouve :
+	\begin{align*}
+		\gamma(\omega)=\frac{ne^2\tau}{m}\frac{1}{1-i\omega\tau}
+	\end{align*}
+	
+	\item[$\spadesuit$] Dans un métal, qui est un réseau cristallin, il y a typiquement un électron tous les Angstrom, soit tous les $10^{-10}$m. On obtient des densités typiques de $10^{30}$ atomes par m$^3$.
+	
+	\item[$\spadesuit$] La résistivité statique correspond à une fréquence qui tend vers 0, cad :
+	\begin{align*}
+		\rho = \frac{1}{\gamma}=\frac{m}{ne^2\tau}
+	\end{align*}
+	On trouve donc $\tau\simeq10^{-14}$s.
+	
+\end{itemize}
+
+\section*{Exercice 4}
+
+\begin{itemize}
+
+	\item[$\heartsuit$] Résistance classique d'un cylindre : $R=L/(\gamma\pi a^2)$.
+	
+	\item[$\heartsuit$] Isolons le câble arrivant en $A$. Par symétrie, le courant partira dans tous les directions. La densité de courant va s'écrire en un point $M$ :
+	\begin{align*}
+		\vec{j_A}=\frac{I}{2\pi e }\frac{\vec{e_r}}{\|\vec{AM} \|}
+	\end{align*}
+	On effectue le même raisonnement pour $B$. La densité de courant totale est alors :
+	\begin{align*}
+		\vec{j}=\frac{I}{2\pi e }\left[ \frac{\vec{e_r}}{\|\vec{AM} \|} - \frac{\vec{e_r}}{\|\vec{BM} \|}\right] 
+	\end{align*}
+	
+	\item[$\heartsuit$] En intégrant la relation $\vec{j}=\gamma\vec{E}$ le long du chemin $AB$, dont la coordonnée sera donnée par $x$, en faisant varier $x$ de $a$ à $d-a$ (pour éviter une divergence de la densité de courant) :
+	\begin{align*}
+		\int_a^{d-a}dx j(x)=\frac{I}{2\pi e}\int_a^{d-a}dx\left(\frac{1}{x}+\frac{1}{d-x} \right) =\gamma\int_a^{d-a}dxE=\gamma\int_a^{d-a}dx\frac{dV}{dx}
+	\end{align*}
+	
+	On trouve alors :
+	\begin{align*}
+		\Delta V = \frac{I}{\pi e\gamma}\log\left(\frac{d-a}{a} \right) 
+	\end{align*}
+
+	\item[$\heartsuit$] En se plaçant en coordonnées sphériques, on a :
+	\begin{align*}
+		\vec{j}=\frac{I}{2\pi}\left[ \frac{\vec{e_r}}{\|\vec{AM} \|^2} - \frac{\vec{e_r}}{\|\vec{BM} \|^2}\right] 
+	\end{align*}
+	Attention, il y a un facteur 2 par rapport à la surface d'une sphère car il s'agit de demi-sphères.
+		On trouve alors :
+	\begin{align*}
+		\Delta V = \frac{I}{\pi \gamma}\frac{d}{a(d-a)}
+	\end{align*}
+	
+\end{itemize}
+
+\section*{Exercice 5}
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] Les lignes de champs sont radiales cad $\vec{j}=j(r)\vec{e_r}$. On a donc :
+\begin{align*}
+	\vec{j}(r)=\frac{I}{2\pi r^2}\vec{e_r}
+\end{align*}
+On en déduit :
+\begin{align*}
+	\dif V=-E(r)dr=\frac{-I}{2\pi r^2\gamma}dr
+\end{align*}
+Par intégration, on trouve :
+\begin{align*}
+	V(r)=\frac{I}{2\pi r\gamma}
+\end{align*}
+
+	\item[$\diamondsuit$] Le potentiel de l'hémisphère est donc simplement :
+\begin{align*}
+	U=\frac{I}{2\pi a\gamma}
+\end{align*}
+La résistance est donc tout simplement $R=\frac{1}{2\pi a \gamma}$. On trouve qu'elle ne dépasse pas 30$\Omega$ si $a>53$cm.
+
+	\item[$\diamondsuit$] La tension de pas vaut, si $d=1$m :
+	\begin{align*}
+		V_p(r)=V(r)-V(r+d)=\frac{I}{2\pi \gamma r(r+d)}
+	\end{align*}
+On trouve que $V_p(10m)=7,2kV$ et  $V_p(100m)=79V$
+
+	\item[$\diamondsuit$] Le courant qui traverse la personne est $i=V_p/R$. On trouve i(10)=2,9A et i(100)=32mA.
+\end{itemize}
+
+\end{document}
