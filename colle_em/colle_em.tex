@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{amsmath,esint }
+\usepackage{amssymb}
 \graphicspath{{figures/}{../figures}}
 
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
@@ -135,7 +136,7 @@ Le paramètre fondamental du modèle de Drude est le temps de collision  $\tau$ 
 
 \section*{Exercice 4}
 
-On considère une plaque métallique de conductivité $\gamma$, infinie dans le plan $xy$ et d'épaisseur $e$ selon $z$. Cette plaque est connectée à deux fils de même métal (et donc de même conductivité $\gamma$) en $A$ et $B$, séparés l'un de l'autre de la distance $d$. Ces deux fils peuvent être assimilés à des cylindre de rayon $a$ et de longueur $l$. 
+On considère une plaque métallique de conductivité $\gamma$, infinie dans le plan $xy$ et d'épaisseur $e$ selon $z$. Cette plaque est connectée à deux fils de même métal (et donc de même conductivité $\gamma$) en $A$ et $B$, séparés l'un de l'autre de la distance $d$. Ces deux fils peuvent être assimilés à des cylindres de rayon $a$ et de longueur $l$. 
 
 \begin{figure}[h!]
 \centering
@@ -144,7 +145,7 @@ On considère une plaque métallique de conductivité $\gamma$, infinie dans le 
 
 \begin{itemize}
 
-	\item[$\heartsuit$] Quelle est la résistance de chaque fil ? On rappelle que $\vec{E}=\vec{\grad}V$.
+	\item[$\heartsuit$] Quelle est la résistance de chaque fil ? 
 	
 	\item[$\heartsuit$] A l'aide des symétries du problème, proposez une expression pour la densité de courant à l'intérieur de la plaque. 
 	
@@ -167,7 +168,7 @@ Lorsque le courant de foutre d'un impact direct sur un paratonnerre s'écoule pa
 
 \begin{itemize}
 	
-	\item[$\diamondsuit$] Quelle est la densité de courant $\vec{j}$ dans le sol pour $r>a$ ? Déterminer alors le potentiel $V(r)$, en supposnat que celui-ci est nul à l'infini. On donne : $\vec{E}=\vec{\grad}V$.
+	\item[$\diamondsuit$] Quelle est la densité de courant $\vec{j}$ dans le sol pour $r>a$ ? Déterminer alors le potentiel $V(r)$, en supposnat que celui-ci est nul à l'infini. 
 	
 	\item[$\diamondsuit$] Déterminer la valeur du rayon $a$ pour laquelle la valeur de la résistance de la prise de terre ne dépasse pas 30$\Omega$.
 	
@@ -176,5 +177,112 @@ Lorsque le courant de foutre d'un impact direct sur un paratonnerre s'écoule pa
 	\item[$\diamondsuit$] Sachant que la résistance entre les deux pieds d'une personne est de l'ordre de 2500$\Omega$, et que l'intensité létale pour un corps humais est de 25mA, une personne est-elle en sécurité à 10m ? A 100m ? 
 	
 \end{itemize} 
+
+\newpage
+
+\section*{Câble coaxial}
+
+On considère un câble coaxial constitué de deux conducteurs cylindriques de même axe, de rayon $a$ (l'âme) et $b$ (la gaine), avec $a<b$, et d'épaisseur négligeable. Le conducteur central (de rayon $a$) a une charge surfacique $\sigma_a$ et est traversé par une densité surfacique de courant $\vec{j_{s,a}}$. La longueur du câble est $L$, très grande devant les rayons $a$ et $b$.  
+
+On cherche à connaitre la capacité et l'inductance linéique du câble coaxial, pour comprendre la propagation des ondes électromagnétiques à l'intérieur. 
+
+\begin{itemize}
+
+	\item[$\blacksquare$] Exprimer le courant $I$ circulant dans l'âme et sa charge totale $Q$ en fonction de $\vec{j_{s,a}}$ et $\sigma_a$. En déduire la charge et l'intensité surfacique de la gaine, $\sigma_b$ et $\vec{j_{s,b}}$, sachant que le courant total à travers le câble est nul et qu'il est neutre électriquement.
+	
+	\item[$\blacksquare$] Déterminer le champ électrique en tout point.
+
+	\item[$\blacksquare$] En déduire la capacité $c$ par unité de longueur de câble. 
+	
+	\item[$\blacksquare$]	 Déterminer le champ magnétique en tout point. 
+	
+	\item[$\blacksquare$] On définit l'inductance $L$ d'un circuit délimitant une surface $S$, parcouru par un courant $I$ comme  comme le rapport du flux du champ magnétique à travers $S$ avec le courant $I$ :
+	\begin{align*}
+		\Phi_B=\oiint_S \dif \vec{S}\cdot\vec{B}=LI
+	\end{align*}
+En choisissant soigneusement une surface $S$, déterminer l'inductance linéique $l$. 
+
+	\item[$\blacksquare$] Que vaut le produit le produit $lc$ ? A quoi correspond cette longueur ?
+	
+\end{itemize}
+
+\newpage
+
+\section*{Étude d'un colloïde}
+
+Les colloïdes sont constitués par un solvant dans lequel est introduit un corps, généralement solide, qui se disperse sous forme de particules en suspension dont la taille peut varier de 10 à 100nm. Ces particules sont des macromolécules ou des agrégats de petites molécules qui s'ionisent dans le milieu. Par exemple, le blanc d'œuf ou le plasma sanguin sont des solutions colloïdales. En agronomie, le colloïde formé par les particules d'argile (silice) et l'humus (matière organique décomposée) est fondamental pour la fertilité des sols. 
+
+On supposera que la solution colloïdale est composée de :
+\begin{itemize}
+	\item[-] des particules de colloïdes, de rayon $r_0$, portant une charge $Q$ sur leur surface. Ils sont supposés assez dilués pour considérer que le potentiel autour d'une particule colloïdale n'est créé que par elle-même et les ions du milieu ;
+	
+	\item[-] les ions contenus dans l'eau, supposés ponctuels, portant une charge $\pm e$ à la concentration $N_0$. On supposera que la concentration en cations est égale à celle en anion. Les ions (cations + ou anions -), quand il sont soumis à un potentiel V, se répartissent en moyenne selon la loi de Boltzmann :
+\begin{align*}
+	\frac{N_{\pm}(r)}{N_0}=\exp\left(-\frac{\pm eV(r)}{k_BT} \right) 
+\end{align*}
+La permitivité du milieu est $\varepsilon=\varepsilon_r\varepsilon_0$ avec $\varepsilon_r=80$.
+\end{itemize}
+
+Lorsqu'on augmente significativement la concentration $N_0$ de la solution ionique, on observe que la suspension colloïdale sédimente très rapidement. On cherche à comprendre ce phénomène appelé \textit{floculation}.
+
+\begin{itemize}
+
+	\item[$\heartsuit$] Établir la densité volumique de charge entourant une particule de colloïde. Que devient cette expression si $eV\ll k_BT$ ?
+	
+	\item[$\heartsuit$] En appliquant le théorème de Gauss sur un volume bien choisi, montrer que : 
+	\begin{align*}
+		\frac{1}{r}\frac{\dif}{\dif r}\left( r^2\frac{\dif V}{\dif r}\right) +\frac{\rho}{\epsilon}=0
+	\end{align*}
+
+	\item[$\heartsuit$] Résoudre l'équation différentielle en posant $U(r)=rV(r)$, et retrouver l'expression de $V(r)$, en fonction de $r$, une longueur caractéristique $\lambda$ et une constante d'intégration qu'on ne cherchera pas à définir. Donner un ordre de grandeur de $\lambda$ à température ambiante dans de l'eau pure.
+	
+	\item[$\heartsuit$] Écrire l'expression du champ électromagnétique. En déduire la constante d'intégration, et l'expression de $V(r)$. 
+	
+	\item[$\heartsuit$] Quelle est l'expression de la densité de charge $\rho$ ? Justifier l'appellation d'\textit{écrantage}.
+	
+	\item[$\heartsuit$] Quelle est la force $F(d)$ qui s'exerce entre deux particules de colloïde éloignées d'une distance $d$ ? Comparer cette force dans le cas d'une eau pure et celle d'une électrolyte de concentration $N_0=100$. Pourquoi parle t-on de coagulation ?
+
+\end{itemize} 
+
+\newpage
+
+\section*{Condensateur Terre-ionosphère}
+
+On représente l'ensemble Terre-ionosphère comme un volumineux condensateur sphérique. La Terre, de rayon $R$, se comporte comme un conducteur parfait de potentiel nul et porte une charge négative $-Q$, uniformément répartie sur sa surface, tandis que la ionosphère est représentée par une surface équipotentielle sphérique de rayon $R+z_0$, de potentiel $V$ possède une charge totale $+Q$. On suppose que la permittivité de l'atmosphère est celle du vide, soit $\varepsilon_0$. 
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] Déterminer le champ électrique $\vec{E}$.
+		
+	\item[$\clubsuit$] En déduire la capacité $C$ du système Terre-ionosphère.
+	
+	\item[$\clubsuit$] Des mesures ont permis de déterminer le potentiel de l'ionosphère à l'altitude $z_0=60$km à environ 360kV. Justifier que le système se comporte comme un condensateur plan. Quel est la valeur de la capacité $C$ et l'énergie électrostatique du système $W_{el}$, ainsi que la valeur du champ électrique au niveau du sol.
+	
+	\item[$\clubsuit$] Donner la valeur de la densité de charge $\sigma$ à la surface de la Terre. Quelle est la charge totale $-Q$ ?
+	
+	\item[$\clubsuit$] Lors d'un orage, les mouvements convectifs de l'air font passer la tension augmentent fortement la tension entre le sol et le bas des nuages. Les éclairs apparaissent lorsque le champ électrique dépasse un seuil, appelé \textit{champ disruptif} : l'air s'ionise et devient conducteur. Sachant que pour un air humide, ce champ disruptif est de $E_{dis.}\simeq10^{5}$V.m$^{-1}$. A quelle tension $V_1$ observe t-on l'apparition des éclairs ?
+	
+	
+	\textit{Données} : Rayon de la Terre, $R_T=6370$km. Permittivité du vide, $\varepsilon=8,85\cdot10^{-12}$F.m$^{-1}$.
+	
+\end{itemize}
+
+\newpage
+
+\section*{Exercices en pagaille}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] On considère une boule métallique de rayon $R$. A l'instant $t$, on la monte instantanément au potentiel $V$. Quel est la charge $Q$ de la sphère ? Justifier qualitativement que la charge se répartit sur la surface de la sphère.
+	
+	\item[$\spadesuit$] On considère un plan infini, avec une charge surfacique $\sigma$. Quel est le champ électrique en tout point de l'espace ? Justifier la présence d'une discontinuité du champ. 
+	
+	\item[$\spadesuit$] Quel est le champ magnétique créé par une nappe de courant infiniment fine parcouru par une densité de courant $\vec{j_s}$ ? 
+	
+	\item[$\spadesuit$] A l'aide du théorème d'Ampère, déterminer le champ créé par une bobine de $N$ spires, de longueur $L$ et de rayon $R$, avec $L\gg R$.
+	
+	\item[$\spadesuit$] On considère un tube parcouru par un courant de densité uniforme $\vec{j}$. Expliquer le phénomène de magnétostriction. On rappelle l'expression de la force de Laplace : $f_{vol}=\vec{j}\dif\tau\wedge\vec{B}$
+	
+\end{itemize}
 
 \end{document}

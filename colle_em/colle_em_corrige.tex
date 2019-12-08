@@ -180,4 +180,96 @@ On trouve que $V_p(10m)=7,2kV$ et  $V_p(100m)=79V$
 	\item[$\diamondsuit$] Le courant qui traverse la personne est $i=V_p/R$. On trouve i(10)=2,9A et i(100)=32mA.
 \end{itemize}
 
+\section*{Étude d'un colloïde}
+
+\begin{itemize}
+
+	\item[$\heartsuit$] Le milieu est composé de cations et d'anions à la même densité :
+	\begin{align*}
+		\rho=eN_+-eN_-=-2eN_0\sinh\left( \frac{eV}{k_BT}\right) 
+	\end{align*}
+Lorsque $eV\ll k_BT$, on a alors : 
+\begin{align*}
+	\rho\simeq -2N_0\frac{eV}{k_BT}
+\end{align*}
+
+	\item[$\heartsuit$] Avec les rotations et les symétries, on montre facilement que $\vec{E}=E(r)\vec{e_r}$. On applique le théorème de Gauss sur un volume compris entre $r$ et $r+dr$ :
+	\begin{align*}
+		-4\pi r^2E(r)-4\pi(r+\dif r)^2E(r+\dif r)=\frac{4\pi r^2\dif r\rho}{\varepsilon}
+	\end{align*}
+	On trouve donc :
+	\begin{align*}
+		\frac{1}{r}\frac{\dif}{\dif r}\left( r^2\frac{\dif V}{\dif r}\right) +\frac{\rho}{\epsilon}=0
+	\end{align*}
+	Cette éuation correspond à l'équation de Maxwell-Gauss : $\diver\vec{E}=\frac{\rho}{\varepsilon}$ (qui correspond à l'équation de Poisson avec le potentiel).
+
+	\item[$\heartsuit$] On remplace $\rho$ par l'expression trouvée plus haut. On obtient : 
+	\begin{align*}
+		\frac{\dif^2U}{\dif r^2}-\frac{2N_0e^2}{k_BT\varepsilon}U=0
+	\end{align*}
+	
+	On pose $\lambda^2 = \frac{k_BT\varepsilon}{2N_0e^2}$. C'est une longueur caractéristique de la décroissance du potentiel. Dans de l'eau pure, le pH est égal à 7 donc $N_0=10^{-7}$mol/L$=10^{19}$part.m$^{-3}$, soit $\lambda=1\mu$m.
+	
+	En résolvant l'équation, on trouve $U(r)=A\exp\left(-r/\lambda \right) +B\exp\left(r/\lambda\right)$. La condition aux limites $V(r\longrightarrow\infty)\longrightarrow0$ impose $B=0$. On a alors :
+	\begin{align*}
+		V(r)=\frac{A}{r}\exp\left(-\frac{r}{\lambda} \right) 
+	\end{align*}
+	
+	\item[$\heartsuit$] L'expression du champ est :
+	\begin{align*}
+		\vec{E}=-\frac{\dif V}{\dif r}\vec{e_r}=A\frac{\exp(-r/\lambda)}{r^2}\left(1+\frac{r}{\lambda}\right)\vec{e_r}
+	\end{align*}
+	S'il n'y avait pas d'ions, on devrait retrouver l'expression du champ d'une particule ponctuelle de charge $Q$. Or l'absence d'ions correspond à $\lambda=\infty$, c'est-à-dire qu'il n'y a plus d'écrantage. On doit nécessairement retrouver $\vec{E}=\frac{Q}{4\pi\epsilon r^2}\vec{e_r}$.
+	
+	D'autre part, pour $r=r_0$, l'expression du champ \textit{avec} ou \textit{sans} ions autour est la même (car on est collé à la surface de la particule). Donc :
+	\begin{align*}
+		\frac{Q}{4\pi\epsilon r^2}=A\frac{\exp(-r_0/\lambda)}{r^2}\left(1+\frac{r_0}{\lambda}\right)
+	\end{align*}
+	
+	On a alors :
+	\begin{align*}
+		V(r)=\frac{Q}{4\pi\epsilon r^2}\frac{1}{1+\frac{r_0}{\lambda}}\exp\left(-\frac{r-r_0}{\lambda} \right) 
+	\end{align*}
+	
+La densité de charge est proportionnelle à l'opposé du potentiel :
+	\begin{align*}
+		\rho(r)=-\frac{2N_0eQ}{4\pi k_BT\epsilon r^2}\frac{1}{1+\frac{r_0}{\lambda}}\exp\left(-\frac{r-r_0}{\lambda} \right) 
+	\end{align*}	
+	
+\end{itemize}
+
+\section*{Condensateur Terre-ionosphère}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] Les symétries et les invariances donnent $\vec{E}=E(r)\vec{e_r}$. Avec le théorème de Gauss appliqué sur une sphère de rayon $r$, on obtient :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	r<R & : & \vec{E}=\vec{0} \\
+	R<r<R+z_0 & : & \vec{E} = -\frac{Q}{4\pi\varepsilon_0 r^2}\vec{e_r} \\
+	r<R+z_0 & : & \vec{E}=\vec{0}
+	\end{array}\right.
+\end{align*}
+
+	\item[$\clubsuit$] Le potentiel se retrouve grâce à l'équation $\frac{\dif V}{\dif r}=-E(r)$. On a donc :
+	\begin{align*}
+		V(r) = \frac{Q}{4\pi\varepsilon_0 r}+A
+	\end{align*}
+Comme le potentiel est nul en $z=0$ (cad en $r=R$) :
+	\begin{align*}
+		V = V(R+z_0)-V(0) = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{R}-\frac{1}{R+z_0} \right) 
+	\end{align*}
+On trouve une capacité équivalente de :
+	\begin{align*}
+		C = \frac{4\pi\varepsilon_0R(R+z_0)}{z_0}\simeq\frac{4\pi\varepsilon_0R^2}{z_0}
+	\end{align*}
+	L'approximation est la formule d'un condensateur plan. de surface $4\pi R^2$. L'énergie électrostatique est $W_{el}=\frac{1}{2}CV^2$. Enfin on peut dire dans cette approximation que $\vec{E}\simeq\frac{V}{z_0}\vec{e_r}$. On trouve $C=6,7\cdot10^{-2}$F, $W_{el}=4,3\cdot10^{9}$J et $E=6$V/m.
+	
+	\item[$\clubsuit$] Toujours dans l'analogie avec le condensateur plan, $\vec{E}=\sigma/\varepsilon\vec{e_r}$. On trouve donc $\sigma=5,3\cdot10^{-11}$C.m$^{-2}$ et $Q=4\pi R^2\sigma=24\cdot10^{3}$C.
+	
+	\item[$\clubsuit$] On peut dire que $E\simeq V/z_1$, où $z_1$ est l'altitude des nuages. En ordre de grandeur, on a $Z_1=1$km, donc $V_1\simeq10^8$V.
+	
+\end{itemize}
+
 \end{document}
