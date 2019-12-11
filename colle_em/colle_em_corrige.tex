@@ -180,6 +180,54 @@ On trouve que $V_p(10m)=7,2kV$ et  $V_p(100m)=79V$
 	\item[$\diamondsuit$] Le courant qui traverse la personne est $i=V_p/R$. On trouve i(10)=2,9A et i(100)=32mA.
 \end{itemize}
 
+\section*{Câble coaxial}
+
+\begin{itemize}
+
+	\item[$\heartsuit$] Le courant circulant dans l'âme est $I=2\pi a j_{s,a}$. De même, la charge totale est $Q=2\pi a l \sigma_a$. On a forcément $I=2\pi b j_{s,b}$. De même, la charge totale est $Q=2\pi b l \sigma_b$ par conservation de la charge et du courant. 
+	
+	\item[$\heartsuit$] Les symétries et les invariances donnent $\vec{E}=E(r)\vec{e_r}$. Avec le théorème de Gauss appliqué sur un cylindre de rayon $r$, on obtient :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	r<a & : & \vec{E}=\vec{0} \\
+	a<r<b & : & \vec{E} = \frac{\sigma_a a}{\varepsilon_0 r}\vec{e_r} \\
+	r>b & : & \vec{E}=\vec{0}
+	\end{array}\right.
+\end{align*}
+
+	\item[$\heartsuit$] On en déduit le potentiel entre les deux conducteurs :
+	\begin{align*}
+		V=\frac{\sigma_aa}{\varepsilon_0}\ln\left(\frac{b}{a} \right) =\frac{Q}{2\pi l\varepsilon_0}\ln\left(\frac{b}{a} \right)
+	\end{align*}
+La capacité par unité de longueur est donc :
+\begin{align*}
+	c = \frac{2\pi\varepsilon_0}{\ln\left(\frac{b}{a} \right)}
+\end{align*}
+
+	\item[$\heartsuit$] Les symétries et les invariances donnent $\vec{B}=B(r)\vec{e_\theta}$. Avec le théorème de d'Ampère appliqué sur un cercle de rayon $r$, on obtient :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	r<a & : & \vec{B}=\vec{0} \\
+	a<r<b & : & \vec{B} = \frac{\mu_0j_{s,a} a}{r}\vec{e_\theta} \\
+	r>b & : & \vec{B}=\vec{0}
+	\end{array}\right.
+\end{align*}
+
+	\item[$\heartsuit$] Le flux du champ $\vec{B}$ se calcule sur la surface rectangulaire comprises entre $a$ et $b$, de longueur $l$ avec $\vec{e_\theta}$ comme vecteur normal. On trouve alors :
+	\begin{align*}
+		\Phi_B=\frac{\mu_0I}{2\pi}\ln\left(\frac{b}{a} \right)
+	\end{align*}
+	On a donc :
+	\begin{align*}
+		L=\frac{\mu_0}{2\pi}\ln\left(\frac{b}{a} \right)
+	\end{align*}
+
+	\item[$\heartsuit$] On trouve que $l\times c=\varepsilon_0\mu_0=\frac{1}{c^2}$. Cela correspond à l'inverse du carré de la vitesse de la lumière, qui est la vitesse de propagation dans le câble coaxial.
+	
+\end{itemize}
+
 \section*{Étude d'un colloïde}
 
 \begin{itemize}
@@ -248,7 +296,7 @@ La densité de charge est proportionnelle à l'opposé du potentiel :
 	\begin{array}{ccc}
 	r<R & : & \vec{E}=\vec{0} \\
 	R<r<R+z_0 & : & \vec{E} = -\frac{Q}{4\pi\varepsilon_0 r^2}\vec{e_r} \\
-	r<R+z_0 & : & \vec{E}=\vec{0}
+	r>R+z_0 & : & \vec{E}=\vec{0}
 	\end{array}\right.
 \end{align*}
 
