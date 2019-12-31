@@ -1,0 +1,41 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\begin{document}
+
+\section*{Sphère radioactive}
+
+\subsubsection*{Densité de charge}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] On calcule d'abord le nombre $N_P(t)$ d'atomes de phosphore restant dans la sphère. Entre $t$ et $t+dt$, il y a $N_P(t)dt/\tau$ qui se sont désintégrés donc :
+	\begin{align*}
+		N_P(t+dt)-N_P(t)=-N_P(t)\frac{dt}{\tau}
+	\end{align*}
+	donc on trouve que $N_P(t)=N_0\exp(-t/\tau)$ : c'est la loi classique de désintégration radioactive. Comme pour un atome de phosphore désintégré on a un positron émis, on a nécessairement : $N_P+N_{e+}=N_0$, donc $N_{e+}=N_0(1-\exp(-t/\tau))$. Le taux de désintégration est alors simplement la variation au cours du temps de $N_{e+}$ :
+	\begin{align*}
+		n(t)=\frac{\dif N_{e+}}{\dif t}=\frac{N_0}{\tau}\exp\left(-\frac{t}{\tau} \right) 
+	\end{align*}
+	
+	\item[$\spadesuit$] Pour $r>tv_0$, il n'y a pas encore de particules : elles n'ont tout simplement pas eu le temps d'atteindre ce rayon.
+	
+		Pour un rayon $r<v_0t$, les particules ont été émises à $t-r/v_0$. Entre les sphères concentriques de rayon $r$ et $r+dr$, il y a donc à l'instant $t$ une charge $dq=en(t-r/v_0)dt$, avec $dt$ correspondant au temps durant lequel les positrons parcourent $dr$. Cette charge est aussi égale à $dq=4\pi r^2dr\rho(r,t)$. Comme $dr=v_0dt$, on a :
+	\begin{align*}
+		\rho(r,t)=\frac{eN_0}{4\pi r^2v_0\tau}\exp\left(-\frac{t-r/v_0}{\tau} \right) 
+	\end{align*}
+
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,194 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\usepackage{amssymb}
+\graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\begin{document}
+
+\section*{Induction mutuelle entre deux circuits}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] L'inductance propre $L$ correspond au flux du champ magnétique créé par un circuit fermé sur lui même. L'induction mutuelle $M$ correspond au flux du champ magnétique d'une bobine à travers l'autre bobine. Comme le champ magnétique créé par une bobine décroit nécessairement avec la distance, l'inductance mutuelle (au carré) est nécessairement plus petite que le produit des inductances propres : $M<L_1L_2$. Elle peut être au mieux égale dans le cas où toute les lignes de champs d'un circuit sont canalisées dans l'autre. On peut montrer cette inégalité à partir de l'énergie magnétique d'un tel ensemble : 
+	\begin{align*}
+		\varepsilon_M=\frac{1}{2}L_1i_1^2+\frac{1}{2}L_2i_2^2+Mi_1i_2
+	\end{align*}
+	Comme $\varepsilon_M>0$, en étudiant la positivité du polynôme en $x=i_2/i_1$, on trouve la condition $M<L_1L_2$.
+	
+	\item[$\clubsuit$] On trouve rapidement que :
+	
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	i_1 + L_1C_1\frac{\dif^2 i_1}{\mathrm{dt}^2}+C_1M\frac{\dif^2 i_2}{\mathrm{dt}^2}=0\\
+	\\
+	i_2 + L_2C_2\frac{\dif^2 i_2}{\mathrm{dt}^2}+C_2M\frac{\dif^2 i_1}{\mathrm{dt}^2}=0\\
+	\end{array}\right.
+	\end{align*}		
+	
+	\item[$\clubsuit$] Dans le cas $L_1=L_2=L$, on pose $\alpha=\frac{M}{L}$ et $\omega_0^2=1/LC$.
+	
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	\omega_0^2i_1+\frac{\dif^2 i_1}{\mathrm{dt}^2}+\alpha\frac{\dif^2 i_2}{\mathrm{dt}^2}=0\\
+	\\
+	\omega_0^2i_2+\frac{\dif^2 i_2}{\mathrm{dt}^2}+\alpha\frac{\dif^2 i_1}{\mathrm{dt}^2}=0\\
+	\end{array}\right.
+	\end{align*}		
+	
+	En posant $I=i_1+i_2$ et $i=i_1-i_2$, on tombe sur les équations différentielles :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	\omega_0^2I+(1+\alpha)\frac{\dif^2 I}{\mathrm{dt}^2}=0\\
+	\\
+	\omega_0^2i+(1-\alpha)\frac{\dif^2 i}{\mathrm{dt}^2}=0\\
+	\end{array}\right.
+	\end{align*}		
+	
+	On trouve alors : $I(t)=A\cos(\omega_1t+\phi)$ et $i(t)=B\cos(\omega_2t+\varphi)$, $\omega_1=\omega_0/\sqrt{1+\alpha}$, $\omega_2=\omega_0/\sqrt{1-\alpha}$ avec $A$, $B$, $\phi$ et $\varphi$ des constantes d'intégration. $I$ et $i$ sont appelés "modes propres" du systèmes.
+	
+	On peut ainsi retrouver les expressions de $i_1$ et $i_2$ comme des superpositions de ces deux modes propres : $i_1=(i+I)/2$ et $i_2=(I-i)/2$. On a alors :
+		\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	i_1(t)=\frac{A}{2}\cos(\omega_1t+\phi)+\frac{B}{2}\cos(\omega_2t+\varphi)\\
+	\\
+	i_2(t)=\frac{A}{2}\cos(\omega_1t+\phi)-\frac{B}{2}\cos(\omega_2t+\varphi)\\
+	\end{array}\right.
+	\end{align*}		
+	
+	\item[$\clubsuit$] Le spectre contient alors deux fréquences $\omega_1$ et $\omega_2$, centrées autour de $\omega_0$. Dans le cas où le couplage devient très faible, $\alpha\longrightarrow0$ et alors $\omega_1\simeq\omega_0(1-\frac{1}{2}\alpha$ et $\omega_2\simeq\omega_0(1+\frac{1}{2}\alpha$. On voit que le spectre se scinde effectivement en deux pulsations, partant de $\omega_0$ et "écartés" en fréquence de $\delta\omega=\omega_0\alpha$. De manière générale, tout système harmonique couplé à un autre système harmonique voit sa fréquence propre se dédoubler autour de la sienne, avec une fréquence propre proche de la sienne, et une autre égale à la différence des deux. 
+	
+	On voit apparaître le phénomène de battements, visible dans la solution de $i_1$ dans le cas de faible couplage ($\alpha\longrightarrow0$), avec $A=B=i_0$ :
+	\begin{align*}
+		i_1(t)=i_0\cos(\omega_0t+\phi)\cos(\delta\omega t)
+	\end{align*}
+	Le terme $\cos(\delta\omega t)$ fait office de "battement" (pulsation lente) cad d'une enveloppe sur la variation rapide $\cos(\omega_0t+\phi)$.
+	
+	\item[$\clubsuit$] Si les condensateurs sont déchargés à $t=0$, la tension à leur borne est nulle, et à celle des bobines aussi. On a donc : $\frac{\mathrm{d}i_1}{\mathrm{dt}}=\frac{\mathrm{d}i_2}{\mathrm{dt}}=0$ et donc $\phi=\varphi=0$.
+	
+	Pour obtenir qu'une seule fréquence, il faut soit $A=0$, soit $B=0$. Cela correspond respectivement à $i_1(t=0)=-i_2(t=0)$ et à $i_1(t=0)=i_2(t=0)$. On parle de mode symétrique et de mode antisymétrique. 
+	
+	\item[$\clubsuit$] La loi des mailles donne
+		\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	\frac{q_1}{C}=L\frac{\mathrm{d}i_1}{\mathrm{dt}}+M\frac{\mathrm{d}i_2}{\mathrm{dt}}\\
+	\\
+	\frac{q_2}{C}=L\frac{\mathrm{d}i_2}{\mathrm{dt}}+M\frac{\mathrm{d}i_1}{\mathrm{dt}}\\
+	\end{array}\right.
+	\end{align*}		
+En multipliant par $i_1$ la première équation, et en utilisant que $i_1=-\frac{\mathrm{d}q_1}{\mathrm{dt}}$ (et même chose pour le circuit 2), on trouve que :
+\begin{align*}
+	\frac{\mathrm{d}}{\mathrm{dt}}\left(\frac{q_1^2}{2C}+\frac{q_2^2}{2C}+\frac{Li_1^2}{2}+\frac{Li_2^2}{2}+Mi_1i_2 \right) =0
+\end{align*}
+Cad l'énergie du système 1+2 se conserve.
+	 
+\end{itemize}
+
+\section*{Courants de Foucault dans un cylindre en rotation}
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] La force de Lorentz qui s'exerce sur un électron de conduction est $\vec{f}=-e(\vec{E}+\vec{v}\wedge\vec{B})$. Sa vitesse étant radiale, il subit alors une force dirigée selon $\vec{e_r}$. Les électrons se déplacent sur les bords du cylindre mais ne peuvent pas "boucler" pour former une boucle de courant : il n'y a donc pas de courant de Foucault en régime permanent.
+	
+	\item[$\diamondsuit$] Les électrons vont se déplacer sur les bords du cylindre, jusqu'à que leur répartition créée un champ électrique opposé à la force de Lorentz, puis qui le compense, de sorte à ce que $\vec{f}=\vec{0}=-e(\vec{E}+\vec{v}\wedge\vec{B})$. On peut voir l'effet du champ magnétique comme un champ électrique "moteur" $\vec{E_m}=\vec{v}\wedge\vec{B}=r\omega B\vec{e_\theta}$. L'équilibre des forces donne un champ électrique créé par la distribution de charge comme $\vec{E}=\vec{E_m}=-r\omega B\vec{e_\theta}$.
+	
+	Comme $\diver(\vec{E})=\frac{\rho}{\varepsilon_0}$, on a :
+	\begin{align*}
+		\frac{1}{r}\frac{\partial E_r}{\partial r} 	= \frac{\rho}{\varepsilon_0}
+	\end{align*}
+	Et alors :
+	\begin{align*}
+		\rho = -2\omega B\varepsilon_0
+	\end{align*}
+	Les électrons sont partis sur la surface, la charge volumique créé en volume est créé par les ions du cristal fixes. Par neutralité de la charge, la charge dans le volume est compensée par une charge surfacique : $\rho h\pi R^2=-\sigma 2\pi Rh$. On a donc :
+	\begin{align*}
+		\sigma = \varepsilon_0 B\omega R
+	\end{align*}
+ 
+\end{itemize}
+
+\section*{Canon électromagnétique}
+
+\subsubsection*{Cas statique}
+
+\begin{itemize}
+
+	\item[$\heartsuit$] $\Phi_B=L(x_0)I(t)$, et avec la loi de Faraday :
+	\begin{align*}
+		e=-L(x_0)\frac{\mathrm{d}I(t)}{\mathrm{dt}}
+	\end{align*}
+	
+	\item[$\heartsuit$] En faisant une loi des mailles puis en multipliant par l'intensité :
+	\begin{align*}
+		P_G=R(x_0)I^2(t)-eI(t)=R(x_0)I^2(t)+\frac{1}{2}L(x_0)\frac{\mathrm{d}} {\mathrm{dt}}I^2(t)
+	\end{align*}
+	Le second terme $\frac{1}{2}L(x_0)\frac{\mathrm{d}} {\mathrm{dt}}I^2(t)$ correspond à l'énergie magnétique.
+
+\end{itemize}
+
+\subsubsection*{Cas mobile}
+
+\begin{itemize}
+
+	\item[$\triangle$] Première justification : avec la force de laplace. Deuxième justification : avec la loi de Lenz, le barreau aura tendance à agrandir le circuit pour s'opposer à la variation du flux de $\vec{B}$ créé par le circuit lui-même.
+	
+	La puissance fournie par le générateur s'écrit :
+	\begin{align*}
+		P_G=R(x)I^2(t)+\frac{\mathrm{d}} {\mathrm{dt}}\left(\frac{1}{2}L(x)I(t)^2\right) = R(x)I^2(t) + \dot{x}(t)\frac{1}{2}\frac{\mathrm{d}L(x)}{\mathrm{dx}}I^2(t)+\frac{1}{2}L(x)\frac{\mathrm{d}} {\mathrm{dt}}I^2(t)
+	\end{align*}
+	
+	\item[$\triangle$] On reconnait la puissance magnétique. La puissance mécanique est celle qui fait intervenir la vitesse du barreau, soit :
+	\begin{align*}
+		P_{méca}=\frac{1}{2}\dot{x}(t)\frac{\mathrm{d}L(x)}{\mathrm{dx}}I^2(t)
+	\end{align*}	
+La force est alors :
+	\begin{align*}
+		F=\frac{1}{2}\frac{\mathrm{d}L(x)}{\mathrm{dx}}I^2(t)
+	\end{align*}	
+
+\end{itemize}
+
+\subsubsection*{Étude du mouvement}
+
+On suppose que le générateur est constitué d'une dynamo couplée à une bobine d'inductance $L_0$ et de résistance $R_0$. Tant que l'interrupteur $C$ est fermé, la dynamo impose un fort courant $I_0$ dans la bobine. A $t=0$, où l'on ouvre $C$, le courant s'écoule alors dans les rails et accélère le barreau. 
+
+On suppose par ailleurs que $L(x)=L'x$ et $R(x)=R'x$, où $L'$ et $R'$ sont respectivement l'inductance et la résistance linéique.
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] L'inductance totale du circuit est $L_{tot}=L_0+L'x$ donc $e=-\frac{\mathrm{d}L_{tot}I(t)}{\mathrm{dt}}=-I(t)L'\dot{x}-(L_0+L'x)\frac{\mathrm{d}I(t)}{\mathrm{dt}}$. On a alors :
+	\begin{align*}
+		-I(t)L'\dot{x}-(L_0+L'x)\frac{\mathrm{d}I(t)}{\mathrm{dt}} = (R_0+xR')I(t)
+	\end{align*}
+	
+	\item[$\diamondsuit$] En utilisant la formule de la force trouvée précédemment :
+	\begin{align*}
+		M\ddot{x}(t)=\frac{1}{2}I^2L'
+	\end{align*}
+	
+	\item[$\diamondsuit$] à $t=0$, on a $x=x_0$ et $\dot{x}=0$ par inertie, de même $I(0)=I_0$. Les solutions stationnaires impliquent $\ddot{x}=0$ cad $I=0$, mais c'est incompatible avec les conditions initiales. 
+	
+	\item[$\diamondsuit$] On a un circuit $(r,L)$ en série, de temps caractéristique $\tau\simeq L_0/R$, si $L_0$ est très grand, ce temps sera très grand devant le temps d'éjection du barreau et $I(t)$ n'aura quasiment pas varié. 
+	
+	A ce moment là :
+	\begin{align*}		
+		x(t)=\frac{1}{2}\frac{L'I_0^2}{M} t^2	
+	\end{align*}
+
+\end{itemize}
+
+\end{document}

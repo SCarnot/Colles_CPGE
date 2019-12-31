@@ -1,0 +1,76 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\usepackage{amssymb}
+\graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\begin{document}
+
+\section*{Sphère radioactive}
+
+On considère une sphère composée d'aluminium de rayon $R_0$, bombardée par un rayonnement de particules $\alpha$ très intense et bref. Sous le bombardement des particules $\alpha$, l'aluminium se transforme en phosphore radioactif, qui se désintègre lui-même en silicium, avec l'émission d'un positron $e^+$ et d'un neutrino électronique $\nu_e$ :
+\begin{align*}
+	^{30}_{15}\mathrm{P}\longrightarrow^{30}_{14}\mathrm{Si}+e^++\nu_e
+\end{align*}
+Le temps caractéristique de cette désintégration est $\tau$ : la probabilité pour qu'un noyau de phosphore se désintègre entre $t$ et $t+dt$ est $dt/\tau$\footnote{Le temps caractéristique $\tau$ est reliée à la demi-vie $\tau_{1/2}$ de la désintégration par la relation $\tau=\tau_{1/2}/\ln2$. On mesure $\tau_{1/2}=$ 3 min 15 sec.}. Les positrons $e^+$ issus de la désintégration sont émis de manière isotrope à la vitesse $v_0$. Ce sont des particules de charge $+e$.
+On suppose que juste après le bombardement, à $t=0$, il y a $N_0$ atomes de phosphore radioactifs dans la sphère d'aluminium.
+
+Dans cet exercice, on cherche à déterminer l'expression du champ électromagnétique engendré par cet émission de particules chargées. Dans toute la suite, on ne s'intéressera qu'aux rayons $r>R_0$.
+
+\subsubsection*{Densité de charge}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Montrer que le le nombre de positron $+e$ émis par unité de temps par la sphère $n(t)$ (ou taux de désintégration) s'écrit : 
+\begin{align*}
+	n(t)=\frac{N_0}{\tau}\exp\left( -\frac{t}{\tau}\right) 
+\end{align*}
+On pourra commencer par calculer le nombre de particule de phosphore $N_P(t)$ au cours du temps. 
+	
+	\item[$\spadesuit$] Quelle est la densité de charge pour $r>v_0t$ ? Pour $r\leq v_0t$, à quel instant les charges arrivant en à l'instant $t$ en $r$ sont elles parties de $O$ ? En déduire, $\forall r>R_0$, la densité de charge $\rho(r,t)$.
+	
+	\item[$\spadesuit$] Représenter l'allure des courbes de $\rho(r,t)$ en fonction de $t$ pour $r$ donné et en fonction de $r$ pour $t$ donné.
+	
+\end{itemize}
+
+\subsubsection*{Champ électrique}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Déterminer le champ électrique $\vec{E}(r,t)$ $\forall r>R_0$ à partir du théorème de Gauss.
+	
+	\item[$\spadesuit$] Retrouver ce résultat grâce à équation de Maxwell-Ampère. On donne, pour un vecteur n'ayant qu'une composante radiale $a_r$ : 
+	\begin{align*}
+		\diver(a_r)=\frac{1}{r^2}\frac{\partial (r^2a_r)}{\partial r}
+	\end{align*}
+	
+\end{itemize}
+
+\subsubsection*{Champ magnétique}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Déterminer la densité de courant $\vec{j}(r,t)$ $\forall r>R_0$.
+	
+	\item[$\spadesuit$] En déduire le champ magnétique $\vec{B}(r,t)$.  L'équation de Maxwell-Ampère est-elle vérifiée ?
+	
+	\end{itemize}
+
+\subsubsection*{Énergie électromagnétique}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Calculer la densité d'énergie électromagnétique $\varepsilon_m(r,t)$ et le vecteur de Poynting $\vec{\Pi}(r,t)$ et la puissance volumique $P$ fournie par le champ électromagnétique aux particules chargées. Conclure.
+	
+\end{itemize}
+
+\end{document}
