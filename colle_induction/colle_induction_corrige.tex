@@ -100,6 +100,8 @@ Cad l'énergie du système 1+2 se conserve.
 
 \section*{Courants de Foucault dans un cylindre en rotation}
 
+\subsubsection*{Champ axial}
+
 \begin{itemize}
 
 	\item[$\diamondsuit$] La force de Lorentz qui s'exerce sur un électron de conduction est $\vec{f}=-e(\vec{E}+\vec{v}\wedge\vec{B})$. Sa vitesse étant radiale, il subit alors une force dirigée selon $\vec{e_r}$. Les électrons se déplacent sur les bords du cylindre mais ne peuvent pas "boucler" pour former une boucle de courant : il n'y a donc pas de courant de Foucault en régime permanent.
@@ -119,6 +121,48 @@ Cad l'énergie du système 1+2 se conserve.
 		\sigma = \varepsilon_0 B\omega R
 	\end{align*}
  
+\end{itemize}
+
+\subsubsection*{Champ transverse}	
+	
+	On applique désormais un champ magnétique uniforme $\vec{B}=B_{0}\vec{e_{x}}$ transverse à l'axe de rotation.
+	
+\begin{itemize}
+	
+		\item[$\square$] Même chose que dans la première question : avec la force de Lorentz, on trouve que les électrons de conduction sont soumis à une force dirigée selon $\vec{e_z}$. Il y a des courants qui se forment en boucle sur la longueur du cylindre. Ces courants vont dissiper de la puissance par effet Joule et exercer un couple résistant selon l'axe $\vec{e_z}$ (c'est aussi la loi de Lenz : Les courants de Foucault induits vont s'opposer au champ magnétique extérieur qui leur a donné naissance, et la force de Laplace associée exerce un couple résistif).
+
+		\item[$\square$] On a $\vec{j}(r,\theta)=-\vec{j}(r,\theta+\pi)$. En effet, les causes de l'apparition des courants de Foucault (le champ magnétique et la rotation) sont les mêmes en $(r,\theta)$ et en $(r,\theta+\pi)$, les effets sont donc les mêmes : on a donc $\parallel\vec{j}(r,\theta)\parallel=\parallel\vec{j}(r,\theta+\pi)\parallel$. Comme la vitesse est opposée entre ces deux points, la norme doit l'être aussi. On peut aussi le justifier avec la fermeture des boucle de courant.
+		
+		\item[$\square$] On prend comme contour $\Gamma$ une boucle rectangulaire avec pour médiane l'axe $\vec{e_z}$, de largeur $2r$, de longueur la hauteur du cylindre. Comme on a la relation $\vec{j}=\gamma\vec{E}$, le champ électrique est colinéaire au champ de courant. Alors, le théorème de Maxwell-Faraday, avec le théorème de Stockes donne :
+		\begin{align*}			
+			\oint_\Gamma \vec{E}\cdot\dif\vec{l}=-\frac{\mathrm{d}}{\mathrm{dt}}\iint_{S_{\Gamma}}\vec{B}\cdot\dif\vec{S}	
+		\end{align*}
+		Comme précisé dans l'énoncé, on néglige ce qu'il se passe là où le courant se "retourne", près des extrémités supérieure et inférieure du cylindre. Dans l'intégrale, seules comptent les contributions verticales :
+			\begin{align*}			
+			-\oint_\Gamma E(r,\theta)\dif z=-\frac{\mathrm{d}}{\mathrm{dt}}\iint_{S_{\Gamma}}B\dif r\dif z\vec{e_x}\cdot\vec{e_\theta}	
+		\end{align*}
+		\textit{NB} : le signe $-$ qui apparait est dû est l'orientation du contour par rapport à la géométrie du problème (règle de la main droite).
+		On trouve, en sachant que $\frac{\mathrm{d}}{\mathrm{dt}}\vec{e_x}\cdot\vec{e_\theta}=-\omega\cos\theta$ :
+		\begin{align*}			
+			2hE(r,\theta)=-2rhB\omega\cos\theta
+		\end{align*}
+		On trouve donc : 
+		\begin{align*}			
+			\vec{E}(r,\theta)=-rB\omega\cos\theta\vec{e_z}
+		\end{align*}
+		\item[$\square$] On a la relation $\vec{j}=\gamma\vec{E}$ :
+		\begin{align*}			
+			\vec{j}(r,\theta)=-\gamma rB\omega\cos\theta\vec{e_z}
+		\end{align*}
+		
+		\item[$\square$] La puissance dissipée est $dP=\vec{j}\cdot\vec{E}d\tau$.
+		On trouve :
+		\begin{align*}
+		P=\gamma B^2\omega^2\int_{z=0}^h \dif z\int_{\theta=0}^{2\pi}\int_{r=0}^{a}r^3\cos^2\theta\dif r\dif\theta=\frac{\pi}{4}\gamma B^2ha^4\omega
+		\end{align*}
+		
+		\item[$\square$] On peut utiliser la relation $P=\omega\Gamma$.
+		
 \end{itemize}
 
 \section*{Canon électromagnétique}
