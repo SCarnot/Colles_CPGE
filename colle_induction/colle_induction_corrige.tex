@@ -235,4 +235,38 @@ On suppose par ailleurs que $L(x)=L'x$ et $R(x)=R'x$, où $L'$ et $R'$ sont resp
 
 \end{itemize}
 
+\section*{Chauffage par induction}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] La plaque est dans un champ magnétique variable, il y a donc une force électromotrice induite dans le conducteur générant des courants de Foucault. Au vu des symétrie et de l'orientation du champ $\vec{B}$, les courants seront de la forme $\vec{j}=j(r,t)\vec{e_\theta}$.
+	
+	\item[$\clubsuit$] Le théorème de Faraday s'écrit :
+	\begin{align*}
+		\oint_\Gamma\vec{E}\dif\vec{l}=\oiint_{S_\Gamma}\vec{B}\dif\vec{S}
+	\end{align*}
+	En prenant comme contour $\Gamma$ un cercle de rayon $r$ centré en $O$, et en utilisant la loi $\vec{j}=\gamma\vec{E}$, on obtient :
+	\begin{align*}
+	\begin{array}{ccc}
+	r<a & : & \frac{2\pi rj(r,t)}{\sigma}=-\frac{\dif B(t)}{\dif t}\pi r^2\\
+	a<r<b & : & \frac{2\pi rj(r,t)}{\sigma}=-\frac{\dif B(t)}{\dif t}\pi a^2\\
+	\end{array}
+	\end{align*}		
+On a alors :
+	\begin{align*}
+	\begin{array}{ccc}
+	r<a & : & j(r,t)=\frac{\sigma\omega B_m r\sin(\omega t)}{2}\\
+	a<r<b & : &  j(r,t)=\frac{\sigma\omega B_m a^2\sin(\omega t)}{2r}\\
+	\end{array}
+	\end{align*}		
+		
+	\item[$\clubsuit$] La puissance volumique est donnée par $p_{Joule}= j^2(r,t)/\sigma$.
+	
+	
+	\item[$\clubsuit$] Ce dispositif est utilisé dans des plaques électrique de cuisine pour chauffer une casserole. Comment créer en pratique le champ magnétique souhaité ?
+	
+	\item[$\clubsuit$] Le champ magnétique utilisé a une pulsation de $\omega=2\times10^{5}$rad.s$^{-1}$ et son intensité de l'ordre de $10^{-4}$T. On considère une plaque à induction de rayon $b=10$cm et une casserole dont le fond a le même rayon $a=b=10$cm et une conductivité $\sigma=6,0\times10^{7}$S.m$^{-1}$. Déterminer l'ordre de grandeur de la puissance dissipée dans le fond de la casserole. 
+
+\end{itemize}
+
 \end{document}

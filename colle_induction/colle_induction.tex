@@ -16,7 +16,7 @@
 \begin{document}
 
 \section*{Induction mutuelle entre deux circuits}
-
+$3^\circ$
 On considère les deux circuits $LC$ suivants, composés de capacités $C_1$ et $C_2$ et de bobines d'inductance propre $L_1$ et $L_2$ et d'inductance mutuelle $M$. 
 
 \begin{figure}[h!]
@@ -177,5 +177,40 @@ On suppose par ailleurs que $L(x)=L'x$ et $R(x)=R'x$, où $L'$ et $R'$ sont resp
 \end{itemize}
 
 Question supplémentaire : déterminer l'inductance et la résistance linéique dans le cas de deux rails cylindriques de rayon $a$, distants de $b$ et de conductivité $\gamma$.
+
+\newpage
+
+\section*{Chauffage par induction}
+
+Un disque métallique de conductivité $\sigma$, d'axe $Oz$ vertical, de rayon $b$ et d'épaisseur $e$ est plongé dans un champ magnétique $\vec{B}$. Ce champ magnétique a les caractéristiques suivantes :
+\begin{itemize}
+
+\item[-] Il est localisé dans un cylindre d'axe vertical $Oz$ et de rayon $a$ ;
+\item[-] il est uniforme dans le cylindre précédent et nul à l'extérieur de ce cylindre ;
+\item[-] il est dirigé suivant $\vec{e_z}$ ;
+\item[-] il varie au cours du temps selon $\vec{B}=B_m\cos(\omega t)\vec{e_z}$.
+
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.25]{induction3.png}
+\end{figure}
+
+On admettra par la suite que le champ magnétique induit est négligeable devant le champ magnétique extérieur appliqué. 
+
+\begin{itemize}
+
+	\item[$\clubsuit$] Justifiez l'existence de courants de Foucault dans le cylindre métallique de la forme $\vec{j}=j(r,t)\vec{e_\theta}$.
+	
+	\item[$\clubsuit$] A l'aide de l'équation de Maxwell-Faraday, exprimer $j(r,t)$ en fonction des données du problème.
+	
+	\item[$\clubsuit$] Quelle est l'expression de la puissance dissipée par effet Joule $P_{Joule}$ ? Donner sa valeur moyenne $\langle P_{Joule}\rangle$
+	
+	\item[$\clubsuit$] Ce dispositif est utilisé dans des plaques électrique de cuisine pour chauffer une casserole. Comment créer en pratique le champ magnétique souhaité ?
+	
+	\item[$\clubsuit$] Le champ magnétique utilisé a une pulsation de $\omega=2\times10^{5}$rad.s$^{-1}$ et son intensité de l'ordre de $10^{-4}$T. On considère une plaque à induction de rayon $b=10$cm et une casserole dont le fond a le même rayon $a=b=10$cm et une conductivité $\sigma=6,0\times10^{7}$S.m$^{-1}$. Déterminer l'ordre de grandeur de la puissance dissipée dans le fond de la casserole. 
+
+\end{itemize}
 
 \end{document}
