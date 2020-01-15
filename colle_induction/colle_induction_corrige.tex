@@ -264,11 +264,17 @@ On a alors :
 	\begin{align*}
 		P_{Joule}=2\pi e\int_0^a \frac{\sigma\omega^2 B_m^2 r^2\sin^2(\omega t)}{4}rdr+2\pi e\int_a^b \frac{\sigma\omega^2 B_m^2 a^4\sin^2(\omega t)}{4r^2}rdr
 	\end{align*}
+	On trouve :
+	\begin{align*}
+		P_{Joule}=\frac{\pi e a^4\sigma\omega^2 B_m^2 r^2\sin^2(\omega t)}{2}\left[\frac{1}{4} + \ln\left(\frac{b}{a} \right)  \right] 
+	\end{align*}
 	
-	\item[$\clubsuit$] Ce dispositif est utilisé dans des plaques électrique de cuisine pour chauffer une casserole. Comment créer en pratique le champ magnétique souhaité ?
+	\item[$\clubsuit$] Le champ magnétique est créé à partir de bobines enroulées en dessous de la plaque, parcourues par des courants sinusoïdaux. La dissipation de puissance par effet Joule se fait directement dans le casserole et non dans la plaque.
 	
-	\item[$\clubsuit$] Le champ magnétique utilisé a une pulsation de $\omega=2\times10^{5}$rad.s$^{-1}$ et son intensité de l'ordre de $10^{-4}$T. On considère une plaque à induction de rayon $b=10$cm et une casserole dont le fond a le même rayon $a=b=10$cm et une conductivité $\sigma=6,0\times10^{7}$S.m$^{-1}$. Déterminer l'ordre de grandeur de la puissance dissipée dans le fond de la casserole. 
-
+	\item[$\clubsuit$] $\langle P_{Joule}\rangle\simeq5$kW
+	
+	\item[$\diamond$] Le champ induit correspond à ce que l'auto induction de la plaque est faible en regard de l'induction mutuelle entre les deux circuits. En effet, le flux du champ induit est donné par $\oiint B_{ind.}\dif S=L_Pi_{Foucault}$ et du champ extérieur par $\oiint B_{ext.}\dif S=Mi_{Foucault}$. Si $B_{ind.}\ll B_{ext.}$, comme les géométries sont presque les mêmes, alors $L_P\ll M$.
+	
 \end{itemize}
 
 \end{document}
