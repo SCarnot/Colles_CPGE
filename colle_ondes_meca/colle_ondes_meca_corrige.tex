@@ -1,0 +1,144 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\usepackage{amssymb}
+\graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\begin{document}
+
+\section*{Chaîne suspendue}
+
+\subsubsection{Cas statique}
+
+\begin{itemize}
+
+	\item[$\star$] On prend un élément infinitésimal de corde de longueur $dl=\sqrt{dx^2+dy^2}$. On note $\alpha(x)$ l'angle de la corde par rapport à l'horizontal à l'abscisse $x$. On applique le principe fondamental de la statique :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	-T(x)\cdot\cos(\alpha(x))+T(x+dx)\cdot\cos(\alpha(x+dx))=0\\
+	\\
+	-T(x)\cdot\sin(\alpha(x))+T(x+dx)\cdot\sin(\alpha(x+dx))-\mu g\sqrt{dx^2+dy^2}=0\\
+	\end{array}\right.
+	\end{align*}		
+	
+	De la première équation, on voit que $T(x)\cdot\cos(\alpha(x))=cste=T_0\cos(\alpha_0)$, où $T_0$ et $\alpha_0$ sont la tension et l'angle au début de la corde (par exemple. On a donc $T(x)=T_0\cos(\alpha_0)/\cos(\alpha(x))$.
+	
+	La seconde équation s'écrit :
+	\begin{align*}
+		\frac{\dif }{\dif x}T(x)\cdot\sin(\alpha(x))=\mu g \sqrt{dx^2+dy^2}
+	\end{align*}
+	Avec la relation trouvée sur la tension, on obtient :
+	\begin{align*}
+		dx\frac{\dif }{\dif x}\left[T_0\cos(\alpha_0)\tan(\alpha(x))\right] =\mu g dx\sqrt{1+\frac{dy^2}{dx^2}}
+	\end{align*}
+	Comme $\tan(x)=dy/dx$, on tombe sur l'équation différentielle :
+	\begin{align*}
+		\frac{\dif^2 y}{\dif x^2} =\frac{1}{l_c}\sqrt{1+\left( \frac{dy}{dx}\right)^2}
+	\end{align*}	
+	avec $l_c=T_0\cos(\alpha_0)/\mu g$.
+	\item[$\star$] Avec le changement de variable proposé, on a :
+	\begin{align*}
+		\frac{\dif p}{\dif x} =\frac{1}{l_c}\sqrt{1+p(x)^2}
+	\end{align*}	
+	On obtient alors :
+	\begin{align*}
+		\frac{\dif p}{\sqrt{1+p(x)^2}} =\frac{\dif x}{l_c}
+	\end{align*}	
+	On reconnait que la primitive est la fonction inverse du sinus hyperbolique :
+	\begin{equation}
+		\sinh^{-1}(p)=\frac{x}{l_c} +\alpha
+	\end{equation}
+	On obtient alors :
+	\begin{equation}
+		y(x) = l_c\cosh\left( \frac{x}{l_c}+\alpha\right) +\beta
+	\end{equation}
+	
+	Avec les conditions aux limites ($y(-D/2)=y(+D/2)=0$), on a :
+	\begin{align*}
+	y(x)=l_c\left[\cosh\left(\frac{x}{l_c} \right) -\cosh\left(\frac{D}{2l_c} \right) \right] 
+	\end{align*}
+	\item[$\star$] La tension horizontale est constante et vaut $T_h(x)=T_0\cos(\alpha_0)$. La tension verticale est $T_v(x)=T(x)\sin(\alpha(x))=T_0\cos(\alpha_0)\tan(\alpha(x))=T_0\cos(\alpha_0)\frac{dy}{dx}$. On a donc :
+	\begin{align*}
+		T_v(x)=T_0\cos(\alpha_0)\sinh\left(\frac{x}{l_c} \right) 
+	\end{align*}
+	
+	\item[$\star$] La longueur correspond à l'intégrale curviligne :
+	\begin{align*}
+		L=\int_C \dif l=\int_{-D/2}^{D/2}dx\sqrt{1+\left( \frac{dy}{dx}\right)^2}
+	\end{align*}
+	En utilisant l'équation différentielle trouvée précédemment, on a tout simplement :
+	\begin{align*}
+		L=\int_{-D/2}^{D/2}dx\frac{d^2y}{dx^2}=\left[ \frac{dy}{dx}\right]_{-D/2}^{D/2}=2l_c\sinh\left(\frac{D}{2l_c} \right) 
+	\end{align*}
+	La flèche correspond tout simplement à la différence entre le point le plus haut et le plus bas, soit $-y(0)$ :
+	\begin{align*}
+		h=l_c\left[\cosh\left(\frac{D}{2l_c} \right) -1 \right] 
+	\end{align*}
+	On utilise la relation $\cosh^2-\sinh^2=1$ :
+	\begin{align*}
+		\left( \frac{h}{l_c}+1\right) ^2-\left( \frac{L}{2l_c}\right) ^2=1
+	\end{align*}
+	et donc :
+	\begin{align*}
+		l_c=\frac{L^2/4-h^2}{2h}
+	\end{align*}
+	Ainsi, avec simplement une photo d'une chaîne suspendue, on peut connaitre $L$, $h$ et $\alpha_0$, on en déduit $l_c$ qui nous donne l'information sur $T_0$
+\end{itemize}
+
+\subsubsection*{Cas dynamique}
+
+\begin{itemize}
+
+	\item[$\diamond$] A ce moment là $T_0\gg \mu g$, et donc $l_c\longrightarrow\infty$ et la corde est horizontale. L'angle $\alpha(x)$ est très petit. On néglige la gravité dans ce cas-là.
+
+	\item[$\diamond$] On reprend le même raisonnement que précédemment en appliquant le principe fondamental de la dynamique et en négligeant la pesanteur. On trouve une équation d'Alembert, qui correspond à la propagation des ondes dans la corde :
+	\begin{align*}
+		\frac{\partial^2y}{\partial x^2}=\frac{1}{c^2}\frac{\partial^2y}{\partial t^2}
+	\end{align*}
+	avec $c=T_0/\mu$.
+	Les solutions sont de la forme $y(x,t)=f(t-x/c)+g(t+x/c)$ : cela correspond à des ondes se propageant suivants les $x$ croissants ($f$) et les $x$ décroissants ($g$).
+	\item[$\diamond$] Sachant que la corde est ancrée en $x=-D/2$ et $x=+D/2$, donner l'expression générale de $y(x,t)$ dans le cas stationnaire. 
+	
+	\item[$\diamond$] On excite la corde avec une excitation dessinée ci-dessous. Donner l'expression de $y(x,t)$ dans ce cas-là.
+	
+	\item[$\diamond$] Si la corde décrite dans l'exercice est celle d'un instrument de musique (violon, guitare, piano...), comment expliquer la différence de timbre entre ces instruments pour une note donnée ?
+	
+\end{itemize}
+
+\newpage
+
+\section*{Corde pendue verticalement}
+
+On considère une corde attachée au plafond à un point fixe en $z=0$ et laissée verticalement à elle-même dans le vide. Elle n'est soumise qu'à la gravité. On notera $\Psi(z,t)$ l'écart de la corde à la verticale à la hauteur $z$ à l'instant $t$.
+
+\begin{itemize}
+
+	\item[$\ast$] En appliquant le principe fondamental de la dynamique, trouver une équation différentielle en  $\Psi(z,t)$.
+
+\end{itemize}
+
+On cherche des solutions sous la forme $\Psi(z,t)=\alpha(z)\cos(\omega t)+\beta(z)\sin(\omega t)$. 
+
+\begin{itemize}
+	
+		\item[$\ast$] Comment s'appellent ce type de solutions ? Déterminer l'équation différentielle vérifiée par $\alpha$ et $\beta$.
+		
+		\item[$\ast$] En posant $Z=\frac{z\omega^2}{g}$, trouver un nouveau système d'équation différentielle en $A(Z)=\alpha(z)/\alpha(0)$. 
+		
+		\item[$\ast$] On cherche la solution sous la forme d'une série entière $A(Z)=\sum_k A_k Z^K$. Déterminer les coefficients $K$. 
+		
+		\item[$\ast$] Comment pourrait-on trouver une relation de dispersion $\omega(k)$ ?
+		
+\end{itemize}
+
+\end{document}
