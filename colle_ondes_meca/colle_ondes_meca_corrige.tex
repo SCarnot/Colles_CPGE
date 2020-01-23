@@ -107,35 +107,115 @@
 	\end{align*}
 	avec $c=T_0/\mu$.
 	Les solutions sont de la forme $y(x,t)=f(t-x/c)+g(t+x/c)$ : cela correspond à des ondes se propageant suivants les $x$ croissants ($f$) et les $x$ décroissants ($g$).
-	\item[$\diamond$] Sachant que la corde est ancrée en $x=-D/2$ et $x=+D/2$, donner l'expression générale de $y(x,t)$ dans le cas stationnaire. 
 	
-	\item[$\diamond$] On excite la corde avec une excitation dessinée ci-dessous. Donner l'expression de $y(x,t)$ dans ce cas-là.
+	\item[$\diamond$] Dans le cas d'ondes stationnaires, on a $y(x,t)=F(x)G(t)$, cad indépendance entre les variables de temps et d'espace. En injectant dans l'équation de propagation, on trouve que la fonction $F$ est une fonction sinusoïdale, qui avec les conditions aux limites est nécessairement :
+	\begin{align*}
+		F(x)=F_0\sin(k_n x),\quad k_n=\frac{n\pi}{L}
+	\end{align*}
+	Et d'autre part :	
+	\begin{align*}
+		G(t)=G_1\cos(\omega t)+G_2\sin(\omega t)
+	\end{align*}	
+En réinjectant les solutions de $F(x)G(t)$ trouvées, on tombe sur la relation de dispersion :
+	\begin{align*}
+		\omega=\omega_n=k_nc=\frac{n\pi c}{L}
+	\end{align*}	
 	
-	\item[$\diamond$] Si la corde décrite dans l'exercice est celle d'un instrument de musique (violon, guitare, piano...), comment expliquer la différence de timbre entre ces instruments pour une note donnée ?
+	Comme toute superposition des solutions précédentes au mode $n$ vérifient l'équation de propagation, la solution générale est donc une somme des solutions au mode $n$ :
+	\begin{align*}
+		y(x,t)=\sum_n \left[A_n\cos(\omega_nt) + B_n\sin(\omega_nt)\right] \cdot\sin(k_nx)
+	\end{align*}
+	\item[$\diamond$] On commence par relier les coefficients $A_n$ et $B_n$ avec les conditions initiales :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	y(x,0)=\sum_n A_n\sin(k_nx)\\
+	\\
+	\frac{\dif y}{\dif t}(x,0)=\sum_n \omega_n B_n\sin(k_nx)\\
+	\end{array}\right.
+	\end{align*}		
+	On peut inverser les intégrales en utilisant l'orthogonalité des fonctions sinusoïdales :
+	\begin{align*}
+	\int_0^1\dif u\sin(n\pi u)\sin(m\pi u)=\frac{\delta_{nm}}{2}
+	\end{align*}			
+On a alors :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	A_n=\frac{2}{L}\int_0^L\dif x\cdot y(x,0)\sin\left(\frac{n\pi x}{L} \right) \\
+	\\
+	B_n=\frac{2}{n\pi c}\int_0^L\dif x\cdot \frac{\dif y}{\dif t}(x,0)\sin\left(\frac{n\pi x}{L} \right)\\
+	\end{array}\right.
+	\end{align*}		
+	
+	Avec les conditions initiales données, on a $\frac{\dif y}{\dif t}(x,0)=0$, cad $B_n=0$. De la même manière :
+	\begin{align*}
+		A_n=\frac{2}{L}\int_0^a\dif x \frac{h}{a}x\sin\left(\frac{n\pi x}{L} \right) + \frac{2}{L}\int_a^L\dif x \frac{h(L-x)}{L-a}\sin\left(\frac{n\pi x}{L} \right) 
+	\end{align*}
+	En intégrant par partie, on obtient :
+	\begin{align*}
+		A_n=\frac{2h}{n^2\pi^2}\frac{L^2}{a(L-a)}\sin\left(\frac{n\pi a}{L} \right) 
+	\end{align*}
+	\item[$\diamond$] Ici, les harmoniques décroissent en $1/n^2$. En fonction des conditions initiales, on peut avoir d'autres décroissances, qui dépendent du type d'instrument de musique. Cela détermine alors le nombre d'harmoniques qui détermine le timbre de l'instrument. 
 	
 \end{itemize}
-
-\newpage
 
 \section*{Corde pendue verticalement}
 
-On considère une corde attachée au plafond à un point fixe en $z=0$ et laissée verticalement à elle-même dans le vide. Elle n'est soumise qu'à la gravité. On notera $\Psi(z,t)$ l'écart de la corde à la verticale à la hauteur $z$ à l'instant $t$.
-
 \begin{itemize}
 
-	\item[$\ast$] En appliquant le principe fondamental de la dynamique, trouver une équation différentielle en  $\Psi(z,t)$.
-
-\end{itemize}
-
-On cherche des solutions sous la forme $\Psi(z,t)=\alpha(z)\cos(\omega t)+\beta(z)\sin(\omega t)$. 
-
-\begin{itemize}
+	\item[$\ast$] On note le 0 des abscisses $z$ le point où la corde est accrochée, avec les $z$ positifs orientés vers le bas. En appliquant le principe fondamental de la dynamique, on trouve :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	T(z+dz)\cdot\cos(\alpha(z+dz))-T(z)\cdot\cos(\alpha(z))+\mu g\dif z=0\\
+	\\
+	\mu\dif z\frac{\partial^2\Psi}{\partial t^2}=T(z+dz)\cdot\sin(\alpha(z+dz))-T(z)\cdot\sin(\alpha(z))\\
+	\end{array}\right.
+	\end{align*}		
+	Si on prend l'hypothèse $\sin(\alpha(z))\simeq\tan(\alpha(z))\simeq\alpha(z)\simeq\frac{\partial \Psi}{\partial z}$ et $\cos(\alpha(z))\simeq1$, on obtient :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	T(z)=\mu gz\\
+	\\
+	\mu\frac{\partial^2\Psi}{\partial t^2}=\frac{\partial}{\partial z}(T(z)\alpha(z))\\
+	\end{array}\right.
+	\end{align*}		
+	En rentrant l'expression de la tension, on obtient donc :
+	\begin{align*}
+		\frac{\partial^2}{\partial t^2}\Psi(z,t)=g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\Psi(z,t)\right) 
+	\end{align*}
 	
-		\item[$\ast$] Comment s'appellent ce type de solutions ? Déterminer l'équation différentielle vérifiée par $\alpha$ et $\beta$.
+		\item[$\ast$] Ce sont des solutions stationnaires. En injectant, on trouve :
+		\begin{align*}
+			\left[ \omega^2\alpha(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\alpha(z,t)\right)\right] \cos(\omega t)+\left[ \omega^2\beta(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\beta(z,t)\right)\right] \sin(\omega t)=0
+		\end{align*}
+		Comme cette équation est vraie $\forall t$, on a nécessairement :
+trouve :
+		\begin{align*}
+			\omega^2\alpha(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\alpha(z,t)\right)=0
+		\end{align*}		
 		
-		\item[$\ast$] En posant $Z=\frac{z\omega^2}{g}$, trouver un nouveau système d'équation différentielle en $A(Z)=\alpha(z)/\alpha(0)$. 
+		$\alpha$ et $\beta$ vérifient la même équation différentielle en $z$.
 		
-		\item[$\ast$] On cherche la solution sous la forme d'une série entière $A(Z)=\sum_k A_k Z^K$. Déterminer les coefficients $K$. 
+		\item[$\ast$] Avec le changement de variable, on a $\alpha(z)=\alpha(0)A(Z(z))$, $\alpha'(z)=\alpha(0)\frac{\omega^2}{g}A'(Z(z))$ et $\alpha''(z)=\alpha(0)\frac{\omega^4}{g^2}A''(Z(z))$. L'équation différentielle devient donc :
+		\begin{equation}
+			A(z)+A'(Z)+ZA''(Z)=0
+		\end{equation}
+		
+		\item[$\ast$] La série entière s'écrit :
+		\begin{align*}
+			A(Z) = 1+\sum_{k=1} A_kZ^k
+		\end{align*}
+		Injecté dans l'équation différentielle, on trouve :
+	\begin{align*}
+		1+A_1+\sum_{k=1}(A_k+(k+1)A_{k+1}+k(k+1)A_{k+2})Z^k=0
+	\end{align*}		
+	On en déduit $A_1=-1$ et $A_{k+1}=-A_k/(k+1)^2$, donc :
+	\begin{align*}
+		A_k=\frac{(-1)^2}{(k!)^2}
+	\end{align*}		
 		
 		\item[$\ast$] Comment pourrait-on trouver une relation de dispersion $\omega(k)$ ?
 		
