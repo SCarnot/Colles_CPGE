@@ -164,7 +164,7 @@ On a alors :
 
 \begin{itemize}
 
-	\item[$\ast$] On note le 0 des abscisses $z$ le point où la corde est accrochée, avec les $z$ positifs orientés vers le bas. En appliquant le principe fondamental de la dynamique, on trouve :
+	\item[$\ast$] En appliquant le principe fondamental de la dynamique, on trouve :
 	\begin{align*}
 	\left\lbrace
 	\begin{array}{ccc}
@@ -219,6 +219,81 @@ trouve :
 		
 		\item[$\ast$] Comment pourrait-on trouver une relation de dispersion $\omega(k)$ ?
 		
+\end{itemize}
+
+\section*{Propagation sur une ligne électrique}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Une loi des noeuds et une loi des mailles donnent : 
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	V_{n-1}-V_{n}=L\frac{\dif I_{n}}{\dif t}\\
+	\\
+	I_{n}=I_{n+1}+C\frac{\dif V_{n}}{\dif t}\\
+	\\
+	V_{n}-V_{n+1}=L\frac{\dif I_{n+1}}{\dif t}\\
+	\end{array}\right.
+	\end{align*}		
+	Avec ces trois expressions, on obtient facilement :
+	\begin{equation}
+		\frac{\dif^2 V_n}{\dif t^2} =\omega_0^2(V_{n+1}+V_{n-1}-2V_n)
+		\label{eq:prop}
+	\end{equation}
+	avec $\omega_0=1/\sqrt{LC}$.
+	 \item[$\spadesuit$] Avec les relations précédentes, on obtient : 
+	 \begin{align*}
+	 \frac{\dif}{\dif t}\left( \frac{1}{2}CV_n^2 + LI_n^2 \right) =V_n(I_{n}-I_{n+1})- I_n(V_{n}-V_{n-1})=I_nV_{n-1}-I_{n+1}V_n
+	 \end{align*}
+	 Le terme global représente la variation temporelle de l'éerngie contenue dans une cellule $n$, $I_nV_{n-1}$ est la puissance qui est reçue depuis la cellule $n-1$ et le terme $I_{n+1}V_n$ est la puissance qui est transmise à la cellule $n+1$. C'est un bilan d'énergie.
+	 
+	\item[$\spadesuit$] C'est un retard exprimé en déphasage qui s'ajoute à chaque traversée d'une cellule. Avec une récurrence : $A_n=A_0\exp(-jn\alpha)$. On injecte cette expression dans l'équation de "propagation", et on trouve :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	\omega^2&=&2\omega_0^2(1-\cos(\alpha)) \\
+	\\
+	& =  &4\omega_0^2\sin^2\left(\frac{\alpha}{2}\right) 
+	\end{array}\right.
+	\end{align*}	
+
+	\item[$\spadesuit$] Comme le sinus est borné, on a forcément $\omega<\omega_c=2\omega_0$. La phase de la tension est donc $\omega t -n\alpha$, ce qui correspond à une propagtion de cellule en cellule. La vitesse de propagation est $v_\varphi=\omega/\alpha$, qui correspond au nombre de cellules parcourues par unité de temps (ce n'est pas en m/s mais en s$^{-1}$ !).
+	
+	\item[$\spadesuit$] Si $\omega\ll\omega_c$, alors $\sin(\alpha/2)\simeq\alpha/2$ et donc $\omega\simeq\omega_0\alpha$ et donc $v_\varphi=\omega_0$. La vitesse de phase ne dépend pas de $\omega$ donc il n'y a pas de dispersion. Le retard est donc $\tau=1/\omega_0$ Application numérique : on trouve $\omega_0=2\cdot10^6$rad/s et $\tau=5\cdot10^{-7}$s. Il faut donc 200 cellules. 
+
+	\item[$\spadesuit$] La vitesse de groupe est $v_g=\dif \omega /\dif \alpha$, elle correspond à la propagation de l'information d'un paquet d'onde (ou de l'énergie). On a $v_g=\omega_0\cos(\alpha/2)$. Pour $\alpha=\pi$, $v_g=0$, il n'y a plus de propagation. Cela correspond à la pulsation de coupure $\omega_c$.
+	
+	\item[$\spadesuit$] En utilisant la relation entre le courant $I_n$ et les tensions aux bornes de la cellule, on obtient :
+\begin{align*}
+	B_n=\frac{A_n}{jL\omega}(\exp(j\alpha)-1)=\frac{2A_n}{L\omega}\exp(j\alpha/2)\sin(\alpha/2)=\frac{A_n}{L\omega_0}\exp(j\alpha/2)
+\end{align*}	
+	 Pour calculer la moyenne temporelle de l'énergie de la cellule, il faut nécessairement passer en réel (sous peine d'avoir des valeurs moyennes nulles !) : $V_n=\Re[A_n\exp(j\omega t)]$ et $I_n=\Re[B_n\exp(j\omega t)]$. Alors :
+	   	\begin{align*}
+	   		\left\langle\frac{1}{2}CV_n^2 \right\rangle =\frac{1}{4}C\mid A_n\mid^2
+	   	\end{align*}
+	    \begin{align*}
+	   		\left\langle\frac{1}{2}LI_n^2 \right\rangle =\frac{1}{4}\frac{L}{L^2\omega_0^2}\mid A_n\mid^2=\frac{1}{4}C\mid A_n\mid^2
+	   	\end{align*}
+	   	
+	   	On obtient donc :
+	   	\begin{align*}
+	   		E=\frac{1}{2}C\mid A_n\mid^2
+	   	\end{align*}
+	   	La cellule reçue de la cellule $n-1$ s'écrit :
+	   	\begin{align*}
+	   		P=\left\langle V_{n-1}(t)I_n(t) \right\rangle =\frac{1}{2}C\mid A_n\mid^2\frac{\cos(\alpha/2)}{LC\omega_0}
+	   	\end{align*}
+	   	Comme $\omega_0\cos(\alpha/2)=v_g$, on a alors :
+	   	\begin{align*}
+	   		P=\frac{1}{2}C\mid A_n\mid^2v_g
+	   	\end{align*}
+	   	On obtient donc :
+	   	\begin{align*}
+	   		\frac{P}{E}=v_g
+	   	\end{align*}
+	   	La vitesse de groupe est donc la vitesse de propagation de l'énergie. 
+
 \end{itemize}
 
 \end{document}
