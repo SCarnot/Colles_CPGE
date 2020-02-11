@@ -49,13 +49,13 @@ On suppose désormais que l'avion se déplace à une vitesse supersonique, c'est
 	
 	\item[$\diamond$] Quelle est la région de l'espace qui peut être atteinte à un instant donné par une onde sonore provenant de l'avion ?
 	
-	\item[$\diamond$] Estimer la vitesse de l'obus en photo ci-dessous.  
+	\item[$\diamond$] Estimer la vitesse de l'avion en photo ci-dessous.  
 
 \end{itemize}
 
 \begin{figure}[h!]
 \centering
-		\includegraphics[scale=0.7]{obus.jpg}
+		\includegraphics[scale=0.12]{avion.jpg}
 \end{figure}
 
 \newpage
@@ -68,7 +68,7 @@ Un pavillon acoustique, de symétrie de révolution autour de l'axe $Ox$, contie
 
 \item[$\diamondsuit$] Qu'est-ce que l'approximation acoustique ?
 
-\item[$\diamondsuit$] En reliant la compressibilité à la surpression $p(x,t)$ et au déplacement $\Psi(x,t)$, démontrer la relation suivante :
+\item[$\diamondsuit$] En reliant la compressibilité $\chi_s=\frac{1}{V}\frac{\partial V}{\partial P}$ à la surpression $p(x,t)$ et au déplacement $\Psi(x,t)$, démontrer la relation suivante :
 \begin{align*}
 	p(x,t) = -\frac{1}{\chi_s}\left(\frac{\partial \Psi}{\partial x}+\Psi(x,t)\frac{\partial }{\partial x}\left[\ln S(x) \right]  \right)
 \end{align*}
@@ -87,5 +87,40 @@ Le pavillon a une allure exponentielle : $S(x)=S_0\exp(ax)$. On suppose que l'on
 \item[$\diamondsuit$] Donner les expression de $v(x,t)$, $p(x,t)$, puis celle de l'énergie acoustique $\varepsilon(x,t)$ et du vecteur de Poyting $\Pi(x,t)$.
 
 \end{itemize}
+
+\newpage
+
+\section*{Impédance acoustique}
+
+On considère une onde acoustique se propageant selon les $x$ croissants dans un milieu 1 et atteignant le milieu 2 en $x=0$. Les milieux 1 et 2 sont caractérisés respectivement par une masse volumique $\rho_1$ et $\rho_2$ et une célérité des ondes acoustiques $c_1$ et $c_2$. 
+
+\subsubsection*{Échographie}
+
+\begin{itemize}
+	
+	\item[$\spadesuit$] Rappeler l'équation d'Alembert vérifiée par la surpression $p(x,t)$ et la vitesse $v(x,t)$ dans un milieu homogène. Quelles sont les solutions générales ? Qu'appelle t-on les ondes planes progressives monochromatiques ?	
+	
+	\item[$\spadesuit$] Écrire les relations que vérifient la vitesse et la surpression à l'interface en $x=0$. Que se passe t-il lorsque l'onde arrive de par la gauche sur l'interface $1\longrightarrow2$ pour que ces relations soient vérifiées ? Justifier de l'existence d'une onde réfléchie et transmise.
+	
+	\item[$\spadesuit$] En déduire les coefficients de réflexion $r$ et de transmission $t$.
+	
+	\item[$\spadesuit$] Pourquoi dont-on mettre un gel sur entre la sonde et le corps durant une échographie ? 
+		
+\end{itemize}
+
+\subsubsection*{Isolation phonique}
+
+On suppose qu'il y a désormais une paroi de masse surfacique $\mu$ à l'interface entre les deux milieux, qui sont supposées être identiques ($\rho_1=\rho_2$ et $c_1=c_2$). Cette paroi se meut librement et sans frottement. 
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] Que deviennent les relations de passage précédentes ? En déduire les coefficients de réflexion et de transmission dans ce cas-là. 
+	
+	\item[$\clubsuit$] Calculer $T=\mid t\mid^2$ et tracer l'allure de la courbe $G_{db}=20\log\left[T(\omega) \right]$ en fonction de $\log(\omega)$. Quelle est la fréquence de coupure ?
+	
+	\item[$\clubsuit$] De combien doit être l'épaisseur d'un mur de béton entre deux logements d'un appartement pour que l'atténuation soit atténuée de 50dB à 300Hz ? On donne $\rho_{béton}=2300$kg.m$^{-3}$. 
+	
+\end{itemize}
+
 
 \end{document}
