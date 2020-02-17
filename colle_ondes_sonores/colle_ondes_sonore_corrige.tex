@@ -101,41 +101,108 @@
 \item[$\diamondsuit$] Approximation acoustique : $v\ll c$.
 
 \item[$\diamondsuit$] La compressibilité devient $\chi_s=\frac{1}{V}\frac{\partial V}{\partial P}=-\frac{1}{p(x,t)}\frac{\Psi(x+dx,t)S(x+dx)\Psi(x,t)S(x)}{S(x)dx}=-\frac{1}{S(x)p(x,t)}\frac{\partial \Psi(x,t)S(x)}{\partial x}$. On trouve ensuite :
-\begin{align*}
+\begin{equation}
 	p(x,t) = -\frac{1}{\chi_s}\left(\frac{\partial \Psi}{\partial x}+\Psi(x,t)\frac{\partial }{\partial x}\left[\ln S(x) \right]  \right)
-\end{align*}
+	\label{eq:p}
+\end{equation}
 
 \item[$\diamondsuit$] L'équation d'Euler :
 \begin{align*}
 	\frac{\partial^2\Psi}{\partial t^2}+\frac{1}{\rho_0}\frac{\partial p}{\partial x}=0
 \end{align*}
 On trouve alors :
-\begin{align*}
+\begin{equation}
 	\frac{\partial^2\Psi}{\partial t^2}-\frac{1}{\chi_s\rho_0}\frac{\partial^2 \Psi}{\partial x^2}=-\frac{\partial}{\partial x}\left(\Psi \frac{\partial \ln S(x)}{\partial x} \right) 
-\end{align*}
-Même chose pour la pression :
+	\label{eq:psi}
+\end{equation}
+
+\item[$\diamondsuit$] Pour trouver la même relation sur la pression, on commence par revenir à l'équation $p(x,t) = -\frac{1}{\chi_s}\left(\frac{\partial \Psi}{\partial x}+\Psi(x,t)\frac{\partial }{\partial x}\left[\ln S(x) \right]  \right)$, en la dérivant par rapport à $\partial^2/\partial t^2$ et en utilisant \ref{eq:p} :
 \begin{align*}
-	\frac{\partial^2p}{\partial t^2}-\frac{1}{\chi_s\rho_0}\frac{\partial^2 p}{\partial x^2}=-\frac{\partial}{\partial x}\left(p \frac{\partial \ln S(x)}{\partial x} \right) 
+	\chi_s\rho_0\frac{\partial^2p}{\partial t^2}=-\frac{1}{\chi_s}\left[ \frac{\partial^3 \Psi}{\partial x^3}+2a\frac{\partial^2 \Psi}{\partial x^2}+a^2\frac{\partial \Psi}{\partial x}\right]
+\end{align*}
+De la même manière, en calculant le terme $\frac{\partial}{\partial x}\left(p \frac{\partial \ln S(x)}{\partial x} \right)$, et en utilisant \ref{eq:psi}, on trouve :
+
+\begin{align*}
+	\frac{\partial}{\partial x}\left(p \frac{\partial \ln S(x)}{\partial x} \right) = \frac{\partial^2 p}{\partial x^2}+m\frac{\partial p}{\partial x}=-\frac{1}{\chi_s}\left[ \frac{\partial^3 \Psi}{\partial x^3}+2a\frac{\partial^2 \Psi}{\partial x^2}+a^2\frac{\partial \Psi}{\partial x}\right]
 \end{align*}
 
-\item[$\diamondsuit$] L'équation de conservation de la masse devient :
-\end{itemize}
+On a trouve donc  la même relation que \ref{eq:psi} sur la pression.
 
-Le pavillon a une allure exponentielle : $S(x)=S_0\exp(ax)$. On suppose que l'onde est une onde plane, progressive et monochromatique : $p(x,t)=p_0\exp\left(j[\omega t-kx] \right)$. On notera la vitesse de déplacement $v(x,t)=\partial\Psi/\partial t$.
+\item[$\diamondsuit$] On fait un bilan de masse entre $x$ et $x+dx$ (la variation entre ce qu'il y a après et avant est égal à ce qui rentre moins ce qui sort) :
+	\begin{align*}
+		\rho(x,t+dt)S(x)\dif x-\rho(x,t)S(x)\dif x=\rho(x,t)v(x,t\dif dt)S(x)-\rho(x+dx,t)v(x+dx,t)S(x+dx)
+	\end{align*}
+où $\rho(x,t)=\mu(x,t)+\rho_0$. Ce qui devient, avec l'approximation acoustique :
+	\begin{align*}
+		\frac{\partial \mu}{\partial t}S(x)=\rho_0\frac{\partial}{\partial x}\left[ v(x,t)S(x)\right] 
+	\end{align*}
+	On a alors : 
+	\begin{align*}
+		\frac{\partial \mu}{\partial t} = -\rho_0\left(\frac{\partial v}{\partial x}+v(x,t)\frac{\partial }		{\partial x}\left[\ln S(x) \right]  \right)
+	\end{align*}
 
-\begin{itemize}
+\item[$\diamondsuit$]  On injecte la solution proposée dans l'équation. On remarque ce sont des OPPM mais que l'équation n'est pas une équation d'Alembert, mais qui ne tente rien n'a rien. On trouve :
+	\begin{align*}
+		k^2+jka-\frac{\omega^2}{c^2}=0
+	\end{align*}
+	Alors, le discriminant est $\Delta=-a^2+4\omega^2/c^2$ :
+	\begin{align*}
+		k=\frac{1}{2}\left(-j\omega\pm\sqrt{4\frac{\omega^2}{c^2}-a^2}\right) 
+	\end{align*}
 
-\item[$\diamondsuit$]  Quelle est alors l'équation de dispersion ? Montrer qu'il ne peut pas y avoir de propagation en dessous d'une certaine pulsation de coupure $\omega_c$.
-
-\item[$\diamondsuit$] Donner les expression de $v(x,t)$, $p(x,t)$, puis celle de l'énergie acoustique $\varepsilon(x,t)$ et du vecteur de Poyting $\Pi(x,t)$.
+	Si $4\omega^2/c^2<a^2$ alors $k$ est imaginaire pur, et l'onde ne peut pas se propager, cad si $\omega<\omega_c=ac/2$ :
+	\begin{align*}
+		p(x,t)=p_0\exp(-kx)\exp(j\omega t)
+	\end{align*}
+	C'est une onde stationnaire, qui ne se propage pas.
+	
+	\item[$\diamondsuit$] Si $4\omega^2/c^2>a^2$ :
+	\begin{align*}
+		p(x,t)=p_0\exp\left(-\frac{ax}{2} \right) \exp\left[ j\left(\omega t- x\frac{\omega}{c}\sqrt{1-\frac{\omega_c^2}{\omega^2}}\right) \right] 
+	\end{align*}
+	On remarque qu'il y a bien atténuation exponentielle de l'onde : c'est normal, la surface croit exponentiellement et il n'y a pas d'apport d'énergie extérieur. Il y a donc "dilution" exponentielle de l'onde. On remarque que pour des ondes se propageant en sens inverse, l'amplitude augmente exponentiellement (cf utilité de l'oreille).
+	
+	La vitesse de phase est :
+	\begin{align*}
+		v_\varphi = \frac{\omega}{\Re\left[ k\right] }=\frac{c}{\sqrt{1-\frac{\omega_c^2}{\omega^2}}}
+	\end{align*}
+	
+	La vitesse de groupe est :
+	\begin{align*}
+		v_g = \frac{\partial\omega}{\partial \Re\left[ k\right] }=c\sqrt{1-\frac{\omega_c^2}{\omega^2}}
+	\end{align*}
+	On remarque que $c^2=v_\varphi v_g$.
+	
+	L'équation d'Euler est :
+	\begin{align*}
+	\frac{\partial v}{\partial t}+\frac{1}{\rho_0}\frac{\partial p}{\partial x}=0
+	\end{align*}
+	On a alors :
+	\begin{align*}
+		v(x,t)=\frac{p_0}{\rho_0\omega}\left[-j\frac{a}{2} +\frac{\omega}{c}\sqrt{1-\frac{\omega_c^2}{\omega^2}}\right] \exp\left(-\frac{ax}{2} \right) \exp\left[ j\left(\omega t- x\frac{\omega}{c}\sqrt{1-\frac{\omega_c^2}{\omega^2}}\right) \right] 
+	\end{align*}
+	En notation réelle :
+	\begin{align*}
+		v(x,t)=\frac{p_0}{\rho_0\omega}\exp\left(-\frac{ax}{2} \right)\left[\frac{a}{2}\sin(\omega t-k'x) +k'\cos(\omega t- k'x)\right] 
+	\end{align*}	
+	Avec $k'=\frac{\omega}{c}\sqrt{1-\frac{\omega_c^2}{\omega^2}}$.
+	
+	Le vecteur de Poynting s'écrit (en notation réelle !) :
+	\begin{align*}
+		\vec{\Pi}(x,t)=\left\langle p\vec{v} \right\rangle =k'\frac{p_0^2}{2\rho_0\omega}\exp\left[-\frac{2x}{\delta} \right] 
+	\end{align*}
+	
+	L'énergie acoustique elle s'écrit :
+	\begin{align*}
+		\varepsilon=\left\langle \frac{\chi_s}{2}p^2+\frac{\rho_0}{2}v^2\right\rangle = \frac{\chi_sp_0^2}{2}\exp\left[-\frac{2x}{\delta} \right] 
+	\end{align*}
+	Les énergies cinétiques et potentielles sont égales.
 
 \end{itemize}
 
 \newpage
 
 \section*{Impédance acoustique}
-
-On considère une onde acoustique se propageant selon les $x$ croissants dans un milieu 1 et atteignant le milieu 2 en $x=0$. Les milieux 1 et 2 sont caractérisés respectivement par une masse volumique $\rho_1$ et $\rho_2$ et une célérité des ondes acoustiques $c_1$ et $c_2$. 
 
 \subsubsection*{Échographie}
 
