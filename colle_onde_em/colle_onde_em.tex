@@ -1,0 +1,103 @@
+ \documentclass{report}
+ 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\usepackage{amssymb}
+\graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\begin{document}
+
+\section*{Réflexion d'une onde électromagnétique sur des plans métalliques en incidence oblique}
+
+On considère une onde plane progressive se propageant dans le vide, selon le vecteur d'onde $\vec{k}=k\cos\theta\vec{u_x}+k\sin\theta\vec{u_y}$ et à la pulsation $\omega$. Elle arrive sur un plan métallique infiniment conducteur situé sur le demi-espace $x>0$. On notera $\vec{E_i}$ et $\vec{B_i}$ respectivement le champ électrique et le champ magnétique incidents. Le champ électrique est polarisé rectilignement selon $Oz$ et son amplitude est $E_0$.
+
+\begin{itemize}
+		
+	\item[$\heartsuit$]	Retrouver l'équation de propagation des champs électrique et magnétique. Quelle est la relation de dispersion associée ? 
+	
+	\item[$\heartsuit$] Expliciter les expressions des champs $\vec{E_i}$ et $\vec{B_i}$.
+	
+\end{itemize}
+
+En arrivant sur l'interface, les relations de passage du champ électromagnétique imposent l'apparition d'une onde réfléchie, dont on notera $\vec{E_r}$ et $\vec{B_r}$ les champ électrique et magnétique. On supposera que $\vec{E_r}$ s'écrit sous la forme : 
+\begin{align*}
+	\vec{E_r}=\vec{E_0'}\exp(i\vec{k_r}\cdot\vec{r}-\omega t)
+\end{align*}
+
+\begin{itemize}
+	
+	\item[$\heartsuit$] Que valent les champs $\vec{E}$ et $\vec{B}$ à l'intérieur de la plaque ? Justifier.
+	
+	\item[$\heartsuit$] En utilisant les relations de passage, écrire $\vec{E_r}$ en fonction de $E_0$, $k$, $\omega$ et $\theta$. En déduire l'expression du champ magnétique réfléchi, $\vec{B_r}$.
+	
+	\item[$\heartsuit$] Quelle est alors l'expression du champ électrique $\vec{E}$ résultant pour $x<0$ ? De quel type d'onde s'agit-il ?
+	
+	\item[$\heartsuit$] 	On place une seconde plaque métallique en $x=-L$. Montrer que la présence de la seconde plaque impose une discrétisation du spectre, c'est-à-dire que seules des fréquences $\omega$ discrètes peuvent se propager pour un angle $\theta$ donné. Tracer les valeurs prises par $\omega$ en fonction de $\theta$. 
+	\item[$\heartsuit$] Quelle est la valeur minimale que peut prendre $\omega$ ? Justifier. 
+	
+	\item[$\heartsuit$] Démontrer que $k_y=\vec{k}\cdot\vec{u_y}$ vérifie l'équation dite de dispersion des modes d'une onde transverse électrique : 
+	\begin{equation}
+		k_y^2=\frac{\omega^2}{c^2}-\left(\frac{n\pi}{a} \right)^2 
+	\end{equation}
+	
+	\item[$\heartsuit$] Quel est le courant surfacique à la surface de la plaque ?
+	
+	\item[$\heartsuit$] Calculer l'expression du champ magnétique résultant $\vec{B}$ entre les deux plaques et en déduire l'expression du vecteur de Poyting. Commenter. 
+	
+\end{itemize}
+
+\newpage
+
+\section*{Propagation d'une onde radio dans un plasma en présence d'un champ magnétique longitudinal}
+
+Le plasma ionosphérique est assimilé à un milieu conducteur ionisé de temps de relaxation infini, c'est-à-dire qu'il n'y a pas de collisions. Le plasma est supposé neutre et sa densité électronique est $n_0$. On tient compte ici du champ magnétostatique terrestre désigné par $\vec{B}_{ext}=B_{ext}\vec{u_z}$, dirigé selon la direction de propagation $Oz$ d'une OPPM électromagnétique de pulsation $\omega$, dont le champ est représenté par :
+\begin{align*}
+	(\vec{E},\vec{B})=(\vec{E}_0,\vec{B}_0)\exp[j(\omega t-kz)]
+\end{align*}
+On note $\omega_p=\sqrt{n_0e^2/m\varepsilon_0}$ la pulsation de plasma du milieu et $\omega_c=eB_{ext}/m$ la pulsation cyclotron. 
+
+\begin{itemize}
+	
+	\item[$\spadesuit$] Montrer que le champ magnétique terrestre intervient dans la conduction électrique du milieu, qui peut être représenté par une relation linéaire :
+	\begin{align*}
+		\vec{j}=\left[\gamma \right] \vec{E}
+	\end{align*}
+	où $\left[\gamma \right]$ est une matrice de conductivité complexe, à exprimer en fonction de $\omega$, $\omega_c$ et $\omega_p$.
+	
+\end{itemize}
+
+Une onde est polarisée circulairement lorsque les composantes transverses sont déphasées de $\pm\pi/2$, c'est-à-dire dans notre cas, en notation réelle :
+\begin{equation}
+	\vec{E}=E_0\cos(\omega t - kz)\vec{e_x}\pm E_0\sin(\omega t - kz)\vec{e_y}
+\end{equation}
+Un signe "+" correspond à une onde polarisée circulairement "gauche" et le signe "-" à une onde polarisée circulaire "droite". On cherche à comprendre la propagation de ces ondes dans le plasma.
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Pourquoi appelle t-on cette polarisation "circulaire" ? 
+	
+	\item[$\spadesuit$] Montrer que l'étude de la propagation des OPPM électromagnétiques peut être ramenée à celle d'ondes polarisées circulairement qui satisfont des relations de dispersion à préciser. 
+	
+	\item[$\spadesuit$] On note $\varepsilon_{rg}$ et $\varepsilon_{rd}$ les permittivités relatives équivalentes associées respectivement à la propagation des ondes circulaires gauche et des ondes circulaires droites, dont les graphes sont donnés ci-dessous. Préciser les domaines du spectre électromagnétique pour lesquels les ondes étudiées se propagent effectivement dans le plasma.
+
+\end{itemize}
+
+Une onde métrique traverse une épaisseur $L$ de plasma dans les conditions de l'étude effectuée. A l'entrée de la couche de plasma, l'onde est polarisée rectilignement.
+
+\begin{itemize}
+	
+	\item[$\spadesuit$] Montrer, dans le cas général, qu'un onde polarisée rectilignement peur s'écrire comme la superposition d'une onde polarisée circulaire droite et circulaire gauche. 
+	
+	\item[$\spadesuit$] Justifier alors que l'effet du plasma consiste, aux hautes fréquences, en une rotation de la direction de polarisation de l'onde. Préciser la valeur de cet angle si $L=1$km et $\lambda_0=30$cm.
+	
+\end{itemize}
+
+\end{document}
