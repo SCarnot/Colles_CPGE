@@ -86,6 +86,12 @@ Un signe "+" correspond à une onde polarisée circulairement "gauche" et le sig
 	
 	\item[$\spadesuit$] Montrer que l'étude de la propagation des OPPM électromagnétiques peut être ramenée à celle d'ondes polarisées circulairement qui satisfont des relations de dispersion à préciser. 
 	
+\end{itemize}
+
+On appelle permittivité relative d'un milieu la quantité complexe $\varepsilon_r$ que l'on peut définir ici à travers la relation $k^2=\varepsilon_r\varepsilon_0\mu_0\omega^2=\varepsilon_r\omega^2/c^2$. 
+
+\begin{itemize}
+
 	\item[$\spadesuit$] On note $\varepsilon_{rg}$ et $\varepsilon_{rd}$ les permittivités relatives équivalentes associées respectivement à la propagation des ondes circulaires gauche et des ondes circulaires droites, dont les graphes sont donnés ci-dessous. Préciser les domaines du spectre électromagnétique pour lesquels les ondes étudiées se propagent effectivement dans le plasma.
 
 \end{itemize}
@@ -98,6 +104,69 @@ Une onde métrique traverse une épaisseur $L$ de plasma dans les conditions de 
 	
 	\item[$\spadesuit$] Justifier alors que l'effet du plasma consiste, aux hautes fréquences, en une rotation de la direction de polarisation de l'onde. Préciser la valeur de cet angle si $L=1$km et $\lambda_0=30$cm.
 	
+\end{itemize}
+
+\newpage
+
+\section*{Ondes électromagnétiques dans un métal conducteur}
+
+On s'intéresse à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal peut être transparent à très basse fréquence, réfléchissant sur sur une certaine bande de fréquences, puis de nouveau transparent à très haute fréquence.
+
+On considère donc que le demi-espace $z>0$ est rempli d'un métal, sur lequel arrive une onde plane progressive monochromatique à la fréquence $\omega$ et polarisée suivant $\vec{e_x}$. 
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] Retrouver l'équation de propagation des ondes électromagnétiques dans le vide. A l'aide des données de l'énoncé, donner l'expression du champ $\vec{E}$ et du champ $\vec{B}$.
+
+\end{itemize}
+
+Pour décrire le métal, on adopte un modèle d'électrons libres, de masse $m$, de charge $-e$ et de densité particulaire $N_0$, soumis au champ électromagnétique, et subissant des collisions en moyenne au bout d'un temps $\tau=1/\omega_c$. On modélise alors le comportement des électrons par l'équation de mouvement (aussi appelé modèle de Drude) :
+
+\begin{equation}
+	m\vec{a}=-e\vec{E}-m\frac{\vec{v}}{\tau}
+	\label{eq:drude}
+\end{equation}
+
+Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq10^{14}$.
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] En utilisant l'équation \ref{eq:drude}, définir une conductivité $\gamma$ complexe qui dépend de la pulsation $\omega$. Commenter. 
+	
+	\item[$\diamondsuit$] En utilisant les équations de Maxwell, trouver une équation vérifiée par le champ $\vec{B}$. En déduire une relation de dispersion des OPPM dans le métal. On fera apparaître la pulsation plasma $\omega_p=\sqrt{N_0e^2/m\varepsilon_0}$.
+	
+	\item[$\diamondsuit$] Comparer $\omega_c=1/\tau$ et $\omega_p$. Justifier de l'existence de 3 régimes de propagation dans le métal que nous allons étudier par la suite.
+
+\end{itemize}
+
+\textbf{On se place dans le cas où $\omega\ll\omega_c$.}
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] Que devient la relation de dispersion dans ce cas-là ? Trouver les solutions possibles pour $k$.
+
+	\item[$\diamondsuit$] Écrire l'expression du champ $\vec{E}$ dans le métal, puis celle du champ $\vec{B}$. Comment appelle t-on ce régime et le phénomène associé ? 
+
+\end{itemize}
+
+\textbf{On se place dans le cas où $\omega\gg\omega_c$.}
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] Que devient la relation de dispersion dans ce cas-là ? Trouver les solutions possibles pour $k$.
+	
+	\item[$\diamondsuit$] Écrire l'expression du champ $\vec{E}$ dans le métal, puis celle du champ $\vec{B}$. On distinguera les cas $\omega<\omega_p$ et $\omega>\omega_p$. Décrire alors le comportement de l'onde dans ces 2 situations.
+
+\end{itemize}
+
+\textbf{Bilan}
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] Finalement, résumer les 3 situations rencontrées et justifier les observations décrites dans l'énoncé.
+
+	\item[$\diamondsuit$] Quelle est la différence fondamentale entre un plasma vu en cours et un métal comme décrit ici ?
+
 \end{itemize}
 
 \end{document}
