@@ -6,12 +6,22 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{amsmath,esint }
-\usepackage{amssymb}
+\usepackage{amssymb} % Pour le sigle euro
+\usepackage{bbold} %Pour la matrice identité
 \graphicspath{{figures/}{../figures}}
 
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
 \newcommand*\diver{\mathop{}\!\mathrm{div}}
 \newcommand*\grad{\mathop{}\!\mathrm{grad}}
+\newcommand*{\vect}[2]{
+	\ensuremath{
+    \left\lvert 
+      \begin{matrix} 
+        #1\\ 
+        #2 
+      \end{matrix}  
+    \right.
+  }}
 
 \begin{document}
 
@@ -58,68 +68,109 @@ En arrivant sur l'interface, les relations de passage du champ électromagnétiq
 
 \section*{Propagation d'une onde radio dans un plasma en présence d'un champ magnétique longitudinal}
 
-Le plasma ionosphérique est assimilé à un milieu conducteur ionisé de temps de relaxation infini, c'est-à-dire qu'il n'y a pas de collisions. Le plasma est supposé neutre et sa densité électronique est $n_0$. On tient compte ici du champ magnétostatique terrestre désigné par $\vec{B}_{ext}=B_{ext}\vec{u_z}$, dirigé selon la direction de propagation $Oz$ d'une OPPM électromagnétique de pulsation $\omega$, dont le champ est représenté par :
-\begin{align*}
-	(\vec{E},\vec{B})=(\vec{E}_0,\vec{B}_0)\exp[j(\omega t-kz)]
-\end{align*}
-On note $\omega_p=\sqrt{n_0e^2/m\varepsilon_0}$ la pulsation de plasma du milieu et $\omega_c=eB_{ext}/m$ la pulsation cyclotron. 
-
 \begin{itemize}
 	
-	\item[$\spadesuit$] Montrer que le champ magnétique terrestre intervient dans la conduction électrique du milieu, qui peut être représenté par une relation linéaire :
+	\item[$\spadesuit$] On écrit le PFD pour un électron du plasma :
 	\begin{align*}
-		\vec{j}=\left[\gamma \right] \vec{E}
+		m\vec{a}=-e\vec{v}\wedge\vec{B_{ext}}-e\vec{E}
 	\end{align*}
-	où $\left[\gamma \right]$ est une matrice de conductivité complexe, à exprimer en fonction de $\omega$, $\omega_c$ et $\omega_p$.
 	
-\end{itemize}
-
-Une onde est polarisée circulairement lorsque les composantes transverses sont déphasées de $\pm\pi/2$, c'est-à-dire dans notre cas, en notation réelle :
-\begin{equation}
-	\vec{E}=E_0\cos(\omega t - kz)\vec{e_x}\pm E_0\sin(\omega t - kz)\vec{e_y}
-\end{equation}
-Un signe "+" correspond à une onde polarisée circulairement "gauche" et le signe "-" à une onde polarisée circulaire "droite". On cherche à comprendre la propagation de ces ondes dans le plasma.
-
-\begin{itemize}
-
-	\item[$\spadesuit$] Pourquoi appelle t-on cette polarisation "circulaire" ? 
+	\textit{NB :} dans la force de Lorentz, le champ magnétique de l'OPPM est négligeable par rapport au champ électrique et au champ magnétique extérieur. Pour une puissance solaire de 1kW/m$^2$, on a un champ électrique de $5\cdot10^2$V/m, et donc un champ magnétique associé de 1$\mu$T environ. En comparaison, le champ magnétostatique terrestre est de 50$\mu$T.
 	
-	\item[$\spadesuit$] Montrer que l'étude de la propagation des OPPM électromagnétiques peut être ramenée à celle d'ondes polarisées circulairement qui satisfont des relations de dispersion à préciser. 
+	On trouve alors comme équation :
+	\begin{align*}
+		mj\omega\vect{v_x}	{v_y}=-e\vect{E_x}{E_y}-e\vect{v_yB_e}{-v_xB_e}	
+	\end{align*}
+	On a de plus : $\vec{j}=-en_0\vec{v}$. Pour trouver la relation, il faut inverser la matrice formée par $(v_x,v_y)$ pour exprimer les coordonnées de la vitesse en fonction de $(E_x,E_y)$.
+	On trouve : 
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	j_x=\frac{\varepsilon_0\omega_p^2}{\omega^2_c-\omega^2}(j\omega E_x-\omega_cE_y)\\
+	\\
+	j_y=\frac{\varepsilon_0\omega_p^2}{\omega^2_c-\omega^2}(\omega_cE_x+j\omega E_y)\\
+	\end{array}\right.
+	\end{align*}	
 	
-\end{itemize}
+	Cela correspond à une matrice de conductivité :
+	\begin{align*}
+		\left[\gamma \right] = \frac{\varepsilon_0\omega_p^2}{\omega^2_c-\omega^2}\begin{pmatrix}
+			j\omega & -\omega_c \\ 
+			\omega_c & j\omega
+		\end{pmatrix}
+	\end{align*}
+
+	\item[$\spadesuit$] On appelle cette onde polarisation circulaire car si l'on regarde l'orientation du vecteur électrique au cours du temps, elle décrit un cercle.
+	
+	\item[$\spadesuit$] Les équations de Maxwell permettent d'obtenir rapidement la relation générale suivante :
+	\begin{align*}
+		\Delta \vec{E} = \mu_0\frac{\partial \vec{j}}{\partial t} +\frac{1}{c^2}\frac{\partial^2 \vec{E}}{\partial t^2}
+	\end{align*}
+	En introduisant les expressions classique d'OPPM dedans, on trouve :
+	\begin{align*}
+		\left( \left( k^2-\frac{\omega^2}{c^2}\right)\cdot\mathbb{1} +j\mu_0\omega\left[ \gamma\right] \right) \vec{E}=\vec{0}
+	\end{align*}
+
+Si l'on veut obtenir des solutions non-triviales, cad valable pour $\vec{E}\neq\vec{0}$, il faut que :
+\begin{align*}
+\mathrm{det}\left( \left( k^2-\frac{\omega^2}{c^2}\right)\cdot\mathbb{1} +j\mu_0\omega\left[ \gamma\right] \right)=0
+\end{align*}
+ cad :
+ \begin{align*}
+	 k^2-\frac{\omega^2}{c^2}+\frac{\omega_p^2}{c^2}\frac{\omega^2}{\omega^2-\omega_c^2}=\pm\frac{\omega_p^2}{c^2}\frac{\omega\omega_c}{\omega^2-\omega_c^2}
+ \end{align*}
+ Les deux possibilités correspondent à :
+ \begin{align*}
+ k^2=\frac{\omega^2}{c^2}\left(1-\frac{\omega_p^2}{\omega(\omega-\omega_c)} \right)\quad,\quad E_y=-jE_x
+ \end{align*}
+ Cad une onde circulaire gauche et :
+  \begin{align*}
+ k^2=\frac{\omega^2}{c^2}\left(1-\frac{\omega_p^2}{\omega(\omega+\omega_c)} \right)\quad,\quad E_y=+jE_x
+ \end{align*}
+ cad une onde polarisée circulaire droite. 
 
 On appelle permittivité relative d'un milieu la quantité complexe $\varepsilon_r$ que l'on peut définir ici à travers la relation $k^2=\varepsilon_r\varepsilon_0\mu_0\omega^2=\varepsilon_r\omega^2/c^2$. 
 
-\begin{itemize}
-
-	\item[$\spadesuit$] On note $\varepsilon_{rg}$ et $\varepsilon_{rd}$ les permittivités relatives équivalentes associées respectivement à la propagation des ondes circulaires gauche et des ondes circulaires droites, dont les graphes sont donnés ci-dessous. Donner leur expression. Préciser les domaines du spectre électromagnétique pour lesquels les ondes étudiées se propagent effectivement dans le plasma.
-
+	\item[$\spadesuit$] On trouve $\varepsilon_{rg} = 1-\frac{\omega_p^2}{\omega(\omega-\omega_c)}$ et $\varepsilon_{rd}=1-\frac{\omega_p^2}{\omega(\omega+\omega_c)}$. Lorsque $\varepsilon_r$ est négatif, $k$ est imaginaire pur et l'onde est évanescente, elle ne se propage pas. 
+	
+	Les graphes montrent que la propagation de l'onde circulaire droite est possible pour $\omega>\omega_1$, où $\omega_1$ est la pulsation pour laquelle $\varepsilon_{rd}$ devient positif :
+	\begin{align*}
+		\omega_1=\frac{-\omega_c+\sqrt{\omega_c^2+4\omega_p^2}}{2}
+	\end{align*}
+Celle de l'onde circulaire gauche est possible pour $\omega<\omega_c$ ou $\omega>\omega_2$, avec :
+	\begin{align*}
+		\omega_2=\frac{\omega_c+\sqrt{\omega_c^2+4\omega_p^2}}{2}
+	\end{align*}
+	
+	\item[$\spadesuit$] Une onde rectiligne peut être considérée comme une superposition de deux ondes circulaires de même amplitude, tournant dans le même sens. Par exemple, pour une onde dirigée suivant $\vec{e_x}$ :
+	\begin{align*}
+		\vec{E}(z,t) = E_0\cos(\omega t-kz)\vect{1}{0}=\Re\left(\frac{E_0}{2}\vect{1}{-i}\exp (j\omega t-kz) + \frac{E_0}{2}\vect{1}{i}\exp (j\omega t-kz) \right) 
+	\end{align*}
+	
+	\item[$\spadesuit$] Si on considère que l'onde rentre dans le plasma en $z=0$, on a alors à la sortie :
+	\begin{align*}
+		\vec{E}(L,t)=\Re\left(\frac{E_0}{2}\vect{1}{-i}\exp (j\omega t-k_gL) + \frac{E_0}{2}\vect{1}{i}\exp (j\omega t-k_dL) \right)
+	\end{align*}
+	où $k_g$ et $k_d$ sont les vecteurs d'ondes associées aux ondes polarisées circulaire droite et gauche. On trouve que l'onde de sortie est bien rectiligne :
+		\begin{align*}
+		\vec{E}(L,t)=E_0\vect{\cos\left( \frac{k_g-k_d}{2}L\right) }{\sin\left( \frac{k_g-k_d}{2}L\right) }\times\cos\left( \omega t - \frac{k_g+k_d}{2}L\right) 
+	\end{align*}
+	La polarisation est donc bien rectiligne avec un angle de décalage $\Psi=\frac{k_g-k_d}{2}L$
+	Pour $\lambda_0=30$cm, $\omega=2\pi10^9$rad/s, ce qui est largement supérieur à $\omega_p=5,6\cdot10^7$rad/s. On peut écrire :
+	\begin{align*}
+		k_g-k_d=\frac{\omega}{c}\left(-\frac{\omega_p^2}{2\omega(\omega-\omega_c)}+ \frac{\omega_p^2}{2\omega(\omega+\omega_c}\right) \simeq \frac{\omega_p^2\omega_c}{\omega^2}\simeq-1,16\cdot10^{-3}\mathrm{rad}
+	\end{align*}
+	C'est une valeur négligeable. 
+	
+	
+	
 \end{itemize}
-
-Une onde métrique traverse une épaisseur $L$ de plasma dans les conditions de l'étude effectuée. A l'entrée de la couche de plasma, l'onde est polarisée rectilignement.
-
-\begin{itemize}
-	
-	\item[$\spadesuit$] Montrer, dans le cas général, qu'un onde polarisée rectilignement peur s'écrire comme la superposition d'une onde polarisée circulaire droite et circulaire gauche. 
-	
-	\item[$\spadesuit$] Justifier alors que l'effet du plasma consiste, aux hautes fréquences, en une rotation de la direction de polarisation de l'onde. Préciser la valeur de cet angle si $L=1$km et $\lambda_0=30$cm.
-	
-\end{itemize}
-
-\textit{Données} : $e=1,6\cdot10^{-19}$C, $m=9,1\cdot10^{-31}$kg, $\varepsilon_0=8,85\cdot10^{-12}$F/m, $n_0=10^{12}$m$^{-3}$, $B_{ext}=5\cdot10^{-5}$T.
-
-\newpage
-
-\begin{figure}[h!]
-\centering
-  \includegraphics[width=0.6\textwidth]{permittivite1.png}
-\end{figure}
 
 \newpage
 
 \section*{Ondes électromagnétiques dans un métal conducteur}
 
-On s'intéresse à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal peut être transparent à très basse fréquence, réfléchissant sur une certaine bande de fréquences, puis de nouveau transparent à très haute fréquence.
+On s'intéresse à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal peut être transparent à très basse fréquence, réfléchissant sur sur une certaine bande de fréquences, puis de nouveau transparent à très haute fréquence.
 
 On considère donc que le demi-espace $z>0$ est rempli d'un métal, sur lequel arrive une onde plane progressive monochromatique à la fréquence $\omega$ et polarisée suivant $\vec{e_x}$. 
 
