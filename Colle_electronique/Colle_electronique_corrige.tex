@@ -70,6 +70,24 @@ donc $H_0=\frac{R_1+R_2}{R}$, $\omega_0=\frac{R_1+R_2}{R_1R_2(C_1+C_2)}$, $\omeg
 
 Diagramme de Bode : on décompose en somme des diagramme de Bode des différents produits.
 
+\textbf{Cas $\omega_0<\omega_1<\omega_2$ :}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{exo2_0.png}
+\end{figure}
+
+\textbf{Cas $\omega_1<\omega_0<\omega_2$ :}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{exo2_1.png}
+\end{figure}
+
+\textbf{Cas $\omega_1<\omega_2<\omega_0$ :}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{exo2_2.png}
+\end{figure}
+
 \section*{Correction exercice 3}
 
 Le courant de sortie est supposé nul.
@@ -129,7 +147,12 @@ C'est un filtre déphaseur.
 		s(t)=\sum_k A_k e^{jk\omega_0 (t-2RC)}=e(t-\tau)
 	\end{equation}
 	
-	\item[•] $\cos^3(\omega t)=\frac{1}{4}(3\cos(\omega t) + \cos(3\omega t))$. Pour les fréquences proposées, le déphasage n'est pas homogène. Il y a donc déformation du signal. 
+	\item[•] $\cos^3(\omega t)=\frac{1}{4}(3\cos(\omega t) + \cos(3\omega t))$.
+	Le signal de sortie sera donc : 
+	\begin{equation}
+	U_s(t) = \frac{1}{4}\left[ 3\cos(\omega t - 2\arctan(\omega/\omega_0)) + \cos(3\omega t - 2\arctan(3\omega/\omega_0))\right] 
+	\end{equation}
+	Pour $\omega = \frac{\omega_{0}}{3}$, on a une déformation du signal car la condition précédente sur le retard n'es tpas vérifiée. Pour $\omega=10^{-2}\omega_0$, le signal est retardé d'une durée $\tau=2/\omega_0=2RC$.
 	
 	\item[•] Pour $t<0$, le condensateur est déchargé donc $u_e(t)=u_s(t)=0$. Pour $t\geq0$, le condensateur se charge donc $u_-(t) = E(1-e^{-t/RC})$, et alors :
 	\begin{equation}
