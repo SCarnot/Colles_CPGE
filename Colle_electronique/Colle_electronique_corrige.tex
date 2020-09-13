@@ -17,19 +17,27 @@
 \subsubsection*{Formes canoniques}
 Avec $x=\omega/\omega_0$ 
 \begin{itemize}
+	\item[•] Passe bas d'ordre 1 :
+	\begin{equation}
+		H(\omega)=\frac{H_0}{1+jx}
+	\end{equation}
+	\item[•] Passe haut d'ordre 1 :
+	\begin{equation}
+		H(\omega)=\frac{H_0jx}{1+jx}
+	\end{equation}
 	\item[•] Passe bas d'ordre 2 :
 	\begin{equation}
-		H(\omega)=\frac{H_0}{1+\frac{jx}{Q}-x^2}
+		H(\omega)=\frac{H_0}{1+\frac{jx}{Q}+(jx)^2}
 	\end{equation}
 	Résonance si $Q>1/\sqrt{2}$
 	\item[•] Passe haut d'ordre 2 :
 	\begin{equation}
-		H(\omega)=\frac{-H_0x^2}{1+\frac{jx}{Q}-x^2}
+		H(\omega)=\frac{H_0(jx)^2}{1+\frac{jx}{Q}+(jx)^2}
 	\end{equation}
 	Résonance si $Q>1/\sqrt{2}$
 	\item[•] Passe bande d'ordre 2 :
 	\begin{equation}
-		H(\omega)=\frac{H_0\frac{jx}{Q}}{1+\frac{jx}{Q}-x^2}
+		H(\omega)=\frac{H_0\frac{jx}{Q}}{1+\frac{jx}{Q}+(jx)^2}=\frac{H_0}{1+jQ\left(x - \frac{1}{x} \right) }=\frac{H_0\frac{jx}{Q}}{1+\frac{jx}{Q}-x^2}
 	\end{equation}
 	Bande-passante : $\Delta\omega=\omega_0/Q$
 \end{itemize}
@@ -114,6 +122,11 @@ Le courant de sortie est supposé nul.
 	\item[•]
 	Diagramme de Bode :
 Diagramme assymptotique :  $\forall \omega, H=0$ et pour $\omega=\omega_0=1/RC$, dirac à "l'envers" avec $H=-\infty$. C'est bien un coupe-bande.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{exo3_0.png}
+\end{figure}
+
 
 	\item[•] Bande-passante :
 	$G_{DB} = -20\log \sqrt{1+\left( \frac{4RC\omega}{1-R^2C^2\omega^2}\right) ^2}=-3$ 
