@@ -33,17 +33,34 @@ Le cadre en pointillé représente un quadripôle tel que : $u_{s}=Gu_{e}$.
 
 \section*{Exercice 2}
 
-On suppose l'AO idéal. 
-
-\begin{itemize}
-	\item[•] Comment se comporte t-il dans cette situation ? Pourquoi ?
-	\item[•] Déterminez l'évolution temporelle de  $U_{-}(t)$ et $U_{s}(t)$. 
-\end{itemize}
+On considère le montage suivant.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.5\linewidth]{circuit_3.pdf}
+\includegraphics[width=0.45\linewidth]{circuit_3.pdf}
 \end{figure}
+
+\subsubsection{Amplificateur idéal}
+
+On suppose l'AO idéal. Rappeler ses caractéristiques.
+
+\begin{itemize}
+	\item[$\clubsuit$] Comment se comporte t-il dans cette situation ? Pourquoi ?
+	\item[$\clubsuit$] Déterminez l'évolution temporelle de  $U_{-}(t)$ et $U_{s}(t)$. 
+\end{itemize}
+
+\subsubsection{Amplificateur réel}
+
+On considère désormais que l'amplificateur est réel, c'est-à-dire que les tensions $u_+$, $u_-$ et $u_s$ vérifient la relation suivante : 
+	\begin{equation}
+		\tau\frac{du_s}{dt} +u_s = \mu_0(u_+-u_-)
+	\end{equation}
+	avec $\mu_0=10^5$ et $\frac{\mu_0}{2\pi\tau}=$1MHz.
+\begin{itemize}
+	\item[$\clubsuit$] Déterminez une équation différentielle sur $u_s(t)$. Commenter les solutions. 
+	\item[$\clubsuit$] Si l'on considère nulles la tension de sortie ($u_s(t=0)=0$) et la tension aux bornes du condensateur  ($u_-(t=0)=0$), pourquoi se retrouve t-on rapidement dans la situation précédente, cad avec des oscillations sur $u_s(t)$ ?
+\end{itemize}
+
 
 \newpage
 
