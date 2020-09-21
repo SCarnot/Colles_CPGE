@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}      
 \usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
@@ -25,20 +26,52 @@
 
 \section*{Correction exercice 2}
 
+\subsubsection{Amplificateur idéal}
+
+
 \begin{itemize}
 	\item[•] La boucle de rétroaction est sur la borne +, l'AO est en régime saturé et donc $u_s=\pm V_s$. 
 	\item[•] Condition de basculement de $+/-V_s\rightarrow-/+V_s$ : $u_-\rightarrow-/+\frac{R_1}{R_2+R_1}$.
 	On peut commencer par $u_-(t=0)=\frac{R_1}{R_2+R_1}V_s$ et $u_+(t=0)=-V_s$. Alors :
 	\begin{equation}
-		u_-(t)=V_s\left(1+\frac{R_1}{R_1+R_2}\right)\exp^{-tRC}-V_s 
+		u_-(t)=V_s\left(1+\frac{R_1}{R_1+R_2}\right)\exp(-t/RC)-V_s 
 	\end{equation}
 Puis, à $t=t_1=RC\ln\left(\frac{2R_1+R_2}{R_2} \right)$ :
 	\begin{equation}
-		u_-(t)=-V_s\left(1+\frac{R_1}{R_1+R_2}\right)\exp^{-(t-t_1)RC}+V_s 
+		u_-(t)=-V_s\left(1+\frac{R_1}{R_1+R_2}\right)\exp(-(t-t_1)/RC)+V_s 
 	\end{equation}
 Et ainsi de suite. La période est donc $T = 2RC\ln\left(\frac{2R_1+R_2}{R_2} \right)$. $u_+(t)$ évolue en créneau de même période. 
 \end{itemize}
 
+\subsubsection{Amplificateur réel}
+
+On trouve :
+
+\begin{align*}
+	\left\lbrace
+\begin{array}{cc}
+	& \tau_0\frac{du_s}{dt} +u_s = \mu_0(u_+-u_-) \\
+	&  u_+=\frac{R_1+R_2}{R_1}\\
+	&\tau_1\frac{du_-}{dt} +u_- =u_s  \\
+\end{array}\right.
+\end{align*}
+
+On arrive alors sur deux équations différentielles couplées :
+\begin{align*}
+	\left\lbrace
+\begin{array}{cc}
+	& \tau_0\frac{du_s}{dt} = \mu_1u_s - \mu_0u_- \\
+	&  \\
+	&\tau_1\frac{du_-}{dt} = u_s - u_-  \\
+\end{array}\right.
+\end{align*}
+avec $\mu_1=\mu_0\frac{R_1+R_2}{R_1}-1\simeq\mu_0\frac{R_1+R_2}{R_1}$.
+
+On toruve alors une ED sur $u_s$ :
+\begin{equation}
+	\frac{d^2u_s}{dt^2} +\left( \frac{1}{\tau_1}-\frac{\mu_1}{\tau_0}\right) \frac{du_s}{dt} + \frac{1}{\tau_1\tau_0}\left(\mu_0-\mu_1\right)u_s=0
+\end{equation}
+Comme $\mu_0<\mu_1$, les solutions sont exponentielles et divergentes. On se retrouve donc très rapidement dans le régime d'instabilité même si les conditions initiales sont nulles (la moindre perturbatiosn étant amplifiée).
 \section*{Correction exercice 3}
 
 \begin{itemize}
@@ -84,6 +117,10 @@ Et ainsi de suite. La période est donc $T = 2RC\ln\left(\frac{2R_1+R_2}{R_2} \r
 		\frac{R_1+R_2}{R_1}\frac{L_2}{L_1+L_2}=1
 	\end{equation}
 \end{itemize}
+
+\subsubsection{Question supplémentaire}
+
+On ne peut avoir des oscillations qu'avec un basse bande. Pour un filtre passe-haut et passe-bas, on ne peut avoir que des solutions divergentes ou qui tendent vers 0. On peut le trouver avec les fonctions canoniques.
 	
 \section*{Remplissage d'un réservoir d'hélium}
 
