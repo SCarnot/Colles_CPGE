@@ -8,16 +8,14 @@
 
 \begin{document}
 
-\section*{Exercice 1}
+\section*{Machine de Carnot}
 
-\subsection*{Machine 1}
-
-On considère un moteur effectuant les transformations suivantes, sur un gaz parfait contenant $n$ moles : 
+On considère une machine thermodynamique effectuant les transformations suivantes, sur un gaz parfait contenant $n$ moles : 
 
 \begin{itemize}
-\item[•]$A \rightarrow B$ : compression isotherme, réversible à la température $T_f$ (contact avec la source froide)
+\item[•]$A \rightarrow B$ : compression isotherme, réversible à la température $T_f$ (contact avec une source froide)
 \item[•]$B \rightarrow C$ : compression adiabatique, réversible
-\item[•]$C \rightarrow D$ : détente isotherme, réversible à la température $T_c$ (contact avec la source chaude)
+\item[•]$C \rightarrow D$ : détente isotherme, réversible à la température $T_c$ (contact avec une source chaude)
 \item[•]$D \rightarrow A$ : détente adiabatique, réversible
 
 \end{itemize}
@@ -25,22 +23,49 @@ On considère un moteur effectuant les transformations suivantes, sur un gaz par
 On supposera que le rapport des volumes $V_A/V_B=10$. Questions : 
 
 \begin{itemize}
-\item[1-] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$. 
-\item[2-] En déduire le rendement théorique.
-\item[3-] On suppose que la chaleur apportée par la source chaude est crée par de la combustion d'essence, de pouvoir calorifique de 35475kJ.L$^{-1}$. Estimer la quantité d'essence injectée à chaque cycle si le moteur est utilisé pour mouvoir une voiture individuelle. Combien vaut alors $T_c$ ?
+
+	\item[0 -] Tracer le cycle dans un diagramme de Clapeyron. Ce cycle est-il moteur ou récepteur ? Justifier. 
+
+	\item[1 -] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$. 
+	
+	\item[2 -] En déduire le rendement théorique.
+	
+	\item[3 -] On suppose qu'une voiture normale est mue par le moteur étudié jusque-là. En supposant que la chaleur apportée par la source chaude est créée par de la combustion d'essence, de pouvoir calorifique de 35 475kJ.L$^{-1}$. Estimer la quantité d'essence injectée à chaque cycle ? Combien vaut alors $T_c$ ?
+	
 %\item[4-] Application numérique : calculer le rendement dans ce cas-là. On prendra $V_A/V_B=10$.
 \end{itemize}
 
-\subsection*{Machine 2}
+\newpage
 
-On considère désormais le moteur effectuant le cycle ci-dessous. De la même manière, on considèrera que la source de chaleur est la combustion d'une certaine quantité d'essence à chaque cycle, apportant une quantité $Q_c$ de chaleur. Le moteur se refroidit jusqu'à la température $T_f$ de la source froide lors de son refroidissement. Les transformations $A\rightarrow B$ et $C\rightarrow D$ sont des adiabatiques, réversibles. On supposera que $\gamma$ est constant. On posera $a=V_2/V_1$
+\section*{Cycle de Beau de Rochas}
+
+On considère un moteur à essence décrit par le cycle ci-dessous, effectué sur $n$ moles de gaz parfait :
 
 \begin{itemize}
-\item[1-] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$. 
-	\item[2-] Calculer son rendement en fonction de $a$ et $\gamma$.
 
-	\item[3-]  Comparer le rendement de ce moteur avec le rendement de Carnot. Conclure.
-	%\item[•] Comparez le rendement de ce moteur avec celui d'un moteur décrivant un cycle de Carnot. Commentez. 
+\item[•]$A \rightarrow B$ : compression adiabatique, réversible du volume $V_A$ au volume $V_B$ ;
+\item[•]$B \rightarrow C$ : échauffement isochore en contact de la source chaude ;
+\item[•]$C \rightarrow D$ : détente adiabatique, réversible du volume $V_B$ au volume $V_C$ ;
+\item[•]$D \rightarrow A$ :  refroidissement isochore en contact de la source froide.
+
+\end{itemize}
+
+\begin{itemize}
+
+	\item[0 -] Montrer que le travail reçu par le gaz lors d'une transformation adiabatique réversible s'écrit :
+	
+\begin{equation}
+	W = \frac{nR}{\gamma - 1}(T_f - T_i)
+\end{equation}	
+
+où $T_f$ et $T_i$ sont respectivement les températures finale et initiale du gaz.
+
+	\item[1 -] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$ en fonction de températures $T_A$, $T_B$, $T_C$ et $T_D$. 
+	\item[2 -] Calculer son rendement en fonction de $a=V_2/V_1$ et $\gamma$. On pourra déterminer dans un premier temps $T_D$ en fonction de $T_A$.
+	\item[3 -]  Comparer le rendement de ce moteur avec le rendement de Carnot. Conclure.
+	
+	\item[4 -] On suppose que ce moteur sert à mouvoir une voiture individuelle. En supposant que la chaleur apportée par la source chaude est créée par de la combustion d'essence, de pouvoir calorifique de 35 475kJ.L$^{-1}$; estimer le volume d'essence injecté à chaque cycle. Combien vaut alors $T_c$ ?
+	
 \end{itemize}
 
 \textit{Données : $ V_{2}/V{1} = 10$ et $ \gamma=1.4$}

@@ -2,11 +2,16 @@
  
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}      
-\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{calc}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint}
+\usepackage{amssymb}
 \graphicspath{{figures/}{../figures}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
 
 \begin{document}
 
@@ -28,45 +33,128 @@ ou :
 \end{equation}
 Ce principe est extrêmement fondamental car il représente la conservation de l'énergie en physique.
  
-\section*{Exercice 1}
-\subsection*{Machine 1}
+\section*{Machine de Carnot}
 
-\subsection*{Machine 2}
 \begin{itemize}
-	\item[•] 
-C'est un cycle moteur (sens horaire). Le cycle correspond au mouvement d'un cylindre avec une compression ($A\longrightarrow B$), une explosion ($B\longrightarrow C$), une détente  ($C\longrightarrow D$) et un refroidissement ($D\longrightarrow A$, ou évacuation des gaz de combustion puis remplacement par du gaz frais).
-	\item[•]
-Pour un cycle, $\Delta U = 0 = W + Q_c + Q_f$. On reconnait facilement que :
-\begin{equation}
-	Q_c = nC_{v,mol}(T_C-T_B)
-\end{equation}
-\begin{equation}
-	Q_f = nC_{v,mol}(T_A-T_D)
-\end{equation}
-Donc :
-$\eta = -\frac{W}{Q_c}=\frac{Q_c +Q_f}{Q_c}=\frac{T_C-T_B + T_A-T_D}{T_C-T_B}$
-Relations de gaz parfaits : $T_C=P_CV_{min}/nR$ et $T_D=P_DV_{max}/nR$
 
-Détente adiabatique réversible en $A\longrightarrow B$ et $C\longrightarrow D$ : $T_D = T_C\left( \frac{V_{max}}{V_{min}}\right)^{1-\gamma}$ et $T_A = T_B\left( \frac{V_{max}}{V_{min}}\right)^{1-\gamma}$
+	\item[0 -] Le cycle est moteur, il est décrit "en tournant" dans le sens des aiguilles d'une montre dnas le diagramme de Clapeyron. L'intégrale $W=-\oint P\dif V<0$ est négative donc le travaile st bien évacué à l'extérieur.
 
-Alors :
-\begin{equation}
-	\eta = 1-\left( \frac{V_{min}}{V_{max}}\right)^{\gamma -1}
-\end{equation}
-\item[•] La température de la source chaude est à priori $T_C$ car le gaz est au maximum de sa température en $C$. En effet, comme la transformation $C\longrightarrow D$ est réversible, elle est supposée très lente, donc on peut supposer que le gaz s'est thermalisé à la température de la source chaude en $C$. 
+	\item[1 -] On trouve les expressions grâce à l'expression du travail $W$ et au premier principe de la thermodynamique. Le point "difficile" est le calcul du travail pour une transformation adiabatique. Il faut utiliser la loi de Laplace : 
 
-Même chose pour la source froide avec $T_A$. 
+\begin{align*}
+	\delta W = -\int_B^C P\dif V &= -cste\int_B^C \frac{\dif V}{V^{\gamma}}\\
+	&=-cste\frac{V_C^{1-k}-V_B^{1-k}}{1-k}\\
+	&=\frac{P_CV_C-P_BV_B}{\gamma-1}\\
+	&= \frac{nR}{\gamma-1}(T_c-T_f)
+\end{align*}
 
-Rendement de Carnot :
-\begin{equation}
-	\eta_C = 1-\frac{T_f}{T_c} = 1-\frac{T_A}{T_C}
-\end{equation}
+Le tableau des différentes transformations est alors :
+
+\begin{center}
+\begin{tabular}{|p{2,5cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+Transformation & $\Delta U$ & $W$ & $Q$ \\
+\hline
+$A\rightarrow B$ & 0  & $nRT_f\ln\left(\frac{V_A}{V_B} \right)$  & $-nRT_f\ln\left(\frac{V_A}{V_B} \right)$  \\
+\hline
+$B\rightarrow C$ & $\frac{nR}{\gamma-1}(T_c-T_f)$ & $\frac{nR}{\gamma-1}(T_c-T_f)$ & 0  \\
+\hline
+$C\rightarrow D$ & 0  & $-nRT_c\ln\left(\frac{V_D}{V_C} \right)$  & $ nRT_c\ln\left(\frac{V_D}{V_C} \right)$ \\
+\hline
+$D\rightarrow A$ & $\frac{nR}{\gamma-1}(T_f-T_c)$ & $\frac{nR}{\gamma-1}(T_f-T_c)$ & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item[2-]  Le rendement est $\eta=-W/Q_c$. La source chaude est ici :
+
+\begin{align*}
+	Q_c&=Q_{C\rightarrow D}\\
+	&=nRT_c\ln\left(\frac{V_D}{V_C} \right)\\
+\end{align*}		
+Et le travail :	
+\begin{align*}
+	W&=\sum_i W_i\\
+	&=nRT_f\ln\left(\frac{V_A}{V_B} \right)-nRT_c\ln\left(\frac{V_D}{V_C} \right)\\
+	&=nR(T_f - T_c)\ln\left(\frac{V_A}{V_B} \right)\\
+\end{align*}		
+car on a $V_A/V_B=V_D/V_C$ avec la loi de Laplace $TV^{\gamma-1}=cste$.
+On trouve alors :
+\begin{align*}
+	\eta=\frac{T_f-T_c}{T_c}=1-\frac{T_f}{T_c}
+\end{align*}
+C'est le rendement de Carnot : c'est normal, c'est un cycle de Carnot !
 
 \end{itemize}
 
-\subsection*{Machine 2}
+\subsection*{Cycle de Beau de Rochas}
 
-\newpage
+\begin{itemize}
+
+	\item[0 -] Il faut utiliser la loi de Laplace : 
+
+\begin{align*}
+	\delta W = -\int_i^f P\dif V &= -cste\int_i^f \frac{\dif V}{V^{\gamma}}\\
+	&=-cste\frac{V_f^{1-k}-V_i^{1-k}}{1-k}\\
+	&=\frac{P_fV_f-P_iV_i}{\gamma-1}\\
+	&= \frac{nR}{\gamma-1}(T_f-T_i)
+\end{align*}
+
+	\item[1 - ] On utilise le résultat précédent pour les transformations $A\rightarrow B$ et $D\rightarrow A$. Pour les transformations isochores, on calcule $\Delta U$ tout simplement pour l'échauffement d'un gaz.
+
+\begin{center}
+\begin{tabular}{|p{2,5cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+Transformation & $\Delta U$ & $W$ & $Q$ \\
+\hline
+$A\rightarrow B$ & $\frac{nR}{\gamma-1}(T_B-T_A)$  & $\frac{nR}{\gamma-1}(T_B-T_A)$  & 0  \\
+\hline
+$B\rightarrow C$ & $\frac{nR}{\gamma-1}(T_C-T_B)$ & 0 & $Q_c=\frac{nR}{\gamma-1}(T_C-T_B)$  \\
+\hline
+$C\rightarrow D$ & $\frac{nR}{\gamma-1}(T_D-T_C)$  & $\frac{nR}{\gamma-1}(T_D-T_C)$ & 0 \\
+\hline
+$D\rightarrow A$ & $\frac{nR}{\gamma-1}(T_A-T_D)$ & 0 & $Q_f=\frac{nR}{\gamma-1}(T_A-T_D)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\item[2 -] Pour calculer le rendement, il faut expliciter la quantité de chaleur issue de la source chaude : il s'agit de $Q_{AB}$, car on augmente la pression à volume constant, c'est-à-dire qu'on apporte de la chaleur. Ici, elle est apportée par l'explosion de l'essence. Le travail, quant à lui, s'écrit :
+
+\begin{align*}
+	W &= -\frac{nR}{\gamma-1}(T_B-T_A+T_D-T_C)\\
+	&=-\frac{nR}{\gamma-1}(T_D-T_A) + Q_c
+\end{align*}
+
+Il reste à déterminer $T_D$ par rapport à $T_A$. Pour cela, on détermine la température à chaque transformation :
+\begin{itemize}
+	\item[$A\rightarrow B$ :] $T_B=a^{\gamma-1}T_A$ car compression adabatique en utilisant $TV^{\gamma-1}=cste$.
+	\item[$B\rightarrow C$ :] $T_C=\frac{nR}{\gamma-1}Q_c + T_B$, d'après le premier principe : on échauffe le gaz en lui apportant $Q_c$.
+	\item[$C\rightarrow D$ :] $T_D=T_C/a^{\gamma-1}$ car compression adabatique.
+\end{itemize}
+
+On a donc :
+\begin{align*}
+	T_D = \frac{\gamma-1}{a^{\gamma-1}nR}Q_c+T_f
+\end{align*}
+
+Donc $W=Q_c\left( 1-\frac{1}{a^{\gamma-1}}\right) $ et alors :
+\begin{align*}
+	\eta= 1-\frac{1}{a^{\gamma-1}}
+\end{align*}
+
+	\item[3 -] Pour comparer avec le rendement de Carnot $\eta_C=1-T_f/T_c$, il faut expliciter les températures de la source chaude $T_c$ et froide $T_f$. La température de la source chaude est à priori $T_C$ car le gaz est au maximum de sa température en $C$. En effet, comme la transformation $C\longrightarrow D$ est réversible, elle est supposée très lente, donc on peut supposer que le gaz s'est thermalisé à la température de la source chaude en $C$. 
+	
+	A ce moment là :
+	\begin{align*}
+		\eta_C&=1-\frac{T_A}{T_C}\\
+		&=1-\frac{T_A}{\frac{\gamma-1}{nR}Q_c+a^{\gamma-1}T_A}\\
+		&=1-\frac{1}{\frac{\gamma-1}{nRT_A}Q_c+a^{\gamma-1}}\\
+		&>1-\frac{1}{a^{\gamma-1}} = \eta
+	\end{align*}
+
+On retrouve bien le fait que le rendement de Carnot est supérieur.
+
+\end{itemize}
 
 \section*{Exercice 2}
 
