@@ -2,13 +2,46 @@
  
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}      
-\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
 \usepackage{graphicx}
 \usepackage{wrapfig}
-\usepackage{amsmath}
+\usepackage{amsmath,esint }
+\usepackage{amssymb}
 \graphicspath{{figures/}{../figures}}
 
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
 \begin{document}
+
+\section*{Structure de l'atmosphère}
+
+La troposphère constitue la partie basse de l'atmophère dans laquelle nous vivons, du niveau de la mer jusqu'à une altitude comprise entre 8 et 15km. On peut considérer la troposphère comme un gaz parfait de coefficient thermodynamique $\gamma=7/5$, de masse molaire $M=28.965$g.mol$^{-1}$, soumis à la gravitation terrestre, modélisée par l'accélération de la pesanteur $g=9.81$m.s$^{-2}$ supposée constante avec l'altitude. L'altitude sera représentée par la variable $z$. La pression au niveau de la mer $z=0$ est $P_0=10^5$Pa et la température est $T_0=$293K. On souhaite connaître l'évolution de la pression $P$ et de la tempérture $T$ avec l'altitude.
+
+\begin{itemize}
+
+	\item[$\vartriangle$] A partir d'un bilan de force, démontrer la relation fondamentale de la statique des fluides pour l'atmosphère : 
+	\begin{align*}
+		\vec{\grad}(P) - \rho\vec{g}=\vec{0}
+	\end{align*}
+		où $\rho$ est la densité massique de l'atmosphère.
+	\item[$\vartriangle$] Pour déterminer l'évolution de la pression et de la température avec l'altitude, on suppose qu'un volume $V$ d'air subit une transformation adiabatique réversible lorsqu'il change d'altitude. Montrer alors que la pression $P$ et la densité $\rho$ de l'air sont alors reliées par :
+	\begin{align*}
+		\rho = \frac{MP_0}{RT_0}\left(\frac{P}{P_0} \right) ^{1/\gamma}
+	\end{align*}
+
+	\item[$\vartriangle$] En déduire l'évolution de la pression avec l'altitude $P(z)$, de la densité $\rho(z)$ puis celle de la température $T(z)$. Commenter en mettant en évidence une altitude caractéristique $H$, et calculer sa valeur numérique. Dans ce modèle, quelle est alors l'épaisseur de l'atmosphère ?
+	
+	\item[$\vartriangle$] De combien chute la température lorsqu'on monte à 1000m d'altitude d'après ce modèle ? Quelle est la pression et la densité de l'air au sommet de l'Everest (8848m) ?
+	
+	\item[$\vartriangle$] En réalité, le gradient de température diminue de $7.7\cdot10^{-3}$K.m$^{-1}$. Cela s'explique par le fait que une transformation thermodynamique dans l'atmosphère (comme évoqué ci-dessus) n'est pas parfaitement adiabatique, et peut être modélisée par un coefficient thermodynamique $\gamma_{eff}\neq\gamma$. Calculer $\gamma_{eff}$.
+	
+	\item[$\vartriangle$] Comparer le modèle précédent (appelé modèle polytropique de l'atmosphère) avec celui de l'atmosphère isotherme.
+
+\end{itemize}
+
+\newpage
 
 \section*{Exercice 1}
 
@@ -112,7 +145,7 @@ z<0 & : & r=\lambda a \\
 z>0 & : & r=\lambda \left(a+\frac{z^2}{b} \right) \\
 \end{array}\right.
 \end{align*}
-où $\lambda$ est un nombre sans dimension, $a$ et $b$ des constantes. 
+où $a$ est le rayon du tube pour $z<0$ et $b$ une longueur caractrsitique de l'évasement du tube pour $z>0$ (cf schéma). Le paramètre $\lambda$ décrit permet de décrire les lignes de courant : chaque ligne de courant est paramétrée par une valeur de $\lambda$ donné.
 
 \begin{center}
 	\includegraphics[scale=0.5]{meca_flu1.pdf}
@@ -121,27 +154,30 @@ où $\lambda$ est un nombre sans dimension, $a$ et $b$ des constantes.
 Le fluide est incompressible et la composante axiale de $v_z$ de la vitesse est supposée uniforme sur une section perpendiculaire, cad $v_z$ ne dépend pas de $r$. On note $v_0$ la vitesse en $O$.
 
 \begin{itemize}
-	\item[1 - ] Déterminez la vitesse $\vec{v}$ en tout point.
-	\item[2 - ] Comment évolue un élément de fluide qui traverse le tuyau ? 
-	\item[3 - ] L'écoulement est-il potentiel ?
+	\item[$\ast$] Déterminez la composante vitesse selon $z$, $v_z$ en tout point. 
+	\item[$\ast$] Déterminez la composante vitesse selon $r$, $v_r$ en tout point. En déduire l'expression du champ de vitesse $\vec{v}$.
+	\item[$\ast$] Comment évolue un élément de fluide qui traverse le tuyau ? 
+	\item[$\ast$] Un écoulement est dit rotationnel si une particule de fluide ne subit pas de rotation lors de l'écoulement. Est-ce le cas ici ? On pourra le vérifier en calculant $\mathrm{\vec{rot}} (\vec{v})$ : si $\mathrm{\vec{rot}} (\vec{v})\neq0$ alors l'écoulement est irrotationnel. On donne la formule du rotationnel en coodronnées cylindrique ci-dessous.
+	
 \end{itemize}
+
+\begin{align*}
+	\mathbf{rot} \mathbf{A}
+   = \left(\frac{1}{r}\frac{\partial \mathrm{A}_z}{\partial \theta} - \frac{\partial \mathrm{A}_\theta}{\partial z}\right) \mathbf{u_r}
+   + \left(\frac{\partial \mathrm{A}_r}{\partial z} - \frac{\partial \mathrm{A}_z}{\partial r}\right)\mathbf{u_\theta}
+   + \frac{1}{r}\left(\frac{\partial}{\partial r}(r \mathrm{A}_\theta) - \frac{\partial \mathrm{A}_r}{\partial \theta}\right) \mathbf{u_z}
+\end{align*}
 
 \subsubsection*{Écoulement entre deux lames}
 
-On considère deux plaques infinies de verres séparées d'une épaisseur $e$ où circule un fluide incompressible. Du fluide est injecté à un débit $D_e$ par le tuyau $A$, et il peut ressortir à travers le tuyau $B$ identique. 
-
-On suppose que l'écoulement dérive du potentiel :
-\begin{align*}
-	\phi(M) = av_0\ln\frac{r_A}{r_B}
-\end{align*}
-où $r_A$ (resp. $r_B$) est la distance d'un point $M$ du champ à la source $A$ (resp. $B$).
+On considère deux plaques infinies de verres séparées d'une épaisseur $e$ où circule un fluide incompressible. Du fluide est injecté à un débit $D_e$ par le tuyau $A$, et il peut ressortir à travers le tuyau $B$ identique. On suppose que l'écoulement est incomprésible et relativement lent.
 
 \begin{center}
 	\includegraphics[scale=0.25]{plaque.pdf}
 \end{center}
 
 \begin{itemize}
-	\item[1 - ] Déterminer le champ des vitesses. Comment relier $a$ et $v_0$ au débit des sources ? 
+	\item[1 - ] Proposer une solution pour le champ de vitesses en faisant des hypothèses raisonnables.
 	\item[2 - ] Est-ce un écoulement compressible ?
 \end{itemize}
 

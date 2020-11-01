@@ -2,14 +2,104 @@
  
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}      
-\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
-\usepackage{calc}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint }
+\usepackage{amssymb}
 \graphicspath{{figures/}{../figures}}
 
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
 \begin{document}
+
+\section*{Structure de l'atmosphère}
+
+\begin{itemize}
+
+	\item[$\vartriangle$] Il s'agit de la démonstration classique de l'équation de statique des fluides. Le bilan des forces (pression et gravité) sur un volume élémentaire $\dif V=\dif x \dif y \dif z$ d'air situé au point $M=(x,y,z)$ s'écrit
+	\begin{align*}
+		-P(x,y,z+ \dif z)\dif x\dif y\vec{e}_z+P(x,y,z)\dif x\dif y\vec{e}_z+\rho\vec{g}=\vec{0}
+	\end{align*}
+	On omis les variations de pression selon $x$ et selon $y$ mais qui sont traitées de la même manière qu'en $z$. On trouve alors rapidement l'expression $\vec{\grad}(P) + \rho\vec{g}=\vec{0}$ avec le développement de Taylor de $P(z+dz)$.
+	
+	\item[$\vartriangle$] Dans l'hypothèse d'une transformation adiabatique réversible, un volume $V$ d'air changeant d'altitude suit la loi de Laplace $PV^\gamma=cste$. Comme la densité $\rho$ du gaz contenu dans ce volume $V$ est inversement proportionnelle à celui-ci, on a :
+	\begin{align*}
+		\rho = cste\times P^{1/\gamma}
+	\end{align*}
+	Pour déterminer la constante, on utilise la loi des gaz parfait à l'altitude $z_0$ : $P_0V=nRT_0$, ce qui donne $\rho_0=\frac{MP_0}{RT_0}$. On a donc :
+	\begin{align*}
+		\rho = \rho_0\left(\frac{P}{P_0} \right) ^{1/\gamma}=\frac{MP_0}{RT_0}\left(\frac{P}{P_0} \right) ^{1/\gamma}
+	\end{align*}
+	
+	\item[$\vartriangle$] Avec l'équation de statique des fluide, on a donc :
+	\begin{align*}
+		\frac{\dif P}{\dif z}=-\rho g = -\frac{Mg}{RT_0}P_0\left(\frac{P}{P_0} \right) ^{1/\gamma}
+	\end{align*}
+	On introduit le paramètre $H=\frac{RT_0}{Mg}$ homogène à une altitude et la variable de pression réduite $p=P/P_0$. L'équation différentielle devient alors :
+	\begin{align*}
+		\frac{\dif p}{\dif z}=-\frac{1}{H}p^{1/\gamma}
+	\end{align*}	
+	La solution est alors :
+	
+\noindent\fbox{\parbox{\linewidth\fboxrule\fboxsep}{
+	\begin{align*}
+		p(z)=\left(1-\frac{\gamma-1}{\gamma}\frac{z}{H} \right)^{\frac{\gamma}{\gamma-1}}
+	\end{align*}
+	}}
+	
+	La densité se trouve grâce à la relation explicitée à la question précédente :
+	
+\noindent\fbox{\parbox{\linewidth\fboxrule\fboxsep}{
+	\begin{align*}
+		\rho(z)=\frac{P_0}{Hg}\left(1-\frac{\gamma-1}{\gamma}\frac{z}{H} \right)^{\frac{1}{\gamma-1}}
+	\end{align*}
+	}}	
+	
+	La température se trouve grâce à la relaiton de Laplace, $T^\gamma P^{1-\gamma}=cste$. On a alors $T=T_0\left( \frac{P}{P_0}\right)^\frac{\gamma-1}{\gamma}=T_0p^\frac{\gamma-1}{\gamma}$, donc :
+	 
+	 	
+\noindent\fbox{\parbox{\linewidth\fboxrule\fboxsep}{
+	\begin{align*}
+		T(z)=T_0\left(1-\frac{\gamma-1}{\gamma}\frac{z}{H} \right)
+	\end{align*}
+	}}
+
+Les fonctions $P$, $\rho$ et $T$ ne sont définies si et seulement si $1-\frac{1-\gamma}{\gamma}\frac{z}{H}>0$, cad si $z<\frac{\gamma}{\gamma-1}H\simeq 29.75$km. Il n'y a plus du tout de gaz au-delà !
+
+	\item[$\vartriangle$]  La température décroit linéairement avec l'altitude, c'est un résultat que l'on retrouve expérimentalement : plus on monte, plus il fait froid ! Plus précisément, elle diminue de $T_0\frac{\gamma}{1-\gamma}\frac{1}{H}\simeq9.77\cdot10^{-3}$ $^{\circ}$C pour une élévation de 1m, soit une chute de 9.77$^{\circ}$C pour 1000m. 
+	
+	Au sommet de l'Everest, la pression est de seulement 1/3 celle au niveau de la mer, et la densité seulement la moitié.
+	
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{exo_atmo1.png}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{exo_atmo2.png}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{exo_atmo3.png}
+\end{figure}
+
+	\item[$\vartriangle$] L'atmosphère réelle permet des échanges thermiques même faibles. Le gradient de température est un peu plus faible, et coefficient thermodynamique $\gamma_{eff}$ est plus faible, correspondant à une situation où l'on est pas parfaitement adaibatique. Pour le retrouver, on utilise le gradient de température :
+	\begin{align*}
+		\frac{\dif T}{\dif z}=-T_0\frac{\gamma-1}{\gamma H}=-Mg\frac{\gamma-1}{\gamma R}
+	\end{align*}
+Pour $\frac{\dif T}{\dif z}=-7.7\cdot10^{-3}$K.m$^{-1}$, on trouve $\gamma_{eff}=1,26$.
+
+	\item[$\vartriangle$] Le modèle d'atmosphère isotherme correspond au cas où $\gamma_{eff}=1$. En effet, dans ce cas là on retrouve la loi des gaz parfait $PV=cste=nRT$, on voit aussi que l'atmosphère a un graident de température nulle et une extension infinie : $z<\frac{\gamma}{\gamma-1}H\longrightarrow\infty$. D'autre part, les fonctions pécédentes convergent vers la décroissance exponentielles de l'atmosphère isotherme :
+	\begin{align*}
+		P(z)&=P_0\left(1-\frac{\gamma-1}{\gamma}\frac{z}{H} \right)^{\frac{\gamma}{\gamma-1}}\\
+		&=P_0\exp\left(\frac{\gamma}{\gamma-1}\ln\left(1-\frac{\gamma-1}{\gamma}\frac{z}{H} \right)\right) \\
+		&\xrightarrow[\gamma\to1]{} P_0\exp\left(-\frac{z}{H} \right) 
+	\end{align*}
+
+\end{itemize}
 
 \section*{Exercice 1}
 
@@ -32,7 +122,7 @@ La résultante des forces de pression, selon l'axe $\vec{e_z}$, est $F_{p,z}=-P(
 \begin{align*}
 	F_{p,z} = -\iint P_\infty R^2d\varphi \sin\theta d\theta \cos\theta + \iint 3\eta\frac{Rv_\infty}{2R^2}\cos^2\theta \sin\theta R^2d\theta d\varphi
 \end{align*}
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\noindent\fbox{\parbox{\linewidth\fboxrule\fboxsep}{
 On trouve alors : $F_{p,z}=2\pi\eta v_\infty R$
 }}
 
@@ -42,7 +132,7 @@ On trouve alors : $F_{p,z}=2\pi\eta v_\infty R$
 \end{align*}
 La projection suivant $\vec{e_z}$ nous donne alors :
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\noindent\fbox{\parbox{\linewidth\fboxrule\fboxsep}{
 \begin{align*}
 	F_{c,z}=\iint \eta \frac{\partial v}{\partial r}R^2\sin\theta d\theta d\varphi \sin\theta=\iint \eta\frac{3}{2}Rv_\infty \sin^3\theta d\theta d\varphi=4\pi\eta Rv_\infty
 \end{align*}
@@ -182,7 +272,7 @@ On obtient la relation voulue :
 			\vec{v}=v_0\vec{e_z}
 		\end{align*}
 		
-		\item[$z>0$ : ] 	La conservation du débit impose que pour toute section du tube, on ait $\iint d\vec{S}\vec{v}= \pi r^2v_z(r,z)=cste$, car $v$ ne dépend pas de $r$. En l'occurrence, pour $z=0$, on a $\pi r^2v_z(r,z)=\pi \lambda^2a^2v_0$. On a donc : 
+		\item[$z>0$ : ] 	La conservation du débit impose que pour toute section du tube, on ait $\iint d\vec{S}\vec{v}= \pi r^2v_z(r,z)=cste$, car $v$ ne dépend pas de $r$. En l'occurrence, pour $z=0$, on a $\pi r^2v_z(r,z)=\pi a^2v_0$. On a donc : 
 \begin{align*}
 	v_z(r,z)=\frac{a^2}{\left(a+\frac{z^2}{b} \right)^2 }v_0
 \end{align*}	
@@ -191,11 +281,15 @@ Les lignes de courant sont définies par $\vec{v}\wedge d\vec{l}$. Comme $d\vec{
 \begin{align*}
 	v_rdz-v_zdr=0\Longrightarrow \frac{v_r}{v_z}=\frac{\partial r}{\partial z}
 \end{align*}
+La quantité $\frac{\partial r}{\partial z}$ vaut $2\lambda z/b$. Pour s'affranchir du $\lambda$, il faut l'exprimer en fonction de $r$. En effet, $\lambda$ n'est qu'un paramètre descriptif d'une ligne de champ, qui sera exprimée en fonction de $r$ et $z$ : $\lambda=r/(a+\frac{z^2}{b})$. On a donc :
+\begin{align*}
+	\frac{\partial r}{\partial z}=\frac{2rz}{ab\left( a+\frac{z^2}{b}\right) }
+\end{align*}
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\noindent\fbox{\parbox{\linewidth\fboxrule\fboxsep}{	
 	On trouve alors :
 	\begin{align*}
-		\vec{v}=\frac{a^2}{\left(a+\frac{z^2}{b} \right)^2 }v_0\vec{e_z}+\frac{2rz}{ab\left( 1+\frac{z^2}{ab}\right)^3 }v_0\vec{e_r}
+		\vec{v}=\frac{a^2}{\left(a+\frac{z^2}{b} \right)^2 }v_0\vec{e_z}+\frac{2arz}{b\left( a+\frac{z^2}{b}\right)^3 }v_0\vec{e_r}
 	\end{align*}}}
 	
 	On peut vérifier que l'écoulement est bien incompressible. 
