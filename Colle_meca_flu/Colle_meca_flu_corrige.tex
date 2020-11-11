@@ -145,15 +145,15 @@ L'intégrale sur $\theta$ vaut 4/3.
 \section*{Exercice 2}
 
 \begin{itemize}
-	\item[1 - ] Comme l'écoulement est lent, et invariant selon $x$ et $y$ : l'écoulement ne dépend que de $z$. De plus, comme il est incompressible, $div(\vec{v})=0$, donc $v_z=cste=0$, car la vitesse doit être nécessairement nulle en $z=0$. L'écoulement est donc laminaire et est dirigé selon $\vec{e_z}$ (c'est une hypothèse, on suppose qu'il est dans le sens de la descente) : $\vec{v}(x,y,z)=v(z)\vec{e_z}$.
 	
-	\textit{NB : }avec un tel profil de vitesse, $(\vec{v}\cdot\vec{grad})\vec{v}$ est identiquement nul, mais on peut directement le négliger ce terme avec l'hypothèse de l'énoncé (écoulement lent et très visqueux).
-	
-	L'équation de Navier-Stokes, avec les hypothèses de l'énoncé, devient : 
+	\item[$\blacktriangleright$] Les forces s'exerçant sur le fluide sont celles de gravité, de pression et de viscosité. Le bilan des forces s'écrit : 
+
 \begin{align*}
 	0=\eta \Delta \vec{v}+\rho\vec{g}-\vec{grad}(P)
 \end{align*}
-	En projetant, on obtient : 
+	En projettant sur les axes $x$ et $z$, on obtient :
+	
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{
 \begin{equation}
 \left\lbrace
 \begin{array}{ccc}
@@ -161,6 +161,11 @@ L'intégrale sur $\theta$ vaut 4/3.
 \vec{e_z}  & : &-\rho g \cos\alpha - \frac{\partial P}{\partial z}=0\\
 \end{array}\right.
 \end{equation}	
+}}
+
+	\item[$\blacktriangleright$] Comme l'écoulement est lent, et invariant selon $x$ et $y$ : l'écoulement ne dépend que de $z$. De plus, comme il est incompressible, $div(\vec{v})=0$, donc $v_z=cste=0$, car la vitesse doit être nécessairement nulle en $z=0$. L'écoulement est donc laminaire et est dirigé selon $\vec{e_x}$ (c'est une hypothèse, on suppose qu'il est dans le sens de la descente) : $\vec{v}(x,y,z)=v(z)\vec{e_x}$.
+	
+	\textit{NB : }avec un tel profil de vitesse, $(\vec{v}\cdot\vec{grad})\vec{v}$ est identiquement nul, mais on peut directement le négliger ce terme avec l'hypothèse de l'énoncé (écoulement lent et très visqueux).
 
 En intégrant selon $\vec{e_z}$ et avec la condition au limite $P(x,z=h)=P_0$, on obtient :
 \begin{align*}
@@ -172,7 +177,7 @@ En intégrant selon $\vec{e_x}$, avec la condition aux limites $\frac{\partial v
 \end{align*}
 En intégrant une nouvelle fois, avec la condition aux limites $v(z=0)=0$ (continuité  de la vitesse avec le support) :
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{
 \begin{align*}
 	v(z)=\frac{\rho g}{\eta}\sin\alpha z\left( h-\frac{z}{2}\right) 
 \end{align*}
@@ -180,29 +185,29 @@ En intégrant une nouvelle fois, avec la condition aux limites $v(z=0)=0$ (conti
 
 Le profil de vitesse est parabolique.
 
-\item[2 - ] Le débit s'écrit, en prenant comme section un carré de largeur $L\gg h$ pour que les hypothèses de l'énoncé soient valables : 
+\item[$\blacktriangleright$] Le débit s'écrit, en prenant comme section un carré de largeur $L\gg h$ pour que les hypothèses de l'énoncé soient valables : 
 \begin{align*}
 	D=\int_{y=0}^{L}dy\int_{z=0}^h dz\cdot v(z)
 \end{align*}
 En intégrant, on obtient :
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\noindent\fbox{\parbox{\linewidth\fboxrule\fboxsep}{
 \begin{align*}
 	D=\frac{\rho g}{3\eta}\sin\alpha L h^3
 \end{align*}
 }}
 
-\item[3 - ] La glace a une densité de 900kg.m$^3$. La vitesse proposée est la vitesse maximale de la glace, car c'est celle en surface. On a donc $\eta\simeq7.1\cdot10^{12}$Pa.s.
+\item[$\blacktriangleright$] La glace a une densité de 900kg.m$^3$. La vitesse proposée est la vitesse maximale de la glace, car c'est celle en surface. On a donc $\eta\simeq7.1\cdot10^{12}$Pa.s.
 
 On obtient donc, sur une année : $V=D\Delta t\simeq4,73\cdot10^6$m$^3$, soit 4250 tonnes chaque année. 
 
 Il faut garder à l'esprit que ce sont des ordre de grandeurs, car nous n'avons pas pris en compte les conditions aux limites sur les bords (en $y$) du canal d'écoulement du glacier, et que la vitesse est elle aussi un ordre de grandeur. 
 
-\item[4 - ] Les conditions aux limites deviennent alors $v(z=0)=v(z=h)=0$, mais on a plus la condition sur la dérivée première de la vitesse. 
+\item[$\blacktriangleright$] Les conditions aux limites deviennent alors $v(z=0)=v(z=h)=0$, mais on a plus la condition sur la dérivée première de la vitesse. 
 La vitesse s'écrit : $v(z)=-\frac{\rho g}{2\eta}\sin\alpha z^2 +a +b$
 Avec les conditions aux limites, on trouve $b=0$ et $a=\frac{\rho g}{2\eta}\sin\alpha h$.
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{
 \begin{align*}
 	v(z)=\frac{\rho g}{2\eta}\sin\alpha z\left( h-z\right) 
 \end{align*}
@@ -226,7 +231,7 @@ C'est un écoulement de Poiseuille.
 Attention, la définition de $\tau$ implique qu'il est opposé à la variation spatiale de la vitesse. Il y a donc un signe - par rapport aux force classique de cisaillement. 
 On obtient la relation voulue :
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{
 	\begin{align*}
 		\frac{\partial P}{\partial z} + \frac{1}{r}\frac{\partial (r\tau)}{\partial r}=0
 	\end{align*}}}
@@ -239,7 +244,7 @@ On obtient la relation voulue :
 	
 	\item[3 - ] Pour qu'il y ait écoulement, il faut qu'il existe une valeur de $r$ telle que $\tau>\tau_s$ (car sinon $\dot{\gamma}=0$). La plus grande valeur de $r$ est le rayon $R$, on doit alors nécessairement avoir $R>R_s$ pour espérer voir un écoulement. On a alors $\tau_s = \tau_s R/R_s$.
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{	
 	Cela correspond à une pression minimum de $\Delta P_{min}=\frac{2\tau_sL}{R}$.}}
 	
 	\item[4 - ] Comme $\Delta P > \Delta P_{min}$, on a forcément $R>R_s$. Donc pour $r>R_s$ :
@@ -247,7 +252,7 @@ On obtient la relation voulue :
 		-\frac{\partial u}{\partial r}=\frac{\tau_s}{\eta}\left( \frac{r}{R_s} - 1\right) 
 	\end{align*}
 	
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{	
 	On trouve donc pour $r>R_s$ :
 	\begin{align*}
 		u(r) = \frac{\Delta P}{4L\eta}(R+r-2R_s)(R-r)
@@ -260,6 +265,8 @@ On obtient la relation voulue :
 	Pour visualiser, l'effet, bouchon, il suffit de tracer la courbe de $u(r)$ en fonction de $r$. 
 	
 \end{itemize}
+
+\newpage
 
 \section*{Exercice 4}
 
@@ -350,7 +357,7 @@ Les champs de vitesses sont à divergence nulle donc incompressibles.
 
 \begin{itemize}
 
-\item[1 - ] $Re=\rho UL/\eta$, écoulement laminaire. q Il y a invariance selon $\theta$ et selon $z$, mais aussi selon $t$ (écoulement permanent). $\vec{v}$ ne dépend donc que de $r$. 
+\item[1 - ] $Re=\rho UL/\eta\simeq2$, écoulement laminaire car $Re< 2000$. q Il y a invariance selon $\theta$ et selon $z$, mais aussi selon $t$ (écoulement permanent). $\vec{v}$ ne dépend donc que de $r$. 
 \item[2 - ] Le bilan de matière donne : 
 \begin{align*}
 	\frac{1}{r}\frac{\partial(rv_r)}{\partial r} + \frac{1}{r}\frac{\partial v_\theta}{\partial \theta}+\frac{\partial v_z}{\partial z}=0
@@ -359,7 +366,7 @@ Les deux derniers termes de l'équation sont nuls à cause des invariances. En i
 
 La vitesse ne dépend donc que de $r$ et a une composante uniquement selon $\vec{e_\theta}$ (d'après l'énoncé, $v_z=0$).
 
-\item[3 - ] Le plus simple est de faire un bilan des moments selon $\vec{e_z}$ à un élément de fluide (en coordonnées cylindriques) qui est un anneau (ou tore) compris entre $r$ et $r+dr$, d'épaisseur $dz$. Les forces visqueuses s'appliquent orthoradialement alors sur les surfaces internes et externe. 
+\item[3 - ] Le plus simple est de faire un bilan des moments selon $\vec{e_z}$ à un élément de fluide (en coordonnées cylindriques) qui est un anneau (ou tore) compris entre $r$ et $r+dr$, d'épaisseur $dz$ : les forces de pression orthoradiales ne s'exercent pas sur ce volume. Les forces visqueuses s'appliquent orthoradialement alors sur les surfaces internes et externe. 
 
 Le moment total exercé doit être nul de sorte que : 
 \begin{align*}
@@ -367,9 +374,11 @@ Le moment total exercé doit être nul de sorte que :
 \end{align*}
 cad : $r^2 \sigma_\theta(r) - (r+dr)^2 \sigma_\theta(r+dr) = 0$. On en déduit que $\frac{\partial}{\partial r}r^2\sigma_\theta=0$.
 
+\textit{NB : on peut aussi le faire sur un volume élémentaire en coordonnées cylindriques. A ce moment-là, on est obligé de tenir compte des forces de pression s'exerçant sur les faces orthoradiales. Cela rajoute un terme $\partial P/\partial\theta$ qu'il suffit d'intégrer selon $\theta$ et cette contribution disparait (on intègre le gradient de pression le long d'une courbe fermée ! Et on se retrouve dans le cas du tore proposé ci-dessus.}
+
 D'autre part, $\sigma_\theta=\eta\left(\frac{\partial v_\theta}{\partial r}-\frac{v_\theta}{r}\right) =\eta r \frac{\partial}{\partial r}\frac{v_\theta}{r} $. On trouve le résultant voulu :
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{	
 	\begin{align*}
 		\frac{\partial}{\partial r}\left(r^3 \frac{\partial}{\partial r}\frac{v_\theta}{r} \right) =0
 	\end{align*}}}
@@ -380,23 +389,25 @@ D'autre part, $\sigma_\theta=\eta\left(\frac{\partial v_\theta}{\partial r}-\fra
 	\end{align*}
 	Les conditions aux limites sont : $v_\theta(r=R_{1,2})=R_{1,2}\Omega_{1,2}$. On obtient alors : 
 	
-	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+	\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{	
 	\begin{align*}
-		v_\theta  = \frac{\Omega_2R_2^2-\Omega_1R_1^2}{R_2^2-R_1^2}r+\frac{(\Omega_1-\Omega_2)R_2^2R_1^2}{R_2^2-R_1^2}\frac{1}{r}
+		v_\theta  = -\frac{(\Omega_2-\Omega_1)R_2^2R_1^2}{R_2^2-R_1^2}\frac{1}{r}+\frac{\Omega_2R_2^2-\Omega_1R_1^2}{R_2^2-R_1^2}r
 	\end{align*}}}
 
 \item[5 - ] Le couple exercé par le cylindre de rayon $R_1$ s'exprime comme la résultantes des contraintes de cisaillement dues à la viscosité :
 \begin{align*}
 	M_{\eta}(R_1)=\iint R_1d\theta dz R_1\sigma_\theta(R_1)= 2\pi R_1^2L\sigma_\theta(R_1)
 \end{align*}
-Or, $\sigma_\theta(R_1) = -2B\eta/R_1^2$ donc on trouve que :
+Or, $\sigma_\theta(R_1) = -2A\eta/R_1^2$ donc on trouve que :
 
-\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{	
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{	
 \begin{align*}
-	M_{\eta}(R_1) = 4\pi\eta\frac{(\Omega_1-\Omega_2)R_2^2R_1^2}{R_2^2-R_1^2}
+	M_{\eta}(R_1) = -4\pi\eta L\frac{\Omega_2R_2^2R_1^2}{R_2^2-R_1^2}
 \end{align*}}}
 
-L'angle du ressort est donc : $\theta = M_{\eta}(R_1)/k$. On peut donc mesurer la viscosité du fluide.
+Comme le résultat ci-dessus est le couple reçu par le fluide de la part du cylindre $R_1$, le couple reçu pa rle cylindre est simplement l'opposé ! Le couple reçu est donc bien positif.
+L'angle du ressort est donc : $\theta = -M_{\eta}(R_1)/k$. On peut donc mesurer la viscosité du fluide.
+
 
 \end{itemize}
 

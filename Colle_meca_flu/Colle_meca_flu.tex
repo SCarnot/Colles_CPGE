@@ -67,17 +67,25 @@ On donne :
 
 \section*{Exercice 2}
 
-On considère un fluide d'épaisseur $h$ s'écoulant lentement sur un plan infini incliné d'un angle $\alpha$ par rapport à la verticale. Le fluide a une forte viscosité $\eta$ et une masse volumique $\rho$, et il est soumis à la gravité. On est en régime permanent.
+On considère un fluide d'épaisseur $h$ s'écoulant lentement sur un plan infini incliné d'un angle $\alpha$ par rapport à la verticale. Le fluide a une forte viscosité $\eta$ et une masse volumique $\rho$, et il est soumis à la gravité. On est en régime permanent, et on suppose que la vitesse selon $\vec{e}_y$ est nulle.
 
 \begin{center}
 	\includegraphics[scale=0.3]{ecoulement.pdf}
 \end{center}
 
 \begin{itemize}
-	\item[1 -] Quel est le profil de vitesse dans le fluide ? 
-	\item[2 -] En déduire le débit. 
-	\item[3 -] On observe avec des images satellite que la vitesse d'écoulement d'un glacier à sa surface est d'environ 100m/an. En déduire la viscosité d'un glacier de 100m d'épaisseur, d'un kilomètre de large. Quelle quantité de glace est charriée en une année ?
-	\item[5 -] On place désormais une plaque au dessus du liquide, au niveau de $z=h$. Que deviennent les conditions aux limites ? Trouver le nouveau profil de vitesse. Comment s'appelle se type d'écoulement ?
+
+	\item[$\blacktriangleright$] Ecrire le bilan des forces volumiques s'exerçant sur un volume de fluide situé au point $M=(x,y,z)$.
+	\item[$\blacktriangleright$] Montrer que $\vec{v}(x,y,z)=v(z)\vec{e_x}$. Quel est le profil de vitesse dans le fluide ? 
+	\item[$\blacktriangleright$] En déduire le débit linéique (le débit par unité de longueur selon l'axe $y$).
+	\item[$\blacktriangleright$] On souhaite avoir un ordre de grandeur de la viscosité d'un glacier. Pour cela, dispose d'image satellite du glacier du Tacul, situé sur la face nord du Mont Blanc. Chaque "rayure" correspond à une année. Estimer sa viscosité. 
+	
+\begin{center}
+	\includegraphics[scale=1]{glacier.png}
+\end{center}
+
+
+	\item[$\blacktriangleright$] En reprenant la première figure, on place désormais une plaque au dessus du liquide, au niveau de $z=h$. Que deviennent les conditions aux limites ? Trouver le nouveau profil de vitesse. Comment s'appelle se type d'écoulement ?
 
 \end{itemize}
 
@@ -95,7 +103,7 @@ On définit la force surfacique de viscosité $\vec{\tau}$, ou contrainte de cis
 où $d\vec{F}$ est la force qui s'exerce mutuellement entre les couches adjacentes, et $dS$ la surface élémentaire de contact entre ces deux surfaces (schéma de droite).
 
 \begin{itemize}
-	\item[1 - ] Quelle est la relation entre la force de viscosité $\vec{\tau}$ et le champ de vitesse $u$ dans le cas d'un fluide classique (vu en cours), dit newtonien ? On pourra dans cette question se placer en coordonnées cartésiennes.
+	\item[$\bigstar$] Quelle est la relation entre la force de viscosité $\vec{\tau}$ et le champ de vitesse $u$ dans le cas d'un fluide classique (vu en cours), dit newtonien ? On pourra dans cette question se placer en coordonnées cartésiennes.
 	
 \end{itemize}
 
@@ -112,21 +120,21 @@ Un fluide est dit de Bingham si les contraintes de cisaillements entre les couch
 On supposera que le fluide que l'on étudie obéit à une telle loi. 
 
 \begin{itemize}
-	\item[2 - ] Quel est la différence entre un fluide classique et un fluide de Bingham ?
+	\item[$\bigstar$] Quel est la différence entre un fluide classique et un fluide de Bingham ?
 
-	\item[3 - ] Montrer que $\vec{u}$ ne dépend que de $r$. En négligeant les actions de la pesanteur, déterminer la relation suivante : 
+	\item[$\bigstar$] Montrer que $\vec{u}$ ne dépend que de $r$. En négligeant les actions de la pesanteur, déterminer la relation suivante : 
 	\begin{align*}
 		\frac{\partial P}{\partial z} + \frac{1}{r}\frac{\partial (r\tau)}{\partial r}=0
 	\end{align*}
-	\item[4 - ] Établir la relation :
+	\item[$\bigstar$] Établir la relation :
 	\begin{align*}
 		\tau(r) = \tau_s\frac{r}{R_s}
 	\end{align*}
 	où $R_s$ est le rayon de seuil, défini par $R_s=2\tau_s L/\Delta P$, en notant $\Delta P = P(0)-P(L)$ la chute de pression entre l'entrée et la sortie du tuyau. Quel est le signe de $\Delta P$ ?
 
-	\item[5 - ] Pour quelle pression minimale $\Delta P_{min}$ commence t-on à voir un écoulement à travers le tube ?
+	\item[$\bigstar$] Pour quelle pression minimale $\Delta P_{min}$ commence t-on à voir un écoulement à travers le tube ?
 	
-	\item[6 - ] On suppose que $\Delta P>\Delta P_{min}$. Déterminer le champs de vitesse dans le tube. Tracer son allure et expliquer pourquoi l'écoulement présente une zone dite \textit{bouchon}.
+	\item[$\bigstar$] On suppose que $\Delta P>\Delta P_{min}$. Déterminer le champs de vitesse dans le tube. Tracer son allure et expliquer pourquoi l'écoulement présente une zone dite \textit{bouchon}.
 	
 	
 \end{itemize}
@@ -185,39 +193,42 @@ On considère deux plaques infinies de verres séparées d'une épaisseur $e$ o�
 
 \section*{Exercice 5}
 
-On considère un fluide incompressible, de viscosité $\eta$ contenu entre deux cylindres orientés verticalement, de même axe $O_z$, et de rayons respectifs $R_1$ et $R_2$ (avec $R_1<R_2$). La hauteur des cylindres $L$ est très grande devant les rayons : $L\gg R_1, R_2$. Les deux cylindres peuvent tourner indépendamment autour de l'axe $Oz$. 
+On considère un fluide incompressible, de viscosité $\eta$ contenu entre deux cylindres orientés verticalement, de même axe $O_z$, et de rayons respectifs $R_1$ et $R_2$ (avec $R_1<R_2$). La hauteur des cylindres $L$ est très grande devant les rayons : $L\gg R_1, R_2$. Les deux cylindres peuvent tourner indépendamment l'un de l'autre autour de l'axe $Oz$. 
 
 \begin{center}
 	\includegraphics[scale=0.8]{meca_flu3.pdf}
 \end{center}
 
-Tout élément de ce fluide subit une force surfacique visqueuse (ou contrainte visqueuse) que l'on notera $\vec{\sigma}$. L'expression en coordonnées cylindrique de sa composante selon $\vec{e_\theta}$ s'écrit : 
+On définit la force surfacique de viscosité $\vec{\sigma}$, ou contrainte de cisaillement, entre deux couches élémentaires adjacentes de fluide, la quantité : $\vec{\sigma}=\frac{d\vec{F}}{dS}$,
+où $d\vec{F}$ est la force qui s'exerce mutuellement entre les couches adjacentes, et $dS$ la surface élémentaire de contact entre ces deux surfaces. L'expression en coordonnées cylindrique de sa composante selon $\vec{e_\theta}$ s'écrit : 
 \begin{align*}
 	\sigma_\theta(r,\theta,z)=\eta\left(\frac{1}{r}\frac{\partial v_r}{\partial \theta}+ \frac{\partial v_\theta}{\partial r} - \frac{v_\theta}{r} \right)
 \end{align*}
-Il est possible de démontrer que, dans le cadre de ce problème, les autres composantes de $\vec{\sigma}$ sont nulles. Nous l'admettrons pour la suite du problème. 
+Il est possible de démontrer que, dans le cadre de ce problème, les autres composantes de $\vec{\sigma}$ sont nulles : $\sigma_r=\sigma_z=0$. Nous l'admettrons pour la suite du problème. 
 
 L'écoulement est supposé permanent. On suppose aussi que $v_z=0$.
 
 \begin{itemize}
-	\item[1 - ] A partir des invariances du problèmes, montrer que $v$ ne dépend que de $r$. Quel est le nombre de Reynolds de cet écoulement ? En déduire le type d'écoulement. \textit{Données :} $R_1=40$cm, $R_2=60$cm, $\Omega_1\simeq\Omega_2=1$rad.s$^{-1}$, $\rho=960$kg.m$^{-3}$ et $\eta=120$ SI.
+	\item[$\clubsuit$] Quel est le nombre de Reynolds de cet écoulement ? En déduire le type d'écoulement. \textit{Données :} $R_1=40$cm, $R_2=60$cm, $\Omega_1\simeq\Omega_2=1$rad.s$^{-1}$, $\rho=960$kg.m$^{-3}$ et $\eta=120$ SI. 
 
-	\item[2 - ] En s'appuyant sur un bilan de matière, retrouver l'expression de l'équation de conservation. En déduire que le champ de vitesse s'écrit $\vec{v}=v_\theta (r)\vec{e_\theta}$. L'écoulement est-il rotationnel ?
+	\item[$\clubsuit$] A partir des invariances du problèmes, montrer que $v$ ne dépend que de $r$. En s'appuyant sur un bilan de matière, retrouver l'expression de l'équation de conservation de la masse (ou du débit) et en déduire que le champ de vitesse s'écrit $\vec{v}=v_\theta (r)\vec{e_\theta}$.
 	
-	\item[3 - ] En faisant un bilan des moments selon $\vec{e_z}$, montrer que la vitesse vérifie la relation suivante : 
+	\item[$\clubsuit$ ] En faisant un bilan des moments sur un élément de fluide selon $\vec{e_z}$, montrer que la vitesse vérifie la relation suivante : 
 	\begin{align*}
 		\frac{\partial}{\partial r}\left(r^3 \frac{\partial}{\partial r}\frac{v_\theta}{r} \right) =0
 	\end{align*}
+Pourquoi les forces de pression n'interviennent-elles pas ?	
 	
-	\item[4 - ] Le cylindre de rayon $R_1$ (resp. $R_2$) tourne à la vitesse angulaire $\Omega_1$ (resp. $\Omega_2$). En déduire l'expression du champs de vitesse. 
+	\item[$\clubsuit$] Le cylindre de rayon $R_1$ (resp. $R_2$) tourne à la vitesse angulaire $\Omega_1$ (resp. $\Omega_2$). En déduire l'expression du champs de vitesse. 
 	
-	\item[5 - ] On suppose que le cylindre intérieur (de rayon $R_1$) est maintenu fixe (cad $\Omega_1=0$) à l'aide d'un ressort de torsion qui exerce un moment $\vec{M}=k\theta\vec{e_z}$. Le cylindre intérieur tourne toujours à la vitesse $\Omega_2$. De quel angle $\theta$ tourne le ressort ? A quel quantité physique a t-on alors accès ?
+	\item[$\clubsuit$ ] On suppose que le cylindre intérieur (de rayon $R_1$) est maintenu fixe (cad $\Omega_1=0$) à l'aide d'un ressort de torsion qui exerce un moment $\vec{M}=k\theta\vec{e_z}$. Le cylindre extérieur tourne toujours à la vitesse $\Omega_2$. De quel angle $\theta$ tourne le ressort ? A quel quantité physique a t-on alors accès ?
 	
-	\item[6 - ] En étant toujours dans la situation $\Omega_2=0$, calculer la puissance mécanique dissipée dans le fluide.
+	\item[$\clubsuit$ ] En étant toujours dans la situation $\Omega_1=0$, calculer la puissance mécanique dissipée dans le fluide.
 	
 \textit{NB :} 
 \begin{align*}
-	\vec{rot}(\vec{v})=\left( \frac{1}{r}\frac{\partial v_z}{\partial\theta}-\frac{v_\theta}{\partial z}\right)\vec{e_r} + \left( \frac{\partial v_r}{\partial z}-\frac{\partial v_z}{\partial r}\right)\vec{e_\theta} + \frac{1}{r}\left( \frac{\partial (rv_\theta)}{\partial r}-\frac{\partial v_r}{\partial \theta}\right)\vec{e_z} 
+	\mathrm{div}(\vec{A}) =
+\frac{1}{r}\frac{\partial (r A_r)}{\partial r} + \frac{1}{r}\frac{\partial A_\theta}{\partial \theta} + \frac{\partial A_z}{\partial z}
 \end{align*}	
 	
 \end{itemize}
