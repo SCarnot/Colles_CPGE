@@ -19,24 +19,26 @@
 
 \item[$\clubsuit$] 
 
-Il faut calculer la force de poussée due à l'éjection de gaz. Dans le repère inertiel de la fusée à la vitesse $V$ à l'instant $t$, le système {gaz + fusée} de masse $M_f$ a une vitesse nulle. Dans le même repère, à $t+dt$, une masse $dm$ de gaz a été éjectée avec une vitesse $v_e$ (qu'on relie à la température $T_2$ avec les résultats précédents) et la fusée a acquis un supplément de vitesse $dV$.
+Il faut calculer la force de poussée due à l'éjection de gaz. Dans le repère inertiel de la fusée à la vitesse $V$ à l'instant $t$, le système {gaz + fusée} de masse $M$ a une vitesse nulle. Dans le même repère, à $t+dt$, une masse $dm$ de gaz a été éjectée avec une vitesse $v_e$ et la fusée a acquis un supplément de vitesse $dV$.
 
-Comme on suppose le système isolé, la conservation de la quantité de mouvement donne : $(M_f(t) - dm)dV = dmv_e$, cad la quantité de mouvement due à l'éjection des gaz $dmv_e$ est égale à l'accroissement quantité de mouvement de la fusée $(M_f(t) - dm)dV$.
+Comme on suppose le système isolé, la conservation de la quantité de mouvement donne : $(M(t) - dm)dV = dmv_e$, cad la quantité de mouvement due à l'éjection des gaz $dmv_e$ est égale à l'accroissement quantité de mouvement de la fusée $(M(t) - dm)dV$. Attention $dm$ correspond à la quantité de gaz \textit{éjecté} durant $dt$.
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 Donc à l'ordre 1 : $M_f(t)dV=v_edm$}}
 
-(Classique de la poussée d'une fusée : $M_f(t)\frac{d}{dt}V(t)=v_2\frac{dm}{dt}$
-
-On a donc : $dV=\frac{dm}{M_f}\sqrt{\frac{2}{M}\frac{R\gamma}{\gamma-1}(T_1-T_2)}$
-
-
-La vitesse acquise par la fusée tout au long de l'éjection du gaz est :
-A chaque fois qu'une masse $dm$ de gaz est éjectée, la fusée acquiert une vitesse $dV$. Initialement, la vitesse de la fusée est nulle et sa masse est $M_0+m_0$. Lorsque tout le réservoir est vidé, sa masse est $M_0$ et sa vitesse est l'intégrale des $dV$. Donc :
+(Classique de la poussée d'une fusée : $M(t)\frac{d}{dt}V(t)=v_2\frac{dm}{dt}$
+On a donc cette équation :
+\begin{align*}
+\frac{DV}{v_e}=\frac{dm}{M_0+m}
+\end{align*}
+où $dm$ la quantité d'ergols consommée (éjectée), et donc $m$ \textbf{est la quantité totale d'ergols éjectée} à l'instant $t$. En intégrant donc cette équation avec $v$ variant de $v$ à $v+\Delta V$, et $m$ de 0 à $m_0$ (il s'agit bien du gaz éjecté !), on obtient :
+\begin{align*}
+	\frac{\Delta V}{v_e}=\int_{0}^{m_0}\frac{dm}{M_0+m}=\ln\left(\frac{M_0 + m_0}{M_0} \right) 
+\end{align*}
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 \begin{equation}
-	\Delta V=v_e\int_0^{m_0}\frac{dm}{(M_0+m_0)-m}=v_e\ln\left(\frac{M_0+m_0}{M_0} \right) 
+	\Delta V=v_e\ln\left(\frac{M_0+m_0}{M_0} \right) 
 \end{equation}}}
 
 \item[$\clubsuit$]  Que ce soit à l'accélération ou la décélération, il faut une quantité $\Delta V$ de vitesse à modifier (dans le sens du mouvement pour l'accélération, l'inverse pour la décélération). Attention ! Lors de la phase d'accélération, il faut prendre en compte la masse d'ergol qui servira pour la décélération. On peut écrire la masse totale comme $m_0=m_1+m_2$, où $m_1$ est la masse nécessaire à l'accélération et $m_2$ pour la décélération. 
@@ -48,10 +50,10 @@ Pour l'accélération, on peut considérer que la masse de la fusée est $M_1=M_
 
 Même chose pour la décélération, sauf qu'il ne reste plus d'ergol à la fin :
 \begin{equation}
-	m_1=M_0\left(\exp\left(\frac{\Delta}{v_e} \right) -1 \right) 
+	m_2=M_0\left(\exp\left(\frac{\Delta}{v_e} \right) -1 \right) 
 \end{equation}
 
-On trouve $m_2=10$t et $m_1=20$t soit 40t au total !
+On trouve $m_2=10$t et $m_1=20$t soit 40t au total pour la lune. Pour Mars, on a $m_2=18$t et $m_1=53$t soit 81t. ça augmente exponentiellement !
 \end{itemize}
 
 \subsubsection*{Condition de décollage d'une fusée}
@@ -78,7 +80,7 @@ C'est à dire :
 	
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 	\begin{equation}
-		D_m > \frac{g}{u}(M_0+m_0)
+		D_m > \frac{g}{v_e}(M_0+m_0)
 	\end{equation}}}
 
 	\item[$\clubsuit$] Le débit est constant, donc $M_f(t)=M_0+m_0-D_mt$. Alors :
@@ -150,7 +152,7 @@ Pour cette valeur de $\Gamma$ et $\omega$, on peut montrer que la vitesse $v_2$ 
 
 	\item[$\spadesuit$] Pour $\Gamma_m=D_mav_1$ et $\omega_P=\frac{v_1}{2a}$, l'équation différentielle obtenue devient :
 	\begin{align*}
-		J\frac{d\omega}{dt} - \frac{\omega-\omega_P}{\tau}=0
+		J\frac{d\omega}{dt} + \frac{\omega-\omega_P}{\tau}=0
 	\end{align*}
 	avec $\tau=\frac{J}{2a^2D_m}$, qui est la durée caractéristique d'établissement du régime permanent. 
 	La solution est alors :
@@ -178,11 +180,11 @@ Pour cette valeur de $\Gamma$ et $\omega$, on peut montrer que la vitesse $v_2$ 
 	
 	\item[$\clubsuit$] La conservation du débit donne $v_eS_e=v_1S=v_2S=v_SS_s$, donc $v_1=v_2$. Dans le cas d'une éolienne, l'hélice prend de l'énergie au fluide, il ralentit, donc $S_s>S_e$. Pour une hélice motrice, c'est l'inverse donc $S_s<S_e$.
 	
-	\item[$\clubsuit$] Le théorème de Bernoulli donne $2P_0+\rho v_e^2=2P_1+\rho v_1^2$ et $2P_2+\rho v_2^2=2P_2+\rho v_s^2$. On pourrait penser écrire $2P_0+\rho v_e^2=2P_0+\rho v_s^2$, ce qui conduit à $v_e=v_s$ (il ne se passe rien). Or on ne peut pas appliquer Bernoulli car l'écoulement est très turbulent dans la zone (2) ! Donc on a bien $v_s\neq v_e$.
+	\item[$\clubsuit$] Le théorème de Bernoulli donne $2P_0+\rho v_e^2=2P_1+\rho v_1^2$ et $2P_2+\rho v_2^2=2P_0+\rho v_s^2$. On pourrait penser écrire $2P_0+\rho v_e^2=2P_0+\rho v_s^2$, ce qui conduit à $v_e=v_s$ (il ne se passe rien). Or on ne peut pas appliquer Bernoulli car l'écoulement est très turbulent dans la zone (2) ! D'autre part, l'hélice ajoute ou prend du travail donc il n'y a plus conservation de l'énergie (ce que traduit Bernoulli). Donc on a bien $v_s\neq v_e$.
 	
 	\item[$\clubsuit$] On considère comme système fermé à $t$ le fluide compris dans la zone (2) avec une masse $dm$ d'air juste avant et qui rentre dans la zone. A $t+dt$, ce système correspond à la masse d'air dans la zone (3) plus la masse $dm$ qui est sortie de la zone. 
 	
-	Alors $P(t)=P_3+dmv_1$ et $P(t+dt)=P_3+dmv_2$. Comme $v_1=v_2$ à cause de la conservation du débit, on trouve que $\frac{dP}{dt}=0$.  Or, les forces qui s'exercent sur l'air sont celles de pression et de l'hélice. On a alors :
+	Alors $p(t)=p_2+dmv_1$ et $p(t+dt)=p_2+dmv_2$. Comme $v_1=v_2$ à cause de la conservation du débit, on trouve que $\frac{dp}{dt}=0$.  Or, les forces qui s'exercent sur l'air sont celles de pression et de l'hélice. On a alors :
 	\begin{align*}
 		0=S(P_1-P_2)+F
 	\end{align*}
@@ -193,7 +195,7 @@ Pour cette valeur de $\Gamma$ et $\omega$, on peut montrer que la vitesse $v_2$ 
 		F = \frac{1}{2}\rho S\left(v_s^2 - v_e^2 \right) 
 	\end{align*}}}
 	
-	\item[$\clubsuit$] On applique le théorème fondamental de la dynamique sur l'ensemble du tube. On a alors, en l'appliquant au système fermé contenu dans le tube d'air complet avec une petit masse $dm=\rho dV=\rho v_e dt S_e$ : $P(t)=P_1+P_2+P_3+\rho v_e S_e dtv_e$ et $P(t+dt)=P_1+P_2+P_3+\rho v_s S_s dtv_s$. Comme la pression à l'entrée et à la sortie est $P_0$, on a : 
+	\item[$\clubsuit$] On applique le théorème fondamental de la dynamique sur l'ensemble du tube. On a alors, en l'appliquant au système fermé contenu dans le tube d'air complet avec une petit masse $dm=\rho dV=\rho v_e dt S_e$ : $P(t)=P_1+P_2+P_3+\rho v_e S_e dtv_e$ et $P(t+dt)=P_1+P_2+P_3+\rho v_s S_s dtv_s$. La pression $P_0$ s'applique \textit{uniformément} sur l'ensemble du tube : elle ne contribue pas à la variation de quantité de mouvement. 
 	
 	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 	\begin{align*}
@@ -217,12 +219,12 @@ Pour cette valeur de $\Gamma$ et $\omega$, on peut montrer que la vitesse $v_2$ 
 		P=\frac{1}{4}\rho S(v_e+v_s)(v_s^2-v_e^2)
 	\end{align*}	
 
-	La puissance incidente du vente est fixée : on ne la choisit pas. Par contre on peut régler la force $F$ du récepteur de sorte 	à choisir $v_s$ qui maximisera $P$. Il faut étudier P en fonction de $v_S$ :
+	La puissance incidente du vent est fixée : on ne la choisit pas. Par contre on peut régler la force $F$ du récepteur de sorte 	à choisir $v_s$ qui maximisera $P$. Il faut étudier P en fonction de $v_S$ :
 	\begin{align*}
-		\frac{dP}{dv_s}=\frac{1}{4}\rho S\left[2v_sv_e-v_e^3+v_s^3-v_e^2v_s \right] 
+		\frac{dP}{dv_s}=\frac{1}{4}\rho S\left[2v_s^2v_e-v_e^3+v_s^3-v_e^2v_s \right] 
 	\end{align*}
 	En posant $x=v_s/v_e$, on résout l'équation du second degré pour trouver la valeur de$v_s$ à laquelle $P$ est maximale. On trouve une solution positive, $x=1/3$, soit $v_s=v_e/3$.
-	La puissance maximale est donc : $P_{max}=16/27\times1/2\times\rho Sv_e^3 $. Or l'énergie cinétique d'un "tube" d'air incident de longueur $x$ à la vitesse $v_e$ est $E_C1/2\times\rho Sxv_e^2$, sa puissance est donc $P_e=dE_C/dt=1/2\times\rho Sv_e^3$. On a donc :
+	La puissance maximale est donc : $P_{max}=16/27\times1/2\times\rho Sv_e^3 $. Dans le cas d'une éolienne, le tube incident n'est pas déformé à l'approche de l'éolienne (puisque c'est celui-ci qui va transmettre son énergie à l'hélice), donc $S=S_e$. De plus, l'énergie cinétique d'un "tube" d'air incident de longueur $x$ à la vitesse $v_e$ est $E_C=1/2\times\rho Sxv_e^2$, sa puissance est donc $P_e=dE_C/dt=1/2\times\rho Sv_e^3$. On a donc :
 	
 	\noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 	\begin{align*}
