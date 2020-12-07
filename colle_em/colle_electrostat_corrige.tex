@@ -14,7 +14,7 @@
 
 \begin{document}
 
-\section*{Exercice 1}
+\section*{Approche ontologique du champ magnétique}
 
 \subsubsection*{Approche en mécanique classique}
 
@@ -71,11 +71,54 @@
 	Cette expression est identique à celle trouvée par le calcul du champ magnétique en mécanique classique. Le champ magnétique est-il est une approximation à l'ordre 2 de la force de Coulomb ? 
 	\end{itemize}
 
+\section*{Corrosion en phase acqueuse}
+
+\subsubsection*{Corrosion uniforme du zinc en milieu acide}
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] Le potentiel de Nernst est $E_n=E^0=-0.76$V comme la concentration de zinc est de 1mol/L.
+	
+	\begin{figure}[h!]
+	\centering
+			\includegraphics[scale=0.25]{pot_zn.png}
+	\end{figure}	
+	
+	\item[$\clubsuit$] Oui, le type de métal peut modifier la surtension (minimale pour le platine) mais aussi l'état de surface : plus la surface de réaction est grande, moins celle-ci sera limitée par la diffusion des ions $H^+$. Par défaut, on suppose que le pH est acide, à 0, comme suggéré dans l'énoncé. 
+	
+	\begin{figure}[h!]
+	\centering
+			\includegraphics[scale=0.25]{pot_h.png}
+	\end{figure}	
+	
+	\item[$\clubsuit$] $Zn+2H^+\longrightarrow Zn^{2+}+H_2$. On rappelle pour que pour voir ce qu'il se passe en oxydation, la première réaction qui se fait est celle de plus bas potentiel. En réduction, la première réaction est celle de plus haut potentiel. Cette réaction est thermodynamiquement possible car $E^0_{Zn/Zn^{2+}}<E^0_{H^+/H_2}$
+	
+	\item[$\clubsuit$] Par conservation du courant, $i_a+i_c=0$. comme les surfaces des deux électrodes sont les mêmes, on trouve $j_a+j_c=0$.
+	
+\end{itemize}
+
 \section*{Exercice 3}
 
 \begin{itemize}
 	
-	\item[$\spadesuit$] On raisonne sur un ensemble d'électrons. On considère les évènements ayant eu lieu à partir de $t=0$. Il faut calculer d'abord le nombre d'électrons ayant subi une collision entre $t$ et $t+dt$. Ce nombre est $N(t)-N(t+dt)=N(t)/\tau$. On a donc $N(t)=N_0\exp(-t/\tau)$. Pour un électron donné, la probabilité de ne pas subir de collision est donc $P(t)=N(t)/N_0$. 
+	\item[$\spadesuit$] Entre $t$ et $t+dt$, le nombre d'électrons ayant subi une collision est $N(t)\frac{dt}{\tau}$ : en effet, à $t$ il reste $N(t)$ électrons n'ayant pas collisioné et parmi eux, une proportion $\frac{dt}{\tau}$ va subit une collision durant $dt$. A noter que cela est valable dans le cadre de la loi des grand nombre, qui est largement validée ici au vu des quantité d'électrons dans un métal.
+	
+	On en déduit alors que le nombre d'électrons n'ayant pas collisioné à $t+dt$ est :
+	\begin{align*}
+		N(t+dt) = N(t) - N(t)\frac{dt}{\tau}
+	\end{align*}
+	On tombe sur l'équation différentielle classique de la désintgration radioactive, donnée par $\dot{N}(t)=-\frac{1}{\tau}N(t)$.En intégrant, on trouve la relation voulue.
+	
+	\item[$\spadesuit$] La probabilité pour un électron de ne pas subir de collision jusqu'à l'instant $t$ correspond au nombre total d'électrons n'yant pas subi de collision sur le nombre total d'électrons, soit $N(t)/N_0=\exp(-t/\tau)$. 
+	
+	La probabilité $dp$ pour un électron de subir une collision entre $t$ et $t+dt$ correspond à la \textit{probabilité de ne pas avoir subi de collision jusqu'à} $t$ ET à la \textit{probabilité de subir une collision entre $t$ et $t+dt$}, soit le produit de probabilité :
+	\begin{align*}
+		dp = \exp(-t/\tau)\cdot\frac{dt}{\tau}
+	\end{align*}
+La valeur moyenne du temps de collision correspond à la somme des temps $t$ durant laquelle il y a eu collision multiplié par la probabilité de collision entre $t$ et $t+dt$ :
+	\begin{align*}
+		\bar{t}=\int_0^{\infty}tdp=\int_0^{\infty} t\exp(-t/\tau)\cdot\frac{dt}{\tau}=\tau
+	\end{align*}
 	
 	\item[$\spadesuit$] Soit $N_0$ le nombre total d'électrons. Entre $t$ et $t+dt$, il y a eu $dtN_0/\tau$ qui ont subi une collision. La quantité de mouvement de tous ces électrons est donc perdue. D'autre part, entre $t$ et $t+dt$ chaque électron est soumis à la force $\vec{F}(t)$, faisant changer la quantité de mouvement totale de $N_0F(t)dt$. Finalement, il vient :
 	\begin{equation}
@@ -232,6 +275,16 @@ La capacité par unité de longueur est donc :
 
 \begin{itemize}
 
+	\item[$\heartsuit$] Classique, champ électrique généré par le potentiel d'une charge $Q$ :
+	\begin{align*}
+		\vec{E}=\frac{Q}{4\pi\varepsilon_0 r^2}\vec{e_r}
+	\end{align*}
+ Et, en prenant le potentiel nul à l'infini :
+	\begin{align*}
+		V=\frac{Q}{4\pi\varepsilon_0 r}
+	\end{align*}
+Si $Q>0$, on aura les ions négatifs qui vont venir s'agglutiner autour de la charge $Q$, alors que les ions positifs seront plus repoussés plus loin. Le problème est que cette répartition d'ions n'est pas "stable" car il faut tenir compte du potentiel des ions lors de la nouvelle répartition. 	
+	
 	\item[$\heartsuit$] Le milieu est composé de cations et d'anions à la même densité :
 	\begin{align*}
 		\rho=eN_+-eN_-=-2eN_0\sinh\left( \frac{eV}{k_BT}\right) 
@@ -247,7 +300,7 @@ Lorsque $eV\ll k_BT$, on a alors :
 	\end{align*}
 	On trouve donc :
 	\begin{align*}
-		\frac{1}{r}\frac{\dif}{\dif r}\left( r^2\frac{\dif V}{\dif r}\right) +\frac{\rho}{\epsilon}=0
+		\frac{1}{r^2}\frac{\dif}{\dif r}\left( r^2\frac{\dif V}{\dif r}\right) +\frac{\rho}{\epsilon}=0
 	\end{align*}
 	Cette éuation correspond à l'équation de Maxwell-Gauss : $\diver\vec{E}=\frac{\rho}{\varepsilon}$ (qui correspond à l'équation de Poisson avec le potentiel).
 
@@ -278,11 +331,15 @@ Lorsque $eV\ll k_BT$, on a alors :
 	\begin{align*}
 		V(r)=\frac{Q}{4\pi\epsilon r^2}\frac{1}{1+\frac{r_0}{\lambda}}\exp\left(-\frac{r-r_0}{\lambda} \right) 
 	\end{align*}
+	Le potentiel décroit très rapidement avec la distance (beaucoup plus rapidement que si la charge était seule).
 	
-La densité de charge est proportionnelle à l'opposé du potentiel :
+	\item[$\heartsuit$] La densité de charge est proportionnelle à l'opposé du potentiel :
 	\begin{align*}
 		\rho(r)=-\frac{2N_0eQ}{4\pi k_BT\epsilon r^2}\frac{1}{1+\frac{r_0}{\lambda}}\exp\left(-\frac{r-r_0}{\lambda} \right) 
 	\end{align*}	
+	Cette densité de charge est opposée à la charge $Q$ : les ions de signe opposés s'agglutinent bien autour de la charge $Q$. D'autre part, le potentiel décroit rapidement : celui créé par la charge $Q$ disparait rapidement, à cause de l'aglutinement des ions autour. Ils écrantent sa charge.
+	
+	\item[$\heartsuit$] Dans le cas où $N_0=10^{-7}$mol/L, la concentration en ions est 100 fois supérieure à celle de l'eau pure et $\lambda$ est donc inférieur d'un facteur 10. Le champ électrique chutant très rapidement avec la distance, plus on rajoute d'ions, plus l'effet d'une particule à l'autre sera faible, et moins les particules de colloïde se repousseront naturellement. Elles auront tendance à tomber au fond de la solution.
 	
 \end{itemize}
 

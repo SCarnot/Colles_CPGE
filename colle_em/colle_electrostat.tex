@@ -15,7 +15,7 @@
 
 \begin{document}
 
-\section*{Exercice 1}
+\section*{Approche ontologique du champ magnétique}
 
 On considère un fil unidimensionnel de section $\Sigma$ dirigé suivant l'axe $x$. Il est constitué d'atomes séparés d'une distance $a$, de charge $+e$  et d'autant d'électrons de conduction de charge $-e$ ; on suppose que atomes et électrons sont confondus sur l'axe $x$ et uniformément répartis à travers $\Sigma$. On impose un courant $I$ dans le fil, les électrons se déplacent alors avec une vitesse $\vec{v'}=v'\vec{e_{x}}$.
 
@@ -54,7 +54,7 @@ En relativité restreinte, tout objet se déplaçant relativement par rapport à
 
 \newpage
 
-\section*{Exercice 2}
+\section*{Corrosion en phase acqueuse}
 
 \subsubsection*{Corrosion uniforme du zinc en milieu acide}
 
@@ -107,17 +107,19 @@ Calculer la densité de courant de corrosion uniforme $j_{corr}$ et le potentiel
 
 \newpage
 
-\section*{Exercice 3}
+\section*{Modèle de Drude}
 
 En 1900, Paul Drude proposa un modèle permettant d'expliquer les propriétés de conduction électrique et thermique des métaux. Dans ce modèle, on considère que les électrons de conduction forment un gaz de particules classiques de masse $m$ et de charge $-e$, auquel on applique les méthodes issues de la théorie cinétique des gaz. Les électrons effectuent des collisions, considérées comme instantanées. Ils sont supposés indépendants (pas d'interaction électron-électron entre les collisions). Drude attribua les collisions aux chocs entre les électrons et les ions, plutôt qu'aux chocs entre les électrons entre eux comme pour un gaz ordinaire. À l'issue d'une collision, la vitesse de l'électron a une direction aléatoire (pas de direction privilégiée), et une valeur liée à la température à l'endroit où a lieu la collision.
 
-\subsubsection*{Temps de relaxation}
+\vspace{0,4cm}
 
-Le paramètre fondamental du modèle de Drude est le temps de collision  $\tau$ ou temps de relaxation. Il représente la durée moyenne entre deux collisions. En d'autres termes, pour un électron donné, la probabilité de subir une collision pendant un intervalle de temps infinitésimal $dt$ est $dt/\tau$. On notera $N_0$ la population totale d'électrons.
+Le paramètre fondamental introduit par Drude est un temps de relaxation, $\tau$ : pour un électron donné, la probabilité de subir une collision pendant un intervalle de temps infinitésimal $dt$ est $dt/\tau$. L'objectif de cet exercice est d'estimer la conductivité d'un métal en fonction de ce temps $\tau$ et de la densité électronique $n$, propres à chaque métal. 
 
 \begin{itemize}
 	
-	\item[$\spadesuit$]	 Montrer que pour un électron donné, observé à l'instant $t=0$, la probabilité de $P(t)$ de ne pas subir de collision est $\exp(-t/\tau)$. 
+	\item[$\spadesuit$]	 On note $N_0$ le nombre total d'électrons dans le métal. Montrer que le nombre d'électrons n'ayant subi aucune collision à un instant $t$ s'écrit $N(t)=N_0\cdot\exp(-t/\tau)$.
+	
+	\item[$\spadesuit$]	 Montrer que la probabilité pour un électron de subir son premier choc entre $t$ et $t+dt$ est $dp=\frac{dt}{\tau}\cdot\exp(-t/\tau)$. En déduire que $\tau$ correspond au temps moyen entre deux collisions.
 	
 	\item[$\spadesuit$] On soumet le métal à un champ de force extérieur, et on note $\vec{F}(t)$ la force subie par chaque électron. Comment varie la quantité de mouvement de la totalité des électrons $\vec{P}(t)$ entre $t$ et $t+dt$ ?
 	
@@ -221,7 +223,7 @@ On supposera que la solution colloïdale est composée de :
 \begin{itemize}
 	\item[-] des particules de colloïdes, de rayon $r_0$, portant une charge $Q$ sur leur surface. Ils sont supposés assez dilués pour considérer que le potentiel autour d'une particule colloïdale n'est créé que par elle-même et les ions du milieu ;
 	
-	\item[-] les ions contenus dans l'eau, supposés ponctuels, portant une charge $\pm e$ à la concentration $N_0$. On supposera que la concentration en cations est égale à celle en anion. Les ions (cations + ou anions -), quand il sont soumis à un potentiel V, se répartissent en moyenne selon la loi de Boltzmann :
+	\item[-] les ions contenus dans l'eau, supposés ponctuels, portant une charge $\pm e$ à la concentration $N_0$. On supposera que la concentration en cations est égale à celle en anion. Les ions (cations + ou anions -), quand il sont soumis à un potentiel $V$, se répartissent en moyenne selon la loi de Boltzmann :
 \begin{align*}
 	\frac{N_{\pm}(r)}{N_0}=\exp\left(-\frac{\pm eV(r)}{k_BT} \right) 
 \end{align*}
@@ -232,11 +234,19 @@ Lorsqu'on augmente significativement la concentration $N_0$ de la solution ioniq
 
 \begin{itemize}
 
+	\item[$\heartsuit$] Quelle serait le potentiel $V(r)$ autour d'une particule de colloïde s'il n'y avait pas d'ions dans l'eau ? Décrire brièvement comment se répartiraient les ions dans ce cas-là, c'est-à-dire unqiuement avec le potentiel de la particule.
+
+\end{itemize}
+
+En réalité, la présence de ces ions modifie le potentiel $V$ autour de la particule, qui modifie à son tour la présence d'ions (à travers la densité de charge $\rho$). On souhaite donc trouver deux équations sur $V(r)$ et $\rho(r)$ pour les déterminer. 
+
+\begin{itemize}
+
 	\item[$\heartsuit$] Établir la densité volumique de charge entourant une particule de colloïde. Que devient cette expression si $eV\ll k_BT$ ?
 	
-	\item[$\heartsuit$] En appliquant le théorème de Gauss sur un volume bien choisi, montrer que : 
+	\item[$\heartsuit$] En appliquant le théorème de Gauss sur un volume bien choisi autour d'une particule de colloïde, montrer que : 
 	\begin{align*}
-		\frac{1}{r}\frac{\dif}{\dif r}\left( r^2\frac{\dif V}{\dif r}\right) +\frac{\rho}{\epsilon}=0
+		\frac{1}{r^2}\frac{\dif}{\dif r}\left( r^2\frac{\dif V}{\dif r}\right) +\frac{\rho}{\epsilon}=0
 	\end{align*}
 
 	\item[$\heartsuit$] Résoudre l'équation différentielle en posant $U(r)=rV(r)$, et retrouver l'expression de $V(r)$, en fonction de $r$, une longueur caractéristique $\lambda$ et une constante d'intégration qu'on ne cherchera pas à définir. Donner un ordre de grandeur de $\lambda$ à température ambiante dans de l'eau pure.
@@ -245,7 +255,7 @@ Lorsqu'on augmente significativement la concentration $N_0$ de la solution ioniq
 	
 	\item[$\heartsuit$] Quelle est l'expression de la densité de charge $\rho$ ? Justifier l'appellation d'\textit{écrantage}.
 	
-	\item[$\heartsuit$] Quelle est la force $F(d)$ qui s'exerce entre deux particules de colloïde éloignées d'une distance $d$ ? Comparer cette force dans le cas d'une eau pure et celle d'une électrolyte de concentration $N_0=100$. Pourquoi parle t-on de coagulation ?
+	\item[$\heartsuit$] Quelle est la force $F(d)$ qui s'exerce entre deux particules de colloïde éloignées d'une distance $d$ ? Comparer cette force dans le cas d'une eau pure et celle d'une électrolyte de concentration $N_0=10^{-7}$mol/L. Pourquoi parle t-on de coagulation ?
 
 \end{itemize} 
 
