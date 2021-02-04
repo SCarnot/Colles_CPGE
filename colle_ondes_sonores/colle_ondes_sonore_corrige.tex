@@ -53,12 +53,14 @@
 		t'=t+\sqrt{\frac{h^2}{c^2}+\frac{v^2t^2}{c^2}}
 	\end{align*}
 
+Si $t\longrightarrow-\infty$, $t'\longrightarrow (1-v/c)t>0$ (attention à la valeur absolue dans le cas $t<0$ !). car $v>c$ et $t<0$. Si $t\longrightarrow+\infty$, $t'\longrightarrow (1+v/c)t>0$, avec une pente plus forte.
+
 \begin{figure}[h!]
 \centering
 		\includegraphics[scale=0.5]{onde_choc.png}
 \end{figure}	
 	
-	\item[$\diamond$] Si $\dif t'/\dif t=0$, à ce moment là le temps d'arrivée des ondes est le même $\forall t$, donc toutes les ondes arrivent en même temps. Il y a un bang !
+	\item[$\diamond$] Si $\dif t'/\dif t=0$, alors $t'=t_0$, c'est-à-dire que quelque soit le temps $t$ durant lequel a été émis un son, celui-ci arrivera à l'observateur à $t_0$. Si l'avion émet des sons durant tout son vol (le bruit du réacteur par exemple), tous ces sons arrivent en même temps à $t_0$. Les ondes sonores se supperposent et la puissance reçue est maximale en un instant très court. Il y a un bang !
 	
 	\item[$\diamond$] $t'_0$ correspond au moment où le bang est perçu par l'observateur, donc d'après la question précédente, correspond au moment où $f'(t_0)=0$.
 	\begin{equation}
@@ -100,7 +102,7 @@
 
 \item[$\diamondsuit$] Approximation acoustique : $v\ll c$.
 
-\item[$\diamondsuit$] La compressibilité devient $\chi_s=\frac{1}{V}\frac{\partial V}{\partial P}=-\frac{1}{p(x,t)}\frac{\Psi(x+dx,t)S(x+dx)\Psi(x,t)S(x)}{S(x)dx}=-\frac{1}{S(x)p(x,t)}\frac{\partial \Psi(x,t)S(x)}{\partial x}$. On trouve ensuite :
+\item[$\diamondsuit$] La compressibilité devient $\chi_s=-\frac{1}{V}\frac{\partial V}{\partial P}=-\frac{1}{p(x,t)}\frac{\Psi(x+dx,t)S(x+dx)-\Psi(x,t)S(x)}{S(x)dx}=-\frac{1}{S(x)p(x,t)}\frac{\partial \Psi(x,t)S(x)}{\partial x}$. On trouve ensuite :
 \begin{equation}
 	p(x,t) = -\frac{1}{\chi_s}\left(\frac{\partial \Psi}{\partial x}+\Psi(x,t)\frac{\partial }{\partial x}\left[\ln S(x) \right]  \right)
 	\label{eq:p}
@@ -200,21 +202,86 @@ où $\rho(x,t)=\mu(x,t)+\rho_0$. Ce qui devient, avec l'approximation acoustique
 
 \end{itemize}
 
-\newpage
-
-\section*{Impédance acoustique}
-
 \subsubsection*{Échographie}
 
 \begin{itemize}
 	
-	\item[$\spadesuit$] Rappeler l'équation d'Alembert vérifiée par la surpression $p(x,t)$ et la vitesse $v(x,t)$ dans un milieu homogène. Quelles sont les solutions générales ? Qu'appelle t-on les ondes planes progressives monochromatiques ?	
+	\item[$\spadesuit$] \item[$\circ$] On retrouve l'équation d'Alembert à partir de trois équation. Sur la masse volumique et la compressibilité :
+	\begin{align*}
+		\mu = \chi_sp\rho_0
+	\end{align*}
+	Sur l'équation de la conservation de la masse :
+	\begin{align*}
+		\frac{\partial \mu}{\partial t}+\grad(p)=0
+	\end{align*}
+	et l'équation d'Euler :
+	\begin{equation}
+		\rho_0\frac{\partial \vec{v}}{\partial t}+\vec{\grad}(\vec{v})=0
+	\end{equation}
+	On trouve alors une équation d'Alembert sur $\mu$, $\vec{v}$ et $p$, avec une célérité $c=1/\sqrt{\chi_s\rho_0}$.
+	 Les solutions générales sont sous la forme $p(x,t)=f(t-x/v) + g(t+x/v)$, représentant une onde se propageant selon les $x$ croissants et décroissants.
 	
-	\item[$\spadesuit$] Écrire les relations que vérifient la vitesse et la surpression à l'interface en $x=0$. Que se passe t-il lorsque l'onde arrive de par la gauche sur l'interface $1\longrightarrow2$ pour que ces relations soient vérifiées ? Justifier de l'existence d'une onde réfléchie et transmise.
+	\item[$\spadesuit$] On trouve avec l'équation d'Alembert 
+	\begin{align*}
+		k_j=\pm\omega/c_j
+	\end{align*}
+	Avec les équation différentielles couplées entre $\vec{v}$ et $p$ on a :
+	\begin{align*}
+		p_j=\pm\rho_j c_j v_j = Z_jv_j
+	\end{align*}
+	Le signe $\pm$ est positif si l'onde se propage selon les $x$ croissant, négatif dans les cas contraire. $Z_j$ est l'impédance acoustique du milieu $j$.
 	
-	\item[$\spadesuit$] En déduire les coefficients de réflexion $r$ et de transmission $t$.
+	\item[$\spadesuit$] Avec respectivement la conservation du débit et le principe fondamental de la dynamique, on a en $x=0$ :
+	\begin{align*}
+		\vec{v}_1(0,t)&=\vec{v}_2(0,t) \\
+		p_1(0,t)&=p_2(0,t)
+	\end{align*}
 	
-	\item[$\spadesuit$] Pourquoi dont-on mettre un gel sur entre la sonde et le corps durant une échographie ? 
+	\item[$\spadesuit$] S'il n'y avait pas d'onde réfléchie (cad d'onde se propageant vers les $x$ décroissant dans le milieu 1), on aurait avec les deux expressions précédentes :
+	\begin{align*}
+		v_{0,1}&=v_{0,2} \\
+		v_{0,1}Z_1&=v_{0,2}Z_2
+	\end{align*}
+	Comme $Z_1\neq Z_2$, on aurait $v_{0,1}=v_{0,2}=0$, c'est à dire rien. Il y a nécéssairement une onde réfléchie, cad :
+	\begin{align*}
+		v_1(x,t)&=v_{0,i}\exp\left[i(k_1x- \omega t) \right]+v_{0,r}\exp\left[i(k_1x+ \omega t) \right]\\
+		v_2(x,t)&=v_{0,t}\exp\left[i(k_1x- \omega t) \right]
+	\end{align*}
+	
+	\item[$\spadesuit$] Avec les relations de continuité, on trouve :
+	\begin{align*}
+	r_v&=\frac{Z_1-Z_2}{Z_1+Z_2}\\
+	t_v&=\frac{2Z_1}{Z_1+Z_2}
+	\end{align*}
+	et (pour la pression, les relations de continuité reviennent à remplacer $r_v\leftarrow r_p$, $t_v\leftarrow t_p$ et $Z_j\leftarrow 1/Z_j$ :
+	\begin{align*}
+	r_p&=\frac{Z_2-Z_1}{Z_1+Z_2}\\
+	t_p&=\frac{2Z_2}{Z_1+Z_2}
+	\end{align*}
+	
+\item[$\spadesuit$] Pour une OPPM, on a les relations énergétiques suivantes :
+	\begin{align*}
+		\left\langle \vec{R_s} \right\rangle &=\frac{1}{2}\rho v_{0}^2 c \vec{e}_x \\
+		\left\langle \varepsilon \right\rangle &= \frac{1}{2}\rho v_{0}^2
+	\end{align*}	
+	où $\vec{R_s}$ est le vecteur d'intensité sonore et $\varepsilon$ l'énergie volumique de l'onde sonore. 
+	L'intensité sonore est simplement $I_s = \|\vec{R_s} \|$. On a alors :
+	\begin{align*}
+		I_{S,i}&=\frac{1}{2}\rho_1 c_1 v_{0,i}^2 \\
+		I_{S,r}&=\frac{1}{2}\rho_1 c_1 v_{0,r}^2 \\
+		I_{S,t}&=\frac{1}{2}\rho_2 c_2 v_{0,t}^2 
+	\end{align*}
+	On a alors :
+	\begin{align*}
+		R =& \frac{ v_{0,i}^2}{ v_{0,r}^2}=r_v^2=\left( \frac{Z_1-Z_2}{Z_1+Z_2}\right) ^2\\
+		T &= \frac{Z_2}{Z_1}t_v^2=\frac{4Z_1Z_2}{Z_1+Z_2}^2
+	\end{align*}		
+	
+	\item[$\spadesuit$] Pour un écho, on souhaite transmettre des ondes sonores entre une sonde solide et le corps humain (liquide) qui ont des impédances très élevées. Si une couche d'air se glisse entre la sonde et le corps, l'impédance de l'air étant très faible par rapport à celle de la sonde ($Z_1\gg Z2$), les coefficients de transmission en énergie sont :
+	\begin{align*}
+		R \gg T
+	\end{align*}
+	Il n'y a pas ou très peu d'onde sonore qui arrive dans le corps humain.
 		
 \end{itemize}
 
@@ -224,11 +291,31 @@ On suppose qu'il y a désormais une paroi de masse surfacique $\mu$ à l'interfa
 
 \begin{itemize}
 	
-	\item[$\clubsuit$] Que deviennent les relations de passage précédentes ? En déduire les coefficients de réflexion et de transmission dans ce cas-là. 
+	\item[$\clubsuit$] On a toujours la continuité de la vitesse, due à la conservation du débit :
+	\begin{align*}
+		v_{0,i}+v_{0,r}=v_{0,t}
+	\end{align*}
+	Pour le PFD, c'est différent à cause du mur, où sa vitesse est supposée être $V$ (qui est nécessairement égale à celle de l'onde transmisse :$V=v_{0,t}$par continuité de la vitesse) :
+	\begin{align*}
+		\mu S\frac{dV}{dt}=S(p_1-p_2)=S(p_{0,i}+p_{0,r}-p_{0,t})
+	\end{align*}
+	En remplaçant avec les impédances respectives, on obitent :
+	\begin{align*}
+		j\omega\mu v_{0,t}=Z_1(v_{0,i}-v_{0,r})+Z_2v_{0,t}
+	\end{align*}
+	On trouve alors si les deux milieux sont identiques ($Z_1=Z_2=Z$) :
+	\begin{align*}
+		t_v= \frac{v_{0,t}}{v_{0,i}}= \frac{1}{1+i\omega\frac{\mu}{2Z}}
+	\end{align*}
 	
-	\item[$\clubsuit$] Calculer $T=\mid t\mid^2$ et tracer l'allure de la courbe $G_{db}=20\log\left[T(\omega) \right]$ en fonction de $\log(\omega)$. Quelle est la fréquence de coupure ?
+	\item[$\clubsuit$] On trouve :
+	\begin{align*}
+		T= |t|^2=\frac{Z_1|v_{0,t}|^2}{Z_2|v_{0,i}|^2}=|t_v|^2=\frac{1}{1+\omega^2\tau^2}
+	\end{align*}
+	avec $\tau=\mu/2Z$. C'est un passe-bas d'ordre 1 avec une pulsation de coupure $\omega_c=1/\tau$.
 	
 	\item[$\clubsuit$] De combien doit être l'épaisseur d'un mur de béton entre deux logements d'un appartement pour que l'atténuation soit atténuée de 50dB à 300Hz ? On donne $\rho_{béton}=2300$kg.m$^{-3}$. 
+	En décibel, on a $20\log$ 
 	
 \end{itemize}
 

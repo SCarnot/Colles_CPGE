@@ -191,13 +191,29 @@ Cad l'énergie du système 1+2 se conserve.
 	\item[$\triangle$] Première justification : avec la force de laplace. Deuxième justification : avec la loi de Lenz, le barreau aura tendance à agrandir le circuit pour s'opposer à la variation du flux de $\vec{B}$ créé par le circuit lui-même.
 	
 	La puissance fournie par le générateur s'écrit :
+	
 	\begin{align*}
-		P_G=R(x)I^2(t)+\frac{\mathrm{d}} {\mathrm{dt}}\left(\frac{1}{2}L(x)I(t)^2\right) = R(x)I^2(t) + \dot{x}(t)\frac{1}{2}\frac{\mathrm{d}L(x)}{\mathrm{dx}}I^2(t)+\frac{1}{2}L(x)\frac{\mathrm{d}} {\mathrm{dt}}I^2(t)
+		P_G&=R(x)I^2(t)-e(t)I(t) \\
+		&= R(x)I^2(t)+I(t)\frac{\mathrm{d}I(t)L(x)}{\mathrm{d}t} \\
+		&= R(x)I^2(t)+I^2(t)\frac{\mathrm{d}L(x)}{\mathrm{d}t}+L(x)I(t)\frac{\mathrm{d}I(t)}{\mathrm{d}t} \\
+		&= R(x)I^2(t)+I^2(t)\dot{x}\frac{\mathrm{d}L(x)}{\mathrm{dx}}+L(x)I(t)\frac{\mathrm{d}I(t)}{\mathrm{d}t}
 	\end{align*}
 	
-	\item[$\triangle$] On reconnait la puissance magnétique. La puissance mécanique est celle qui fait intervenir la vitesse du barreau, soit :
+Le premier terme est le terme d'effet Joule. L'autre terme correspond à la puissance mécanique et magnétique. 
+
+\item[$\triangle$] On a donc :
+\begin{align*}	
+	I^2(t)\dot{x}\frac{\mathrm{d}L(x)}{\mathrm{dx}}+L(x)I(t)\frac{\mathrm{d}I(t)}{\mathrm{d}t} &= \frac{\mathrm{d}\varepsilon_{m}}{\mathrm{d}t} + P_{meca} \\
+	&= \frac{1}{2}I^2(t)\dot{x}\frac{\mathrm{d}L(x)}{\mathrm{dx}} + L(x)I(t)\frac{\mathrm{d}I(t)}{\mathrm{d}t}+ P_{meca}
+\end{align*}	
+	
 	\begin{align*}
-		P_{méca}=\frac{1}{2}\dot{x}(t)\frac{\mathrm{d}L(x)}{\mathrm{dx}}I^2(t)
+		 P_{meca} = \frac{1}{2}I^2(t)\dot{x}\frac{\mathrm{d}L(x)}{\mathrm{dx}} 
+	\end{align*}
+	
+	La puissance mécanique fait bien intervenir la vitesse du barreau, soit :
+	\begin{align*}
+		P_{meca}=\frac{1}{2}\dot{x}(t)\frac{\mathrm{d}L(x)}{\mathrm{dx}}I^2(t)
 	\end{align*}	
 La force est alors :
 	\begin{align*}
@@ -243,7 +259,7 @@ On suppose par ailleurs que $L(x)=L'x$ et $R(x)=R'x$, où $L'$ et $R'$ sont resp
 	
 	\item[$\clubsuit$] Le théorème de Faraday s'écrit :
 	\begin{align*}
-		\oint_\Gamma\vec{E}\dif\vec{l}=\oiint_{S_\Gamma}\vec{B}\dif\vec{S}
+		\oint_\Gamma\vec{E}\dif\vec{l}=-\frac{d}{dt}\oiint_{S_\Gamma}\vec{B}\dif\vec{S}
 	\end{align*}
 	En prenant comme contour $\Gamma$ un cercle de rayon $r$ centré en $O$, et en utilisant la loi $\vec{j}=\gamma\vec{E}$, on obtient :
 	\begin{align*}

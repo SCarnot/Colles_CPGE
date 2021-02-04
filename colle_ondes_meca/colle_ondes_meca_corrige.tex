@@ -46,7 +46,7 @@
 		\frac{\dif^2 y}{\dif x^2} =\frac{1}{l_c}\sqrt{1+\left( \frac{dy}{dx}\right)^2}
 	\end{align*}	
 	avec $l_c=T_0\cos(\alpha_0)/\mu g$.
-	\item[$\star$] Avec le changement de variable proposé, on a :
+	\item[$\star$] Avec le changement de variable $p(x)=\dif y/\dif x$, on a :
 	\begin{align*}
 		\frac{\dif p}{\dif x} =\frac{1}{l_c}\sqrt{1+p(x)^2}
 	\end{align*}	
@@ -293,6 +293,66 @@ trouve :
 	   		\frac{P}{E}=v_g
 	   	\end{align*}
 	   	La vitesse de groupe est donc la vitesse de propagation de l'énergie. 
+
+\end{itemize}
+
+\section*{Propagation dans une ligne coaxiale dissipative}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] 	
+	Une loi des noeuds et une loi des mailles donnent : 
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	V_{n-1}-V_{n}=L\frac{\dif I_{n}}{\dif t} + RI_n\\
+	\\
+	I_{n}=I_{n+1}+C\frac{\dif V_{n}}{\dif t}+GV_n\\
+	\end{array}\right.
+	\end{align*}		
+	Avec ces trois expressions, on obtient facilement :
+	\begin{equation}
+		LC\frac{\dif^2 V_n}{\dif t^2} + (LG+RC)\frac{\dif V_{n}}{\dif t}+RGV_n=V_{n+1}+V_{n-1}-2V_n
+		\label{eq:prop}
+	\end{equation}
+	
+	 \item[$\spadesuit$] 
+	 \begin{align*}
+	 \frac{\dif}{\dif t}\left( \frac{1}{2}CV_n^2 +\frac{1}{2} LI_n^2 \right) &=V_n(I_{n}-I_{n+1}-GV_n)+ I_n(V_{n-1}-V_{n}-RI_n) \\
+	 &=I_nV_{n-1}-I_{n+1}V_n-GV_n^2-RI_n^2
+	 \end{align*}
+	 Le terme global représente la variation temporelle de l'éerngie contenue dans une cellule $n$, $I_nV_{n-1}$ est la puissance qui est reçue depuis la cellule $n-1$ et le terme $I_{n+1}V_n$ est la puissance qui est transmise à la cellule $n+1$. Les termes $GV_n^2$ et $RI_n^2$ sont els pertes dues à la conductance et à la résistance. C'est un bilan d'énergie.
+
+	\item[$\spadesuit$] On a tout simplement $C = ca$, $G=ga$, $L=la$ et $R=ra$. On peut aussi montrer que ce sont des grandeurs linéiques infinétisémiales comme $a=dx$.
+
+	\item[$\spadesuit$] Comme $V_n(t)=V(x,t)=V(na,t)$ et que $a=dx$, on a alors $V_{n+1}(t)=V((n+1)a,t) = V(na+a,t)=V(x+dx,t)$.
+	On peut montrer que $V_{n+1}+V_{n-1}-2V_n=dx^2\frac{\partial^2V}{\partial x^2}$ avec un d.l. à l'ordre 2 en $dx$. Alors :
+	\begin{equation}
+		lc\frac{\partial^2 V}{\partial t^2} + (lg+rc)\frac{\partial V}{\partial t}+rgV=\frac{\partial^2V}{\partial x^2}
+		\label{eq:prop}
+	\end{equation}
+
+	\item[$\spadesuit$] On retombe sur l'équation d'Alembert. Les solutions sont de la forme :
+	\begin{align*}
+		V(x,t)=f\left(t-\frac{x}{c_0} \right) + g\left(t+\frac{x}{c_0} \right) 
+	\end{align*}
+	La vitesse de propagation est bien $c_0^2=1/lc$.
+	\item[$\spadesuit$] Il suffit d'injecter l'expression proposée dans l'équa. diff. :
+	\begin{equation}
+		k^2=lc\omega^2-j(lg+rc)-rg
+	\end{equation}
+
+ \item[$\spadesuit$] En factorisant par $lc$, on obtient :
+ \begin{align*}
+ 	k^2=\frac{\omega^2}{c_0^2}\left(1 - \frac{j}{\omega}\left( \frac{r}{l}+\frac{g}{c}\right)  - \frac{1}{\omega^2}\frac{rg}{lc}\right) 
+ \end{align*}
+
+Comme $(1+x)^\frac{1}{2}=1+x/2-x^2/8$, en ne gardant que les termes d'ordre 2, on obtient : 
+\begin{align*}
+	k=\frac{\omega}{c_0}\left[1-\frac{j}{2\omega}\left( \frac{r}{l}+\frac{g}{c}\right)+\frac{1}{8\omega^2}\left( \frac{r}{l}-\frac{g}{c}\right)^2 \right] 
+\end{align*}
+
+La tension s'écrit alors : $V(x,t)=V_0\exp\left[j(\omega t - k'x )\right]\exp\left[-k"x \right]$. On a alors une longueur caractéristique de décroissance $\delta=1/k''$. Pas de dispersion si $v_\varphi$ ne dépend pas de $\omega$, cad $k'$ ne dépend pas de $\omega$, cad $\frac{r}{l}-\frac{g}{c}=0$.
 
 \end{itemize}
 
