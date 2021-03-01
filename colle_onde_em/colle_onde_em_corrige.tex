@@ -170,32 +170,47 @@ Celle de l'onde circulaire gauche est possible pour $\omega<\omega_c$ ou $\omega
 
 \section*{Ondes électromagnétiques dans un métal conducteur}
 
-On s'intéresse à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal peut être transparent à très basse fréquence, réfléchissant sur sur une certaine bande de fréquences, puis de nouveau transparent à très haute fréquence.
-
-On considère donc que le demi-espace $z>0$ est rempli d'un métal, sur lequel arrive une onde plane progressive monochromatique à la fréquence $\omega$ et polarisée suivant $\vec{e_x}$. 
-
 \begin{itemize}
 
-	\item[$\diamondsuit$] Retrouver l'équation de propagation des ondes électromagnétiques dans le vide. A l'aide des données de l'énoncé, donner l'expression du champ $\vec{E}$ et du champ $\vec{B}$.
+	\item[$\diamondsuit$] Equation de propagation d'Alembert, archi-classique. Avec les données de l'énoncé, on a dans le vide :
+		\begin{align*}
+		\begin{cases}
+        \vec{E}&=E_0\exp[i(kz-\omega t)]\vec{e}_x \\
+		\vec{B}&=\frac{E_0}{c}\exp[i(kz-\omega t)]\vec{e}_y
+		\end{cases}  
+		\end{align*}
 
-\end{itemize}
-
-Pour décrire le métal, on adopte un modèle d'électrons libres, de masse $m$, de charge $-e$ et de densité particulaire $N_0$, soumis au champ électromagnétique, et subissant des collisions en moyenne au bout d'un temps $\tau=1/\omega_c$. On modélise alors le comportement des électrons par l'équation de mouvement (aussi appelé modèle de Drude) :
-
-\begin{equation}
-	m\vec{a}=-e\vec{E}-m\frac{\vec{v}}{\tau}
-	\label{eq:drude}
-\end{equation}
-
-Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq10^{14}$.
-
-\begin{itemize}
-
-	\item[$\diamondsuit$] En utilisant l'équation \ref{eq:drude}, définir une conductivité $\gamma$ complexe qui dépend de la pulsation $\omega$. Commenter. 
+	\item[$\diamondsuit$] En régime sinusoïdal, l'équation du mouvement des électrons devient :
+	\begin{align*}
+		mi\omega\vec{v}=-e\vec{E}-\frac{m}{\tau}\vec{v}
+	\end{align*}
+	Sachant que $\vec{j}=-eN_0$, on a donc :
+	\begin{align*}
+		\vec{j}=\gamma\vec{E}=\frac{\varepsilon_0\omega_p^2}{i\omega+\frac{1}{\tau}}\vec{E}
+	\end{align*}
+	Ou encore :
+	\begin{align*}
+		\gamma=\frac{\gamma_0}{1+i\omega\tau}
+	\end{align*}
+	avec $\gamma_0=\frac{N_0e^2\tau}{m}$ est la conductivité statique du métal.
 	
-	\item[$\diamondsuit$] En utilisant les équations de Maxwell, trouver une équation vérifiée par le champ $\vec{B}$. En déduire une relation de dispersion des OPPM dans le métal. On fera apparaître la pulsation plasma $\omega_p=\sqrt{N_0e^2/m\varepsilon_0}$.
+	\item[$\diamondsuit$] Les équations de Maxwell donnent :
+	\begin{align*}
+		\Delta \vec{E} = \mu_0\frac{\partial \vec{j}}{\partial t}+\varepsilon_0\mu_0\frac{\partial^2\vec{E}}{\partial t^2}
+	\end{align*}
 	
-	\item[$\diamondsuit$] Comparer $\omega_c=1/\tau$ et $\omega_p$. Justifier de l'existence de 3 régimes de propagation dans le métal que nous allons étudier par la suite.
+	On a alors :
+	\begin{align*}
+			k^2 &= \frac{\omega^2}{c^2}\left(1-i\frac{\gamma}{\varepsilon_0\omega} \right) \\
+		&= \frac{\omega^2}{c^2}\left(1-i\frac{i \omega_p^2}{\omega\left( i\omega+\frac{1}{\tau}\right) } \right)
+	\end{align*}
+	
+	\item[$\diamondsuit$] Comparer $\omega_c=1/\tau\simeq10^{14}$ et $\omega_p\simeq10^{16}$. On a donc $\omega_c\ll\omega_p$. Il existe bien trois régimes : 
+	\begin{itemize}
+		\item[1 - ] $\omega\ll \omega_c \ll\omega_p$. Régime basse fréquence.
+		\item[2 - ] $\omega_c\ll \omega < \omega_p$. Régime "moyenne" fréquence.
+		\item[3 - ] $\omega_c \ll \omega_p < \omega$. Régime haute fréquence.
+	\end{itemize}
 
 \end{itemize}
 
@@ -203,19 +218,45 @@ Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq1
 
 \begin{itemize}
 
-	\item[$\diamondsuit$] Que devient la relation de dispersion dans ce cas-là ? Trouver les solutions possibles pour $k$.
+	\item[$\diamondsuit$] On trouve alors que :
+	\begin{align*}
+		k^2=-\frac{i\omega_p^2\omega}{\omega_cc^2}=-i\gamma_0\mu_0\omega
+	\end{align*}
 
-	\item[$\diamondsuit$] Écrire l'expression du champ $\vec{E}$ dans le métal, puis celle du champ $\vec{B}$. Comment appelle t-on ce régime et le phénomène associé ? 
-
+	\item[$\diamondsuit$] Dans ce cas-là :
+	\begin{align*}
+		k = \frac{1-j}{\delta}
+	\end{align*}
+	avec $\delta=\sqrt{2/\mu_0\gamma\gamma}$.
+	Et :
+	\begin{align}
+     	\vec{E}=E_{0}\exp[-z/\delta]\exp[i(\omega t-z/\delta)]\vec{e}_x
+	\end{align}
 \end{itemize}
+On retrouve bien le cas de l'effet de peau à basse fréquence. L'onde se propage encore dans le métal mais son amplitude décroit exponentiellement.
 
 \textbf{On se place dans le cas où $\omega\gg\omega_c$.}
 
 \begin{itemize}
 
-	\item[$\diamondsuit$] Que devient la relation de dispersion dans ce cas-là ? Trouver les solutions possibles pour $k$.
+	\item[$\diamondsuit$] Dans ce cas-là, c'est le terme dissipatif en $m\vec{v}/\tau$ qui devient négligeable, et on se retrouve dans le cas du plasma non dissipatif :
+	\begin{align*}
+		k^2=\frac{\omega^2}{c^2}\left( 1-\frac{\omega_p^2}{\omega^2}\right) 
+	\end{align*}
 	
-	\item[$\diamondsuit$] Écrire l'expression du champ $\vec{E}$ dans le métal, puis celle du champ $\vec{B}$. On distinguera les cas $\omega<\omega_p$ et $\omega>\omega_p$. Décrire alors le comportement de l'onde dans ces 2 situations.
+	\item[$\diamondsuit$] Dans ce cas plasma, la conductivité devient imaginaire pure, donc il n'y a plus de dissipation (le terme $\vec{j}\cdot\vec{E}$ est en $\cos(\omega t)\sin(\omega t)$ et sa valeur moyenne s'annule).
+	
+	Si $\omega<\omega_p$, $k$ est imaginaire pur : $k=i\delta$ et alors :
+	\begin{align}
+     	\vec{E}=E_{0}\exp[-z/\delta]\exp[i\omega t]\vec{e}_x
+	\end{align}
+	avec $\delta = \frac{c^2}{\omega_p^2-\omega}$. L'onde est stationnaire et evanescente : elle ne se propage plus du tout, contrairement au cas de l'effet de peau. 
+	
+	Si $\omega>\omega_p$, $k$ est réel : 
+	\begin{align}
+     	\vec{E}=E_{0}\exp[-z/\delta]\exp[i(\omega t-kz)]\vec{e}_x
+	\end{align}
+L'onde se propage a une vitesse différente que celle-dans le vide mais le métal est transparent pour l'onde.
 
 \end{itemize}
 
@@ -227,6 +268,168 @@ Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq1
 
 	\item[$\diamondsuit$] Quelle est la différence fondamentale entre un plasma vu en cours et un métal comme décrit ici ?
 
+\end{itemize}
+
+\section*{Guide d'onde métallique}
+
+\begin{itemize}
+
+	\item[$\bigstar$] Ce n'est pas une OPPM : l'amplitude n'est pas uniforme dans le plan orthogonal à la direction de propagation. On ne peut donc pas utiliser la relation de structure ; la relation de dispersion du vide $\omega=kc$ est \textit{a priori} non valide.
+	
+	\item[$\bigstar$] On utilise $div(\vec{E}=0$, et on voit rapidement que :
+	\begin{align*}
+		\frac{\partial f}{\partial x} =0 
+	\end{align*}
+	Avec les autres équations de Maxwell, on trouve très facilement l'équation d'Alembert sur $\vec{E}$ dans le guide, qui est assimilé au vide. La présence des parois modifient les conditions aux limites. En injectant l'expression de $\vec{E}$ dans l'équation de propagation, on trouve :
+	\begin{align*}
+		f''(y)+\left(\frac{\omega^2}{c^2} - k^2 \right)\cdot f(y) =0
+	\end{align*}
+	
+	Si $\frac{\omega^2}{c^2} - k^2<0$, alors on a des solutions exponentielles :
+	\begin{align*}
+		f(y)=A\exp(Ky)+B\exp(-Ky)
+	\end{align*}
+	avec $K=-\frac{\omega^2}{c^2} + k^2$
+	
+	Si $\frac{\omega^2}{c^2} - k^2>0$, alors on a des solutions sinusoïdales :
+	\begin{align*}
+		f(y)=A\cos(Ky)+B\sin(-Ky)
+	\end{align*}
+	avec $K=\frac{\omega^2}{c^2} - k^2$
+	
+	\item[$\bigstar$] Les conditions aux limites sont :
+	\begin{align*}
+		E_x(y=0)=E(y=b)=0
+	\end{align*}
+	Elles proviennent des relations de passage à l'interface avec la paroi métallique, où la composante tangentielle du champ électrique est continue. Le champ électrique étant nul dans le métal infiniment conducteur, la composante tangentielle de celui-ci dans le vide doit être nulle.
+	Dans le cas des solutions exponentielles, on aurait :
+	\begin{align}
+    	\begin{cases}
+        A+B  =0\\
+     	\exp(Kb)+\exp(-Kb) = 0
+    \end{cases}  
+	\end{align}
+	La solution serait alors $A=B=0$. A l'inverse, des solutions sinusoïdales non nulles sont possibles avec ces conditions aux limites, où l'on a $B=0$ et $A=E_0$, l'amplitude du champ éléctrique :
+	\begin{align*}
+		\vec{E}=E_0\sin(Kx)\exp[i(kz-\omega t)]\vec{e}_x
+	\end{align*}
+	
+	\item[$\bigstar$]	Les solution ssinusoïdales trouvées correspondent au cas $K^2=\omega^2/c^2-k^2>0$, cad $\lambda>2\pi c/\omega$. A une fréquence donnée, la longueur d'onde doit avoir une valeur minimale.
+	
+	 D'autre part, la condition $f(y=b)=0$ implique que $\sin(Kb)=0$, cad que $Kb=m\pi$, où $m$ est un entier, cad :
+	 \begin{align*}
+	 	\frac{\omega^2}{c^2}-k^2=\frac{m^2\pi^2}{b^2}
+	 \end{align*}
+	 
+	On a alors :	 
+	\begin{align*}
+		\vec{E}=E_0\sin\left(\frac{m\pi}{b}y\right) \exp[i(kz-\omega t)]\vec{e}_x
+	\end{align*}
+		 
+	 On parle de mode de quantification car pour une pulsation donnée, seuls des valeurs du vecteur d'onde $k$ sont autorisées, discrétisées par la valeur $m$. Pour $m=0$, il n'y a  aucun mode, donc pas de propagation possible ($f=0$). Pour $m=1$, on a un mode, cad un $k$ pour un $\omega$ donné, compris entre $[c\pi/b;2c\pi/b]$. Pour $m=2$, on a deux modes, cad 2 $k$ pour un $\omega$ donné, compris entre $[2c\pi/b;3c\pi/b]$. Etc. Inversement, pour une pulsation $\omega$ donnée, on a $E(\omega b/c\pi)$ modes possibles.
+	 
+	 Pour représenter $\vec{E}$, il suffit de représenter les fonctions $\sin(\frac{\pi}{b}y)$ (m=1) et $\sin(\frac{2\pi}{b}y)$ (m=2).
+	
+	\item[$\bigstar$] Le champ magnétique $\vec{B}$ est donné par Maxwell-Faraday :
+	\begin{align*}
+		\nabla\wedge \vec{E}=i\omega\cdot\vec{B}
+	\end{align*}
+	On doit trouver :
+	\begin{align*}
+		\vec{B}&=\frac{k}{\omega}E_0\sin\left(\frac{m\pi}{b}y\right) \exp[i(kz-\omega t)]\vec{e}_y \\
+		&+\frac{im\pi}{\omega b}E_0\cos\left(\frac{m\pi}{b}y\right) \exp[i(kz-\omega t)]\vec{e}_z
+	\end{align*}
+	
+	\item[$\bigstar$] Le vecteur $\vec{\Pi}$ est défini comme :
+	\begin{align*}
+		\vec{\Pi}=\frac{\vec{E}\wedge\vec{B}}{\mu_0}
+	\end{align*}
+	NE JAMAIS OUBLIER DE PASSER E ET B EN REEL ! 
+	
+	On trouve, après calculs :
+	\begin{align*}
+		\vec{\Pi}&=\frac{m\pi}{\omega b\mu_0}E_0^2\sin\left(\frac{m\pi}{b}y\right)\cos\left(\frac{m\pi y}{b}\right)\cos(kz-\omega t)\sin(kz-\omega t)\cdot\vec{e}_y \\
+		&+\frac{k}{\omega\mu_0}E_0^2\sin^2\left(\frac{m\pi y}{b}\right)\cos^2(kz-\omega t)\cdot\vec{e}_z
+	\end{align*}
+	
+	Seule la valeur moyenne temporelle de la composante selon 	$\vec{e}_z$ est non nulle : l'énergie se propage bien selon la direction de propagation de l'onde.
+	
+\end{itemize}
+
+\section*{Réflexion sur un conducteur de conductivité finie}
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] Equation de propagation d'une onde, ou d'Alembert. En injectant l'expression des ondes incidentes et réfléchies, on trouve que $k_i^2=k_r^2=\omega^2/c^2$. Le signe est donné par la direction de propagation : on a donc $k_i=\omega/c$ et $k_r=-\omega/c$.
+	
+	\item[$\clubsuit$] Pour des fréquences inférieures au GHz, on peut négliger dans l'équation de Maxwell-Ampère le courant de déplacement $\vec{j}_D=\varepsilon_0\frac{\partial \vec{E}}{\partial t}$ les courants induits par ce même champ électrique, $\vec{j}=\gamma\vec{E}$, car $\omega\varepsilon_0\ll\gamma$. On en déduit que le champ électrique vérifie une équation de diffusion :
+	\begin{align*}
+		\Delta \vec{E}=\mu_0\gamma\frac{\partial \vec{E}}{\partial t}
+	\end{align*}
+	En insérant l'expression proposée sur l'onde transmise, on trouve que $k_t^2=-j\mu_0\gamma\omega$. On a donc :
+	\begin{align*}
+		k_t = \frac{1-j}{\delta}
+	\end{align*}
+	avec $\delta=\sqrt{2/\mu_0\gamma\gamma}$.
+	
+	\item[$\clubsuit$] On trouve à partir de la relation de structure $\vec{B}=\frac{\vec{k}\wedge\vec{E}}{\omega}$ :
+	\begin{align}
+    \begin{cases}
+        \vec{B}_i=\frac{E_{0,i}}{c}\exp[i(\omega t-kz)]\vec{e}_y\\
+     	\vec{B}_r=-\frac{E_{0,r}}{c}\exp[i(\omega t+kz)]\vec{e}_y\\
+     	\vec{B}_t=(1-j)\frac{E_{0,t}}{\delta\omega}\exp[-z/\delta]\exp[i(\omega t-z/\delta)]\vec{e}_y
+    \end{cases}  
+	\end{align}
+	avec $k=\omega/c$.
+	
+	\item[$\clubsuit$] Il y a continuité des champs électriques et magnétiques : il n'y a ni charges surfaciques, ni courants surfaciques (la conductivité est finie !). On a alors :
+	\begin{align}
+    \begin{cases}
+        E_{0,i} + E_{0,r} =E_{0,t}\\
+     	\frac{E_{0,i}}{c} + \frac{E_{0,r}}{c} =E_{0,t}\frac{(1-j)}{\delta\omega}
+    \end{cases}  
+	\end{align}
+	
+	On trouve alors :
+	\begin{align}
+    \begin{cases}
+        r=\frac{1-n}{1+n}=\frac{1-\frac{(1-j)c}{\omega\delta}}{1-\frac{(1-j)c}{\omega\delta}}\\
+     	t=\frac{2}{1+n}=\frac{2}{1-\frac{(1-j)c}{\omega\delta}}
+    \end{cases}  
+	\end{align}
+	avec $n=\frac{(1-j)c}{\omega\delta}$. 
+		
+	\item[$\clubsuit$] On bourrine avec $\vec{\Pi}=\frac{\vec{E}\wedge\vec{B}}{\mu_0}$, toujours en notation réelle ! On peut utiliser $(1-j)/\sqrt{2}=\exp(-j\pi/4)$.
+	On trouve alors :
+	\begin{align}
+    \begin{cases}
+        \left\langle \vec{\Pi}_i\right\rangle =\frac{E_{0,i}^2}{2\mu_0c}\vec{e}_z\\
+     	\left\langle \vec{\Pi}_r\right\rangle=\frac{E_{0,r}^2}{2\mu_0c}\vec{e}_z\\
+     	\left\langle \vec{\Pi}_t\right\rangle= \frac{E_{0,t}^2}{2\mu_0\omega\delta}\vec{e}_z
+     \end{cases}  
+	\end{align}
+	
+	En $z=0$, on a :
+	\begin{align}
+    \begin{cases}
+        R=-\frac{\left\langle \vec{\Pi}_r\right\rangle\cdot\vec{e}_z}{\left\langle \vec{\Pi}_i\right\rangle\cdot\vec{e}_z}=\frac{1+\left( 1-\frac{\omega\delta}{c}\right)^2}{1+\left(1+\frac{\omega\delta}{c}\right)^2}\\
+     	T=-\frac{\left\langle \vec{\Pi}_t\right\rangle\cdot\vec{e}_z}{\left\langle \vec{\Pi}_i\right\rangle\cdot\vec{e}_z}=\frac{4\frac{\omega\delta}{c}}{1+\left(1+\frac{\omega\delta}{c}\right)^2}
+    \end{cases}  
+	\end{align}	
+	On trouve évidemment que $R+T=1$ : l'énergie est belle et bien conservée. 
+	
+	\item[$\clubsuit$] La puissance dissipe par unité de volume par effet Joule dans le métal s'écrit :
+	\begin{align*}
+		p_{vol}=\vec{j}\cdot\vec{E_t}=\gamma\vec{E_t}\cdot\vec{E_t}
+	\end{align*}
+	Pour obtenir une puissance dissipée, on intègre sur un cylindre de section $S$, sur la longueur $z\in[0;\infty]$ pour prendre en compte la dissipation sur toute l'épaisseur du métal. La décroissance étant exponentielle, l'intégrale sera définie :
+	\begin{align*}
+		\left\langle P \right\rangle &= S\gamma\frac{E_{0,t}^2}{2}\int_0^\infty dz\exp[-2z/\delta] \\
+		&= S\gamma\delta|t|^2\frac{E_{0,i}^2}{2} \\
+		&= ST\frac{E_{0,i}^2}{2\mu_0 c} \\
+		&=S\left\langle \parallel\vec{\Pi}_t(z=0)\parallel\right\rangle
+	\end{align*}
+	
 \end{itemize}
 
 \end{document}

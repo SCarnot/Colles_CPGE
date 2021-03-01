@@ -119,13 +119,13 @@ Une onde métrique traverse une épaisseur $L$ de plasma dans les conditions de 
 
 \section*{Ondes électromagnétiques dans un métal conducteur}
 
-On s'intéresse à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal peut être transparent à très basse fréquence, réfléchissant sur une certaine bande de fréquences, puis de nouveau transparent à très haute fréquence.
+On s'intéresse à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal est transparent à basse fréquence, mais transparent à partir d'une certaine fréquence.
 
 On considère donc que le demi-espace $z>0$ est rempli d'un métal, sur lequel arrive une onde plane progressive monochromatique à la fréquence $\omega$ et polarisée suivant $\vec{e_x}$. 
 
 \begin{itemize}
 
-	\item[$\diamondsuit$] Retrouver l'équation de propagation des ondes électromagnétiques dans le vide. A l'aide des données de l'énoncé, donner l'expression du champ $\vec{E}$ et du champ $\vec{B}$.
+	\item[$\diamondsuit$] Retrouver l'équation de propagation des ondes électromagnétiques dans le vide. A l'aide des données de l'énoncé, donner l'expression du champ $\vec{E}$ et du champ $\vec{B}$ pour $z<0$.
 
 \end{itemize}
 
@@ -136,13 +136,13 @@ Pour décrire le métal, on adopte un modèle d'électrons libres, de masse $m$,
 	\label{eq:drude}
 \end{equation}
 
-Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq10^{14}$.
+Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq10^{-14}$s.
 
 \begin{itemize}
 
-	\item[$\diamondsuit$] En utilisant l'équation \ref{eq:drude}, définir une conductivité $\gamma$ complexe qui dépend de la pulsation $\omega$. Commenter. 
+	\item[$\diamondsuit$] En utilisant l'équation \ref{eq:drude}, définir une conductivité du métal $\gamma$ complexe, lorsqu'il est soumis à une OPPM comme proposé ci-dessus. On fera apparaître la pulsation plasma $\omega_p=\sqrt{N_0e^2/m\varepsilon_0}$. 
 	
-	\item[$\diamondsuit$] En utilisant les équations de Maxwell, trouver une équation vérifiée par le champ $\vec{B}$. En déduire une relation de dispersion des OPPM dans le métal. On fera apparaître la pulsation plasma $\omega_p=\sqrt{N_0e^2/m\varepsilon_0}$.
+	\item[$\diamondsuit$] En utilisant les équations de Maxwell, déterminer la relation de dispersion des OPPM dans le métal. 
 	
 	\item[$\diamondsuit$] Comparer $\omega_c=1/\tau$ et $\omega_p$. Justifier de l'existence de 3 régimes de propagation dans le métal que nous allons étudier par la suite.
 
@@ -152,7 +152,7 @@ Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq1
 
 \begin{itemize}
 
-	\item[$\diamondsuit$] Que devient la relation de dispersion dans ce cas-là ? Trouver les solutions possibles pour $k$.
+	\item[$\diamondsuit$] Que devient la relation de dispersion dans ce cas-là ? Trouver les solutions possibles pour $k$. Faire apparaitre l'expression de la conductivité statique $\gamma_0$ en fonction de $\omega_p$, $\tau$ et $\varepsilon_0$.
 
 	\item[$\diamondsuit$] Écrire l'expression du champ $\vec{E}$ dans le métal, puis celle du champ $\vec{B}$. Comment appelle t-on ce régime et le phénomène associé ? 
 
@@ -176,6 +176,67 @@ Pour un métal très conducteur, on a $N_0\simeq10^{29}$m$^{-3}$ et $\tau\simeq1
 
 	\item[$\diamondsuit$] Quelle est la différence fondamentale entre un plasma vu en cours et un métal comme décrit ici ?
 
+\end{itemize}
+
+\newpage
+
+\section*{Guide d'onde métallique}
+
+Les guides d'onde sont des dispositifs métalliques creux, généralement à section rectagulaire, permettant de canaliser et de guider des ondes électromagnétiques de grande puissance sur une certaine distance. Ils sont utilisés notamment dans les radars ou sur des micro-ondes. 
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.4\textwidth]{guide_onde.pdf}
+\end{figure}
+
+On considère donc un guide d'onde métallique rectangulaire (largeur $a$, hauteur $h$) dans lequel se propage une onde élétromagnétique à la pulsation $\omega$. On suppose que le champ électrique s'écrit :
+\begin{align*}
+	\vec{E}=f(x,y)\cdot\exp[i(kz-\omega t)]\vec{e}_x
+\end{align*}
+Les parois sont de plus supposées infiniment conductrices et l'air à l'intérieur du guide est assimilé au vide. On souhaite comprendre les caractéristiques de la propagation dans le guide par rapport à celle dans le vide.
+
+\begin{itemize}
+
+	\item[$\bigstar$] A t-on affaire à une OPPM ? Justifier.
+	
+	\item[$\bigstar$] A partir des équations de Maxwell, montrer que $f$ ne dépend que de $x$ et retrouver l'équation de propagation vérifiée par $\vec{E}$. En déduire l'équation différentielle vérifiée par $f$ et montrer qu'il existe deux types de solution.
+	
+	\item[$\bigstar$]  A partir des conditions aux limites, montrer qu'il ne peut y avoir qu'un seul type de solution non nulle pour $\vec{E}$ et donner son expression. 
+	
+	\item[$\bigstar$] En déduire une inégalité sur la longueur d'onde $\lambda$, puis déterminer la relation de dispersion reliant $k$ et $\omega$. Pourquoi parle t-on de modes ou de quantification ? Pour une fréquence donnée, combien de modes peuvent se propager dans le guide ? Représenter $\vec{E}$ pour les deux premier modes à un instant donné.
+	
+	\item[$\bigstar$] Donner l'expression du champ magnétique $\vec{B}$. 
+	
+	\item[$\bigstar$] Calculer le vecteur de Poynting $\vec{\Pi}$ de l'onde. Commenter.
+	
+	\item[$\bigstar$] Estimer la norme de $\vec{\Pi}$ dans le cas d'un micro-onde domestique.
+
+\end{itemize}
+
+\newpage
+
+\section*{Réflexion sur un conducteur de conductivité finie}
+
+Un milieu conducteur de conductivité $\gamma=6\cdot10^7\Omega^{-1}$m$^{-1}$ occupe le demi-espace $z>0$ tandis que de l'air, assimilé au vide, occupe le demi-espace $z<0$. Une onde électromagnétique incidente plane et monochromatique de pulsation $\omega$ se propage dans la direction de l'axe $Oz$ dans l'air. Le champ électrique de cette onde incidente s'écrit :
+\begin{align*}
+	\vec{E}_i=E_{0,i}\exp[i(\omega t-k_iz)]\vec{e}_x
+\end{align*}
+A l'interface $z=0$, elle donne naissance à une onde réfléchie et transmise s'écrivant respectivement $\vec{E}_r=\vec{E}_{0,r}\exp[i(\omega t-k_rz)]$ et $\vec{E}_t=\vec{E}_{0,t}\exp[i(\omega t-k_tz)]$, de même pulsation.
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] Déterminez l'équation de propagation vérifiée par le champ électrique dans le vide, et en déduire l'expression de $k_i$ et $k_r$. 
+	
+	\item[$\clubsuit$] Quelle équation vérifie le champ électrique à l'intérieur du métal, pour des fréquences que l'on supposera ici inférieures au GHz ? En déduire l'expression de $k_t$. Commenter. 
+	
+	\item[$\clubsuit$] Déterminer l'expression des champ magnétiques $\vec{B}_i$, $\vec{B}_r$ et $\vec{B}_t$ associés.
+	
+	\item[$\clubsuit$] Quelles sont les conditions imposées aux champ électrique et magnétique à l'interface $z=0$ ? En déduire les coefficients de réflexion $r=E_{0,r}/E_{0,i}$ et de transmission $t=E_{0,t}/E_{0,i}$.
+	
+	\item[$\clubsuit$] Après avoir déterminé les moyennes temporelles des vecteurs de Poynting $\vec{Pi}$ des trois ondes	, déterminer le coefficient de réflexion $R$ et de transmission $T$ en énergie. Commenter.
+	
+	\item[$\clubsuit$] Quelle est la puissance moyenne dissipée par effet Joule dans le métal, par unité de surface. Donner une estimation dans le cas où cette plaque est exposée en plein soleil.
+	
 \end{itemize}
 
 \end{document}
