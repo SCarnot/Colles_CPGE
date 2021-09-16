@@ -70,13 +70,16 @@ Un AO est idéal si :
 \end{itemize}
 
 \section*{Correction exercice 2}
-Fonction de transfert :
+
+\begin{itemize}
+
+	\item[$\ast$] Fonction de transfert :
 \begin{equation}
 	H=\frac{u_s}{u_e}=\frac{R_1+R_2}{R}\frac{1+j\frac{R_1R_2}{R_1+R_2}(C_1+C_2)\omega}{(1+jR_1C_1\omega)(1+jR_2C_2\omega)}=H_0\frac{1+j\omega/\omega_0}{(1+j\omega/\omega_1)(1+j\omega/\omega_2)}
 \end{equation}
 donc $H_0=\frac{R_1+R_2}{R}$, $\omega_0=\frac{R_1+R_2}{R_1R_2(C_1+C_2)}$, $\omega_1=1/R_1C_1$ et $\omega_2=1/R_2C_2$
 
-Diagramme de Bode : on décompose en somme des diagramme de Bode des différents produits.
+	\item[$\ast$] Diagramme de Bode : on décompose en somme des diagramme de Bode des différents produits.
 
 \textbf{Cas $\omega_0<\omega_1<\omega_2$ :}
 \begin{figure}[!h]
@@ -96,30 +99,94 @@ Diagramme de Bode : on décompose en somme des diagramme de Bode des différents
 	\includegraphics[width=0.8\linewidth]{exo2_2.png}
 \end{figure}
 
+	\item[$\ast$] Comme $\omega_0=\omega_1=\omega_2$ et $H_0=2$, la fonction de transfert se simplifie en : 
+\begin{equation}
+	H=\frac{2}{(1+j\omega/\omega_0)}
+\end{equation}	
+C'est un filtre passe-bas d'ordre 1.
+
+\item[$\ast$] Le signal d'entrée est un signal créneau (pair, avec les cosinus) : on reconnait la décroissance typique en $1/n$ avec les $n$ impairs seulement. Les coefficients de Fourier sont :
+
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		C_n &= \frac{4U_0}{\pi}\frac{1}{2(p+1)}\\
+		\varphi_n &= -\frac{\pi}{2} \\
+	\end{array}\right.
+\end{equation}
+
+On rappelle l'écriture de la décomposition de Fourier :
+\begin{equation}
+	U_e(t) = \sum_{p=0}^{\infty}C_n\cos(n\omega t+\varphi_n)
+\end{equation}
+
+La fonction de transfert, dans le cas où $\omega\gg\omega_0$, peut se simplifier en $H\simeq\frac{2\omega_0}{j\omega}$. Les coefficients de Fourier du signal de sortie sont alors : 
+
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		C'_n & = \frac{4U_0}{\pi}\frac{1}{2(p+1)}\times |H(2(p+1)\omega)|\\
+
+		\varphi_n' &= -\frac{\pi}{2}+\mathbf{arg}\left(\frac{2\omega_0}{j\omega} \right)  \\
+	\end{array}\right.
+\end{equation}
+
+On obtient donc :
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		C'_n & = \frac{4U_0}{\pi}\frac{2}{(2(p+1))^2}\frac{\omega_0}{\omega}\\
+		\varphi_n' &= -\frac{\pi}{2}-\frac{\pi}{2} \\
+	\end{array}\right.
+\end{equation}
+
+Le signal de sortie est donc :
+
+\begin{equation}
+	U_s(t) = \frac{2U_0}{\pi}\sum_{p=0}^{\infty}\frac{1}{(2p+1)^2}\cos(2(p+1)\omega t -\pi)
+\end{equation}
+
+On reconnait la décroissance en $1/n^2$ typique d'un signal triangulaire. C'est normal : le filtre se comporte ici comme un intégrateur.
+
+\end{itemize}
+
 \section*{Correction exercice 3}
 
 Le courant de sortie est supposé nul.
 
 \begin{itemize}
-	\item[•] Comportement : BF, $u_e=u_s$ et HF, $u_e=u_s$, c'est un filtre passe bande
+	\item[$\spadesuit$] Comportement : BF, $u_e=u_s$ et HF, $u_e=u_s$, c'est un filtre coupe-bande (l'inverse d'un passe-bande, qui ne laisse rien passer à BF et HF). En BF, le circuit est "flottant", cad il n'es tplus connecté à la masse. Comme l'intensité de sortie est considérée comme nulle, la chute de tension aux bornes des résistances est nulle.
 	
-	\item[•]
+	\item[$\spadesuit$]
 		Pour la fonction de transfert, on fait une loi des nœuds en A (entre les 2 résistances du haut), en B (entre les 2 capa du milieu) et à la sortie :
-	\begin{equation}
-		(u_e-u_a)/R+(u_s-u_a)/R-j2C\omega u_a=0
-	\end{equation}
-	\begin{equation}
-		(u_e-u_b)jC\omega+(u_s-u_b)jC\omega-u_b/R=0
-	\end{equation}
-	\begin{equation}
-		(u_s-u_a)/R+-jC\omega(u_s-u_b)=0
-	\end{equation}
-	On trouve alors :
+		
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		 \frac{u_e-u_A}{R} + \frac{u_s-u_A}{R} -2jC\omega u_A = 0\\
+		 \\
+		 jC\omega(u_e-u_B) +  jC\omega(u_s-u_B) - \frac{2}{R}u_B =0  \\
+		 \\
+		 \frac{u_A-u_s}{R} + jC\omega(u_B-u_s)=0
+	\end{array}\right.
+\end{equation}
+
+Avec les deux premières lignes, on trouve :
+
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		 u_A = \frac{u_e+u_s}{2(1+jRC\omega)}\\
+		 \\
+		 u_B = \frac{u_e+u_s}{2(1+1/jRC\omega)} \\
+	\end{array}\right.
+\end{equation}
+
+	On trouve alors en réinjectant dans la dernière équation :
 	\begin{equation}
 		H =\frac{1+(jRC\omega)^2}{1+4jRC\omega + (jRC\omega)^2}
 	\end{equation}
 	
-	\item[•]
 	Diagramme de Bode :
 Diagramme assymptotique :  $\forall \omega, H=0$ et pour $\omega=\omega_0=1/RC$, dirac à "l'envers" avec $H=-\infty$. C'est bien un coupe-bande.
 \begin{figure}[!h]
@@ -128,46 +195,117 @@ Diagramme assymptotique :  $\forall \omega, H=0$ et pour $\omega=\omega_0=1/RC$,
 \end{figure}
 
 
-	\item[•] Bande-passante :
-	$G_{DB} = -20\log \sqrt{1+\left( \frac{4RC\omega}{1-R^2C^2\omega^2}\right) ^2}=-3$ 
+	\item[$\spadesuit$] Pour la bande-coupante, on cherche les $\omega$ de telle sorte que :
+\begin{equation}
+	G_{DB} = -20\log \left( \frac{|1-x^2|}{\sqrt{(1-x^2)^2+16x^2}}\right) = -20\log\left(\frac{1}{\sqrt{2}} \right) \simeq 3
+\end{equation}	
+	en posant $x=RC\omega$.
+On tombe alors sur l'équation $(1-x^2)^2=16x^2$, et en enlevant le carré :
+\begin{equation}
+	x^2\pm 4x -1 =0
+\end{equation}
+Avec le signe $\pm$, il y a 4 solutions possibles (2 par équations, qui ont 2 solutions chacunes). Les seules solutions positives sont $\omega_{\pm}=\frac{\pm 2+\sqrt{5}}{RC}$.
+
+	\item[$\spadesuit$] On peut montrer facilement que le signal d'entrée peut s'écrire sous la forme :
+	\begin{equation}
+		U_e(t)=\frac{1}{4}\left( 3\cos(\omega t) + \cos(3\omega t)\right) 
+	\end{equation}
 	
-	$\Rightarrow R^2C^2\omega^2 - 4RC\omega -1=0$
-	alors : $\omega_{\pm}=\frac{\pm 2+\sqrt{5}}{RC}$
+	On a donc deux harmoniques, à $\omega$ et $3\omega$, soit :
+
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		C_1 & = \frac{3}{4}, \quad \varphi_1=0 \\
+
+		C_3 & = \frac{1}{4}, \quad \varphi_3=0  \\
+	\end{array}\right.
+\end{equation}	
+
+Ces harmoniques deviennent après sortie du filtre : 
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		C_1 & = \frac{3}{4}\times |H(\omega)|, \quad \varphi_1=0 + \mathbf{arg}\left(H(\omega) \right)  \\
+
+		C_3 & = \frac{1}{4}\times |H(3\omega)|, \quad \varphi_3=0 + \mathbf{arg}\left(H(3\omega) \right)  \\
+	\end{array}\right.
+\end{equation}		
+
+Comme $|H(3\omega)| = |H(\omega_0)| = 0$, l'harmonique 3 n'a aucune contribution. Dès lors, pur la première harmonique $x=\omega/\omega_0=1/3$ : 
+\begin{equation}
+	\left\lbrace
+	\begin{array}{lll}
+		C_1 & = \frac{3}{4}\times \left|\frac{1-\frac{1}{9}}{1+j\frac{4}{3}-\frac{1}{9}} \right| =\frac{4}{\sqrt{52}} \simeq\frac{1}{2} \\
+
+		\varphi_1 & = -\mathbf{arg}\left( 1+j\frac{4}{3}-\frac{1}{9}\right) =\arctan\left( \frac{27}{32}\right) \simeq \frac{\pi}{4} \\
+	\end{array}\right.
+\end{equation}		
 	
-	AN : $\omega_- = 230$ Hz et $\omega_+ = 4230$ Hz
+En très grosse approximation, on peut donc dire que :
+\begin{equation}
+	U_s(t) \simeq \frac{1}{2}\cos(\omega t + \pi/4)
+\end{equation}	
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\linewidth]{exo3_1.png}
+\end{figure}
 	
-	\item[•] Question supplémentaire : 
-	Le filtre supprime les harmonique 1 et 3. Le signal est un créneau, pour le tracer, on retire les 2 premières harmoniques d'un signal créneau.
 \end{itemize}
 
 \section*{Correction exercice 4}
 
 \begin{itemize}
-	\item[•]
-	$H=\frac{1-jRC\omega}{1+jRC\omega}$. On remarque que $\mid H\mid=1$, mais que $\varphi=-2\arctan(RC\omega)$. On peut écrire alors $H$ sous la forme :
+	\item[$\star$]
+	$H=\frac{1-jRC\omega}{1+jRC\omega}$. On remarque que $\mid H\mid=1$, mais que $\varphi=-2\arctan(RC\omega)=-2\arctan(\omega/\omega_0)$, avec $\omega_0=1/RC$. On peut écrire alors $H$ sous la forme :
 	\begin{equation}
 		H=e^{-2j\arctan(RC\omega)}
 	\end{equation}
 C'est un filtre déphaseur.
 
-	\item[•]
-	Dans l'espace de fourier, pour un signal quelconque d'entrée $e(t)=\sum_k A_k e^{jk\omega_0 t}$, la sortie est :
-	\begin{equation}
-		s(t)=\sum_k A_k e^{jk\omega_0 t+j\varphi(k\omega_0)}
-	\end{equation}
-	Si $\omega\ll RC$, alors $\varphi(\omega)\longrightarrow-2RC\omega$ et que toutes les harmoniques valident cette condition (ex : signal triangulaire, avec une décroissance rapide de l'amplitude des harmoniques) :
-	\begin{equation}
-		s(t)=\sum_k A_k e^{jk\omega_0 (t-2RC)}=e(t-\tau)
-	\end{equation}
+	\item[$\star$]
+	On part de la décomposition de Fourier d'un signal (quelconque) d'entrée :
+\begin{equation}
+	U_e(t) = \sum_n C_n\cos(n\omega t + \varphi_n)
+\end{equation}	
+Après le passage dans le filtre, le signal de sortie :	
+\begin{equation}
+	\begin{array}{lll}
+		U_s(t) & = \sum_n C_n|H(n\omega)|\cos(n\omega t + \varphi_n + \mathbf{arg}(H(n\omega)) \\
+
+		 & = \sum_n C_n\cos(n\omega t + \varphi_n -2\arctan(RCn\omega)) \\
+	\end{array}
+\end{equation}			
+	Or, pour obtenir une forme retardée comme proposée dans l'énoncé, il faut factoriser par le $n\omega$ compris dans le $\arctan$. On le linéarise dans le cas où $RCn\omega\ll1$, cad $\omega\ll\omega_0$ avec $1/\tau=1/2RC$. 
 	
-	\item[•] $\cos^3(\omega t)=\frac{1}{4}(3\cos(\omega t) + \cos(3\omega t))$.
+	Dans ce cas-là :
+\begin{equation}
+	\begin{array}{lll}
+		U_s(t) & = \sum_n C_n\cos(n\omega t + \varphi_n -2RCn\omega) \\
+
+		 & = \sum_n C_n\cos(n\omega (t-\tau) + \varphi_n) \\
+		 &= U_e(t-\tau)
+	\end{array}
+\end{equation}			
+	Il faut donc que $\omega\ll 1/RC$, avec toutes les harmoniques qui valident cette condition (ex : signal triangulaire, avec une décroissance rapide de l'amplitude des harmoniques).
+	
+	\item[$\star$] On décompose le signal en une série de cosinus : $\cos^3(\omega t)=\frac{1}{4}(3\cos(\omega t) + \cos(3\omega t))$.
 	Le signal de sortie sera donc : 
 	\begin{equation}
 	U_s(t) = \frac{1}{4}\left[ 3\cos(\omega t - 2\arctan(\omega/\omega_0)) + \cos(3\omega t - 2\arctan(3\omega/\omega_0))\right] 
 	\end{equation}
-	Pour $\omega = \frac{\omega_{0}}{3}$, on a une déformation du signal car la condition précédente sur le retard n'es tpas vérifiée. Pour $\omega=10^{-2}\omega_0$, le signal est retardé d'une durée $\tau=2/\omega_0=2RC$.
+	Pour $\omega = \frac{\omega_{0}}{3}$, on a :
+\begin{equation}
+	\begin{array}{lll}
+		U_s(t) & = \frac{3}{4}\cos(\omega t - 2\arctan(1/3)) + \frac{1}{3}\cos(3\omega t - 2\arctan(1) \\
+
+		 & \simeq \frac{3}{4}\cos(\omega t - \pi/5) + \frac{1}{3}\cos(3\omega t - \pi/2)\\
+	\end{array}
+\end{equation}		
+	Pour $\omega = 10^{-2}\omega_0$, on a la condition $\omega\ll\omega_0$, avec un retard de phase $\varphi = 2\cdot10^{-2}$.
 	
-	\item[•] Pour $t<0$, le condensateur est déchargé donc $u_e(t)=u_s(t)=0$. Pour $t\geq0$, le condensateur se charge donc $u_-(t) = E(1-e^{-t/RC})$, et alors :
+	\item[$\star$] Pour $t<0$, le condensateur est déchargé donc $u_e(t)=u_s(t)=0$. Pour $t\geq0$, le condensateur se charge donc $u_-(t) = E(1-e^{-t/RC})$, et alors :
 	\begin{equation}
 		u_s(t)=2E(1-e^{-t/RC}) - E
 	\end{equation}

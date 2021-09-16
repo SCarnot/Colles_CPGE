@@ -58,61 +58,82 @@ On introduit un montage intermédiaire pour compenser l'insuffisance de la sourc
 \newpage
 
 \section*{Exercice 2}
-Déterminer la fonction de transfert de ce filtre, que l'on mettra sous lal forme suivante : 
-\begin{equation}
-\underline{H}(j\omega) = H_{0}\frac{\prod_{k=1}^{n} (1+j\omega/\omega_{k})}{\prod_{l=1}^{m} (1+j\omega/\omega_{l})}
-\end{equation} 
 
-Tracer le diagramme de Bode correspondant en fonction des différentes pulsations en jeu. Expliciter trois cas possibles.
+On considère le montage suivant. L'AO est supposé idéal.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{circuit_6.pdf}
 \end{figure}
 
+\begin{itemize}
+
+	\item[$\ast$] Déterminer la fonction de transfert de ce filtre, que l'on mettra sous la forme suivante : 
+\begin{equation}
+\underline{H}(j\omega) = H_{0}\frac{\prod_{k} (1+j\omega/\omega_{k})}{\prod_{l} (1+j\omega/\omega_{l})}
+\end{equation} 
+
+\item[$\ast$] Tracer le diagramme de Bode correspondant en fonction des différentes pulsations en jeu. Expliciter les cas possibles.
+
+\item[$\ast$] On considère désormais que $R=R_1=R_2$ et $C_1=C_2=C$. Simplifier la fonction de transfert, en introduisant $\omega_0=1/RC$. A quel type de filtre à t-on affaire ?
+
+\item[$\ast$] On envoie en entrée le signal suivant :
+\begin{equation}
+	U_e(t) = \frac{4U_0}{\pi}\sum_{p=0}^{\infty}\frac{1}{2p+1}\sin(2(p+1)\omega t)
+\end{equation}
+On suppose que $\omega\gg\omega_0$. Quel est le signal de sortie $U_s$ ? Donner son allure et commenter. 
+
+\end{itemize}
+
  \newpage
 
 \section*{Exercice 3}
 
-Après avoir précisé le comportement du circuit en basse et haute fréquence, déterminez la fonction de transfert de ce filtre sous la forme canonique. Quel est le rôle de ce filtre ? Tracez le diagramme de Bode correspondant et déterminez sa bande passante. 
-
-\textit{Données : $R=50k\Omega$ et $C=3.2nF$}
+On considère le filtre suivant :
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{circuit_2.pdf}
 \end{figure}
 
-\section*{Question supplémentaire}
-On suppose désormais que $R=50k\Omega$ et $C=3.2nF$. On envoie un signal de fondamental $f_{0}=1kHz$ dont le développement en série de Fourier est donné par :
-\begin{equation}
-u_{e}(t)=\frac{4E}{\pi}\sum_{p=0}^{\infty}\frac{\sin \left[    \left( 2p+1\right)2\pi f_{0}t \right]}{2p+1}  
-\end{equation}
+\begin{itemize}
 
-Quel est ce signal ? Quel est l'effet du filtre sur ce signal ? On tracera schématiquement le signal d'entrée et de sortie.
+	\item[$\spadesuit$] Quel est le comportement de ce filtre à basse et haute fréquence ? 
+	
+	\item[$\spadesuit$] Déterminer la fonction de transfert associée et tracer le diagramme de Bode correspondant. On introduira $\omega_0=1/RC$.
+	
+	\item[$\spadesuit$] Déterminer la bande "coupante" $\Delta\omega$, cad la plage de pulsations $\Delta\omega$ pour lesquelles $G^{dB}(\omega)\leq G^{dB}_{max} - 3$. On rappelle que $20\log\left( \sqrt{2}\right)\simeq3 $.
+	
+	\item[$\spadesuit$] On envoie le signal $U_e(t)=U_0\cos^3(\omega t)$ en entrée, avec $\omega=\omega_0/3$. Déterminer le signal de sortie $U_s(t)$. Tracer schématiquement les signaux.
+
+\end{itemize}
 
 \newpage
 
 \section*{Exercice 4}
 \begin{itemize}
-\item[•] Explicitez la fonction de transfert de ce filtre, puis calculez son gain et sa phase. On notera $\omega_0$ sa pulsation caractéristique. Quel est son rôle ?
+\item[$\star$] Explicitez la fonction de transfert de ce filtre, puis calculez son gain et sa phase. On notera $\omega_0$ sa pulsation caractéristique. Quel est son rôle ?
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{circuit_.pdf}
 \end{figure}
 
-\item[•]
+\item[$\star$]
 Pour quelles conditions sur le circuit et le signal d'entrée trouve t-on que le circuit retarde un signal périodique sans le déformer, c'est-à-dire que $U_{s}(t)=U_{e}(t-\tau)$ ? Exprimez alors ce retard $\tau$ en fonction de $R$ et $C$.
-\textit{Conseil : utiliser la décomposition spectrale d'un signal}
-\item[•] On envoie en entrée le signal suivant :
+
+On pourra utiliser la décomposition en série de Fourier du signal d'entrée :
+\begin{equation}
+U_e(t) = \sum_n C_n\cos(n\omega t + \varphi_n)
+\end{equation}
+
+\item[$\star$] On envoie en entrée le signal suivant :
 \begin{equation}
 U_{e}(t) = U_{0}\cos^{3}(\omega t)
 \end{equation}
-En décomposant $U_e(t)$ en une somme de deux signaux, écrire l'expression de $U_s(t)$, le signal en sortie du filtre.
 
-Décrire l'effet du filtre sur ce signal pour $\omega = \frac{\omega_{0}}{3}$ et $\omega=10^{-2}\omega_0$.
+Décrire l'effet du filtre sur ce signal pour $\omega = \frac{\omega_{0}}{3}$ et $\omega=10^{-2}\omega_0$, et donner l'allure du signal de sortie. On donne $\arctan(1/3)\simeq\pi/10$.
 
-\item[•]
+\item[$\star$]
 On suppose le condensateur déchargé à $t=0$. On envoie un échelon de tension $E$ en entrée. Quelle est la sortie ? Commenter.
 \end{itemize}
 
