@@ -31,8 +31,21 @@
 
 \begin{itemize}
 	\item[•] La boucle de rétroaction est sur la borne +, l'AO est en régime saturé et donc $u_s=\pm V_s$. 
-	\item[•] Condition de basculement de $+/-V_s\rightarrow-/+V_s$ : $u_-\rightarrow-/+\frac{R_1}{R_2+R_1}$.
-	On peut commencer par $u_-(t=0)=\frac{R_1}{R_2+R_1}V_s$ et $u_+(t=0)=-V_s$. Alors :
+
+	\item[•] L'AO fonctionne en régime saturé, la condition $u_+=u_-$ n'est plus vérifiée ! On a cependant les équation suivantes (loi des noeuds en $u_+$ et loi des noeuds en $u_-$) :
+	
+\begin{align*}
+	\left\lbrace
+\begin{array}{cc}
+	&  u_+=\frac{R_1}{R_1+R_2}u_s\\
+	\\
+	&RC\frac{du_-}{dt} +u_- =u_s  \\
+\end{array}\right.
+\end{align*}	
+
+L'AO étant en régime saturé, $u_s=\pm V_s$, la deuxième équation correspond donc à une charge et décharge du condensateur. On peut partir de la situation où le condensateur est chargé négativement (donc $u_-<0$) et $u_s=+V_s$ (cad cohérent la condition $u_-<u_+$, toutes les autres situations s'y ramènent, juste le signe peut s'inverser). 
+
+	Plus particulièrement, on peut commencer par $u_-(t=0)=\frac{R_1}{R_2+R_1}V_s$ et $u_+(t=0)=-V_s$ et alors :
 	\begin{equation}
 		u_-(t)=V_s\left(1+\frac{R_1}{R_1+R_2}\right)\exp(-t/RC)-V_s 
 	\end{equation}
