@@ -15,6 +15,58 @@
 
 \begin{document}
 
+\section*{Flux et divergence en coordonnées cylindriques}
+
+On s'intéresse à l'écoulement d'un fluide incompressible en utilisant la description langrangienne. On considère un volume $d\tau$ élémentaire, situé en $P=(r,\theta,z)$ en coordonnées cylindriques. Chaque face de ce volume est indexé de 1 à 6, comme indiqué sur le schéma ci-dessous.
+
+\begin{center}
+	\includegraphics[scale=0.65]{div_meca_flu.pdf}
+\end{center}
+
+Le champ de vitesse en tout point $P$ est noté $\vec{v}(r,\theta,z)$. On admet que le débit volumique $\phi_v$ d'un fluide à travers une surface $\Sigma$ est :
+\begin{equation}
+\label{eq:debit}
+	\phi_v = \iint _\Sigma d\vec{S}\cdot\vec{v}
+\end{equation}
+Plus précisément, c'est la somme sur la surface $\Sigma$ des flux (ou débits volumiques) élémentaires $d\phi_v=d\vec{S}\cdot\vec{v}$.
+
+\begin{itemize}
+
+	\item[$\ast$] Rappeler ce que sont les descriptions langrangienne et eulérienne d'un fluide en écoulement.
+	
+	\item[$\ast$] Calculer les flux élémentaires $d\phi_{v,i}$ sur chaque face du volume élémentaire $d\tau$, $i\in\{1;6\}$.
+	
+	\item[$\ast$] En déduire la relation :
+	\begin{align*}
+	 	\sum_{i=1}^6 d\phi_{v,i} = \mathbf{div}(\vec{v})d\tau
+	\end{align*}
+
+	Cela vous rappelle t-il un théorème ?
+	
+	\item[$\ast$] On suppose désormais que l'écoulement est radial et qu'il ne dépend que de $r$ : $\vec{v}=v(r)\vec{e}_r$. De plus, on suppose que l'écoulement est incompressible, c'est-à-dire que pour tout volume $V$ ne contenant pas l'axe $Oz$, le débit de fluide entrant dans $V$ est égal au débit de fluide sortant.
+	
+	En déduire que le champ de vitesse s'écrit $\vec{v}=\frac{A}{r}\vec{e}_r$, où $A$ est constante.
+	
+	\item[$\ast$] On s'intéresse au volume $V$ délimitant un cylindre coaxial à l'axe $Oz$, de hauteur $h$, de rayon $R$. En considérant le champ de vitesse radial de la question précédente, calculer le débit volumique $\phi_v$ s'écoulant à travers les parois de ce cylindre en utilisant la définition du débit donné avec la formule $\ref{eq:debit}$. Est-ce compatible avec le théorème de Green-Ostrogradski ?
+	
+\end{itemize}
+
+\textit{Données}
+
+Divergence en coordonnée cylindrique d'un vecteur $\vec{A}$ :
+\begin{align*}
+\mathbf{div}(\vec{A})=\frac{1}{r}\frac{\partial (r A_r)}{\partial r} + \frac{1}{r}\frac{\partial A_\theta}{\partial \theta} + \frac{\partial A_z}{\partial z}
+\end{align*}
+
+Théoèreme de Green-Ostrogradski :
+\begin{align*}
+\int\!\!\!\!\!\int\!\!\!\!\!\int_{V} \mathbf{div}(\vec{A})\, {\rm d}\tau =
+\int\!\!\!\!\!\!\!\subset\!\!\!\supset\!\!\!\!\!\!\!\int_{\Sigma}  \overrightarrow A \cdot \mathrm d \overrightarrow{S}
+\end{align*}
+
+
+\newpage
+
 \section*{Structure de l'atmosphère}
 
 La troposphère constitue la partie basse de l'atmophère dans laquelle nous vivons, du niveau de la mer jusqu'à une altitude comprise entre 8 et 15km. On peut considérer la troposphère comme un gaz parfait de coefficient thermodynamique $\gamma=7/5$, de masse molaire $M=28.965$g.mol$^{-1}$, soumis à la gravitation terrestre, modélisée par l'accélération de la pesanteur $g=9.81$m.s$^{-2}$ supposée constante avec l'altitude. L'altitude sera représentée par la variable $z$. La pression au niveau de la mer $z=0$ est $P_0=10^5$Pa et la température est $T_0=$293K. On souhaite connaître l'évolution de la pression $P$ et de la tempérture $T$ avec l'altitude.
