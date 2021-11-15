@@ -64,12 +64,67 @@ Théoèreme de Green-Ostrogradski :
 \int\!\!\!\!\!\!\!\subset\!\!\!\supset\!\!\!\!\!\!\!\int_{\Sigma}  \overrightarrow A \cdot \mathrm d \overrightarrow{S}
 \end{align*}
 
+\newpage
+
+\section*{Force exercée sur un barrage}
+
+On considère un barrage de lac rempli d'une hauteur d'eau $H$. La forme de sa paroi en contact avec l'eau est décrite par l'équation $z=kx^2$, comme indiqué sur le schéma ci-dessous. Le barrage a une longueur $L$ selon $y$.
+
+\begin{center}
+	\includegraphics[scale=1]{barrage.pdf}
+\end{center}
+
+\begin{itemize}
+
+	\item[$\diamond$] A partir d'un bilan de force, démontrer la relation fondamentale de la statique des fluides dans l'eau : 
+	\begin{align*}
+		\vec{\grad}(P) - \rho\vec{g}=\vec{0}
+	\end{align*}
+		où $\rho$ est la densité massique de l'eau, supposée constante et $\vec{g}$ le champ de pesanteur terrestre.
+		
+		\item[$\diamond$] Donner l'expression du champ de pression $p$ dans l'eau.
+		
+		\item[$\diamond$] Déterminer les forces horizontale et verticale exercées par le lac sur le barrage.
+
+\end{itemize}
+
+\newpage
+
+\section*{Pression dans une étoile}
+
+Soit une étoile sphérique de rayon $R$ et de masse $M$, constituée de gaz. On note respectivement $p(r)$, $\rho(r)$ et $\vec{g}(r)$ la pression, la densité et le champ de gravitation dans l'étoile à une distance $r$ du centre. On souhaite connaître ces quantités au sein de l'étoile. 
+
+\begin{itemize}
+
+	\item[$\spadesuit$] On admet que le champ de grvitation et la densité sont reliés par la relation :
+	\begin{align*}
+		\mathbf{div}\vec{g}(r)=-4\pi G\rho(r)
+	\end{align*}
+où $\rho$ est la constante gravitationnelle. 
+Déterminer $g(r)$ en fonction d'une intégrale de $\rho$ que l'on déterminera.
+
+	\item[$\spadesuit$] A partir d'un bilan de force, démontrer la relation fondamentale de la statique des fluides dans le gaz de l'étoile : 
+	\begin{align*}
+		\vec{\grad}(p) - \rho\vec{g}=\vec{0}
+	\end{align*}
+	
+	\item[$\spadesuit$] Dans le cas où la masse volumique est une constante, cad $\rho(r)=\rho_0$, déterminer le champ de gravité $\vec{g}(r)$ et le champ de pression $p(r)$.
+	
+	\item[$\spadesuit$] On suppose maintenant que le gaz se comprime au fur et à mesure que la pression augmente au sein de l'étoile, en suivant la loi suivante : 
+	\begin{align*}
+		\frac{P}{\rho^2}= C
+	\end{align*}
+	où $C$ est une constante quelconque. 
+	
+	Trouver une équation différentielle en $\rho(r)$ et la résoudre en introduisant la fonction $f(r)=r\rho(r)$.
+
+\end{itemize}
 
 \newpage
 
 \section*{Structure de l'atmosphère}
 
-La troposphère constitue la partie basse de l'atmophère dans laquelle nous vivons, du niveau de la mer jusqu'à une altitude comprise entre 8 et 15km. On peut considérer la troposphère comme un gaz parfait de coefficient thermodynamique $\gamma=7/5$, de masse molaire $M=28.965$g.mol$^{-1}$, soumis à la gravitation terrestre, modélisée par l'accélération de la pesanteur $g=9.81$m.s$^{-2}$ supposée constante avec l'altitude. L'altitude sera représentée par la variable $z$. La pression au niveau de la mer $z=0$ est $P_0=10^5$Pa et la température est $T_0=$293K. On souhaite connaître l'évolution de la pression $P$ et de la tempérture $T$ avec l'altitude.
+La troposphère constitue la partie basse de l'atmophère dans laquelle nous vivons, du niveau de la mer jusqu'à une altitude comprise entre 8 et 15km. On peut considérer la troposphère comme un gaz parfait de coefficient thermodynamique $\gamma=7/5$, de masse molaire $M=28.965$g.mol$^{-1}$, soumis à la gravitation terrestre, modélisée par l'accélération de la pesanteur $g=9.81$m.s$^{-2}$ supposée constante avec l'altitude (représentée par la variable $z$). La pression au niveau de la mer $z=0$ est $P_0=10^5$Pa et la température est $T_0=$293K. On souhaite connaître l'évolution de la pression $P$ et de la tempérture $T$ avec l'altitude.
 
 \begin{itemize}
 
@@ -78,18 +133,19 @@ La troposphère constitue la partie basse de l'atmophère dans laquelle nous viv
 		\vec{\grad}(P) - \rho\vec{g}=\vec{0}
 	\end{align*}
 		où $\rho$ est la densité massique de l'atmosphère.
-	\item[$\vartriangle$] Pour déterminer l'évolution de la pression et de la température avec l'altitude, on suppose qu'un volume $V$ d'air subit une transformation adiabatique réversible lorsqu'il change d'altitude. Montrer alors que la pression $P$ et la densité $\rho$ de l'air sont alors reliées par :
+		
+	\item[$\vartriangle$] Redémontrer dans le cas classique de l'atmopshère isotherme ($T(z)=T_0$) l'expression de la pression $P(z)$ et $\rho(z)$. On mettra en évidence une altitude caractéristique $H$ à déterminer. En quoi ce modèle est-il limité ?
+		
+	\item[$\vartriangle$] Pour déterminer l'évolution de la pression et de la température avec l'altitude, on suppose qu'un volume $V$ d'air subit une transformation adiabatique réversible (et non plus isotherme) lorsqu'il change d'altitude. Montrer alors que la pression $P$ et la densité $\rho$ de l'air sont alors reliées par :
 	\begin{align*}
 		\rho = \frac{MP_0}{RT_0}\left(\frac{P}{P_0} \right) ^{1/\gamma}
 	\end{align*}
 
-	\item[$\vartriangle$] En déduire l'évolution de la pression avec l'altitude $P(z)$, de la densité $\rho(z)$ puis celle de la température $T(z)$. Commenter en mettant en évidence une altitude caractéristique $H$, et calculer sa valeur numérique. Dans ce modèle, quelle est alors l'épaisseur de l'atmosphère ?
+	\item[$\vartriangle$] En déduire l'évolution de la pression avec l'altitude $P(z)$, de la densité $\rho(z)$ puis celle de la température $T(z)$. Commenter en mettant en évidence l'altitude caractéristique $H$ vue précédemment. Dans ce modèle, quelle est alors l'épaisseur de l'atmosphère ?
 	
 	\item[$\vartriangle$] De combien chute la température lorsqu'on monte à 1000m d'altitude d'après ce modèle ? Quelle est la pression et la densité de l'air au sommet de l'Everest (8848m) ?
 	
-	\item[$\vartriangle$] En réalité, le gradient de température diminue de $7.7\cdot10^{-3}$K.m$^{-1}$. Cela s'explique par le fait que une transformation thermodynamique dans l'atmosphère (comme évoqué ci-dessus) n'est pas parfaitement adiabatique, et peut être modélisée par un coefficient thermodynamique $\gamma_{eff}\neq\gamma$. Calculer $\gamma_{eff}$.
-	
-	\item[$\vartriangle$] Comparer le modèle précédent (appelé modèle polytropique de l'atmosphère) avec celui de l'atmosphère isotherme.
+	\item[$\vartriangle$] En réalité, le gradient de température diminue de $7.7\cdot10^{-3}$K.m$^{-1}$. Cela s'explique par le fait que une transformation thermodynamique dans l'atmosphère (comme évoqué ci-dessus) n'est pas parfaitement adiabatique et que le gaz n'est pas sec. Il peut néanmoins être modélisé par un coefficient thermodynamique $\gamma_{eff}\neq\gamma$. Estimer $\gamma_{eff}$. Commenter. 
 
 \end{itemize}
 
@@ -240,6 +296,55 @@ On considère deux plaques infinies de verres séparées d'une épaisseur $e$ o�
 	\item[1 - ] Proposer une solution pour le champ de vitesses en faisant des hypothèses raisonnables.
 	\item[2 - ] Est-ce un écoulement compressible ?
 \end{itemize}
+
+\newpage
+
+\section*{Boîte automatique}
+
+On s'intéresse au convertisseur de couple d'une boite automatique d'un véhicule, qui permet de se passer d'un embrayage. On le modélise comme un système de deux cylindres de même axe $\vec{e}_z$, et de rayons respectifs $R_1$ et $R_2$, de longueur $L$, où se trouve un fluide de viscosité $\eta$ élevée (\textit{schéma de gauche}). Le moteur (respectivement l'arbre de transmission) est solidaire du cylindre $1$ (resp. 2) et tourne à la vitesse $\Omega_1$ (resp. $\Omega_2$). Lorsque le moteur fournit un couple $\Gamma_1$ au cylindre 1, il entraîne le fluide situé entre $R_1$ et $R_2$, qui entraîne à son tour le cylindre 2. On souhaite étudier le fonctionnement du dispositif, et pour cela, on se placera en coordonnées cylindriques. 
+
+\begin{center}
+	\includegraphics[scale=0.8]{boite_auto.pdf}
+\end{center}
+
+On rappelle que la force surfacique de viscosité, entre deux couches élémentaires 1 et 2 adjacentes de fluide, s'écrit : $\vec{\sigma}_{1\rightarrow2}=\frac{d\vec{F}_{1\rightarrow2}}{dS}$, où $d\vec{F_{1\rightarrow2}}$ est la force exercée de la couche 1 sur la couche 2,  $dS$ étant la surface élémentaire de contact (\textit{schéma de droite}). On admet que son expression en coordonnées cylindriques de sa composante selon $\vec{e_\theta}$ s'écrit : 
+\begin{align*}
+	\sigma_\theta(r,\theta,z)=\eta\left(\frac{1}{r}\frac{\partial v_r}{\partial \theta}+ \frac{\partial v_\theta}{\partial r} - \frac{v_\theta}{r} \right)
+\end{align*}
+
+On admet que les autres composantes de $\vec{\sigma}$ sont nulles ($\sigma_r=\sigma_z=0$). On suppose par ailleurs que l'écoulement est permanent, que la vitesse ne dépend que de $r$, et enfin que $v_z=0$.
+
+\begin{itemize}
+		
+	\item[$\bigstar$] Quel est le nombre de Reynolds de cet écoulement ? En déduire le type d'écoulement. 
+	
+	\item[$\bigstar$] Montrer que le champ de vitesse est strictement orthoradial : $\vec{v}=v_\theta (r)\vec{e_\theta}$.
+	
+	\item[$\bigstar$] En faisant un bilan des moments sur un élément de fluide selon $\vec{e_z}$ et en négligeant les forces de pression, montrer que la vitesse vérifie la relation suivante : 
+	\begin{align*}
+		\frac{\partial}{\partial r}\left(r^3 \frac{\partial}{\partial r}\frac{v_\theta}{r} \right) =0
+	\end{align*}
+	
+	\item[$\bigstar$] A l'aide des conditions aux limites, en déduire l'expression du champ de vitesse $\vec{v}$.
+	
+	\item[$\bigstar$] Calculer le couple $\Gamma_{1\rightarrow2}$ qu'exercent les forces visqueuses sur le cylindre 2. Comparer avec $\Gamma_{2\rightarrow1}$.
+	\end{itemize}
+
+On suppose que le moteur peut asservir son régime moteur de sorte à garder $\Omega_1$ fixé, quelque soit le couple $\Gamma_{1\rightarrow2}$ qu'il délivre.
+
+\begin{itemize}
+	
+	\item[$\bigstar$] Le véhicule roule à vitesse constante dans une montée, équivalent à un couple résistif $-\Gamma_r$ sur l'arbre de transmission. Déterminer $\Omega_2$ puis le rendement du convertisseur de couple. Quels sont les intérêts et les incovénients d'un convertisseur de couple par rapport à un embrayage classique ?
+	
+	\item[$\bigstar$]  Désormais, le véhicule est intialement à l'arrêt, et démarre à pleine puissance sur une route plate à $t=0$. L'inertie du véhicule est vue au niveau du cylindre 2 comme un moment d'inertie $J$. Déterminer l'évolution $\Omega_2(t)$. 
+		
+\end{itemize}
+
+\textit{Données :} $R_1=295$mm, $R_2=300$mm, $L=500$mm, $\rho=860$kg.m$^{-3}$ et $\eta=120$ SI. 
+\begin{align*}
+	\mathrm{div}(\vec{A}) =
+\frac{1}{r}\frac{\partial (r A_r)}{\partial r} + \frac{1}{r}\frac{\partial A_\theta}{\partial \theta} + \frac{\partial A_z}{\partial z}
+\end{align*}	
 
 \newpage
 

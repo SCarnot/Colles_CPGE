@@ -15,6 +15,46 @@
 
 \begin{document}
 
+\section*{Force exercée sur un barrage}
+
+\begin{itemize}
+
+	\item[$\diamond$] Il s'agit de la démonstration classique de l'équation de statique des fluides. Le bilan des forces (pression et gravité) sur un volume élémentaire $\dif V=\dif x \dif y \dif z$ d'air situé au point $M=(x,y,z)$ s'écrit
+	\begin{align*}
+		-P(x,y,z+ \dif z)\dif x\dif y\vec{e}_z+P(x,y,z)\dif x\dif y\vec{e}_z+\rho\vec{g}=\vec{0}
+	\end{align*}
+	On omis les variations de pression selon $x$ et selon $y$ mais qui sont traitées de la même manière qu'en $z$. On trouve alors rapidement l'expression $\vec{\grad}(P) + \rho\vec{g}=\vec{0}$ avec le développement de Taylor de $P(z+dz)$.
+	
+	\item[$\diamond$] En utilisant la relation précédente : 
+	
+	\begin{align*}
+		p(y) = p_0+\rho g (H-z)
+	\end{align*}
+		
+		\item[$\diamond$] Il faut faire un bilan des forces, en "zoomant" sur la paroi du barrage en un point $(x,z)$ de la surface. La force élémentaire créée par la pression est $d\vec{F}=p(x)dS\vec{n}$, où $\vec{n}$ est la normale à la surface : $\vec{n}=\sin\alpha\vec{e}_x-\cos\alpha\vec{e}_z$, en notant $\alpha$ l'angle la pente du barrage en ce point, cad $\tan\alpha=dz/dx$.
+		
+		Pour la force horizontale, selon $\vec{e_x}$ :
+		
+	\begin{align*}
+		dF_x = p(x)\sqrt{dx^2+dz^2}L\sin\alpha=p(x)Ldz
+	\end{align*}
+	car $dS = Ldl=\sqrt{dx^2+dz^2}L$ et $\sin\alpha=dz/dl$. On a donc :
+	\begin{align*}
+		F_x = \int_0^H p(x)Ldz=\left[  p_0+\frac{\rho g H}{2}\right] LH
+	\end{align*}
+	
+		Pour la force verticale, selon $\vec{e_z}$ :
+		
+	\begin{align*}
+		dF_z= p(x)\sqrt{dx^2+dz^2}L\cos\alpha = -p(x)Ldx
+	\end{align*}
+	car $\cos\alpha=dx/dl$. En posant $x_0$ tel que $H=kx_0^2$, on a donc :
+	\begin{align*}
+		F_z = \int_0^{x_0} p(x)Ldz=L\int_0^{x_0} (p_0+\rho g (H-kx^2)dz=-Lx_0p_0-\frac{2}{3}L\rho g x_0H
+	\end{align*}
+
+\end{itemize}
+
 \section*{Structure de l'atmosphère}
 
 \begin{itemize}
@@ -352,6 +392,82 @@ Au final :
 Les champs de vitesses sont à divergence nulle donc incompressibles.
 
 \newpage
+
+\section*{Boîte automatique}
+
+\begin{itemize}
+		
+	\item[$\bigstar$] Question piège : on a pas la vitesse de rotation. Pour un moteur de voiture, on a typiquement $\Omega=1000$tr/min$\simeq105$rad/s, soit une vitesse typique $U=R_2\Omega\simeq31$m/s. On trouve $Re=\rho UL/\eta\simeq 67$, soit un écoulement laminaire.
+	
+	\item[$\bigstar$] Comme l'écoulement est incompressible, on a $\mathbf{div}(\vec{v})=0$. Avec les hypothèses de l'énoncé, on trouve donc que $v_r=\frac{cste}{r}$. Comme $v_r(R_1)=0$ par conservation du débit, $\forall r, v_r=0$.
+	
+	\item[$\bigstar$] Le plus simple est de faire un bilan des moments selon $\vec{e_z}$ à un élément de fluide (en coordonnées cylindriques) qui est un anneau (ou tore) compris entre $r$ et $r+dr$, d'épaisseur $dz$. Les forces visqueuses s'appliquent orthoradialement alors sur les surfaces internes et externe. 
+
+Comme on est en régime stationnaire, le moment total exercé doit être nul de sorte que : 
+\begin{align*}
+	2\pi r dz \sigma_\theta(r)\times r - 2\pi (r+dr) dz \sigma_\theta(r+dr)\times (r+dr) = 0
+\end{align*}
+cad : $r^2 \sigma_\theta(r) - (r+dr)^2 \sigma_\theta(r+dr) = 0$. On en déduit que $\frac{\partial}{\partial r}r^2\sigma_\theta=0$.
+
+D'autre part, $\sigma_\theta=\eta\left(\frac{\partial v_\theta}{\partial r}-\frac{v_\theta}{r}\right) =\eta r \frac{\partial}{\partial r}\frac{v_\theta}{r} $. On trouve le résultant voulu :
+
+\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{	
+	\begin{align*}
+		\frac{\partial}{\partial r}\left(r^3 \frac{\partial}{\partial r}\frac{v_\theta}{r} \right) =0
+	\end{align*}}}
+	
+	\item[$\bigstar$] On intègre la relaiton précédente et on trouve :
+	\begin{align*}
+		v_\theta = \frac{A}{r} + Br
+	\end{align*}
+	Les conditions aux limites sont : $v_\theta(r=R_{1,2})=R_{1,2}\Omega_{1,2}$. On obtient alors : 
+	
+	\noindent\fbox{\parbox{\linewidth\fboxrule-2\fboxsep}{	
+	\begin{align*}
+		v_\theta  = -\frac{(\Omega_2-\Omega_1)R_2^2R_1^2}{R_2^2-R_1^2}\frac{1}{r}+\frac{\Omega_2R_2^2-\Omega_1R_1^2}{R_2^2-R_1^2}r
+	\end{align*}}}
+	
+	\item[$\bigstar$] Le couple s'exerçant sur une surface élémentaire $dS=R_2\cdot d\theta\cdot  dz$ du cylindre 2 correspond au moment des forces de cisaillement en $R_2$ : $d\Gamma_{1\rightarrow2} = \sigma_\theta(R_2)\cdot dS\cdot R_2$.
+	
+	Comme $\sigma_\theta(r)=\eta r \frac{\partial}{\partial r}\frac{v_\theta}{r}=-2\eta\frac{A}{r^2}$, on a :
+	
+	\begin{align*}
+		\Gamma_{1\rightarrow2}	 = -4\pi\eta L\frac{(\Omega_2-\Omega_1)R_2^2R_1^2}{R_2^2-R_1^2}
+	\end{align*}
+	
+	On trouve bien que le couple reçu par 2 $\Gamma_{1\rightarrow2}$ est négatif lorsque $\Omega_2>\Omega_1$, et inversement.
+	
+	Pour le cas du cylindre 1, le calcul donne la même chose, avec un signe négatif (car les forces de viscosité s'exercenet sur un cylindre plus petit) :
+	
+		\begin{align*}
+		\Gamma_{2\rightarrow1}	 =4\pi\eta L\frac{(\Omega_2-\Omega_1)R_2^2R_1^2}{R_2^2-R_1^2}
+	\end{align*}
+	
+	On trouve bien que $\Gamma_{1\rightarrow2} + \Gamma_{2\rightarrow1}	=0$. Le couple exercée par le cylindre 1 est bien reçu par le cylindre 2, et inversement
+	
+	\item[$\bigstar$] En supposant que la vitesse de rotation du moteur est fixée à $\Omega_1$, déterminer $\Omega_2$. Calculer alors la puissance dissipée dans le fluide visqueux et la comparer avec la puissance mécanique $P_1$ fournie par le moteur et $P_2$, celle récupérée par l'arbre de transmission.
+	
+	Le couple résistif s'exerce sur l'arbre de transmission, cad sur le cylindre 2, donc le couple résistif s'exerce aussi sur 1 : $\Gamma_{2\rightarrow1} = -\Gamma_r$. On toruve donc :
+	
+	\begin{align*}
+		-\Gamma_{r}	 =4\pi\eta L\frac{(\Omega_2-\Omega_1)R_2^2R_1^2}{R_2^2-R_1^2}
+	\end{align*}
+	cad :
+	\begin{align*}
+		\Omega_2 =\Omega_1 - \frac{\Gamma_{r}}{4\pi\eta L}\frac{R_2^2-R_1^2}{R_2^2R_1^2}<\Omega_1
+	\end{align*}
+	On trouve que l'arbre extérieur tourne moins vite que l'arbre intérieur : le couple résistif fait "glisser" le convertisseur de couple. Si le couple résistif est trop important, on peut même arrêter l'arbre de transmission : le véhicule s'arrête ! 
+	
+	Par ailleurs, toute la puissance n'est pas transmise à l'arbre 2. La puissance fournie par le moteur est $P_1 = \Omega_1\Gamma_r$ et la puissance reçue par l'arbre est $P_2 = \Omega_2\Gamma_r<P_1$. Le rendement du convertisseur est alors :
+	\begin{align*}
+		r = \frac{P_2}{P_1} = \frac{\Omega_2}{\Omega_1}=1-\frac{\Gamma_{r}}{4\pi\eta L\Omega_1}\frac{R_2^2-R_1^2}{R_2^2R_1^2}
+	\end{align*}
+	
+	Le rendement est systématiquement inférieur à 1, sauf lorsqu'il n'y a pas de couple résistif.
+	
+	\item[$\bigstar$] On a bien vu que, par essence, ce convertisseur de couple perd de la puissance par dissipation dès qu'il doit exercer un couple ou transmettre de la puissance. Néanmoins, l'avantage est que le moteur peut rester à régime fixe (notamment sur les meilleures plages de rendement) et il n'y a pas de discontinuité dans la transmission du couple, contrairement à un embrayage (lorsqu'on change de vitesse : les disques se décollent et frottent par ailleurs aussi). Un embrayage fonctionnant sur le même rapport n'a aucune perte.
+		
+\end{itemize}
 
 \section*{Exercice 5}
 

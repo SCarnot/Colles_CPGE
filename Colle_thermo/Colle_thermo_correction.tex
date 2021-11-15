@@ -341,7 +341,7 @@ Le travail se calcul grâce à $W_A^B=\int_{R+a}^{R-A}dL F$, puis la chaleur $Q_
 \subsubsection*{Transformation AB}
 Pour le travail, on oublie pas de faire un dl à l'ordre 1 en $a$.
 \begin{equation}
-W_A^B=\int_{R+a}^{R-a}dL F = \int_{R+a}^{R-A}dL =-2a\left( F_0-\sigma(T_1-T_0)  \right) -2a\rho(R-L_0)
+W_A^B=\int_{R+a}^{R-a}dL F = \int_{R+a}^{R-A}dL =-2a\left[ F_0+\sigma(T_1-T_0)  \right] -2a\rho(R-L_0)
 \end{equation}
 
 Énergie interne, toujours avec un dl en $a$ : 
@@ -375,9 +375,25 @@ L'énergie interne est : $\Delta U_D^A=C_L(T_1-T_2)$
 
 La quantité de chaleur est donc : $Q_D^A=\Delta U_D^A = C_L(T_1-T_2)$
 
+\begin{center}
+\begin{tabular}{|p{1.5cm}|p{5.5cm}|p{2.5cm}|p{5cm}|}
+\hline
+Transfo. & $W$ & $Q$ & $\Delta U$  \\
+\hline
+$A\rightarrow B$ & $-2a\left[F_0+\sigma(T_1- T_0) +\rho(R-L_0) \right]$  & $2\sigma a T_1$  & $-2a\left[F_0-\sigma T_0+\rho(R-L_0) \right]$  \\
+\hline
+$B\rightarrow C$ & 0 & $C_L(T_2-T_1)$ & $C_L(T_2-T_1)$  \\
+\hline
+$C\rightarrow D$ & $+2a\left[F_0+\sigma(T_2- T_0) +\rho(R-L_0) \right]$  & $-2\sigma a T_2$ & $+2a\left[F_0-\sigma T_0+\rho(R-L_0) \right]$ \\
+\hline
+$D\rightarrow A$ & 0 & $-C_L(T_2-T_1)$ & $-C_L(T_2-T_1)$ \\
+\hline
+\end{tabular}
+\end{center}
+
 \subsubsection*{Bilan}
 Au final, sur le cycle : 
-$W=2a\sigma(T_2-T_1)$, $Q=2a\sigma(T_2-T_1)$ et $\Delta U=0$.
+$W=-2a\sigma(T_1-T_2)<0$, $Q=2a\sigma(T_1-T_2)>0$ et $\Delta U=0$.
 
 \item[•]
 Le travail est moteur car $W<0$. Il faut bien noter que le sens est inversé par rapport à un diagramme "classique" car ici $\delta W = +FdL$ et non $\delta W = - pdV$.

@@ -4,11 +4,13 @@
 \usepackage[T1]{fontenc}      
 \usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
 \usepackage{graphicx}
+\usepackage{amsmath,esint }
+\usepackage{amssymb}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
 
-\section*{Machine de Carnot}
+\section*{Machines de Carnot et de Stirling}
 
 On considère une machine thermodynamique effectuant les transformations suivantes, sur un gaz parfait contenant $n$ moles : 
 
@@ -20,17 +22,27 @@ On considère une machine thermodynamique effectuant les transformations suivant
 
 \end{itemize}
 
-On supposera que le rapport des volumes $V_A/V_B=10$. Questions : 
+Ce cycle est appelé cycle de Carnot, qui permet en théorie, d'obtenir un rendement maximal. On supposera que le rapport des volumes $V_A/V_B=10$. Questions : 
 
 \begin{itemize}
 
-	\item[0 -] Tracer le cycle dans un diagramme de Clapeyron. Ce cycle est-il moteur ou récepteur ? Justifier. 
+	\item[$\clubsuit$] Tracer le cycle dans un diagramme de Clapeyron. Ce cycle est-il moteur ou récepteur ? Justifier. 
 
-	\item[1 -] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$. 
+	\item[$\clubsuit$] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$. 
 	
-	\item[2 -] En déduire le rendement théorique.
+	\item[$\clubsuit$] En déduire le rendement théorique.
 	
-	\item[3 -] On suppose qu'une voiture normale est mue par le moteur étudié jusque-là. En supposant que la chaleur apportée par la source chaude est créée par de la combustion d'essence, de pouvoir calorifique de 35 475kJ.L$^{-1}$. Estimer la quantité d'essence injectée à chaque cycle ? Combien vaut alors $T_c$ ?
+\end{itemize}
+
+On s'intéresse au cycle de Stirling, dans lequel les transformations $B \rightarrow C$ et $D \rightarrow A$ sont désormais des isochores au contact respectivement de la source chaude et source froide. Les autres transformations sont les mêmes. Le cycle de Stirling a l'avantage de pouvoir être réalisable en pratique sur des dispositifs appelés \textit{moteurs de Stirling}, contrairement au cycle de Carnot, théorique.
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Mêmes questions que pour le cycle de Carnot ci-dessus. Quel est le rendement théorique ? Montrer qu'il est nécessairement inférieur au rendement de Carnot.
+	
+	\item[$\spadesuit$]	 Montrer que l'on peut récupérer une partie d ela chaleur lors du cycle pour atteindre le rendement de Carnot.
+	
+	\item[$\spadesuit$] On suppose qu'une voiture normale est mue par le moteur étudié jusque-là. En supposant que la chaleur apportée par la source chaude est créée par de la combustion d'essence, de pouvoir calorifique de 35 475kJ.L$^{-1}$. Estimer la quantité d'essence injectée à chaque cycle ? Combien vaut alors $T_c$ ?
 	
 %\item[4-] Application numérique : calculer le rendement dans ce cas-là. On prendra $V_A/V_B=10$.
 \end{itemize}
@@ -39,43 +51,36 @@ On supposera que le rapport des volumes $V_A/V_B=10$. Questions :
 
 \section*{Cycle de Beau de Rochas}
 
-On considère un moteur à essence décrit par le cycle ci-dessous, effectué sur $n$ moles de gaz parfait :
+Les moteurs à essence équipant la plupart des véhicules terrestres sont des machines thermodynamiques constitués de un ou plusieurs cylindres, dans lequels un piston fait subir sur $n$ moles de gaz parfait le cycle suivant (dit de Beau de Rochas) :
 
 \begin{itemize}
 
-\item[•]$A \rightarrow B$ : compression adiabatique, réversible du volume $V_A$ au volume $V_B$ ;
-\item[•]$B \rightarrow C$ : échauffement isochore en contact de la source chaude ;
-\item[•]$C \rightarrow D$ : détente adiabatique, réversible du volume $V_B$ au volume $V_C$ ;
-\item[•]$D \rightarrow A$ :  refroidissement isochore en contact de la source froide.
+\item[$A \rightarrow B$ :] compression adiabatique, réversible du volume $V_A$ au volume $V_B$ : le mélange d'air et essence est comprimé ;
+\item[$B \rightarrow C$ :] échauffement isochore en contact de la source chaude, en pratique il s'agit de la combustion très rapide de l'essence ;
+\item[$C \rightarrow D$ :] détente adiabatique, réversible du volume $V_B$ au volume $V_C=V_A$ : les gaz de combustion "poussent" le cylindre en fournissant du travail ;
+\item[$D \rightarrow A$ :] refroidissement isochore en contact de la source froide : les gaz issus de combustion sont évacués et remplacés par par un mélange d'air frais et d'essence.
 
 \end{itemize}
 
+Ce cycle de fonctionnement a l'avantage de pouvoir faire varier la puissance rapidement en faisant varier à la demande la quantité de chaleur $Q_c$ apportée par l'essence lors de la transformation $B \rightarrow C$, mais au détriment du rendement. On souhaite montrer que le rendement $\eta$ de ce cycle est nécessairement inférieur au rendement de Carnot $\eta_C$.
+
 \begin{itemize}
 
-	\item[0 -] Montrer que le travail reçu par le gaz lors d'une transformation adiabatique réversible s'écrit :
-	
-\begin{equation}
-	W = \frac{nR}{\gamma - 1}(T_f - T_i)
-\end{equation}	
+	\item[$\clubsuit$] Décrire ce cycle dans un diagramme de Clapeyron et justifier qu'il est moteur.
 
-où $T_f$ et $T_i$ sont respectivement les températures finale et initiale du gaz.
-
-	\item[1 -] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$ en fonction de températures $T_A$, $T_B$, $T_C$ et $T_D$. 
-	\item[2 -] Calculer son rendement en fonction de $a=V_2/V_1$ et $\gamma$. On pourra déterminer dans un premier temps $T_D$ en fonction de $T_A$.
-	\item[3 -]  Comparer le rendement de ce moteur avec le rendement de Carnot. Conclure.
+	\item[$\clubsuit$] Déterminer, pour chaque transformation, $\Delta U$, $W$, et $Q$ en fonction de températures $T_A$, $T_B$, $T_C$ et $T_D$ atteintes aux moments $A$, $B$, $C$ et $D$.
 	
-	\item[4 -] On suppose que ce moteur sert à mouvoir une voiture individuelle. En supposant que la chaleur apportée par la source chaude est créée par de la combustion d'essence, de pouvoir calorifique de 35 475kJ.L$^{-1}$; estimer le volume d'essence injecté à chaque cycle. Combien vaut alors $T_c$ ?
+	\item[$\clubsuit$] Déterminer les tempratures $T_B$, $T_C$ et $T_D$ en fonction de $T_A$. Quel paramètre doit-on introduire pour calculer $T_C$ ? 
+	
+	\item[$\clubsuit$]  Calculer son rendement $\eta$ en fonction de $a=V_A/V_B$ et $\gamma$. 
+	
+	\item[$\clubsuit$] Rappeler le rendement de Carnot $\eta_C$ et montrer que celui-ci est nécessairement supérieur au rendement $\eta$ de ce cycle.
+	
+	\item[$\clubsuit$] On suppose que ce moteur sert à mouvoir une voiture individuelle. En supposant que la chaleur apportée par la source chaude est créée par de la combustion d'essence, de pouvoir calorifique de 35 475kJ.L$^{-1}$; estimer le volume d'essence injecté à chaque cycle. Combien vaut alors $T_c$ ?
 	
 \end{itemize}
 
 \textit{Données : $ V_{2}/V{1} = 10$ et $ \gamma=1.4$}
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.3\linewidth]{cycle_beau_rochas.pdf}
-\end{figure}
-
-
 
 \newpage
 
@@ -192,13 +197,11 @@ Si les transformations sont en fait irréversibles, quel les inégalités satisf
 \includegraphics[width=0.4\linewidth]{thermo2.pdf}
 \end{figure}
 
-On considère un fil de caoutchouc décrit par les variables d'état : sa longueur $L$, sa température $T$ et $F$ la force appliquée dessus. Son équation d'état est de la forme : 
+On considère un fil de caoutchouc décrit par les variables d'état suivantes : sa longueur $L$, sa température $T$ et $F$ la force appliquée dessus. On le modélise à travers une équation d'état de la forme : 
 \begin{equation}
 	F(L,T) = F_0 + \rho(L-L_0) + \sigma(T-T_0)
 \end{equation}
-$\rho$ et $\sigma$ sont des constantes. 
-
-L'énergie interne du fil peut alors s'écrire : 
+où $\rho$ et $\sigma$ sont des constantes positives et les grandeurs indicées par "0" sont des grandeurs intrinsèques au fil. D'autre part, on admet que l'énergie interne du fil s'écrit : 
 \begin{equation}
 	U(L,T) = C_L(T-T_0)+(F_0-\sigma T_0)(L-L_0) +\frac{ \rho}{2}(L-L_0)^2 +U_0
 \end{equation}
@@ -211,19 +214,19 @@ On attache désormais le fil de caoutchouc en $CM$, où le cercle de centre $O$ 
 \includegraphics[width=0.3\linewidth]{thermo3.pdf}
 \end{figure}
 
-Le fil subit les transformations successives suivantes :
+En tournant dans le sens de rotation indiqué sur le schéma, le fil subit les transformations successives suivantes :
 \begin{itemize}
-\item[1 -] Une transformation isotherme à $T_1$ lorsque le fil est dans la demi-partie supérieure (rouge)
-\item[2 -] Lorsque le fil passe à l'horizontale (longueur $R-a$), il passe instantanément de $T_1$ à $T_2$
-\item[3 -] Une transformation isotherme à $T_2$ lorsque le fil est dans la demi-partie inférieure (bleue)
-\item[4 -] Lorsque le fil passe à l'horizontale (longueur $R+a$), il passe instantanément de $T_2$ à $T_1$
+\item[$A\rightarrow B$ :] Une transformation isotherme à $T_1$ lorsque le fil est dans la demi-partie supérieure (rouge)
+\item[$B\rightarrow C$ :] Lorsque le fil passe à l'horizontale (longueur $R-a$), il passe instantanément de $T_1$ à $T_2$
+\item[$C\rightarrow D$ :] Une transformation isotherme à $T_2$ lorsque le fil est dans la demi-partie inférieure (bleue)
+\item[$D\rightarrow A$ :] Lorsque le fil passe à l'horizontale (longueur $R+a$), il passe instantanément de $T_2$ à $T_1$
 \end{itemize}
 Questions : 
-\begin{itemize}
-\item[•] Comment s'écrit le travail reçu par le fil ?
-\item[•] Décrire le cycle dans un diagramme de Clapeyron.
-\item[•] Calculer les divers échanges mécaniques et thermiques au cours de ce cycle.
-\item[•] Le cycle proposé est-il moteur ?
+\begin{itemize} 
+\item[$\spadesuit$] Par analogie avec le travail des forces de pression d'un gaz parfait ($P, V\leftarrow F, L$), montrer que le travail reçu par l'élastique sur une transformation $A\rightarrow B$ s'écrit $W=\int_A^B dL\cdot F$.
+\item[$\spadesuit$] Décrire le cycle dans un diagramme de Clapeyron $(F,L)$.
+\item[$\spadesuit$] Calculer les divers échanges mécaniques et thermiques au cours de ce cycle.
+\item[$\spadesuit$] Le cycle proposé est-il moteur ? Calculer son rendement.
 \end{itemize}
 
 \newpage
@@ -269,5 +272,90 @@ On considère le dispositif ci-dessous. Le piston (gris, entouré de noir) et le
 \item[•] On suppose désormais que $V_A>V_C$. Quel est l'état final ?
 
 \end{itemize}
+
+\newpage
+
+\section*{Travail maximal de deux réservoirs finis}
+
+On considère deux réservoirs $A$ et $B$ remplis du même gaz parfait caractérisé par $\gamma$, l'un contenant $n_A$ moles à la température $T_A$, l'autre $n_B$ moles à la température $T_B$. Ils sont parfaitements isolés du monde extérieur, mais peuvent échanger de la chaleur avec une machine thermique $M$, considérée comme parfaite (pas de capacité calorifique propre, pas de d'échange thermique autre qu'avec $A$ et $B$, aucun frottement). Cette machine peut néanmoins extraire un travail $W$ avec l'extérieur. 
+
+\begin{itemize}
+\item[$\blacklozenge$] Quelle est la quantité maximale de travail $W$ que peut extraire la machine $M$ ?
+\end{itemize}
+
+\newpage
+
+\section*{Formation du brouillard}
+
+On considère un gaz parfait de coefficient $\gamma$ contenu dans un cylindre de section $S$ orienté verticalement. L'altitude le long de ce cylindre est notée $z$, et on note $g$ l'accélération de la pesanteur supposée uniforme le long du cylindre. Le gaz est soumis à un mouvement ascendant dans le cylindre en se déplaçant à la vitesse notée $c$. Les parois du cylindre ne permettent pas de transfert thermique. L'écoulement est de plus supposé stationnaire.
+
+On note $T_0$, $P_0$ et $c_0$ la température, la pression et la vitesse du gaz à l'altitude $z=0$ et $T(z)$, $P(z)$ et $c(z)$ ces trois grandeurs à l'altitude $z$. De la même manière, on introduit $h_{m,0}$ et $h_m(z)$ l'enthalpie massique du gaz à l'altitude $z=0$ et $z$.
+
+\begin{itemize}
+	
+	\item[$\triangle$] En utilisant le premier principe industriel appliqué au gaz dans le cylindre entre les altitudes $z=0$ et $z$, trouver une relation entre $h_{m,0}$, $h_m(z)$, $c_0$, $c(z)$ et $z$.
+	
+	\item[$\triangle$] Pour simplifier le problème, on considère que la vitesse du gaz est quasi-nulle, de sorte à ce que $c_0=c(z)=0$. Montrer que la température obéit alors à la loi suivante :
+	\begin{align*}
+		T(z)=T_0(1-\frac{z}{H})
+	\end{align*}
+	Expliciter $H$ en fonction de $\gamma$, $g$ et la masse molaire du gaz $M$. Donner une estimation numérique.
+	
+\end{itemize}
+
+On considère que le gaz étudié est de l'air humide, subissant une ascension verticale, lente et isentropique dans ce cylindre. La vapeur d'eau contenue en faible quantité dans l'air se comporte comme un gaz parfait. La pression de vapeur saturante de l'eau, notée $P_s$ et exprimée en Pa est une focntion de $T$ suivant la loi empirique suivante :
+\begin{align*}
+	\ln(P_s(T)) = a -\frac{b}{T}
+\end{align*}
+
+\begin{itemize}
+	
+	\item[$\triangle$] Soit $\varphi$ la fraction molaire de vapeur d'eau contenue dans une masse d'air ascendante. Après avoir explicité la pression $P(z)$ dans la colonne, déterminer la pression partielle $P_e(z)$ de cette vapeur. 
+	
+	\item[$\triangle$] A quelle altitude, notée $z_1$, peut-on avoir le changement d'état liquide-vapeur ? On pourra supposer que $z\ll H$.
+	
+	\item[$\triangle$] Justifier que les reliefs sont propices à l'apparition du brouillard.
+	
+\end{itemize}
+
+\newpage	
+
+\section*{Etude d'un turborécteur}
+
+Un turboréacteur est un moteur thermique équipant les avions dits \textit{à réaction}, schématisé ci-dessous. Le fonctionnement général est le suivant : une turbine aspire et comprime l'air en amont du réacteur (soufflante et compresseur, étapes $1\rightarrow2$ et $2\rightarrow3$), qui est échauffé par la combustion du kérosène dans la chambre de combustion (étape $\rightarrow4$). Les gaz de combustion sont ensuite détendus ($4\rightarrow5$) à travers une turbine dont l'arbre est commun avec celui du compresseur et de la soufflante, puis ces gaz sont finalement évacués par la tuyère ($5\rightarrow6$), en accélérant fortement, fournissant la poussée requise.
+
+Le but de l'exercice est de calculer la vitesse de sortie $c_6$ des gaz de combustion. On ne s'intéresse ici qu'au flux primaire, circulant dans le compresseur. Le flux dit secondaire, passant de $2\rightarrow7$ n'est pas étudié ici. 
+
+\begin{figure}[!h]
+\centering
+	\includegraphics[width=0.65\linewidth]{turboreacteur.png}
+\end{figure}
+
+On formule les hypothèses suivantes pour les différentes transformations :
+\begin{itemize}
+
+	\item[$1\rightarrow3$ :] Soufflante et compresseur, compression adiabatique réversible au taux de compression $P_2/P_1=2$ puis $P_3/P_2=13$ ;
+	\item[$3\rightarrow4$ :] Chambre de combustion, le gaz est chauffé jusqu'à $T_4=1450$K de manière isobare ;
+	\item[$4\rightarrow5$ :] Détente adiabatique réversible du gaz de $P_4$ et $P_5$ à travers la turbine ;
+	\item[$5\rightarrow6$ :] Détente adiabatique réversible du gaz de $P_5$ et $P_6$ dans la tuyère.
+
+\end{itemize}
+
+On supposera que le régime est stationnaire, que l'énergie potentielle de pesanteur du fluide est négligeable dans toutes les étapes. L'énergie cinétique sera aussi négligée dans toutes les étapes, sauf à la sortie de la tuyère (en 6) où le gaz est très fortement accéléré. On négligera tout frottement mécanique. Les pressions en entrée et en sortie sont $P_1=P_6=1$ bar et la température en entrée est $T_1=288$K. On note $C_p$ la capacité thermique massique de l'air.
+
+\begin{itemize}
+
+	\item[$\bigstar$] En s'inspirant de la démonstration du premier principe indutriel, montrer que le travail massique utile reçu par le gaz lors de la trasformation de l'état $i$ à $j$ (sauf pour $3\rightarrow4$, dans la chambre de combustion) est donné par :
+	\begin{align*}
+		w_{i\rightarrow j}=C_p(T_j-T_i) + \frac{1}{2}\left(c_j^2-c_i^2 \right) 
+	\end{align*}
+	
+	\item[$\bigstar$] Donner une relation entre $P_i$, $P_j$, $T_i$, $T_j$ et $\gamma$ (sauf pour $3\rightarrow4$).
+	\item[$\bigstar$] En exploitant le couplage mécanique entre turbine, compresseur et soufflante, établir les expressions littérales et les valeurs numériques des températures $T_2$, $T_3$, $T_5$ et de la pression $P_5$ en sortie de turbine.
+	\item[$\bigstar$] En déduire la vitesse $c_6$ en sortie de turbine. 
+
+\end{itemize}
+
+\textit{Données :} $C_p=1,0\times10^3$J.kg$^{-1}$.K$^{-1}$, $\gamma=1,4$
 
 \end{document}
