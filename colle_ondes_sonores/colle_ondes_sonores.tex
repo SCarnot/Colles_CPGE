@@ -90,7 +90,7 @@ On s'intéresse désormais à un pavillon acoustique, de symétrie de révolutio
 	p(x,t) = -\frac{1}{\chi_s}\left(\frac{\partial \Psi}{\partial x}+\Psi(x,t)\frac{\partial }{\partial x}\left[\ln S(x) \right]  \right)
 \end{align*}
 
-\item[$\diamondsuit$] En faisant un bilan de quantité de mouvement sur un fluide, en déduire une relation similaire à une équation "d'onde" portant sur $\Psi(x,t)$.
+\item[$\diamondsuit$] En utilisant la relation fondamentale de la dynamique, en déduire une relation similaire à une équation "d'onde" portant sur $\Psi(x,t)$.
 
 \end{itemize}
 
@@ -124,8 +124,8 @@ On considère une onde acoustique se propageant selon les $x$ croissants dans un
 	
 On suppose que les champs de vitesse et de surpression sont des ondes planes progressives monochromatique et s'écrivent (l'indice $j$ représentant le milieu 1 ou 2) :
 \begin{align*}
-	\vec{v}_j(x,t)&=v_{0,j}\exp\left[i(k_jx\pm \omega t) \right] \vec{e}_x \\
-	p_j(x,t)&=p_{0,j}\exp\left[i(k_jx\pm \omega t) \right]
+	\vec{v}_j(x,t)&=v_{0,j}\exp\left[i(\omega t\pm k_jx ) \right] \vec{e}_x \\
+	p_j(x,t)&=p_{0,j}\exp\left[i(\omega t \pm k_jx ) \right]
 \end{align*}
 
 \begin{itemize}
@@ -134,9 +134,64 @@ On suppose que les champs de vitesse et de surpression sont des ondes planes pro
 	
 	\item[$\spadesuit$] Écrire les relations que vérifient la vitesse et la surpression à l'interface en $x=0$. Justifier. 
 	
-	\item[$\spadesuit$] Une onde incidente $v_{0,i}\exp\left[i(k_1x- \omega t) \right] \vec{e}_x$  arrive sur l'interface depuis le milieu 1. Pourquoi a t-on nécessairement l'apparition d'une onde réfléchie et d'une onde transmise à l'interface si les milieux 1 et 2 ne sont pas les mêmes ?
+	\item[$\spadesuit$] Une onde incidente $v_{0,i}\exp\left[i(\omega t - k_1x) \right] \vec{e}_x$  arrive sur l'interface depuis le milieu 1. Pourquoi a t-on nécessairement l'apparition d'une onde réfléchie et d'une onde transmise à l'interface si les milieux 1 et 2 ne sont pas les mêmes ?
 	
 	\item[$\spadesuit$] Exprimer les coefficients de réflexion en vitesse $r_v=v_{0,r}/v_{0,i}$ et de transmission $t_v=v_{0,t}/v_{0,i}$, puis les coefficients de réflexion en pression $r_v=p_{0,r}/p_{0,i}$ et de transmission $t_v=p_{0,t}/p_{0,i}$
+	
+	\item[$\spadesuit$]	 En déduire les coefficients de réflexion $R$ et de transmission $T$ en intensité. 
+	
+	\item[$\spadesuit$] Pourquoi dont-on mettre un gel sur entre la sonde et le corps durant une échographie ? 
+		
+\end{itemize}
+
+\subsubsection*{Isolation phonique}
+
+On suppose qu'il y a désormais une paroi de masse surfacique $\mu$ à l'interface entre les deux milieux, qui sont supposées être identiques ($\rho_1=\rho_2$ et $c_1=c_2$). Cette paroi se meut librement et sans frottement. 
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] Que deviennent les relations de passage précédentes ? En déduire le coefficient de transmission en vitesse $t_v$ dans ce cas-là. 
+	
+	\item[$\clubsuit$] Calculer $T=\mid t\mid^2$ et tracer l'allure de la courbe $G_{db}=20\log\left[T(\omega) \right]$ en fonction de $\log(\omega)$. Quelle est la fréquence de coupure ?
+	
+	\item[$\clubsuit$] Expliquer pourquoi les sons graves se transmettent mieux à travers les parois (un mur par exemple) que les sons aigus.
+	
+\end{itemize}
+
+\newpage
+
+\newpage
+
+\section*{Impédance acoustique 2}
+
+On s'intéresse à la propagation d'une onde sonore dans un milieu ayant une masse volumique au repos $\rho_0$ et une compressibilité $\chi_s$. Dans tout l'exercice, on considèrera que l'onde se propage unidimensionnellement selon l'axe $\vec{e}_x$. Les vibrations des ondes sonores sont caractérisées par des variations locales du champ de pression $P = P_0 + p(x,t)$, de masse volumique $\rho=\rho_0 + \mu(x,t)$ et de vitesse $\vec{v}=v(x,t)\vec{e}_x$. 
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Etablir deux équations différentielles couplées entre $\vec{v}(x,t)$ et $p(x,t)$.
+	
+	\item[$\spadesuit$] En déduire l'équation d'Alembert vérifiée par la surpression $p(x,t)$ et la vitesse $\vec{v}(x,t)$ dans un milieu homogène. Quelles sont les solutions générales dans ce cas unidimensionnel ? 
+
+\end{itemize}	
+	
+\subsubsection*{Échographie}
+
+On s'intéresse désormais au cas où le milieu de propagation n'est plus homogène, mais est constitué de deux milieux 1 et 2, caractérisés par leur masse volumique $\rho_1$ et $\rho_2$. Le demi-espace $x<0$ est constitué du milieu 1, et le demi-espace $x>0$ est constitué du milieu 2. On écrit les solutions des champs de vitesse et de surpression de l'équation d'Alembert comme : 
+\begin{align*}
+	v_j(x,t)&=v^+_{j}\left( t-\frac{x}{c_j}\right) + v^-_{j}\left( t+\frac{x}{c_j}\right) \\
+	p_j(x,t)&=p^+_{j}\left( t-\frac{x}{c_j}\right) + p^-_{j}\left( t+\frac{x}{c_j}\right) 
+\end{align*}
+où l'indice $j$ représente le milieu 1 ou 2. Pour simplifier, on a supposé que le vecteur vitesse $\vec{v}_j(x,t)=v_j(x,t)\vec{e}_x$ n'a de composante que sur $x$ pour s'affranchir de la notation vectorielle. 
+
+\begin{itemize}
+	
+	\item[$\spadesuit$] Donner la signification physique des champs $v^+_{j}$ et $v^-_{j}$. Trouver deux relations, une entre $v^+_{j}$ et $p^+_{j}$ et une autre entre $v^-_{j}$ et $p^-_{j}$. On fera intervenir l'impédance acoustique du milieu $Z_j=c_j\rho_j$.
+	
+	\item[$\spadesuit$] Quelle relations que vérifient la vitesse et la surpression à l'interface en $x=0$ ? Justifier. 
+	
+	\item[$\spadesuit$] Quelqu'un génère une onde depuis les $x<0$, qui arrive sur l'interface depuis le milieu 1. Pourquoi a t-on nécessairement l'apparition d'une onde réfléchie et d'une onde transmise à l'interface si les milieux 1 et 2 ne sont pas les mêmes ?
+	
+	\item[$\spadesuit$] Exprimer les coefficients de réflexion en vitesse $r_v=v_1^-(t)/v_1^+(t)$ et de transmission $t_v=v_2^+(t)/v_1^+(t)$, puis les coefficients de réflexion en pression $r_p$ et de transmission $t_p$
 	
 	\item[$\spadesuit$]	 En déduire les coefficients de réflexion $R$ et de transmission $T$ en intensité. 
 	

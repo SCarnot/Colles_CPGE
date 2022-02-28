@@ -227,7 +227,7 @@ Celle de l'onde circulaire gauche est possible pour $\omega<\omega_c$ ou $\omega
 	\begin{align*}
 		k = \frac{1-j}{\delta}
 	\end{align*}
-	avec $\delta=\sqrt{2/\mu_0\gamma\gamma}$.
+	avec $\delta=\sqrt{2/\mu_0\gamma\omega}$.
 	Et :
 	\begin{align}
      	\vec{E}=E_{0}\exp[-z/\delta]\exp[i(\omega t-z/\delta)]\vec{e}_x
@@ -266,7 +266,6 @@ L'onde se propage a une vitesse différente que celle-dans le vide mais le méta
 
 	\item[$\diamondsuit$] Finalement, résumer les 3 situations rencontrées et justifier les observations décrites dans l'énoncé.
 
-	\item[$\diamondsuit$] Quelle est la différence fondamentale entre un plasma vu en cours et un métal comme décrit ici ?
 
 \end{itemize}
 
@@ -370,30 +369,29 @@ L'onde se propage a une vitesse différente que celle-dans le vide mais le méta
 	\begin{align*}
 		k_t = \frac{1-j}{\delta}
 	\end{align*}
-	avec $\delta=\sqrt{2/\mu_0\gamma\gamma}$.
+	avec $\delta=\sqrt{2/\mu_0\gamma\omega}$.
 	
 	\item[$\clubsuit$] On trouve à partir de la relation de structure $\vec{B}=\frac{\vec{k}\wedge\vec{E}}{\omega}$ :
 	\begin{align}
     \begin{cases}
-        \vec{B}_i=\frac{E_{0,i}}{c}\exp[i(\omega t-kz)]\vec{e}_y\\
-     	\vec{B}_r=-\frac{E_{0,r}}{c}\exp[i(\omega t+kz)]\vec{e}_y\\
-     	\vec{B}_t=(1-j)\frac{E_{0,t}}{\delta\omega}\exp[-z/\delta]\exp[i(\omega t-z/\delta)]\vec{e}_y
+        \vec{B}_i=\vec{B_{0,i}}\exp[i(\omega t-kz)]\vec{e}_y\\
+     	\vec{B}_r=\vec{B_{0,r}}\exp[i(\omega t+kz)]\vec{e}_y\\
+     	\vec{B}_t=\vec{B_{0,t}}\exp[-z/\delta]\exp[i(\omega t-z/\delta)]\vec{e}_y
     \end{cases}  
 	\end{align}
-	avec $k=\omega/c$.
+	avec $k=\omega/c$, $\vec{B_{0,i}}=\frac{\vec{e}_z\wedge E_{0,i}}{c}$, $\vec{B_{0,r}}=\frac{\vec{e}_z\wedge E_{0,r}}{c}$ et $\vec{B_{0,t}}=\frac{1-i}{\delta}\frac{\vec{e}_z\wedge E_{0,t}}{\omega}$
 	
 	\item[$\clubsuit$] Il y a continuité des champs électriques et magnétiques : il n'y a ni charges surfaciques, ni courants surfaciques (la conductivité est finie !). On a alors :
 	\begin{align}
     \begin{cases}
         E_{0,i} + E_{0,r} =E_{0,t}\\
-     	\frac{E_{0,i}}{c} + \frac{E_{0,r}}{c} =E_{0,t}\frac{(1-j)}{\delta\omega}
+     	\frac{\vec{E}_{0,i}}{c} - \frac{\vec{E}_{0,r}}{c} =\vec{E}_{0,t}\frac{(1-j)}{\delta\omega}
     \end{cases}  
 	\end{align}
-	
-	On trouve alors :
+	On trouve alors en faisant le produit vectoriel de la seconde ligne avec $\vec{e}_z$ (on se débarrase des vecteurs) :
 	\begin{align}
     \begin{cases}
-        r=\frac{1-n}{1+n}=\frac{1-\frac{(1-j)c}{\omega\delta}}{1-\frac{(1-j)c}{\omega\delta}}\\
+        r=\frac{1-n}{1+n}=\frac{1-\frac{(1-j)c}{\omega\delta}}{1+\frac{(1-j)c}{\omega\delta}}\\
      	t=\frac{2}{1+n}=\frac{2}{1-\frac{(1-j)c}{\omega\delta}}
     \end{cases}  
 	\end{align}

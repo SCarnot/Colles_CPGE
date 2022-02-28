@@ -15,6 +15,80 @@
 
 \begin{document}
 
+\section*{Etude d'une corde statique suspendue}
+
+On considère une corde suspendue entre deux points fixes de même hauteur $y=0$, situés à $x=-D/2$ et $x=+D/2$. La corde a une masse volumique $\mu$ et on note $y(x)$ sa hauteur à l'abscisse $x$. La corde est, statique, n'est soumise qu'à la pesanteur $\vec{g}$ et à sa tension $T(x)$. 
+
+On considère le cas général, c'est-à-dire le cas où l'angle $\alpha$ (défini entre la tangeante de la corde et l'horizontale) n'est pas nécessairement petit. On notera respectivement $T_0$ et $\alpha_0$ la tension de la corde et l'angle $\alpha$ en $x=-D/2$.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=1.5]{onde1.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\star$] En appliquant une première fois le principe fondamental de la statique sur un élément de corde de longueur $dl$, montrer que $T(x)\cdot\cos(\alpha(x))=T_0\cdot\cos(\alpha_0)$.
+
+	\item[$\star$] En appliquant une seconde fois le principe fondamental de la statique, montrer que $y(x)$ vérfie l'équation différentielle :
+	\begin{align*}
+		\frac{\dif^2 y}{\dif x^2} =\frac{1}{l_c}\sqrt{1+\left( \frac{dy}{dx}\right)^2}
+	\end{align*}	
+	
+	On explicitera l'expression de $l_c$, dont on précisera la dimension.
+	
+	\item[$\star$] Résoudre cette équation différentielle. Trouver la solution à l'aide des conditions aux limites. On donne : $\int \frac{dx}{\sqrt{1+x^2}}=\mathrm{argsh}(x)$
+	
+	\item[$\star$] Montrer que le poids total de la corde s'écrit :
+\begin{align*}
+		P = 2 \mu g l_c\times\mathrm{sh}\left(\frac{D}{2l_c} \right) 
+\end{align*}
+	
+	\item[$\star$] Expliciter l'expression de la tension $T(x)$ le long de la corde. A quelle endroit est-elle maximale ? Minimale ? Comparer avec le poids de la corde. 
+	
+	\item[$\star$] Exprimer la longueur $L$ et la \textit{flèche} $h$ (la hauteur entre le point le plus haut et le plus bas) de la chaîne en fonction du paramètre $l_c$. Comment connaître alors la tension dans une chaîne suspendue simplement à partir d'une photographie de celle-ci et de sa masse linéique ?
+	
+\end{itemize}
+
+\newpage
+
+\section*{Etude d'un instrument à corde}
+
+On considère une corde d'un instrument de musique fixée entre deux points de même hauteur $y=0$, situés à $x=0$ et $x=D$. On note $y(x)$ son écart par rapport à l'horizontale (l'axe $Ox$) à l'abscisse $x$. La corde a une masse volumique $\mu$ et est tendue à une tension $T_0$ à ses extrémités, suffisamment forte pour que la pesnateur puisse être négligée et que l'écart $y$ reste très petit devant la longueur $L$ de la corde. On négligera par ailleurs les frottements lorsque la corde vibre.
+
+On s'intéresse à la dynamique de la corde, en particulier aux fréquences qui seront générées lorsqu'elle sera soumise à une excitation par le musicien.
+
+\begin{itemize}
+
+\item[$\bullet$] A l'aide des hypothèses données et en utilisant le principe fondamental de la dynamique, montrer que la tension est constante le long de la corde, puis établir une équation différentielle sur $y(x,t)$. On fera intervenir une célérité $c$ que l'on explicitera. 
+
+\item[$\bullet$] Quelles sont les solutions générales de cette équation ? Commenter.
+
+\item[$\bullet$] On s'intéresse aux solution de l'équation s'écrivant sous la forme $y(x,t)=F(x)G(t)$. Comment s'appelle ce type d'onde ? Obtenir de nouvelles équations différentielles sur $F$ et $G$. Combien y a t-il de constantes d'intégration ?
+
+\item[$\bullet$] Montrer que la solution générale sur $y$ s'écrit alors : 
+\begin{align*}
+	y(x,t)=\sum_n \left[A_n\cos(\omega_nt) + B_n\sin(\omega_nt)\right] \cdot\sin(k_nx)
+\end{align*}
+où $A_n$ et $B_n$ sont des constantes. Expliciter l'expression de $k_n$. 
+
+\item[$\bullet$] On excite la corde avec une excitation dessinée ci-dessous. Donner l'expression de $y(x,t)$ dans ce cas-là.
+	
+	\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=1.5]{onde2.pdf}
+	\end{figure}
+
+On rappelle la relation suivante :
+	\begin{align*}
+	\int_0^1\dif u\times\sin(n\pi u)\times\sin(m\pi u)=\frac{\delta_{nm}}{2}
+	\end{align*}			
+où $\delta_{nm}=1$ si $n=m$ et $\delta_{nm}=0$ si $n\neq m$.
+
+\end{itemize}
+
+\newpage
+
 \section*{Étude d'une corde}
 
 On considère une corde suspendue entre deux points fixes de même hauteur $y=0$, situés à $x=-D/2$ et $x=+D/2$. La corde a une masse volumique $\mu$ et on note $y(x)$ sa hauteur à l'abscisse $x$.
@@ -28,31 +102,28 @@ On considère une corde suspendue entre deux points fixes de même hauteur $y=0$
 
 \begin{itemize}
 
-	\item[$\star$] En appliquant le principe fondamental de la statique sur un élément de corde, montrer que $y(x)$ vérfie l'équation différentielle :
+	\item[$\star$] En appliquant une première fois le principe fondamental de la statique sur un élément de corde de longueur $dl$, montrer que $T(x)\cdot\cos(\alpha(x))=T_0\cdot\cos(\alpha_0)$.
+
+	\item[$\star$] En appliquant une seconde fois le principe fondamental de la statique, montrer que $y(x)$ vérfie l'équation différentielle :
 	\begin{align*}
 		\frac{\dif^2 y}{\dif x^2} =\frac{1}{l_c}\sqrt{1+\left( \frac{dy}{dx}\right)^2}
 	\end{align*}	
 	
 	On explicitera l'expression de $l_c$, dont on précisera la dimension.
 	
-	\item[$\star$] Résoudre cette équation différentielle. Trouver la solution à l'aide des conditions aux limites. On donne : 
-	\begin{align*}
-		\int \frac{dx}{\sqrt{1+x^2}}=\mathrm{argsh}(x)
-	\end{align*}
+	\item[$\star$] Résoudre cette équation différentielle. Trouver la solution à l'aide des conditions aux limites. On donne : $\int \frac{dx}{\sqrt{1+x^2}}=\mathrm{argsh}(x)$
 	
-	\item[$\star$] Déterminer la tension $T(x)$ le long de la corde. A quelle endroit est-elle maximale ? Minimale ? Commenter. 
+	\item[$\star$] Expliciter la tension verticale $T(x)\cdot\sin(\alpha(x))$ le long de la corde. A quelle endroit est-elle maximale ? Minimale ? Commenter. 
 	
 	\item[$\star$] Exprimer la longueur $L$ et la \textit{flèche} $h$ (la hauteur entre le point le plus haut et le plus bas) de la chaîne en fonction du paramètre $l_c$. Comment connaître alors la tension dans une chaîne suspendue simplement à partir d'une photographie de celle-ci et de sa masse linéique ?
 	
 \end{itemize}
 
-\paragraph{Cas dynamique} On considère maintenant que la corde est fortement tendue ($\alpha\ll1$) mais qu'elle n'est plus statique. On cherche à comprendre sa dynamique. On négligera les frottements.
+\paragraph{Cas dynamique} On considère maintenant que la corde est fortement tendue ($\alpha\ll1$, $l_c\longrightarrow\infty$) mais qu'elle n'est plus statique. On cherche à comprendre sa dynamique. On négligera les frottements.
 
 \begin{itemize}
 
-	\item[$\diamond$] Que se passe t-il lorsque la corde devient extrêmement tendue ? Que peut-on négliger par rapport au cas statique ?
-
-	\item[$\diamond$] Déterminer l'équation régissant $y(x,t)$ le long de la corde. Comment s'appelle cette équation ? Quelles sont ses solutions ? Commenter.
+	\item[$\diamond$] Déterminer l'équation régissant $y(x,t)$ le long de la corde avec $\alpha\ll1$. Comment s'appelle cette équation ? Quelles sont ses solutions ? Commenter.
 	
 	\item[$\diamond$] Sachant que la corde est ancrée en $x=0$ et $x=L$, donner l'expression générale de $y(x,t)$ dans le cas de solutions stationnaires. 
 	
@@ -119,7 +190,7 @@ On considère une ligne électrique composée d'une suite de cellules identiques
 	\end{equation}
 	On précisera l'expression de $\omega_0$.
 	
-	 \item[$\spadesuit$] Calculer la quantité $\frac{\dif}{\dif t}\left( \frac{1}{2}CV_n^2 + LI_n^2 \right) $. Interpréter physiquement l'ensemble des termes.
+	 \item[$\spadesuit$] A quoi correspond la quantité $\frac{\dif}{\dif t}\left( \frac{1}{2}CV_n^2 + \frac{1}{2}LI_n^2 \right)$ ? L'exprimer en fonction de $i_n\times V_{n-1}$ et $i_{n+1}\times V_{n}$. Interpréter ce résultat.
 
 \end{itemize}
 
@@ -155,7 +226,7 @@ On suppose que l'inductance $L$ et la capacité $C$ sont remplacées respectivem
 
 \section*{Propagation dans une ligne coaxiale dissipative}
 
-On considère une ligne électrique composée d'une suite de cellules identiques, chacunes constituées d'une inductance $L$, d'une capacité $C$, d'une résistance $R$ et d'une conductance $G$, comme indiqué sur le schéma ci-dessous. Dans la cellule $n$, on note $V_n$ la tension au bornes de la capacité et $I_n$ le courant traversant l'inductance. Le câble s'étend sur l'axe $x$ et on suppose que chaque cellule a une longueur $a$.
+On considère une ligne électrique composée d'une suite de cellules identiques, chacunes constituées d'une inductance $L$, d'une capacité $C$, d'une résistance $R$ et d'une conductance $G$, comme indiqué sur le schéma ci-dessous. Dans la cellule $n$, on note $V_n$ la tension au bornes de la capacité et $I_n$ le courant traversant l'inductance. Le câble s'étend sur l'axe $x$ et on suppose que chaque cellule est de longueur $a$. On souhaite comprendre la propagation des ondes électromagnétique dans cette ligne. 
 
 \begin{figure}[h!]
 \centering
@@ -164,9 +235,14 @@ On considère une ligne électrique composée d'une suite de cellules identiques
 
 \begin{itemize}
 
-	\item[$\spadesuit$] En établissant judiscieusement des relations entre les courants et les tensions des cellules $n-1$, $n$ et $n+1$, trouver une équation reliant $V_{n-1}$, $V_{n}$ et $V_{n+1}$ et les dérivées temporelles de $V_n$.
+	\item[$\spadesuit$] En établissant judiscieusement des relations entre les courants et les tensions des cellules $n-1$, $n$ et $n+1$, montrer que les tensions $V_{n-1}$, $V_{n}$ et $V_{n+1}$ vérifient la relation suivante :
+		\begin{equation}
+		\omega_0^2(V_{n+1}+V_{n-1}-2V_n) = \frac{\dif^2 V_n}{\dif t^2} + \alpha\frac{\dif V_n}{\dif t} + \beta V_n
+		\label{eq:prop}
+	\end{equation}
+	On précisera l'expression de $\omega_0$, $\alpha$ et $\beta$.
 	
-	 \item[$\spadesuit$] Calculer la quantité $\frac{\dif}{\dif t}\left( \frac{1}{2}CV_n^2 + \frac{1}{2}LI_n^2 \right)$ en fonction de $I_n$, $V_n$, $V_{n-1}$ et $V_{n+1}$ (et les grandeurs caractéristiques du circuit). Interpréter physiquement l'ensemble des termes, puis la signification physique de l'équation obtenue. 
+	 \item[$\spadesuit$] Calculer la quantité $\frac{\dif}{\dif t}\left( \frac{1}{2}CV_n^2 + \frac{1}{2}LI_n^2 \right)$ en fonction de $i_n$, $i_{n+1}$, $V_{n}$, $V_{n-1}$ et de $R$ et $G$. Interpréter physiquement l'ensemble des termes, puis la signification physique de l'équation obtenue. 
 
 \end{itemize}
 
@@ -193,9 +269,7 @@ On souhaite décrire la ligne non plus par le paramètre discret $n$ mais avec l
 
 \section*{Propagation des ondes sonores dans un solide}
 
-Dans un solide, on modélise les atomes du cristal comme une succession de masses $m$ espacées d'une distance $a$ selon l'axe $x$, et reliées entre elles par un ressort de raideur $k$. Ce ressort modélise l'intérection électromagnétique entre deux atomes successifs du réseau cristallin. Lorsque le solide est soumis à un choc extérieur, chaque atome s'écarte de sa position d'équilibre. L'écart à la position d'équilibre du \textit{nième} atome est noté $u_n$. On cherche à décrire la propagation de l'onde qui résulte de ce choc.
-
-On note dans la suite $v_n$ la vitesse du \textit{nième} atome et $F_n$ la force qu'exerce sur lui l'atome $n+1$ suivant.
+Dans un solide, on modélise les atomes du cristal comme une succession de masses $m$ espacées d'une distance $a$ selon l'axe $x$, et reliées entre elles par un ressort de raideur $k$. Ce ressort modélise l'intéraction électromagnétique entre deux atomes successifs du réseau cristallin. Lorsque le solide est soumis à un choc extérieur, chaque atome s'écarte de sa position d'équilibre. L'écart à la position d'équilibre du \textit{nième} atome est noté $u_n$ et $F_n$ la force qu'exerce sur lui l'atome $n+1$ suivant. On cherche à décrire la propagation de l'onde sonore qui résulte de ce choc.
 
 \begin{figure}[h!]
 \centering
@@ -204,22 +278,22 @@ On note dans la suite $v_n$ la vitesse du \textit{nième} atome et $F_n$ la forc
 
 \begin{itemize}
 
-	\item[$\spadesuit$] Montrer que la tension $V_n$ vérifie la relation suivante :
+	\item[$\spadesuit$] Montrer que la position $u_n$  de l'atome $n$ vérifie la relation suivante :
 	\begin{equation}
-		\frac{\dif^2 v_n}{\dif t^2} =\omega_0^2(v_{n+1}+v_{n-1}-2v_n)
+		\ddot{u}_n=\omega_0^2(u_{n+1}+u_{n-1}-2u_n)
 		\label{eq:prop}
 	\end{equation}
 	On précisera l'expression de $\omega_0$.
 	
-	 \item[$\spadesuit$] Calculer, en fonction de $v_n$, $F_n$ et $F_{n+1}$, la quantité :
+	 \item[$\spadesuit$] Calculer, en fonction de $u_n$, $u_{n-1}$, $F_n$ et $F_{n-1}$, la quantité :
 	 \begin{align*}
-	 	\frac{\dif}{\dif t}\left[ \frac{1}{2}k(u_n-u_{n+1})^2 + \frac{1}{2} mv_n^2 \right]
+	 	\dot{\varepsilon}_n = \frac{\dif}{\dif t}\left[ \frac{1}{2}k(u_n-u_{n+1})^2 + \frac{1}{2} m\dot{u}^2_n \right]
 	 \end{align*}
 	  Interpréter physiquement l'ensemble des termes.
 
 \end{itemize}
 
-On cherche une solution sinusoïdale pour $V_n(t)$ de l'équation \ref{eq:prop} (on prendra la notation complexe $V_n(t)=A_n\exp(j\omega t)$) de sorte à ce que l'effet après le passage dans une cellule soit un déphasage $\alpha$ fixé : $V_{n+1}=V_n\exp(-j\alpha)$, avec $\alpha>0$.
+On cherche une solution sinusoïdale pour $u_n(t)$ de l'équation \ref{eq:prop} (on prendra la notation complexe $u_n(t)=A_n\exp(j\omega t)$) de sorte à ce que l'effet après le passage sur un atome soit un déphasage $\alpha$ fixé : $u_{n+1}=u_n\exp(-j\alpha)$, avec $\alpha>0$.
 
 \begin{itemize}
 
@@ -227,24 +301,12 @@ On cherche une solution sinusoïdale pour $V_n(t)$ de l'équation \ref{eq:prop} 
 
 	\item[$\spadesuit$] Montrer que ces solutions n'existent que si $\omega$ est inférieur à une certaine fréquence $\omega_c$, que l'on exprimera. Si cette condition est vérifiée, pourquoi peut-on parler de propagation de la phase ? Préciser la "vitesse" de propagation $v_\varphi$ correspondante.
 	
-	\item[$\spadesuit$] On suppose maintenant que $\omega\ll\omega_c$. En explicitant $\alpha$ en fonction de $\omega$, exprimer $v_\varphi$. Que constate t-on ? En déduire l'effet d'une cellule sur un signal électrique, composé de fréquence suffisamment basses, se traduit par un retard temporel $\tau$ que l'on exprimera en fonction de $\omega_0$. Application numérique : $C=10$nF et $L=25\mu$H, calculer $\omega_0$ et $\tau$. Combien de cellules doit-on mettre pour obtenir un retard de $0.1$ms ?
+	\item[$\spadesuit$] On suppose maintenant que $\omega\ll\omega_c$. En explicitant $\alpha$ en fonction de $\omega$, exprimer $v_\varphi$. Que constate t-on ? En déduire l'effet d'un atome sur un signal sonore, composé de fréquence suffisamment basses, se traduit par un retard temporel $\tau$ que l'on exprimera en fonction de $\omega_0$. 
 
-	\item[$\spadesuit$] On se place dans le cas où $\omega<\omega_c$ et $\alpha>0$. Rappeler la définition et l'interprétation de la vitesse de groupe. En donner l'expression en fonction de $\omega_0$ et $\alpha$ et donner son allure de son graphe en fonction de $\alpha$. Que se passe t-il pour $\alpha=\pi$ ?
+	\item[$\spadesuit$] On se place dans le cas où $\omega<\omega_c$ et $\alpha>0$. Rappeler la définition et l'interprétation de la vitesse de groupe. En donner l'expression en fonction de $\omega_0$ et $\alpha$ et donner son allure de son graphe en fonction de $\alpha$. 
 	
-	\item[$\spadesuit$] En notation complexe, l'intensité $I_n$ est de la forme $I_n(t)=B_n\exp(j\omega t)$. Exprimer $B_n$ en fonction de $A_n$, $L$, $\omega_0$ et $\alpha$. Calculer la moyenne temporelle de l'énergie de la cellule $n$ $E=\left\langle \frac{1}{2}CV_n^2+\frac{1}{2}LI_n^2\right\rangle$, ainsi que celle de la puissance $P$ reçue de la cellule $n-1$. En déduire le rapport $P/E$. Commenter.  	
-
-\end{itemize}
-
-\subsubsection*{Question supplémentaire}
-
-On suppose que l'inductance $L$ et la capacité $C$ sont remplacées respectivement par une inductance linéique $\Lambda$ et une capacité linéique $\Gamma$. 
-
-\begin{itemize}
-
-	\item[$\heartsuit$] En substituant judicieusement l'indice $n$ par la dimension spatiale $x$ le long du câble coaxial, montrer que l'équation \ref{eq:prop} devient une équation d'Alembert.
+	\item[$\spadesuit$] Que se passe t-il pour $\alpha=\pi$ ? Commenter. Donner la solution générale de $x_n(t)$ $\forall n$ sachant que $x_0(t)=A_0\cos(\omega t)$. Calculer la quantité $\varepsilon_n$, puis sa dérivée temporelle $\dot{\varepsilon}_n$. Commenter.
 	
-	\item[$\heartsuit$] Dans ce cas-là, par quelle quantité substituer $\alpha$ ? Sur quel type de solutions sur $V$ retombe t-on ? Que devient l'équation de dispersion ? Justifier. 
-
 \end{itemize}
 
 \end{document}

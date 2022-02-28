@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{amsmath,esint }
+\usepackage{amssymb}
 \graphicspath{{figures/}{../figures}}
 
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
@@ -20,13 +21,13 @@
 
 \begin{itemize}
 	\item[$\clubsuit$] Dans une volume $a\Sigma$, on a une charge $+e$ et une charge $-e$, comme celle-ci sont réparties uniformément. Les densités de charges sont donc respectivement $\rho_+=e/(a\Sigma)$ et $\rho_-=-e/(a\Sigma)$.
-	\item[$\clubsuit$] Par définition, $\vec{j}=\rho\vec{v}$. Comme seuls les électrons ont une vitesse non nulle, $\vec{j}=-v'\rho_-=-ev'/(a\Sigma)$. Et donc $I=\oiint_\Sigma\dif\vec{S}\vec{j}=-ev'/a$.
+	\item[$\clubsuit$] Par définition, $\vec{j}=\rho\vec{v}$. Comme seuls les électrons ont une vitesse non nulle, $\vec{j}=\rho_-\vec{v'}=ev'/(a\Sigma)\vec{e}_x$. Et donc $I=\oiint_\Sigma\dif\vec{S}\vec{j}=ev'/a$.
 	\item[$\clubsuit$] $\rho_{tot}=\rho_++\rho_-=0$ donc $\vec{E}=0$.
 	\item[$\clubsuit$] Avec le théorème d'Ampère appliqué uniquement en dehors du fil, on trouve :
 	\begin{align*}
-		\vec{B}=-\frac{\mu_0I}{2\pi r}\vec{e_\theta}
+		\vec{B}=\frac{\mu_0I}{2\pi r}\vec{e_\theta}
 	\end{align*}
-	(le signe - provient du fait que le sens du courant est opposé à celui des électrons)
+	(résultat classique d'un fil parcouru par un courant $I$)
 	La force qui s'exerce sur la charge $q$ est donc :
 	\begin{align*}
 		\vec{F}=-\frac{qv\mu_0I}{2\pi r}\vec{e_r}
@@ -40,32 +41,34 @@
 		\item[$\clubsuit$] Ainsi, en se déplaçant à la vitesse $\vec{v}$, la charge $+q$ voit dans son référentiel la distance entre atomes réduite d'un facteur $\gamma_{+}=1/\sqrt{1-v^{2}/c^{2}}$ et la distance entre électrons de conduction d'un facteur $\gamma_{-}=1/\sqrt{1-(v-v')^{2}/c^{2}}$. 
 		On trouve donc que :
 		\begin{align*}
-			\rho_+=\frac{e}{a\Sigma}\frac{1}{\sqrt{1-v^{2}/c^{2}}}
+			\rho_+=\frac{e}{a\Sigma}\sqrt{1-v^{2}/c^{2}}
 		\end{align*}
 		\begin{align*}
-			\rho_-=\frac{e}{a\Sigma}\frac{1}{\sqrt{1-(v-v')^{2}/c^{2}}}
+			\rho_-=\frac{e}{a\Sigma}\sqrt{1-(v+v')^{2}/c^{2}}
 		\end{align*}		
-		Attention, l'hypothèse que la vitesse relative des électrons par rapport à la charge $q$ est $v'-v$ est une approximation. En mécanique relativiste, la vitesse relative serait :
+		Attention, l'hypothèse que la vitesse relative des électrons par rapport à la charge $q$ est $v'+v$ est une approximation. En mécanique relativiste, la vitesse relative serait :
 		\begin{equation}
 			v_{e_-/q}=\frac{v'-v}{1-\frac{vv'}{c^2}}
 		\end{equation}
 		
-	\item[$\clubsuit$] On trouve facilement avec le théorème dee Gauss que :
+	\item[$\clubsuit$] On trouve facilement avec le théorème de Gauss que :
 	\begin{align*}
-		\vec{E}=\frac{\Sigma(\rho_++\rho_-)}{2\pi r\epsilon}
+		\vec{E}=\frac{\Sigma(\rho_++\rho_-)}{2\pi r\varepsilon_0}
 	\end{align*}
 	
-	\item[$\clubsuit$] En développant à l'ordre 2, on trouve :
+	 En développant à l'ordre 2, on trouve :
 	\begin{align*}
-		\rho_++\rho_-\approx \frac{e}{a\Sigma}\frac{vv'}{c^2}
+		\rho_++\rho_-\approx -\frac{e}{a\Sigma}\frac{vv'}{c^2}
 	\end{align*}
 	On trouve alors que :
 	\begin{align*}
-		\vec{E}=-\frac{I\mu_0 v}{2\pi r}\vec{e_r}
+		\vec{E}=-\frac{e vv'}{2\pi r a\varepsilon_0 c^2}\vec{e_r}=-\frac{I\mu_0 v}{2\pi r}\vec{e_r}
 	\end{align*}
+	
+	\item[$\clubsuit$]
 	La force de Lorentz associée est donc :
 	\begin{align*}
-		\vec{F}=-\frac{qI\mu_0 v}{2\pi r}\vec{e_r}
+		\vec{F}=-\frac{qe vv'}{2\pi r a\varepsilon_0 c^2}\vec{e_r}=-\frac{qI\mu_0 v}{2\pi r}\vec{e_r}
 	\end{align*}
 	
 	Cette expression est identique à celle trouvée par le calcul du champ magnétique en mécanique classique. Le champ magnétique est-il est une approximation à l'ordre 2 de la force de Coulomb ? 
@@ -154,25 +157,90 @@ La valeur moyenne du temps de collision correspond à la somme des temps $t$ dur
 	
 \end{itemize}
 
+\newpage
+
+\section*{Conduction électrique dans un semiconducteur bidimensionnel}
+
+\begin{itemize}
+
+	\item[$\bowtie$] $\vec{j_s}=-en_s\vec{v}$ et $\vec{j_s}=I/W$.
+
+	\item[$\bowtie$] Entre $t$ et $t+dt$, les électrons ont acquis une quantité de mouvement $-eN_0\vec{E}dt$, mais en ont perdu par collision $-P(t)dp=-P(t)\times dt/\tau$ (comme une fraction $dt/\tau$ d'électrons ont perdu \textbf{en moyenne} leur quantité de mouvement). On a donc :
+	\begin{align*}
+		P(t+dt) = P(t)-eN_0\vec{E}dt-P(t)\frac{dt}{\tau}
+	\end{align*}
+	En régime permanent, $P(t+dt) = P(t)$, donc :
+	\begin{align*}
+		\vec{P}=-eN_0\tau\vec{E}
+	\end{align*}
+	Et alors :
+	\begin{align*}
+		\vec{v}=-\frac{e\tau}{m}\vec{E}
+	\end{align*}
+	
+	\item[$\bowtie$] Le courant surfacique est donc :
+	\begin{align*}
+		\vec{j_s}=\frac{e^2\tau n_s}{m}\vec{E}
+	\end{align*}
+	
+	Et comme $V_1-V_2 = int_1^2\vec{dl}\cdot \vec{E}=E\times L$ et que $I=j_S\times W$, on obtient :
+	\begin{align*}
+		V_1-V_2 = I\times\frac{m}{e^2\tau n_s}\frac{L}{W}
+	\end{align*}
+	Donc $R_\boxdot = \frac{m}{e^2\tau n_s}\frac{L}{W}$
+	
+	\item[$\bowtie$] $R_\boxdot$ ne dépend que du rapport d'aspect du conducteur (qui est rectangulaire) : dans le cas $W=L$, la résistance ne dépend plus des dimensions du conducteur. Pour connaitre la resistance d'un tel conducteur, il suffit de "compter" les carrés composant le conducteur (et faire les lois d'addition de résistance en série et en parallèle) pour en déduire la résistance totale du conducteur.
+	
+	\item[$\bowtie$] On note $x$ la dimsension le long du conducteur (selon $l$) et on décompose le conducteur en 3 parties : la première partie du sablier, le carré central et la seconde partie en sablier, notées 1, 2 et 3.
+	
+	Dans la partie $1$, on a $j_s=I/(w-ax)$, avec $a=\frac{l}{W-d}$. Comme on a toujours $\vec{j_s}=\frac{e^2\tau n_s}{m}\vec{E}$, on obtient :
+	\begin{align*}
+		\Delta V_1=\frac{m}{e^2\tau n_s}\int_{x=0}^{x=l}dxj_s(x)=\frac{m}{e^2\tau n_s}\times\frac{I}{a}\ln\left(\frac{w}{d} \right) 
+	\end{align*}
+	où $\Delta V_1 = V_1-V(x=l)$ est la chute de tension dans la partie 1. On a $\Delta V_1+\Delta V_2+\Delta V_3=V_1-V_2 = E\times (2l+d) $.
+	
+	Finalement, on obtient :
+	\begin{align*}
+		R_1=\frac{m}{e^2\tau n_sa}\ln\left(\frac{w}{d} \right) =\frac{R_\boxdot}{a}\ln\left(\frac{w}{d} \right)
+	\end{align*}
+	
+	Comme la résistance centrale est une résistance "carrée", on a $R_2=R_\boxdot$. Enfin, par symétrie, on a $R_1=R_3$. Donc :
+	\begin{align*}
+		R = R_1+R_2+R_3 = R_\boxdot\left(\frac{2}{a}\ln\left(\frac{w}{d} \right)+1 \right) 
+	\end{align*}
+	
+	
+	\item[$\bowtie$] $p_s=\vec{j_s}\cdot\vec{E}=\frac{I}{l(x)}\times\frac{V_1-V_2}{2l+d}$, où $l(x)$ est la largeur du conducteur en $x$. 
+	
+	La puissance totale est donc :
+	\begin{align*}
+	P_J = \iint dx dy\times p_s = \int_{0}^{2l+d} dx l(x)\times\frac{I}{l(x)}\times\frac{V_1-V_2}{2l+d} = (V_1-V_2)\times I= RI^2
+	\end{align*}
+
+\end{itemize}
+
 \section*{Exercice 4}
 
 \begin{itemize}
 
 	\item[$\heartsuit$] Résistance classique d'un cylindre : $R=L/(\gamma\pi a^2)$.
 	
-	\item[$\heartsuit$] Isolons le câble arrivant en $A$. Par symétrie, le courant partira dans tous les directions. La densité de courant va s'écrire en un point $M$ :
+	\item[$\heartsuit$] Isolons le câble arrivant en $A$. Par symétrie, le courant $I$ partira dans tous les directions. La densité de courant va s'écrire en un point $M$ :
 	\begin{align*}
-		\vec{j_A}=\frac{I}{2\pi e }\frac{\vec{e_r}}{\|\vec{AM} \|}
+		\vec{j_A}=\frac{I}{2\pi e }\frac{\vec{AM}}{\|\vec{AM} \|^2}
 	\end{align*}
-	On effectue le même raisonnement pour $B$. La densité de courant totale est alors :
+	C'est une décroissance typique en $1/r$, où $r=AM$.
+	On effectue le même raisonnement pour la source de courant en $B$, mais où la source de courant est $-I$. Par superposition, la densité de courant totale est alors :
 	\begin{align*}
-		\vec{j}=\frac{I}{2\pi e }\left[ \frac{\vec{e_r}}{\|\vec{AM} \|} - \frac{\vec{e_r}}{\|\vec{BM} \|}\right] 
+		\vec{j}=\frac{I}{2\pi e }\left[ \frac{\vec{AM}}{\|\vec{AM} \|^2} - \frac{\vec{BM}}{\|\vec{BM} \|^2}\right] 
 	\end{align*}
 	
 	\item[$\heartsuit$] En intégrant la relation $\vec{j}=\gamma\vec{E}$ le long du chemin $AB$, dont la coordonnée sera donnée par $x$, en faisant varier $x$ de $a$ à $d-a$ (pour éviter une divergence de la densité de courant) :
 	\begin{align*}
-		\int_a^{d-a}dx j(x)=\frac{I}{2\pi e}\int_a^{d-a}dx\left(\frac{1}{x}+\frac{1}{d-x} \right) =\gamma\int_a^{d-a}dxE=\gamma\int_a^{d-a}dx\frac{dV}{dx}
+		\int_a^{d-a}dx j(x)=\frac{I}{2\pi e}\int_a^{d-a}dx\left(\frac{1}{x}+\frac{1}{d-x} \right) =\gamma\int_a^{d-a}dxE=-\gamma\int_a^{d-a}dx\frac{dV}{dx}
 	\end{align*}
+	
+	\textit{Remarque} : Lorsque $M$ est strictement contenu sur le segment $AB$, on a : $\vec{BM} = -\|BM\|\vec{e}_x=-(d-a)\vec{e}_x$ où $\vec{e}_x$ est le vecteur normé orientant ce segment. 
 	
 	On trouve alors :
 	\begin{align*}

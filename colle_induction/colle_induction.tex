@@ -15,8 +15,21 @@
 
 \begin{document}
 
+\section*{Courants de Foucault}
+
+On considère un cylindre de rayon $a$ et de longueur $L$ dont l'axe de rotation est colinéaire au vecteur unitaire $\vec{e}_z$ des coordonnées cylindriques. Ce cylindre est constitué d'un matériaux conducteur de conductivité $\gamma$ et est soumis à un champ magnétique uniforme $\vec{B}=B_0\cos(\omega t)\vec{e}_z$. On se place dans l'approximation des régimes quasi-stationnaire.
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] Montrer que le cylindre est le siège de courants volumiques $\vec{j}$ induits par le champ magnétique. Après avoir précisé leur direction, donner leur expression en fonction des données de l'énnoncé et des constantes fondamentales.
+	
+	\item[$\diamondsuit$] Ces courants volumiques induisent en retour un champ magnétique $B_{ind}$. Donner l'expression de $B_{ind}$ en fonction des données de l'énnoncé et des constantes fondamentales. Commenter
+
+\end{itemize}
+
+\newpage
+
 \section*{Induction mutuelle entre deux circuits}
-$3^\circ$
 On considère les deux circuits $LC$ suivants, composés de capacités $C_1$ et $C_2$ et de bobines d'inductance propre $L_1$ et $L_2$ et d'inductance mutuelle $M$. 
 
 \begin{figure}[h!]
@@ -70,18 +83,84 @@ On retourne au cas général : on suppose que $L_1\neq L_2$ et $C_1\neq C_2$.
 
 \newpage
 
+\section*{Induction mutuelle entre deux lignes bifilaires}
+
+On considère deux lignes bifilaires constituées de 4 fils colinéaires à l'axe $O_z$, formant un carré de côté $d$ sur le plan normal à $O_z$ (cf schéma). Les deux fils supérieurs, parcourus par des courants $i_1$ et $-i_1$, forment un premier circuit $C_1$, les deux fils inférieurs, parcourus par $i_2$ et $-i_2$ forment un circuit $C_2$. Le rayon des fils est $a$ et leur résistance est nulle. D'autre part, leur longueur $l$ est supposé très grande devant $a$ et $b$ de sorte à ce qu'on négligera tous les effets de bord.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.7]{ligne_bifil.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] Pourquoi les deux circuits $C_1$ et $C_2$ ont-ils la même inductance $L$ ? La calculer. 
+	
+\end{itemize}
+
+On suppose de plus que les circuits $C_1$ et $C_2$ ont une capacité $C$ identique pour les deux circuits, et leur inductance mutuelle est notée $M$. Ils peuvent être modélisés par la figure ci-dessous. Les courants $i_1(t)$ et $i_2(t)$ sont supposés dépendre du temps, dans le cadre de l'ARQS.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.45]{induction_mutuelle2.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	
+	\item[$\clubsuit$] Déterminer les équations différentielles satisfaites par $i_1(t)$ et $i_2(t)$.
+	
+	\item[$\clubsuit$] En proposant un changement de fonction bien choisi avec $i_1(t)$ et $i_2(t)$, trouver la solution générale pour $i_1$ et $i_2$. Pourquoi parle t-on de modes propres ?
+	
+	\item[$\clubsuit$] Quelle est l'allure du spectre de $i_1$ ? Dans le cas d'un faible couplage $M$, montrer que le spectre se scinde en deux harmoniques centrées autour de $\omega_0$, séparées en fréquence de $\delta\omega$, que l'on déterminera.  
+	
+	\item[$\clubsuit$] On suppose qu'à $t=0$, les deux condensateurs sont déchargés. Pour quelles valeurs de $i_1(t=0)$ et $i_2(t=0)$ n'y a t-il qu'une fréquence dans le spectre de $i_1$ et $i_2$ ?
+	
+	\item[$\clubsuit$] Réaliser un bilan de puissance électrique et commenter. 	
+	
+\end{itemize}	
+
+\subsubsection*{Questions bonus}
+
+\begin{itemize}
+		
+	\item[$\bigstar$] Calculer l'inductance mutuelle $M$ entre les deux circuits. A t-on bien $M<L$ ? 
+	
+	\item[$\bigstar$] Calculer la capacité $C$ de chaque ligne. 
+	
+\end{itemize}
+
+\newpage
+
 \section*{Courants de Foucault dans un cylindre en rotation}
 
-Un cylindre conducteur plein et de conductivité $\gamma$ est en rotation de vitesse angulaire constante $\omega$ autour de son axe Oz. L'axe est en matière isolante.
-\vspace{0.5cm}
+Un cylindre plein, de rayon $a$ et de longueur $L\gg a$ est en rotation de vitesse angulaire constante $\omega$ autour de son axe $Oz$. Le cylindre est constitué d'un métal de conductivité $\gamma$, et est soumis à un champ magnétique $\vec{B}_{ext}$ uniforme et ne dépendant pas du temps.
+	
+\subsubsection*{Champ transverse}	
+	
+	On considère que le champ magnétique $\vec{B}_{ext}=B_{0}\vec{e_{x}}$ est transverse à l'axe de rotation. 
+	
+\begin{itemize}
 
-\begin{center}
-	\includegraphics[scale=0.2]{Foucault.pdf}
-\end{center}
+	\item[$\square$] Justifier l'existence de courants de Foucault dans le cylindre et brièvement leur allure. Quel est leur effet mécanique ?
+	
+\end{itemize}
+	
+	Le cylindre étant très long, on suppose que les courants de Foucault peuvent être décrit par la densité de courant $\vec{j}=j(r,\theta)\vec{e_{z}}$ loin des extrémités du cylindre.
+	
+\begin{itemize}
+
+		\item[$\square$] Quelle est la relation entre $\vec{j}(r,\theta)$ et $\vec{j}(r,\theta+\pi)$ ?
+		
+		\item[$\square$] A l'aide d'un contour soigneusement choisi, utiliser l'équation de Maxwell Faraday pour déterminer le champ électrique $\vec{E}(r,t)$ à l'intérieur du cylindre. En déduire $\vec{j}(r,\theta)$.
+		
+		\item[$\square$] Déterminer le moment des efforts de Laplace par rapport à l'axe de rotation. Quelle est la puissance dissipée dans le cylindre ?
+								
+\end{itemize}
 
 \subsubsection*{Champ axial}
 
-	Un champ magnétique uniforme $\vec{B}=B_{0}\vec{e_{z}}$ est appliqué.
+	On suppose que le champ magnétique extérieur est désormais coaxial avec l'axe du cylindre :$\vec{B}=B_{0}\vec{e_{z}}$.
 	
 	\begin{itemize}
 	
@@ -90,33 +169,7 @@ Un cylindre conducteur plein et de conductivité $\gamma$ est en rotation de vit
 	\item[$\diamondsuit$] En régime permanent, montrer à l'aide de la force de Laplace que l'effet du champ magnétique est équivalent à un champ électrique $\vec{E_m}$ dont on précisera l'expression. Quelle est alors la répartition des charges dans le cylindre ?
 	
 	\end{itemize}
-	
-	
-\subsubsection*{Champ transverse}	
-	
-	On applique désormais un champ magnétique uniforme $\vec{B}=B_{0}\vec{e_{x}}$ transverse à l'axe de rotation.
-	
-\begin{itemize}
-	
-		\item[$\square$] Justifier l'existence de courants de Foucault dans ce cas en prévoyant leur allure (on pourra s'appuyer sur la force de Lorentz). Quel est leur effet mécanique ?
 
-\end{itemize}
-		
-Si le cylindre est très long, la densité de courant est de la forme $\vec{j}=j(r,\theta)\vec{e_{z}}$. On suppose de plus que les phénomènes électromagnétiques proches des extrémités supérieures et inférieures (les disques) sont négligeables par rapport à ceux ayant lieu le long du cylindre.
-
-\begin{itemize}
-
-		\item[$\square$] Quelle est la relation entre $\vec{j}(r,\theta)$ et $\vec{j}(r,\theta+\pi)$ ?
-		
-		\item[$\square$] A l'aide d'un contour soigneusement choisi, utiliser l'équation de Maxwell Faraday pour déterminer le champ électrique $\vec{E}(r,t)$ à l'intérieur du cylindre.
-		
-		\item[$\square$] Exprimer alors l'expression de $\vec{j}(r,\theta)$ 
-		
-		\item[$\square$] Quelle est la puissance dissipée dans le cylindre ?
-		
-		\item[$\square$] Déterminer le moment des efforts de Laplace par rapport à l'axe de rotation.
-		
-\end{itemize}
 
 \newpage
 
@@ -213,9 +266,21 @@ On admettra par la suite que le champ magnétique induit est négligeable devant
 
 \subsubsection*{Questions supplémentaires}
 
-	\item[$\diamond$] Dans l'énoncé, on suppose que le champ induit dans la plaque est négligeable. Comment cela se traduit-il sur le coefficient d'auto-induction de la plaque $L_p$ et le coefficient d'induction mutuelle $M$ ?
+	\item[$\diamond$] Dans l'énoncé, on suppose que le champ induit dans la plaque est négligeable. Quelle condition doit-on avoir pour que cette hypothèse soit valide ? %Comment cela se traduit-il sur le coefficient d'auto-induction de la plaque $L_p$ et le coefficient d'induction mutuelle $M$ ?
 	
-	\item[$\diamond$] A partir d'un raisonnement énergétique, expliquer pourquoi le dispositif est équipé d'un système de sécurité coupant le champ $\vec{B}$ dès qu'on éloigne la casserole de la plaque.
+	%\item[$\diamond$] A partir d'un raisonnement énergétique, expliquer pourquoi le dispositif est équipé d'un système de sécurité coupant le champ $\vec{B}$ dès qu'on éloigne la casserole de la plaque.
+
+\end{itemize}
+
+\newpage
+
+\section*{Charge magnétique dans un solénoïde}
+
+\begin{itemize}
+
+	\item[$\bigotimes$] Une "charge" (ou "monopole magnétique") $q_m$ se déplace sur l'axe d'un long solénoïde  (rayon $a$, longueur $L$, $N$ spires, résistance nulle) et court-circuité. On veut déterminer l'intensité qui circule dans ses spires. Que vaut, pour une position donnée de $q_m$ sur l'axe, la contribution à la ddp induite du flux magnétique propre de $q_m$ ? Montrer qu'elle est quasi nulle "au coeur de la bobine", cad loin des extrémités. On ne poursuit pas le calcul, même s'il pose problème, car on n'aime pas trop la discontinuité temporelle du flux de $q_m$ au passage par la spire à son aplomb (cad dans le plan de laquelle se situe la spire à l'instant $t$), expliquer ! On désire donc changer de modèle pour la question suivante.
+	
+	\item[$\bigotimes$] Le calcul précédent ayant montré que le flux de $q_m$ au travers de tout le solénoïde est quasi nul en son coeur, par quelle distribution magnétique (de "charge magnétique") simple pourrait-on dans ce cas remplacer la charge magnétique $q_m$ pour s'affranchir de cette discontuinité (et qui donnerait alors un flux dû à $q_m$ "rigoureusement nul", si tant est bien sûr qu'on s'affranchisse toujours des effets de bords, solénoïde infini) ?
 
 \end{itemize}
 

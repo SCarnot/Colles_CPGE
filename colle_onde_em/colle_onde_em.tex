@@ -17,7 +17,7 @@
 
 \section*{Réflexion d'une onde électromagnétique sur des plans métalliques en incidence oblique}
 
-On considère une onde plane progressive se propageant dans le vide, selon le vecteur d'onde $\vec{k}=k\cos\theta\vec{u_x}+k\sin\theta\vec{u_y}$ et à la pulsation $\omega$. Elle arrive sur un plan métallique infiniment conducteur situé sur le demi-espace $x>0$. On notera $\vec{E_i}$ et $\vec{B_i}$ respectivement le champ électrique et le champ magnétique incidents. Le champ électrique est polarisé rectilignement selon $Oz$ et son amplitude est $E_0$.
+On considère une onde plane progressive se propageant dans le vide, selon le vecteur d'onde $\vec{k}=k\cos\theta\vec{u_x}+k\sin\theta\vec{u_y}$ et à la pulsation $\omega$. Elle arrive sur un plan métallique infiniment conducteur situé sur le demi-espace $x>0$. On notera $\vec{E_i}$ et $\vec{B_i}$ respectivement le champ électrique et le champ magnétique incidents. Le champ électrique incident est polarisé rectilignement selon $Oz$ et son amplitude est $E_0$.
 
 \begin{itemize}
 		
@@ -31,12 +31,14 @@ En arrivant sur l'interface, les relations de passage du champ électromagnétiq
 \begin{align*}
 	\vec{E_r}=\vec{E_0'}\exp(i\vec{k_r}\cdot\vec{r}-\omega t)
 \end{align*}
-
+avec $\vec{k_r}=k_r\cos\theta_r\vec{u_x}+k_r\sin\theta_r\vec{u_y}$, où $\theta_r$ est l'angle de réflexion de l'onde, à priori différent de $\theta$.
 \begin{itemize}
 	
 	\item[$\heartsuit$] Que valent les champs $\vec{E}$ et $\vec{B}$ à l'intérieur de la plaque ? Justifier.
 	
-	\item[$\heartsuit$] En utilisant les relations de passage, écrire $\vec{E_r}$ en fonction de $E_0$, $k$, $\omega$ et $\theta$ et démontrer la loi de Descartes sur la réflexion d'une onde électromagnétique. En déduire l'expression du champ magnétique réfléchi, $\vec{B_r}$.
+	\item[$\heartsuit$] En utilisant les relations de passage, déterminer $\vec{E_0'}$ puis $\theta_r$ pour en déduire l'expression de $\vec{E_r}$ en fonction de $E_0$, $k$, $\omega$ et $\theta$. Quel est le lien avec la loi de Descartes sur la réflexion ?
+	
+	\item[$\heartsuit$] En déduire l'expression du champ magnétique réfléchi, $\vec{B_r}$.
 	
 	\item[$\heartsuit$] Quelle est alors l'expression du champ électrique $\vec{E}$ résultant pour $x<0$ ? De quel type d'onde s'agit-il ?
 	
@@ -119,9 +121,9 @@ Une onde métrique traverse une épaisseur $L$ de plasma dans les conditions de 
 
 \section*{Ondes électromagnétiques dans un métal conducteur}
 
-On s'intéresse à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal est transparent à basse fréquence, mais transparent à partir d'une certaine fréquence.
+On s'intéresse ici à la propagation des ondes électromagnétiques dans un conducteur métallique, en fonction de leur fréquence et des caractéristiques du métal. Plus particulièrement, on souhaite savoir pourquoi un métal est réfléchissant à basse fréquence, mais transparent à partir d'une certaine fréquence.
 
-On considère donc que le demi-espace $z>0$ est rempli d'un métal, sur lequel arrive une onde plane progressive monochromatique à la fréquence $\omega$ et polarisée suivant $\vec{e_x}$. 
+On considère donc que le demi-espace $z>0$ est rempli d'un métal conducteur, sur lequel arrive une onde plane progressive monochromatique à la fréquence $\omega$ et dont le champ électrique est polarisé suivant $\vec{e_x}$. 
 
 \begin{itemize}
 
@@ -129,7 +131,7 @@ On considère donc que le demi-espace $z>0$ est rempli d'un métal, sur lequel a
 
 \end{itemize}
 
-Pour décrire le métal, on adopte un modèle d'électrons libres, de masse $m$, de charge $-e$ et de densité particulaire $N_0$, soumis au champ électromagnétique, et subissant des collisions en moyenne au bout d'un temps $\tau=1/\omega_c$. On modélise alors le comportement des électrons par l'équation de mouvement (aussi appelé modèle de Drude) :
+Pour décrire le métal, on adopte un modèle d'électrons libres de masse $m$, de charge $-e$ et de densité particulaire $N_0$, soumis au champ électromagnétique, et subissant des collisions en moyenne au bout d'un temps $\tau=1/\omega_c$. On modélise alors le comportement des électrons par l'équation de mouvement (aussi appelé modèle de Drude) :
 
 \begin{equation}
 	m\vec{a}=-e\vec{E}-m\frac{\vec{v}}{\tau}
@@ -219,17 +221,18 @@ Les parois sont de plus supposées infiniment conductrices et l'air à l'intéri
 
 Un milieu conducteur de conductivité $\gamma=6\cdot10^7\Omega^{-1}$m$^{-1}$ occupe le demi-espace $z>0$ tandis que de l'air, assimilé au vide, occupe le demi-espace $z<0$. Une onde électromagnétique incidente plane et monochromatique de pulsation $\omega$ se propage dans la direction de l'axe $Oz$ dans l'air. Le champ électrique de cette onde incidente s'écrit :
 \begin{align*}
-	\vec{E}_i=E_{0,i}\exp[i(\omega t-k_iz)]\vec{e}_x
+	\vec{E}_i=\vec{E}_{0,i}\exp[i(\omega t-k_iz)]
 \end{align*}
-A l'interface $z=0$, elle donne naissance à une onde réfléchie et transmise s'écrivant respectivement $\vec{E}_r=\vec{E}_{0,r}\exp[i(\omega t-k_rz)]$ et $\vec{E}_t=\vec{E}_{0,t}\exp[i(\omega t-k_tz)]$, de même pulsation.
+en notant $\vec{E}_{0,i}$ son amplitude.
+A l'interface $z=0$, elle donne naissance à une onde réfléchie et une onde transmise s'écrivant respectivement $\vec{E}_r=\vec{E}_{0,r}\exp[i(\omega t-k_rz)]$ et $\vec{E}_t=\vec{E}_{0,t}\exp[i(\omega t+k_tz)]$, toutes de même pulsation $\omega$. On admet que les amplitudes des champs éléectriques appartiennent au plan $xOy$.
 
 \begin{itemize}
 	
-	\item[$\clubsuit$] Déterminez l'équation de propagation vérifiée par le champ électrique dans le vide, et en déduire l'expression de $k_i$ et $k_r$. 
+	\item[$\clubsuit$] Déterminez l'équation de propagation vérifiée par le champ électrique dans le vide, et en déduire l'expression de $k_i$ et $k_r$ en fonction de $\omega$ et $c$, la vitesse de la lumière. 
 	
 	\item[$\clubsuit$] Quelle équation vérifie le champ électrique à l'intérieur du métal, pour des fréquences que l'on supposera ici inférieures au GHz ? En déduire l'expression de $k_t$. Commenter. 
 	
-	\item[$\clubsuit$] Déterminer l'expression des champ magnétiques $\vec{B}_i$, $\vec{B}_r$ et $\vec{B}_t$ associés.
+	\item[$\clubsuit$] Déterminer l'expression du champ magnétique $\vec{B}_i$ en fonction de l'amplitude du champ électrique incident, $\vec{E}_{0,i}$, et des données de l'enoncé. Déterminer de la même manière $\vec{B}_r$ et $\vec{B}_t$ respectivement en fonction de $\vec{E}_{0,r}$ et $\vec{E}_{0,t}$.
 	
 	\item[$\clubsuit$] Quelles sont les conditions imposées aux champ électrique et magnétique à l'interface $z=0$ ? En déduire les coefficients de réflexion $r=E_{0,r}/E_{0,i}$ et de transmission $t=E_{0,t}/E_{0,i}$.
 	

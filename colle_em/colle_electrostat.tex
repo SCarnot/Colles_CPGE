@@ -17,9 +17,9 @@
 
 \section*{Approche ontologique du champ magnétique}
 
-On considère un fil unidimensionnel de section $\Sigma$ dirigé suivant l'axe $x$. Il est constitué d'atomes séparés d'une distance $a$, de charge $+e$  et d'autant d'électrons de conduction de charge $-e$ ; on suppose que atomes et électrons sont confondus sur l'axe $x$ et uniformément répartis à travers $\Sigma$. On impose un courant $I$ dans le fil, les électrons se déplacent alors avec une vitesse $\vec{v'}=v'\vec{e_{x}}$.
+On considère un fil unidimensionnel de section $\Sigma$ dirigé suivant l'axe $x$. Il est constitué d'atomes séparés d'une distance $a$, de charge $+e$  et d'autant d'électrons de conduction de charge $-e$ ; on suppose que atomes et électrons sont confondus sur l'axe $x$ et uniformément répartis à travers $\Sigma$. On impose un courant $I$ dans le fil, les électrons se déplacent alors avec une vitesse $\vec{v'}=-v'\vec{e_{x}}$ uniforme le long du fil.
 
-Une particule de charge $q$ se déplace à la vitesse $\vec{v}=v\vec{e_{x}}$ à une distance $r$ de l'axe $x$, supérieure au rayon du fil.
+Une particule de charge $q$ se déplace à la vitesse $\vec{v}=v\vec{e_{x}}$ à une distance $r>a$ de l'axe $x$.
 
 \begin{figure}[h!]
 \centering
@@ -31,23 +31,21 @@ On s'intéresse aux forces électromagnétiques exercées par les charges du fil
 \subsubsection*{Approche en mécanique classique}
 
 \begin{itemize}
-	\item[$\clubsuit$] Quelle est la densité de charge $\rho_{+}$ (respectivement $\rho_{-}$) due aux atomes (resp. aux électrons) dans le fil ? 
+	\item[$\clubsuit$] Quelle est la densité de charge $\rho_{+}$ (respectivement $\rho_{-}$) due aux atomes (resp. aux électrons) dans le fil ? En déduire le champ électrique $\vec{E}$ créé par cette distribution de charge pour $r>a$.
 	
-	\item[$\clubsuit$] Quel est la densité de courant $\vec{j}$ dans le fil ? Exprimer la vitesse $\vec{v'}$ des électrons de conduction en fonction de $I$.
-	
-	\item[$\clubsuit$] Quel est le champ électrique créé par la distribution de charges ? 
-	\item[$\clubsuit$] Quel est le champ magnétique créé par le courant $I$ ?
-		\item[$\clubsuit$] Quelle est la force totale s'exerçant alors sur la charge $+q$ ? Quels sont les contributions des forces électriques et magnétiques sur cette particule ?
+	\item[$\clubsuit$] Quelle est la densité de courant $\vec{j}$ dans le fil ? Exprimer la vitesse $\vec{v'}$ des électrons de conduction en fonction de $I$. En déduire le champ magnétique $\vec{B}$ créé par ce courant en fonction de $v'$ et des autres données de l'énoncé.
+	\item[$\clubsuit$] Exprimer la force totale s'exerçant alors sur la charge $+q$, en fonction de $q$, $v$, $v'$, $a$, $r$ et de constantes fondamentales. Quels sont les contributions des forces électriques et magnétiques sur cette particule ?
+	\item[$\clubsuit$] Que devient cette force dans le référentiel de la charge $+q$ ? En quoi est-ce une contradiction ?
 \end{itemize}
 
 \subsubsection*{Approche en mécanique relativiste}
 
-En relativité restreinte, tout objet se déplaçant relativement par rapport à un autre voit sa longueur contractée dans le sens du déplacement. Ainsi, Einstein a démontré en 1905 qu'un objet à la vitesse $v$ par rapport à un autre objet, voit la longueur de ce dernier contracté du facteur $\gamma=1/\sqrt{1-v^{2}/c^{2}}$ (où $c$ est la vitesse de la lumière). La charge $q$ voit donc la densité de charge des atomes $\rho_+$ et des électrons $\rho_-$ augmenter, mais pas dans les mêmes proportions. 
+La théorie de la relativité restreinte permet de lever cette contradiction, en affirmant que tout objet se déplaçant relativement par rapport à un autre voit sa longueur contractée dans le sens du déplacement. Ainsi, Einstein a démontré en 1905 qu'un objet à la vitesse $v$ par rapport à un autre objet, voit la longueur de ce dernier contractée d'un facteur $\gamma(v)=1/\sqrt{1-v^{2}/c^{2}}$ (où $c$ est la vitesse de la lumière). Dans son référentiel, la charge $q$ voit donc la densité de charge des atomes $\rho_+$ et des électrons $\rho_-$ augmenter, mais pas dans les mêmes proportions. 
 	\begin{itemize}
-		\item[$\clubsuit$] Que deviennent les densités de charge $\rho_{+}$ et $\rho_{-}$ dans le référentiel de la particule $+q$ ? On admettra que les électrons se déplacent à la vitesse $v'-v$ dans le référentiel de $+q$. 
-		\item[$\clubsuit$] Déterminer le champ électrique créé par cette nouvelle distribution de charges. 
-		\item[$\clubsuit$] Quelle est la force électrique s'exerçant sur la particule $+q$ ? On supposera que $v'\ll v\ll c$.
-		\item[$\clubsuit$] Comparer avec le résultat trouvé en approche classique (non relativiste).
+		\item[$\clubsuit$] Que deviennent les densités de charge $\rho_{+}$ et $\rho_{-}$ dans le référentiel de la particule $+q$ ? %On admettra que les électrons se déplacent à la vitesse $v'-v$ dans le référentiel de $+q$. 
+		\item[$\clubsuit$] Déterminer le champ électrique créé par cette nouvelle distribution de charges en fonction de $v$, $v'$, $a$, $r$ et de constantes fondamentales. On supposera que $v'\ll v\ll c$.
+		\item[$\clubsuit$] Quelle est la force électrique s'exerçant sur la particule $+q$ ? 
+		\item[$\clubsuit$] Comparer avec le résultat trouvé en approche classique (non relativiste). Que peut-on en dire sur la nature du champ magnétique ?
 	\end{itemize}
 			
 \textit{N.B.} : On rappelle que la vitesse de la lumière $c$ est définie comme $c^{2}=1/\epsilon_{0}\mu_{0}$, où $\epsilon_{0}$ et $\mu_{0}$ sont respectivement la permittivité électrique et la perméabilité magnétique du vide.
@@ -136,6 +134,51 @@ Le paramètre fondamental introduit par Drude est un temps de relaxation, $\tau$
 
 \newpage
 
+\section*{Conduction électrique dans un semiconducteur bidimensionnel}
+ 
+Les techniques récentes de microfabrication permettent de créer à partir de semiconducteurs dopés (cristaux d'arsenure de gallium) des conducteurs où les électrons sont quantiquement confinés dans un plan : leur déplacement, et donc la condution électrique, sont parfaitement bidimensionnels. On s'intéresse au conducteur 2D rectangulaire de largeur $W$ et de longueur $L$ ci-dessous, contenant un total de $N_0=n_s\times W\times L$ électrons, où $n_s$ est la densité surfacique d'électron.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.5]{2DEG_square.pdf}
+\end{figure}
+
+On admet que les électrons dans ce plan se comportent comme un gaz parfait : ils n'interagissent pas entre eux et ne sont soumis qu'à champ électrique $\vec{E}$ uniforme lorsque un opérateur impose une différence de potentiel $V_1-V_2$. Ils subissent néanmoins des collisions avec les impuretés du réseau cristallin, à l'issue desquelles ils ont une direction et une vitesse aléatoire. On admet que durant un temps $dt$, la probabilité pour un électron de subir une collision est $dp = dt/\tau$, où $\tau$ est un paramètre imposé par la qualité du réseau cristallin.
+
+L'objectif de l'exercice est de déterminer les propriétés de conduction d'un tel matériau, en fonction de ses caractéristiques $n_s$ et $\tau$.
+
+\begin{itemize}
+
+	\item[$\bowtie$] Relier le courant surfacique $\vec{j_s}$ à la densité surfacique $n_s$ d'électron et leur vitesse moyenne $\vec{v}$. Relier ensuite $\vec{j_s}$ avec $I$ et $W$.
+
+	\item[$\bowtie$] A l'instant $t$, $P(t)=mN_0v(t)$ la quantité de mouvement totale des électrons. En effectuant un bilan de quantité de mouvement, montrer qu'en régime permanent on a :
+	\begin{align*}
+		\vec{v}=-\frac{e\tau}{m}\vec{E}
+	\end{align*}
+	
+	\item[$\bowtie$] L'opérateur impose une différence de potentiel $U=V_1-V_2$, générant un courant total $I$ réparti uniformément dans le conducteur. En déduire la résistance $R$ du conducteur en fonction de $n_s$, $\tau$, $L$ et $W$.
+	
+	\item[$\bowtie$] Pourquoi appelle t-on $R_\boxdot=\frac{m}{e^2\tau n_s}$ résistance par carré ?
+	
+\end{itemize}
+
+On s'interesse à un conducteur bidimensionnel avec une géométrie en "sablier", proposée sur le schéma ci-dessous. Il s'agit d'un "quantum point contact", un dispositif permettant d'étudier les propriétés quantiques des électrons dans les conducteurs.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.5]{2DEG_QPC.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\bowtie$] En supposant que la densité de courant est uniforme dans la largeur du conducteur 2D, calculer la résistance totale $R$ de ce conducteur.
+	
+	\item[$\bowtie$] Calculer la puissance surfacique locale dissipée par effet Joule, $p_s=\vec{j_s}\cdot\vec{E}$, puis la puissance totale $P_J$ dissipée dans le conducteur. A t-on $P_J=RI^2$ ?
+
+\end{itemize}
+
+\newpage
+
 \section*{Exercice 4}
 
 On considère une plaque métallique de conductivité $\gamma$, infinie dans le plan $xy$ et d'épaisseur $e$ selon $z$. Cette plaque est connectée à deux fils de même métal (et donc de même conductivité $\gamma$) en $A$ et $B$, séparés l'un de l'autre de la distance $d$. Ces deux fils peuvent être assimilés à des cylindres de rayon $a$ et de longueur $l$. 
@@ -184,7 +227,7 @@ Lorsque le courant de foutre d'un impact direct sur un paratonnerre s'écoule pa
 
 \section*{Câble coaxial}
 
-On considère un câble coaxial constitué de deux conducteurs cylindriques de même axe, de rayon $a$ (l'âme) et $b$ (la gaine), avec $a<b$, et d'épaisseur négligeable. Le conducteur central (de rayon $a$) a une charge surfacique $\sigma_a$ et est traversé par une densité surfacique de courant $\vec{j_{s,a}}$. La longueur du câble est $L$, très grande devant les rayons $a$ et $b$.  
+On considère un câble coaxial constitué de deux conducteurs cylindriques de même axe, séparés par du vide, de rayon $a$ (l'âme) et $b$ (la gaine), avec $a<b$, et d'épaisseur négligeable. Le conducteur central (de rayon $a$) a une charge surfacique $\sigma_a$ répartie uniformément et est traversé par une densité surfacique de courant $\vec{j_{s,a}}$, répartie aussi uniformément sur l'âme. La longueur du câble est $L$, très grande devant les rayons $a$ et $b$.  
 
 \begin{figure}[h!]
 \centering
@@ -195,7 +238,7 @@ On cherche à connaitre la capacité et l'inductance linéique du câble coaxial
 
 \begin{itemize}
 
-	\item[$\blacksquare$] Exprimer le courant $I$ circulant dans l'âme et sa charge totale $Q$ en fonction de $\vec{j_{s,a}}$ et $\sigma_a$. En déduire la charge et l'intensité surfacique de la gaine, $\sigma_b$ et $\vec{j_{s,b}}$, sachant que le courant total à travers le câble est nul et qu'il est neutre électriquement.
+	\item[$\blacksquare$] Exprimer le courant $I$ circulant dans l'âme et sa charge totale $Q$ en fonction de $\vec{j_{s,a}}$ et $\sigma_a$. En déduire la charge et l'intensité surfacique de la gaine, $\sigma_b$ et $\vec{j_{s,b}}$, sachant que, sur toute la longueur du câble, le courant total à travers le câble est nul et qu'il est neutre électriquement.
 	
 	\item[$\blacksquare$] Déterminer le champ électrique en tout point.
 
@@ -217,24 +260,27 @@ En choisissant soigneusement une surface $S$, déterminer l'inductance linéique
 
 \section*{Étude d'un colloïde}
 
-Les colloïdes sont constitués par un solvant dans lequel est introduit un corps, généralement solide, qui se disperse sous forme de particules en suspension dont la taille peut varier de 10 à 100nm. Ces particules sont des macromolécules ou des agrégats de petites molécules qui s'ionisent dans le milieu. Par exemple, le blanc d'œuf ou le plasma sanguin sont des solutions colloïdales. En agronomie, le colloïde formé par les particules d'argile (silice) et l'humus (matière organique décomposée) est fondamental pour la fertilité des sols. 
+Un colloïde est une solution constituée d'un solvant (de l'eau et des ions) et de particules solides en suspension dont la taille peut varier de 10 à 100nm et qui s'ionisent dans le solvant. Par exemple, en agronomie, on étudie les propriétés d'un sol en disolvant un échantillon de terre dans de l'eau. Après traitement, la solution qui en résulte est \textit{une solution colloïdale}, composée des particules d'argile (silice) en suspension dans une eau contenant des ions minéaraux. 
 
-On supposera que la solution colloïdale est composée de :
+Lorsqu'on augmente la concentration ionique de la solution (en ajoutant du sel par exemple) on observe la sédimentation de la solution colloïdale (les particules d'argiles "tombent" au fond du récipient) : ce phénomène est appelé \textit{floculation} et on cherche à le décrire ici. Il permet notamment de décrire les argiles présente dans la solution.
+
+%Les colloïdes sont constitués par un solvant dans lequel est introduit un corps, généralement solide, qui se disperse sous forme de particules en suspension dont la taille peut varier de 10 à 100nm. Ces particules sont des macromolécules ou des agrégats de petites molécules qui s'ionisent dans le milieu. Par exemple, le blanc d'œuf ou le plasma sanguin sont des solutions colloïdales. En agronomie, le colloïde formé par les particules d'argile (silice) et l'humus (matière organique décomposée) est fondamental pour la fertilité des sols. 
+
+Pour la décrire, on supposera que la solution colloïdale est composée de :
 \begin{itemize}
-	\item[-] des particules de colloïdes, de rayon $r_0$, portant une charge $Q$ sur leur surface. Ils sont supposés assez dilués pour considérer que le potentiel autour d'une particule colloïdale n'est créé que par elle-même et les ions du milieu ;
-	
-	\item[-] les ions contenus dans l'eau, supposés ponctuels, portant une charge $\pm e$ à la concentration $N_0$. On supposera que la concentration en cations est égale à celle en anion. Les ions (cations + ou anions -), quand il sont soumis à un potentiel $V$, se répartissent en moyenne selon la loi de Boltzmann :
+	\item[-] des particules de colloïdes, de rayon $r_0$, portant une charge $Q$ sur leur surface. Ils sont supposés assez dilués pour considérer que le potentiel autour d'une particule colloïdale n'est créée que par elle-même et les ions du milieu ;
+	\item[-] les ions contenus dans l'eau à la concentration $N_0$, supposés ponctuels, portant une charge $\pm e$. On supposera que la concentration en cations est égale à celle en anions. Les ions (cations + ou anions -), quand il sont soumis à un potentiel extérieur $V$, se répartissent en moyenne selon la loi de Boltzmann :
 \begin{align*}
 	\frac{N_{\pm}(r)}{N_0}=\exp\left(-\frac{\pm eV(r)}{k_BT} \right) 
 \end{align*}
-La permitivité du milieu est $\varepsilon=\varepsilon_r\varepsilon_0$ avec $\varepsilon_r=80$.
 \end{itemize}
+La permitivité du milieu est $\varepsilon=\varepsilon_r\varepsilon_0$ avec $\varepsilon_r=80$. On s'intéresse à une particule de colloïde en suspension dans la solution, entourée d'ions.
 
-Lorsqu'on augmente significativement la concentration $N_0$ de la solution ionique, on observe que la suspension colloïdale sédimente très rapidement. On cherche à comprendre ce phénomène appelé \textit{floculation}. Pour cela, on s'intéresse à une particule de colloïde en suspension dans la solution, entourée des ions. 
+%Lorsqu'on augmente significativement la concentration $N_0$ de la solution ionique, on observe que la suspension colloïdale sédimente très rapidement. On cherche à comprendre ce phénomène appelé \textit{floculation}. Pour cela, on s'intéresse à une particule de colloïde en suspension dans la solution, entourée des ions. 
 
 \begin{itemize}
 
-	\item[$\heartsuit$] Quelle serait le potentiel $V(r)$ autour d'une particule de colloïde s'il n'y avait pas d'ions dans l'eau ? Décrire brièvement comment se répartiraient les ions dans ce cas-là, c'est-à-dire unqiuement avec le potentiel de la particule.
+	\item[$\heartsuit$] S'il n'y avait pas d'ions en solution, quel serait le potentiel $V(r)$ autour de la particule de colloïde ? Décrire brièvement comment se répartiraient alors des ions s'ils étaient soumis à ce potentiel.
 
 \end{itemize}
 
@@ -244,7 +290,7 @@ En réalité, la présence de ces ions modifie le potentiel $V$ autour de la par
 
 	\item[$\heartsuit$] Établir la densité volumique de charge entourant une particule de colloïde. Que devient cette expression si $eV\ll k_BT$ ?
 	
-	\item[$\heartsuit$] En appliquant le théorème de Gauss sur un volume bien choisi autour d'une particule de colloïde, montrer que : 
+	\item[$\heartsuit$] En appliquant le théorème de Gauss, une fois sur une sphère de rayon $r$ autour de la particule, puis une seconde fois en $r+dr$, montrer que : 
 	\begin{align*}
 		\frac{1}{r^2}\frac{\dif}{\dif r}\left( r^2\frac{\dif V}{\dif r}\right) +\frac{\rho}{\epsilon}=0
 	\end{align*}
@@ -271,8 +317,10 @@ On représente l'ensemble Terre-ionosphère comme un volumineux condensateur sph
 \end{figure}
 
 \begin{itemize}
+
+	\item[$\clubsuit$] Lorsqu'un conducteur parfait est suoumis à un champ électrique extérieur, le champ électrique est nul à l'intérieur de ce conducteur et il se charge en surface. Rappeler pourquoi.
 	
-	\item[$\clubsuit$] Déterminer le champ électrique $\vec{E}$.
+	\item[$\clubsuit$] Déterminer le champ électrique $\vec{E}(r)$.
 		
 	\item[$\clubsuit$] En déduire la capacité $C$ du système Terre-ionosphère.
 	
@@ -285,6 +333,31 @@ On représente l'ensemble Terre-ionosphère comme un volumineux condensateur sph
 	
 	\textit{Données} : Rayon de la Terre, $R_T=6370$km. Permittivité du vide, $\varepsilon=8,85\cdot10^{-12}$F.m$^{-1}$.
 	
+\end{itemize}
+
+\newpage
+
+\section*{Champ magnétique dans un cylindre parcouru par un courant orthoradial}
+
+On considère un cylindre conducteur de rayon $a$ et de longueur $L\gg a$ selon l'axe $O_z$, dans lequel circule une densité volumique de courant $\vec{j}(r)=j_0\vec{e}_r$.
+
+\begin{itemize}
+
+	\item[$\circ$] Déterminer l'expression du champ magnétique $\vec{B}(r)$ en fonction de la valeur du champ magnétique en $r=0$.
+	\item[$\circ$] Quel est l'expression du champ magnétique $\vec{B}(r)$ si on impose un champ exterieur $\vec{B}_{ext}$ de sorte à ce que  $\vec{B}(r=a)=\vec{0}$ ?
+
+\end{itemize}
+
+\newpage
+
+\section*{Condensateur sphère-plan}
+
+On considère un conducteur parfait plan, situé en $z=0$ et une sphère de rayon $a$, elle aussi parfaitement conductrice, dont le centre est situé en $(x=0, y=0, z=d)$. La sphère est portée au potentiel $V$ tandis que le plan est relié à la masse, c'est-à-dire u potentiel nul. Le but de l'exercice est de déterminer la capacité entre le plan et la sphère.
+
+\begin{itemize}
+
+	\item[$\circ$] 
+
 \end{itemize}
 
 \newpage

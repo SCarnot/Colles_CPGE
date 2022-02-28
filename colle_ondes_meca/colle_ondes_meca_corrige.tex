@@ -15,6 +15,264 @@
 
 \begin{document}
 
+\section*{Etude d'une corde statique suspendue}
+
+\begin{itemize}
+
+	\item[$\star$] On prend un élément infinitésimal de corde de longueur $dl=\sqrt{dx^2+dy^2}$. On note $\alpha(x)$ l'angle de la corde par rapport à l'horizontal à l'abscisse $x$. On applique le principe fondamental de la statique :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	-T(x)\cdot\cos(\alpha(x))+T(x+dx)\cdot\cos(\alpha(x+dx))=0\\
+	\\
+	-T(x)\cdot\sin(\alpha(x))+T(x+dx)\cdot\sin(\alpha(x+dx))-\mu g\sqrt{dx^2+dy^2}=0\\
+	\end{array}\right.
+	\end{align*}		
+	
+	De la première équation, on voit que $T(x)\cdot\cos(\alpha(x))=cste=T_0\cos(\alpha_0)$, où $T_0$ et $\alpha_0$ sont la tension et l'angle au début de la corde (par exemple. On a donc $T(x)=T_0\cos(\alpha_0)/\cos(\alpha(x))$.
+	
+	\item[$\star$] La seconde équation s'écrit :
+	\begin{align*}
+		\frac{\dif }{\dif x}T(x)\cdot\sin(\alpha(x))=\mu g \sqrt{1+\left( \frac{dy}{dx}\right)^2}
+	\end{align*}
+	Avec la relation trouvée sur la tension, on obtient :
+	\begin{align*}
+		dx\frac{\dif }{\dif x}\left[T_0\cos(\alpha_0)\tan(\alpha(x))\right] =\mu g dx\sqrt{1+\frac{dy^2}{dx^2}}
+	\end{align*}
+	Comme $\tan(x)=dy/dx$, on tombe sur l'équation différentielle :
+	\begin{align*}
+		\frac{\dif^2 y}{\dif x^2} =\frac{1}{l_c}\sqrt{1+\left( \frac{dy}{dx}\right)^2}
+	\end{align*}	
+	avec $l_c=T_0\cos(\alpha_0)/\mu g$.
+	
+	\item[$\star$] Avec le changement de variable $p(x)=\dif y/\dif x$, on a :
+	\begin{align*}
+		\frac{\dif p}{\dif x} =\frac{1}{l_c}\sqrt{1+p(x)^2}
+	\end{align*}	
+	On obtient alors :
+	\begin{align*}
+		\frac{\dif p}{\sqrt{1+p(x)^2}} =\frac{\dif x}{l_c}
+	\end{align*}	
+	On reconnait que la primitive est la fonction inverse du sinus hyperbolique :
+	\begin{equation}
+		\sinh^{-1}(p)=\frac{x}{l_c} +\alpha
+	\end{equation}
+	On obtient alors :
+	\begin{equation}
+		y(x) = l_c\cosh\left( \frac{x}{l_c}+\alpha\right) +\beta
+	\end{equation}
+	
+	Avec les conditions aux limites ($y(-D/2)=y(+D/2)=0$), on a :
+	\begin{align*}
+	y(x)=l_c\left[\cosh\left(\frac{x}{l_c} \right) -\cosh\left(\frac{D}{2l_c} \right) \right] 
+	\end{align*}
+	
+	\item[$\star$] Il faut calculer la longeur $L$ de la corde pour obtenir son poids $P=\mu gL$. La longueur correspond à l'intégrale curviligne :
+	\begin{align*}
+		L=\int_C \dif l=\int_{-D/2}^{D/2}dx\sqrt{1+\left( \frac{dy}{dx}\right)^2}
+	\end{align*}
+	En utilisant l'équation différentielle trouvée précédemment, on a tout simplement :
+	\begin{align*}
+		L=\int_{-D/2}^{D/2}dx\frac{d^2y}{dx^2}=\left[ \frac{dy}{dx}\right]_{-D/2}^{D/2}=2l_c\sinh\left(\frac{D}{2l_c} \right) 
+	\end{align*}
+	Et donc :
+\begin{align*}
+		P = 2 T_0 \cos(\alpha_0)\mathrm{sh}\left(\frac{D}{2l_c} \right) 
+\end{align*}
+
+Le poids est relié à la tension en bout de la corde. 
+	
+	\item[$\star$] En reprenant les expressions trouvées précédemment, on a :
+	
+	\begin{align*}
+		\frac{\dif }{\dif x}T(x)\cdot\sin(\alpha(x))=\mu g \sqrt{1+\left( \frac{dy}{dx}\right)^2}= \mu g \sqrt{1+\mathrm{sh}\left( \frac{x}{l_c}\right)^2}=\mu g \mathrm{ch}\left( \frac{x}{l_c}\right)
+	\end{align*}
+	Et donc :
+	\begin{align*}
+		T(x)\cdot\sin(\alpha(x)) = \mu g l_c\mathrm{sh}\left( \frac{x}{l_c}\right) = T_0\cos(\alpha_0)\mathrm{sh}\left( \frac{x}{l_c}\right)
+	\end{align*}
+	Il n'y a pas de constante d'intégration car en $x=0$, $\alpha=0$.
+	La tension totale est donc : 
+	\begin{align*}
+		T(x) &= \sqrt{T(x)^2\sin^2(\alpha(x) + T(x)^2\cos^2(\alpha(x)} \\
+		&=T_0\cos(\alpha_0)\sqrt{1+\mathrm{sh^2}\left( \frac{x}{l_c}\right)} \\
+		&= T_0\cos(\alpha_0)\mathrm{ch}\left( \frac{x}{l_c}\right)
+	\end{align*}
+	
+La tension est minimale en $x=0$, elle ne spporte pas son poids à ce point-là. Elle est maximale en $x=\pm D/2$ car il y la tension et le poids de la corde en ce point-là.
+
+Pour comparer la tension (maximale) et le poids, on peut s'intéresser au rapport des deux : 
+\begin{align*}
+	\frac{P}{T_{max}}=2\times\frac{\mathrm{sh}(D/2l_c)}{\mathrm{ch}(D/2l_c)}=2\tanh\left(\frac{D}{2l_c} \right) 
+\end{align*}
+Le poids est toujours inférieur à 2$\times$ la tension : c'est normal car la tension est répartie en 2, sur les deux points d'accroche. Le poids est toujours inférieur à $2T_{max}$, car dans le cas où $\alpha_0=\pi/2$, on retrouve $P=2T_{max}$ : la corde est pliée veticalement en deux, la tension correspond uniquement au poids. A l'inverse, le poids devient négligeable devant la tension lorsque la corde devient horzontale.
+
+	\item[$\star$] 	La flèche correspond tout simplement à la différence entre le point le plus haut et le plus bas, soit $-y(0)$ :
+	\begin{align*}
+		h=l_c\left[\cosh\left(\frac{D}{2l_c} \right) -1 \right] 
+	\end{align*}
+	On utilise la relation $\cosh^2-\sinh^2=1$ :
+	\begin{align*}
+		\left( \frac{h}{l_c}+1\right) ^2-\left( \frac{L}{2l_c}\right) ^2=1
+	\end{align*}
+	et donc :
+	\begin{align*}
+		l_c=\frac{L^2/4-h^2}{2h}
+	\end{align*}
+	Ainsi, avec simplement une photo d'une chaîne suspendue, on peut connaitre $L$, $h$ et $\alpha_0$, on en déduit $l_c$ qui nous donne l'information sur $T_0$
+	
+\end{itemize}
+
+\section*{Etude d'un instrument à corde}
+
+\begin{itemize}
+
+\item[$\bullet$] On reprend le même raisonnement que précédemment en appliquant le principe fondamental de la dynamique et en négligeant la pesanteur :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	-T(x)\cdot\cos(\alpha(x))+T(x+dx)\cdot\cos(\alpha(x+dx))=0\\
+	\\
+	-T(x)\cdot\sin(\alpha(x))+T(x+dx)\cdot\sin(\alpha(x+dx))=\mu dx\frac{\partial^2 y}{\partial t^2}\\
+	\end{array}\right.
+	\end{align*}		
+Comme l'écart reste très petit, on a $\cos(\alpha)\simeq1$ et $\sin(\alpha)\simeq\alpha$. Comme $\alpha\simeq dy/dx$, on trouve une équation d'Alembert, qui correspond à la propagation des ondes dans la corde :
+	\begin{align*}
+		\frac{\partial^2y}{\partial x^2}=\frac{1}{c^2}\frac{\partial^2y}{\partial t^2}
+	\end{align*}
+	avec $c=T_0/\mu$.
+
+\item[$\bullet$] Les solutions sont de la forme $y(x,t)=f(t-x/c)+g(t+x/c)$ : cela correspond à des ondes se propageant suivants les $x$ croissants ($f$) et les $x$ décroissants ($g$).
+
+\item[$\bullet$] Ce sont des solutions stationnaires. On trouve des solutions harmoniques pour $F$ et $G$ :
+\begin{align*}
+	F(x)G"(t)=c^2G(t)F"(x)
+\end{align*}
+et alors :
+\begin{align*}
+	\frac{F"(x)}{F(x)} =\frac{G"(t)}{G(t)} = -\omega_0^2
+\end{align*}
+Les deux fractions étant fonction de variables indépendantes l'une de l'autre, on peut les égaliser à $-\omega_0^2$, le signe - permettant d'avoir des solutions bornées. 
+
+Alors : 
+\begin{align*}
+	F"(x)+\frac{\omega_0^2}{c^2}F(x)&=0\\
+	G"(t)+\omega_0^2G(t)&=0
+\end{align*}
+
+\item[$\bullet$] Dans le cas d'ondes stationnaires, on a $y(x,t)=F(x)G(t)$, cad indépendance entre les variables de temps et d'espace. En injectant dans l'équation de propagation, on trouve que la fonction $F$ est une fonction sinusoïdale, qui avec les conditions aux limites est nécessairement :
+	\begin{align*}
+		F(x)=F_0\sin(k_n x),\quad k_n=\frac{n\pi}{L}
+	\end{align*}
+	Et d'autre part :	
+	\begin{align*}
+		G(t)=G_1\cos(\omega t)+G_2\sin(\omega t)
+	\end{align*}	
+En réinjectant les solutions de $F(x)G(t)$ trouvées, on tombe sur la relation de dispersion :
+	\begin{align*}
+		\omega=\omega_n=k_nc=\frac{n\pi c}{L}
+	\end{align*}	
+	
+	Comme toute superposition des solutions précédentes au mode $n$ vérifient l'équation de propagation, la solution générale est donc une somme des solutions au mode $n$ :
+	\begin{align*}
+		y(x,t)=\sum_n \left[A_n\cos(\omega_nt) + B_n\sin(\omega_nt)\right] \cdot\sin(k_nx)
+	\end{align*}
+
+\item[$\bullet$] On commence par relier les coefficients $A_n$ et $B_n$ avec les conditions initiales :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	y(x,0)=\sum_n A_n\sin(k_nx)\\
+	\\
+	\frac{\dif y}{\dif t}(x,0)=\sum_n \omega_n B_n\sin(k_nx)\\
+	\end{array}\right.
+	\end{align*}		
+	On peut inverser les intégrales en utilisant l'orthogonalité des fonctions sinusoïdales :
+	\begin{align*}
+	\int_0^1\dif u\sin(n\pi u)\sin(m\pi u)=\frac{\delta_{nm}}{2}
+	\end{align*}			
+On a alors :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	A_n=\frac{2}{L}\int_0^L\dif x\cdot y(x,0)\sin\left(\frac{n\pi x}{L} \right) \\
+	\\
+	B_n=\frac{2}{n\pi c}\int_0^L\dif x\cdot \frac{\dif y}{\dif t}(x,0)\sin\left(\frac{n\pi x}{L} \right)\\
+	\end{array}\right.
+	\end{align*}		
+	
+	Avec les conditions initiales données, on a $\frac{\dif y}{\dif t}(x,0)=0$, cad $B_n=0$. De la même manière :
+	\begin{align*}
+		A_n=\frac{2}{L}\int_0^a\dif x \frac{h}{a}x\sin\left(\frac{n\pi x}{L} \right) + \frac{2}{L}\int_a^L\dif x \frac{h(L-x)}{L-a}\sin\left(\frac{n\pi x}{L} \right) 
+	\end{align*}
+	En intégrant par partie, on obtient :
+	\begin{align*}
+		A_n=\frac{2h}{n^2\pi^2}\frac{L^2}{a(L-a)}\sin\left(\frac{n\pi a}{L} \right) 
+	\end{align*}
+
+\end{itemize}
+
+\section*{Corde pendue verticalement}
+
+\begin{itemize}
+
+	\item[$\ast$] En appliquant le principe fondamental de la dynamique, on trouve :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	T(z+dz)\cdot\cos(\alpha(z+dz))-T(z)\cdot\cos(\alpha(z))+\mu g\dif z=0\\
+	\\
+	\mu\dif z\frac{\partial^2\Psi}{\partial t^2}=T(z+dz)\cdot\sin(\alpha(z+dz))-T(z)\cdot\sin(\alpha(z))\\
+	\end{array}\right.
+	\end{align*}		
+	Si on prend l'hypothèse $\sin(\alpha(z))\simeq\tan(\alpha(z))\simeq\alpha(z)\simeq\frac{\partial \Psi}{\partial z}$ et $\cos(\alpha(z))\simeq1$, on obtient :
+	\begin{align*}
+	\left\lbrace
+	\begin{array}{ccc}
+	T(z)=\mu gz\\
+	\\
+	\mu\frac{\partial^2\Psi}{\partial t^2}=\frac{\partial}{\partial z}(T(z)\alpha(z))\\
+	\end{array}\right.
+	\end{align*}		
+	En rentrant l'expression de la tension, on obtient donc :
+	\begin{align*}
+		\frac{\partial^2}{\partial t^2}\Psi(z,t)=g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\Psi(z,t)\right) 
+	\end{align*}
+	
+		\item[$\ast$] Ce sont des solutions stationnaires. En injectant, on trouve :
+		\begin{align*}
+			\left[ \omega^2\alpha(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\alpha(z,t)\right)\right] \cos(\omega t)+\left[ \omega^2\beta(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\beta(z,t)\right)\right] \sin(\omega t)=0
+		\end{align*}
+		Comme cette équation est vraie $\forall t$, on a nécessairement :
+trouve :
+		\begin{align*}
+			\omega^2\alpha(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\alpha(z,t)\right)=0
+		\end{align*}		
+		
+		$\alpha$ et $\beta$ vérifient la même équation différentielle en $z$.
+		
+		\item[$\ast$] Avec le changement de variable, on a $\alpha(z)=\alpha(0)A(Z(z))$, $\alpha'(z)=\alpha(0)\frac{\omega^2}{g}A'(Z(z))$ et $\alpha''(z)=\alpha(0)\frac{\omega^4}{g^2}A''(Z(z))$. L'équation différentielle devient donc :
+		\begin{equation}
+			A(z)+A'(Z)+ZA''(Z)=0
+		\end{equation}
+		
+		\item[$\ast$] La série entière s'écrit :
+		\begin{align*}
+			A(Z) = 1+\sum_{k=1} A_kZ^k
+		\end{align*}
+		Injecté dans l'équation différentielle, on trouve :
+	\begin{align*}
+		1+A_1+\sum_{k=1}(A_k+(k+1)A_{k+1}+k(k+1)A_{k+2})Z^k=0
+	\end{align*}		
+	On en déduit $A_1=-1$ et $A_{k+1}=-A_k/(k+1)^2$, donc :
+	\begin{align*}
+		A_k=\frac{(-1)^2}{(k!)^2}
+	\end{align*}		
+		
+		\item[$\ast$] Comment pourrait-on trouver une relation de dispersion $\omega(k)$ ?
+		
+\end{itemize}
+
 \section*{Chaîne suspendue}
 
 \subsubsection{Cas statique}
@@ -160,66 +418,6 @@ On a alors :
 	
 \end{itemize}
 
-\section*{Corde pendue verticalement}
-
-\begin{itemize}
-
-	\item[$\ast$] En appliquant le principe fondamental de la dynamique, on trouve :
-	\begin{align*}
-	\left\lbrace
-	\begin{array}{ccc}
-	T(z+dz)\cdot\cos(\alpha(z+dz))-T(z)\cdot\cos(\alpha(z))+\mu g\dif z=0\\
-	\\
-	\mu\dif z\frac{\partial^2\Psi}{\partial t^2}=T(z+dz)\cdot\sin(\alpha(z+dz))-T(z)\cdot\sin(\alpha(z))\\
-	\end{array}\right.
-	\end{align*}		
-	Si on prend l'hypothèse $\sin(\alpha(z))\simeq\tan(\alpha(z))\simeq\alpha(z)\simeq\frac{\partial \Psi}{\partial z}$ et $\cos(\alpha(z))\simeq1$, on obtient :
-	\begin{align*}
-	\left\lbrace
-	\begin{array}{ccc}
-	T(z)=\mu gz\\
-	\\
-	\mu\frac{\partial^2\Psi}{\partial t^2}=\frac{\partial}{\partial z}(T(z)\alpha(z))\\
-	\end{array}\right.
-	\end{align*}		
-	En rentrant l'expression de la tension, on obtient donc :
-	\begin{align*}
-		\frac{\partial^2}{\partial t^2}\Psi(z,t)=g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\Psi(z,t)\right) 
-	\end{align*}
-	
-		\item[$\ast$] Ce sont des solutions stationnaires. En injectant, on trouve :
-		\begin{align*}
-			\left[ \omega^2\alpha(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\alpha(z,t)\right)\right] \cos(\omega t)+\left[ \omega^2\beta(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\beta(z,t)\right)\right] \sin(\omega t)=0
-		\end{align*}
-		Comme cette équation est vraie $\forall t$, on a nécessairement :
-trouve :
-		\begin{align*}
-			\omega^2\alpha(z)+g\frac{\partial}{\partial z}\left( z\frac{\partial}{\partial z}\alpha(z,t)\right)=0
-		\end{align*}		
-		
-		$\alpha$ et $\beta$ vérifient la même équation différentielle en $z$.
-		
-		\item[$\ast$] Avec le changement de variable, on a $\alpha(z)=\alpha(0)A(Z(z))$, $\alpha'(z)=\alpha(0)\frac{\omega^2}{g}A'(Z(z))$ et $\alpha''(z)=\alpha(0)\frac{\omega^4}{g^2}A''(Z(z))$. L'équation différentielle devient donc :
-		\begin{equation}
-			A(z)+A'(Z)+ZA''(Z)=0
-		\end{equation}
-		
-		\item[$\ast$] La série entière s'écrit :
-		\begin{align*}
-			A(Z) = 1+\sum_{k=1} A_kZ^k
-		\end{align*}
-		Injecté dans l'équation différentielle, on trouve :
-	\begin{align*}
-		1+A_1+\sum_{k=1}(A_k+(k+1)A_{k+1}+k(k+1)A_{k+2})Z^k=0
-	\end{align*}		
-	On en déduit $A_1=-1$ et $A_{k+1}=-A_k/(k+1)^2$, donc :
-	\begin{align*}
-		A_k=\frac{(-1)^2}{(k!)^2}
-	\end{align*}		
-		
-		\item[$\ast$] Comment pourrait-on trouver une relation de dispersion $\omega(k)$ ?
-		
-\end{itemize}
 
 \section*{Propagation sur une ligne électrique}
 
@@ -315,6 +513,7 @@ trouve :
 		LC\frac{\dif^2 V_n}{\dif t^2} + (LG+RC)\frac{\dif V_{n}}{\dif t}+RGV_n=V_{n+1}+V_{n-1}-2V_n
 		\label{eq:prop}
 	\end{equation}
+	On a donc $\omega_0^2=1/LC$, $\alpha=G//C+R/L$ et $\beta=RG/LC$.
 	
 	 \item[$\spadesuit$] 
 	 \begin{align*}

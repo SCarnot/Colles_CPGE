@@ -15,6 +15,48 @@
 
 \begin{document}
 
+\section*{Courants de Foucault}
+
+\begin{itemize}
+
+	\item[$\diamondsuit$] Grand classique de l'induction de Neumann. Le champ magnétique extérieur induit un champ électromoteur $\vec{E}=E(r)\vec{e}_\theta$ : en effet, par l'équation de Maxwell-Faraday, le champ éléctromoteur tourne autour du champ magnétique qui l'induit. D'autre part, les invariances et symétries imposent une dépendance seulement en $r$. Toujours avec cette même équation, on a :
+	\begin{align*}
+		\oint_\Gamma \vec{E}\cdot d\vec{l} = -\frac{\partial \phi_B}{\partial t}
+	\end{align*}	
+En prenant pour contour $\Gamma$ un cercle de rayon $r$, de centre $O$ dont la normale est dirigée par $\vec{e}_z$ :
+	\begin{align*}
+		2\pi r\times E(r)= B_0\omega\sin(\omega t)\pi r^2
+	\end{align*}
+Les courants induits sont donc :
+	\begin{align*}
+		 \vec{j}(r)= \frac{\gamma B_0\omega r}{2}\sin(\omega t) \vec{e}_\theta
+	\end{align*}
+
+	
+	\item[$\diamondsuit$] En se plaçant toujours dans l'ARQS, on peut calculer le champ magnétique $\vec{B}_{ind}$ induit par ces courants. Par invariance et symétrie, ce champ magnétique ne dépend que de $r$ et est dirigé suivant $\vec{e}_z$.
+	
+	 On utilise le théorème d'Ampère, en prenant pour contour $\Gamma$ le rectangle $ABCD$ suivant : $AB$ est un segment de longueur $h$ confondu avec l'axe $Oz$, $BC$ un segment colinéaire à l'axe $\vec{e}_r$ de longueur $r$ et $CD$, $DA$ de sorte à refermer le rectangle. Alors : 
+	\begin{align*}
+		h(B(r=0)-B(r))=\frac{\mu_0\gamma B_0\omega }{2}\sin(\omega t)\times h\int_0^r r'dr'
+	\end{align*}
+
+On trouve ainsi : 
+\begin{align*}
+	\vec{B}(r) = \left[ B(r=0) - \frac{\mu_0\gamma B_0\omega r^2}{4}\sin(\omega t)\right] \vec{e}_z
+\end{align*}
+
+\textbf{\textit{A partir de là, je ne suis plus du tout sûr de ce que je dis !}}
+
+Le champ magnétique $B(r=0)$ correspond au champ magnétique initial, cad $B_0$. 
+\begin{align*}
+	\vec{B}(r) = B_0\left[cos(\omega t)  - \frac{\mu_0\gamma \omega r^2}{4}\sin(\omega t)\right] \vec{e}_z
+\end{align*}
+On a donc bien un champ induit qui s'oppose au champ magnétique générateur $B_0$ : la valeur du champ diminue jusqu'à : $B_0\left[cos(\omega t)  - \frac{\mu_0\gamma \omega a^2}{4}\sin(\omega t)\right]$., ce qui est la valeur du champ dans tout l'espace pour $r>a$.
+
+Problème : cette valeur du champ n'est pas bornée, le champ induit peut être plus fort que le champ générateur !!! Surtout si $\gamma$ est suffisament fort :'(
+
+\end{itemize}
+
 \section*{Induction mutuelle entre deux circuits}
 
 \begin{itemize}
@@ -97,6 +139,39 @@ En multipliant par $i_1$ la première équation, et en utilisant que $i_1=-\frac
 Cad l'énergie du système 1+2 se conserve.
 	 
 \end{itemize}
+
+\section*{Induction mutuelle entre deux lignes bifilaires}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] La géométrie étant identique pour les deux circuits, l'inductance est strictement la même. On peut la calculer pour le circuit 1, en notant $A$ et $B$ le centre de chaque cable. A ce moment là, le champ magnétique créé par ces fils est :
+	\begin{align*}
+		\vec{B}_{A/B}(M) = \frac{\mu_0i_1}{2\pi r_{A/B}}\vec{e}_{\theta, A/B}
+	\end{align*}
+
+	\item[$\clubsuit$] Déterminer les équations différentielles satisfaites par $i_1(t)$ et $i_2(t)$.
+	
+	\item[$\clubsuit$] En proposant un changement de fonction bien choisi avec $i_1(t)$ et $i_2(t)$, trouver la solution générale pour $i_1$ et $i_2$. Pourquoi parle t-on de modes propres ?
+	
+	\item[$\clubsuit$] Quelle est l'allure du spectre de $i_1$ ? Dans le cas d'un faible couplage $M$, montrer que le spectre se scinde en deux harmoniques centrées autour de $\omega_0$, séparées en fréquence de $\delta\omega$, que l'on déterminera.  
+	
+	\item[$\clubsuit$] On suppose qu'à $t=0$, les deux condensateurs sont déchargés. Pour quelles valeurs de $i_1(t=0)$ et $i_2(t=0)$ n'y a t-il qu'une fréquence dans le spectre de $i_1$ et $i_2$ ?
+	
+	\item[$\clubsuit$] Réaliser un bilan de puissance électrique et commenter. 	
+	
+\end{itemize}	
+
+\subsubsection*{Questions bonus}
+
+\begin{itemize}
+		
+	\item[$\bigstar$] Calculer l'inductance mutuelle $M$ entre les deux circuits. A t-on bien $M<L$ ? 
+	
+	\item[$\bigstar$] Calculer la capacité $C$ de chaque ligne. 
+	
+\end{itemize}
+
+\newpage
 
 \section*{Courants de Foucault dans un cylindre en rotation}
 
