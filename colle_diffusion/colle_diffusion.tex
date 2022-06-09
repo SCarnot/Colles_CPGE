@@ -176,4 +176,88 @@ Un campeur se trouve allongé dans sa tente canadienne. Le soleil se lève et é
   \includegraphics[width=0.7\textwidth]{tente.jpg}
 \end{figure}
 
+\newpage	
+
+\section*{Diffusion de particules dans un récipent en rotation}
+
+Des particules de masse $m$, de rayon $a$ et de masse volumique $\rho_p$ sont en suspension dans un solvant de masse volumique $\rho_s$ et de viscosité $\eta$, contenu dans un récipent. Elles subissent par ailleurs une force de frottement fluide $-6\pi\eta a\vec{v}$ lorsqu'elles sont en mouvement à la vitesse moyenne $\vec{v}$. Le coefficient de diffusion de ces particules dans le solvant est noté $D$.
+
+\subsubsection*{Cas statique : sédimentation}
+
+\begin{itemize}
+	
+	\item[$\odot$] En régime permanent, établir la vitesse moyenne d'une particule isolée qui sédimente, soumise à son poids, à la poussée d'Archimède et à la force de frottement fluide.	On introduira la masse effective $m^*=m\left( 1-\frac{\rho_s}{\rho_p}\right) $. Quel est le flux de particules $\vec{j}_s$ associé à cette sédimentation ? 
+	
+	\item[$\odot$] Ce flux de sédimentation est compensée par le phénomène de diffusion. Expliquer le phénomène. 
+	
+	\item[$\odot$] En faisant un bilan de particules sur un volume élémentaire, montrer que la concentration de particule $c$ est reliée à $\vec{j}_s$ et au flux de particule $\vec{j}_D$ dû à la diffusion par la relation suivante :
+	\begin{align*}
+		\frac{\partial c}{\partial t}=-\diver(\vec{j}_D+\vec{j}_s)
+	\end{align*}
+	
+	\item[$\odot$] En déduire la concentration de particule $c(z)$ dans le récipient en régime permanent.
+	
+\end{itemize}
+
+\subsubsection*{Cas dynamique}
+
+On fait tourner désormais le récipient à une vitesse angulaire $\omega$, soumettant les particules à une force centrifuge $\vec{f}_r=m\omega^2r\vec{e}_r$. On néglige désormais le poids des particules.
+
+\begin{itemize}
+
+	\item[$\odot$] Montrer que la concentration en particules vérifient l'équation suivante :
+	\begin{align*}
+		\frac{\partial c}{\partial t}=\frac{1}{r}\frac{\partial }{\partial r}\left(r\left(D\frac{\partial c}{\partial r} -sr\omega^2c(r) \right) \right)
+	\end{align*}
+	Préciser l'expression de $s$.
+	
+	\item[$\odot$] En déduire la concentration de particules en régime permanent. 
+
+\end{itemize}
+
+\newpage
+
+\section*{Diffusion à contre-courant}
+
+Dans un tuyau de section $S$ circule un solvant à la vitesse $-v_0\vec{e}_x$, où $x$ est l'axe le long du tuyau. En $x=0$, on injecte à travers une petite ouverture un colorant dans le tuyau, avec un débit molaire $n^*$. On suppose que le colorant s'homogénéise immédiatement sur toute la section $S$ du tuyau dès son injection en $x=0$. On remarque que, en plus de s'évacuer avec le solvant vers les $x$ négatifs, le colorant remonte à contre-courant sur une longueur caractéristique $L$. Le coefficient de diffusion du colorant dans le solvant est noté $D$.
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Montrer que la concentration $c$ de particules de colorant en aval de l'écoulement $(x<0$) ne dépend de $x$ et s'écrit $c=\frac{N_A n^*}{v_0S}$, en notant $N_A$ le nombre d'Avogadro. En déduire le flux de particule associé $\vec{j}_c$.
+	
+	\item[$\spadesuit$] Pourquoi la concentration $c$ va dépendre de $x$ en amont de l'écoulement $(x<0$) ? Quel est le flux de particule $\vec{j}_c(x)$ associé ?
+	
+	\item[$\spadesuit$] En déduire une équation différentielle sur $c(x)$. La résoudre, et en déduire la longueur $L$ de remontée à contre-courant.
+
+\end{itemize}
+
+\newpage
+
+\section*{Evaporation de l'éther}
+
+Un tube à essai de section $S$ est rempli d'éther (masse volumique $\mu=626$ kg.m$^{-1}$, masse molaire $M=74$ g.mol$^{-1}$), à une distance $h(t)$ du bord. L'éther étant un liquide très volatile , il s'évapore progressivement de sorte à ce que la hauteur $h$ augmente. A la surface de l'éther, il y a un équilibre vapeur/liquide à la pression de vapeur saturante de l'éther $P_{sat}=0,583$ mbar (à une température $T=293K$ que l'on supposera fixe). Au bord du tube, l'éther est vite dilué dans l'air ambiant et sa concentration est donc nulle. Sa diffusivité dans l'air est notée $D=1,5\times10^{-5}$m$^2$.s$^{-1}$.
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.2\textwidth]{ether2.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\blacktriangle$] En notant $c(x)$ la concentration molaire en vapeur d'éther dans le tube entre $0$ et $h(t)$, retrouver l'équation de diffusion sur $c(x)$ en supposant la loi de Fick vérifiée.
+	
+	\item[$\blacktriangle$] En déduire la concentration de vapeur d'éther $c(x)$ dans le tube en fonction de $x$, $h(t)$, $P_{sat}$, $R$ et $T$. On supposera qu'on est en régime quasi-stationnaire.
+	
+	\item[$\blacktriangle$] Quelle quantité d'éther $dN$ est évaporée entre $t$ et $t+dt$ ? 
+	
+	\item[$\blacktriangle$] En déduire l'équation différentielle suivante :
+	\begin{align*}
+		h\dot{h}=C		
+	\end{align*}
+	où $C$ est une constante que l'on précisera.
+	
+	\item[$\blacktriangle$] En déduire un ordre de grandeur du temps d'évaporation de l'éther.
+
+\end{itemize}
+
 \end{document}

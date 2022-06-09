@@ -208,4 +208,119 @@ Avec $\kappa=P_r/(\mu c_p)$ et de $D=\lambda/(\mu c_p)$.
 
 \end{itemize}
 
+\section*{Diffusion de particules dans un récipent en rotation}
+
+\subsubsection*{Cas statique : sédimentation}
+
+\begin{itemize}
+	
+	\item[$\odot$] La poussée d'Archimède est définie comme :
+	\begin{align*}
+		\vec{\pi}=\rho_s\frac{m}{\rho_p}g\vec{e}_z
+	\end{align*}
+	Elle est égale au poids du volume de solvant déplacé et est opposée à la gravitation. 
+	Le bilan des forces devient en régime permanent, appléiqué sur une particule :
+	\begin{align*}
+		\vec{0} = \vec{\pi} -mg\vec{e}_z-6\pi\eta a\vec{v}
+	\end{align*}
+	La vitesse moyenne qui es résulte est donc :
+	\begin{align*}
+		\vec{v} = -\frac{mg}{6\pi\eta a}\left(1-\frac{\rho_s}{\rho_p} \right)\vec{e}_z=-\frac{m^*g}{6\pi\eta a}\vec{e}_z
+	\end{align*}
+	On trouve bien que la particule tombe (respectivement remonte) si sa masse volumique est supérieure à celle du solvant (respectivement inférieure).
+	Le flux associé de particules est $\vec{j}_s=c\times\vec{v}$.
+	
+	\item[$\odot$] Si on regardait le phénomène sans diffusion, toutes les particules tomberaient au fond du récipient et s'agglutineraient. Or, au fur et à mesure qu'elles tombent, leur concentration $c(z)$ augemente, générant un courant de diffusion $\vec{j}_D=-D\vec{\grad}(c)$ opposé qui fait "remonter" les particules. Un équilibre s'établit.
+	
+	\item[$\odot$] On refait le bilan élémentaire du flux de particule sur un volume élémentaire, en ajoutant le courant $\vec{j}_s$. On trouve alors facilement :
+	\begin{align*}
+		\frac{\partial c}{\partial t}=-\diver(\vec{j}_D+\vec{j}_s)
+	\end{align*}
+	
+	\item[$\odot$] En régime permanent : 
+	\begin{align*}
+		\diver(\vec{j}_D+\vec{j}_s)=0
+	\end{align*}
+	Comme les flux ne sont que selon $\vec{e}_z$, en intégrant par rapport à $z$, on a $\vec{j}_D+\vec{j}_s=A$. En $z=0$, au fond du récipient, le flux total est nécessairement nul car les particules ne peuvent pas traverser le récipient. Donc :
+	\begin{align*}
+		\vec{j}_D+\vec{j}_s=0
+	\end{align*}
+	Et alors :
+	\begin{align*}
+		c(z)\frac{m^*g}{6\pi\eta a} &= -D\frac{\partial c}{\partial z} \\
+		c(z) &+ L\frac{\partial c}{\partial z}=0
+	\end{align*}
+	avec $L=\frac{6\pi\eta aD}{m^*g}$.
+	Et donc :
+	\begin{align*}
+		c(z)=c_0\exp\left[-\frac{z}{L} \right] 
+	\end{align*}
+	
+\end{itemize}
+
+\subsubsection*{Cas dynamique}
+
+\begin{itemize}
+
+	\item[$\odot$] Même raisonnement que précédemment, en remplaçant la force du poids par la force centrifuge. Attention, il y a toujours une poussée d'Archimède ! On trouve que $\vec{v}=\frac{m^*\omega^2 r}{6\pi\eta a}\vec{e}_r$. Les particules sont bien ramenées vers l'extérieurs si elles sont plus denses que le solvant. Le courant de particules associé est $j_c=c(r)\vec{v}$, la concentration ne dépendant que de $r$ dans ce cas-là.
+	
+	On trouve ensuite, avec un bilan en coordonnées cylindriques :
+
+	\begin{align*}
+		\frac{\partial c}{\partial t}=\frac{1}{r}\frac{\partial }{\partial r}\left(r\left(D\frac{\partial c}{\partial r} -sr\omega^2c(r) \right) \right)
+	\end{align*}
+	avec $s=\frac{m^*}{6\pi\eta a}$. 
+	
+	\item[$\odot$] Même raisonnement que précédemment, pour trouver que $D\frac{\partial c}{\partial r} -sr\omega^2c(r)=0$.
+	On trouve alors que :
+	\begin{align*}
+	 \frac{\partial c}{\partial r}=\frac{r}{L^2}c(r)
+	\end{align*}
+	avec $L=\sqrt{s\omega^2/D}$.
+	La solution est :
+	\begin{align*}
+		c(r)=c_0\exp\left[\frac{r^2}{2L^2} \right] 
+	\end{align*}
+
+\end{itemize}
+
+\section*{Diffusion à contre-courant}
+
+Dans un tuyau de section $S$ circule un solvant à la vitesse $-v_0\vec{e}_x$, où $x$ est l'axe le long du tuyau. En $x=0$, on injecte à travers une petite ouverture un colorant dans le tuyau, avec un débit molaire $n^*$. On suppose que le colorant s'homogénéise immédiatement sur toute la section $S$ du tuyau dès son injection en $x=0$. On remarque que, en plus de s'évacuer avec le solvant vers les $x$ négatifs, le colorant remonte à contre-courant sur une longueur caractéristique $L$. Le coefficient de diffusion du colorant dans le solvant est noté $D$.
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Montrer que la concentration $c$ de particules de colorant en aval de l'écoulement $(x<0$) ne dépend de $x$ et s'écrit $c=\frac{N_A n^*}{v_0S}$, en notant $N_A$ le nombre d'Avogadro. En déduire le flux de particule associé $\vec{j}_c$.
+	
+	\item[$\spadesuit$] Pourquoi la concentration $c$ va dépendre de $x$ en amont de l'écoulement $(x<0$) ? Quel est le flux de particule $\vec{j}_c(x)$ associé ?
+	
+	\item[$\spadesuit$] En déduire une équation différentielle sur $c(x)$. La résoudre, et en déduire la longueur $L$ de remontée à contre-courant.
+
+\end{itemize}
+
+\section*{Evaporation de l'éther}
+
+\begin{itemize}
+
+	\item[$\blacktriangle$] Le grand classique :
+	\begin{align*}
+		\frac{\partial c}{\partial t}= D\frac{\partial^2 c}{\partial x^2} 
+	\end{align*}
+	
+	\item[$\blacktriangle$] En RP, $c(x=Ax+B$. Avec les CL :
+	\begin{align*}
+		c(x)=\frac{P_{sat}}{RT}\frac{x}{h(t)}
+	\end{align*}
+	
+	\item[$\blacktriangle$] On a $dN=\frac{\mu}{M}S(h(t+dt)-h(t)$. Mais aussi $dN=-j(x=h(t))S=\frac{P_{sat}}{RT}\frac{D}{h(t)}$
+	
+	\item[$\blacktriangle$] On en déduit l'équation :
+	\begin{align*}
+		h\dot{h}=\frac{DP_{sat}M}{R\mu}		
+	\end{align*}
+	
+	\item[$\blacktriangle$] En déduire un ordre de grandeur du temps d'évaporation de l'éther.
+
+\end{itemize}
+
 \end{document}
