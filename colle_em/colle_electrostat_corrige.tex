@@ -7,6 +7,8 @@
 \usepackage{wrapfig}
 \usepackage{amsmath,esint }
 \usepackage{amssymb}
+\usepackage{esvect}
+
 \graphicspath{{figures/}{../figures}}
 
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
@@ -443,6 +445,74 @@ On trouve une capacité équivalente de :
 	
 	\item[$\clubsuit$] On peut dire que $E\simeq V/z_1$, où $z_1$ est l'altitude des nuages. En ordre de grandeur, on a $Z_1=1$km, donc $V_1\simeq10^8$V.
 	
+\end{itemize}
+
+\section*{Champ dans une cavité}
+
+On utilise le théoèrme de superposition : on "superpose" le champ créé par la boule 1 de charge volumique $+\rho$ avec le champ de la boule 2 ayant une charge volumique $-\rho$.
+On trouve avec le théorème de Gauss pour un point $M$ situé dans la cavité :
+\begin{align*}
+	\vec{E}(M)=&\vec{E}_1(M)+\vec{E}_2(M)\\
+	=&\frac{\rho}{3\varepsilon_0}\left(\vv{O_1M}-\vv{O_2M} \right) \\
+	=&\frac{\rho}{3\varepsilon_0}\vv{O_1O_2}
+\end{align*}
+Le champ est uniforme dans toute la cavité. Et si on fixe l'axe $\vv{O_1O_2}$ suivant l'axe $\vec{e}_x$, en notant $d=||\vv{O_1O_2}||$ :
+\begin{align*}
+	\vec{E}(M)=\frac{\rho d}{3\varepsilon_0}\vec{e}_x
+\end{align*}
+
+Le potentiel est alors $V(M)=\frac{\rho d x}{3\varepsilon_0}+ K$.
+
+\section*{Interaction entre un plan chargé en volume et une charge $-q$}
+
+On considère une nappe de charge, comprise entre $x=-a/2$ et $x=a/2$, et infiniment étendue selon les axes $y$ et $z$, avec une densité volumique de charge $\rho>0$.
+
+\begin{itemize}
+
+	\item[$\heartsuit$] A l'aide des invariances et des symétries, montrer que $\vec{E}=E(x)\vec{e}_x$.
+
+	\item[$\heartsuit$] Déterminer le champ électrique $\vec{E}$ et le potentiel $V$ en tout point de l'espace.
+	
+	\item[$\heartsuit$] Une charge ponctuelle $-q$ peut se mouvoir librement selon l'axe $Ox$. Déterminer la nature de son mouvement en supposant que sa vitesse est nulle en $x=b<a_2$.
+	
+	\item[$\heartsuit$] On suppose désormais que la nappe est infiniment fine, c'est-à-dire que $a\longrightarrow0$, mais que $\rho\longrightarrow\infty$ de sorte que la charge contenue dans un volume $V$ passant par le plan reste finie. Introduire une densité surfacique de charge $\sigma$, puis donner les expressions de $\vec{E}$ et de $V$.
+	
+	\item[$\heartsuit$] Déterminer le mouvement de la charge $-q$ dans ce cas-là. 
+
+\end{itemize}
+
+\section*{Champ créé par deux sphères $\bigstar$}
+
+\begin{itemize}
+
+	\item[$\oplus$] 
+	\begin{align*}
+		\vec{E}_1(M)=\frac{Q_1}{4\pi\varepsilon_0r^2}\vec{e}_r=\frac{Q_1}{4\pi\varepsilon_0||O_1M||^3}\vv{O_1M}
+	\end{align*}
+		\begin{align*}
+		\vec{E}(M)=\frac{Q_1}{4\pi\varepsilon_0||O_1M||^3}\vv{O_1M}-\frac{Q_2}{4\pi\varepsilon_0||O_2M||^3}\vv{O_2M}
+	\end{align*}
+	
+	\item[$\oplus$] Par le gradient :
+		\begin{align*}
+		\vec{V}_1(M)=\frac{Q_1}{4\pi\varepsilon_0r}=\frac{Q_1}{4\pi\varepsilon_0||O_1M||}
+	    \end{align*}
+	    \begin{align*}
+		\vec{V}(M)=\frac{Q_1}{4\pi\varepsilon_0||O_1M||}-\frac{Q_2}{4\pi\varepsilon_0||O_2M||}
+	    \end{align*}
+	
+	
+	\item[$\oplus$] Classique de tracé.
+	
+	\item[$\oplus$] La charge est attirée par la seconde sphère, elle accélère en ligne droite. La variation d'énergie potentielle en allant d'une sphère à l'autre :
+	\begin{align*}
+		E_p=\frac{1}{4\pi\varepsilon_0}\left(\frac{Q_1}{R}-\frac{Q_2}{d-R} \right) =\frac{Q}{4\pi\varepsilon_0}\frac{d-2R}{(d+R)R}\simeq\frac{Q}{4\pi\varepsilon_0R}
+	\end{align*}
+	
+	Elle arrive donc avec une vitesse $v=v_0+\frac{Q}{4\pi\varepsilon_0R}$.
+	
+	\item[$\oplus$] La charge est repoussée par les deux sphères. Comme elle part parfaitement en ligne droite, elle reste sur l'axe $\vec{e}_x$ mais ce mouvement est instable selon les autres directions. 
+
 \end{itemize}
 
 \end{document}
