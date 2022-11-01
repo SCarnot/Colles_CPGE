@@ -221,6 +221,26 @@ On admet que le champ électrique créé par un plan infini de charge surfacique
 
 \newpage
 
+\section*{Champ créé par deux plans infinis $\bigstar\bigstar$}
+
+On considère deux plans "épais" de vecteur normal $\vec{e}_x$, d'épaisseur $e$, de surface $S$ très grande : $S\gg e$. Ils situés respectivement en $O_1=O$ (où $O$ est l'origine du repère de coordonnées carthésiennes) et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$. Le plan situé en $O_1$ porte une charge $+Q_1$, celui en $O_2$ porte une charge $-Q_2$, charges que l'on supposera uniformément réparties. 
+
+\begin{itemize}
+
+	\item[$\oplus$] Quelle sont les charges volumiques associées aux plan 1 et 2, notées $\rho_1$ et $\rho_2$ ? En déduire le champ électrique $\vec{E}$ créé dans tout l'espace.
+
+	\item[$\oplus$] En déduire le potentiel total $V(x)$ créé par les deux plans.
+	
+	\item[$\oplus$] Tracer sur un schéma les lignes de champs et les équipotentielles. 
+	
+	\item[$\oplus$] On suppose que $Q_1=-Q_2=Q$. Une charge $+e$ arrive depuis les $x$ décroissants avec une vitesse initiale $\vec{v}=v_0\vec{e}_x$. On suppose qu'elle peut traverser les plans chargés sans autre interation que celle électromagnétique. A quelle condition sur $v_0$ arrive t-elle à passer outre le second plan ? 
+	
+	\item[$\oplus$] On retire maintenant le plan 2 ($Q_2=0$) et on suppose que le plan 1 est infiniment fin $e\longrightarrow0$, toujours chargé positiviment. Après avoir introduit la densité de charge surfacique $\sigma_1$, calculer le champ électrique résultant puis en déduire le mouvement d'une particule $-e$ autour de l'axe $Ox$.
+
+\end{itemize}
+
+\newpage
+
 \section*{Interaction entre un plan chargé et une charge $-q$ $\bigstar$}
 
 On considère une nappe de charge, comprise entre $x=-a/2$ et $x=a/2$, et infiniment étendue selon les axes $y$ et $z$, avec une densité volumique de charge $\rho>0$.
@@ -345,6 +365,67 @@ En choisissant soigneusement une surface $S$, déterminer l'inductance linéique
 
 \newpage
 
+\section*{Champ magnétique entre deux nappes de courant}
+
+Deux nappes de courant identiques de très grande surface $S = L_x\times L_y$, d’épaisseur $e$, sont parallèles entre elles et séparées d’une longueur $2a$ par un matériau isolant. Elles sont parcourues par un courant permanent de vecteur densité $J\vec{e}_x$ pour la nappe supérieure 1 et $-J\vec{e}_x$ pour la nappe inférieure 2. On se place suffisament loin des bords de la nappe pour négliger les effets de bord.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.7]{nappe_courant.png}
+\end{figure}
+
+\begin{itemize}
+	
+	\item[$\clubsuit$] Etudier la dépendance et la direction du champ magnétique à partir des symétries et invariances.
+	
+	\item[$\clubsuit$] Déterminer rigoureusement le champ magnétique dans tous l'espace, et le représenter sur un graphe.
+	
+\end{itemize}
+
+On définit l'inductance $L$ d'un circuit délimitant une surface $S$, parcouru par un courant $I$ comme  comme le rapport du flux du champ magnétique à travers $S$ avec le courant $I$ :
+	\begin{align*}
+		\Phi_B=\oiint_S \dif \vec{S}\cdot\vec{B}=LI
+	\end{align*}
+
+\begin{itemize}
+
+	\item[$\clubsuit$] Quelle est la surface délimitée par le circuit formé par les deux nappes ? En déduire l'inductance formée par ce système. 
+	
+\end{itemize}
+
+\newpage
+
+\section*{Champ magnétique dans un cylindre parcouru par un courant orthoradial $\bigstar$}
+
+On considère un cylindre conducteur de rayon $a$ et de longueur $L\gg a$ selon l'axe $O_z$, dans lequel circule une densité volumique de courant $\vec{j}(r)=j_0\vec{e}_\theta$.
+
+\begin{itemize}
+
+	\item[$\circ$] Déterminer l'expression du champ magnétique $\vec{B}(r)$ en fonction de la valeur du champ magnétique en $r=0$.
+	\item[$\circ$] Quel est l'expression du champ magnétique $\vec{B}(r)$ si on impose un champ exterieur $\vec{B}_{ext}$ de sorte à ce que  $\vec{B}(r=a)=\vec{0}$ ?
+
+\end{itemize}
+
+\newpage
+
+\section*{Foudre}
+
+On modélise la foudre par un tube d'air ionisé cylindrique de rayon $a$=1m et de densité de courant uniforme $\vec{j}=j_0\vec{e}_z$. Ce sont les électrons de charge $-e$ qui sont supposés porter le courant électrique.
+
+\begin{itemize}
+
+	\item[$\wr$] Sachant que l'intensité d'un éclair peut atteindre 100 kA, quelle est la densité de courant $j_0$ associée ? 
+
+	\item[$\wr$] Etudier la dépendance et la direction du champ magnétique à partir des symétries et invariances.
+	
+	\item[$\wr$] Déterminer rigoureusement le champ magnétique dans tous l'espace, et le représenter sur un graphe. Estimer la valeur maximale que prend le champ magnétique.
+	
+	\item[$\wr$] Rappeler l'expression de la force de Lorentz pour un électron de charge $-e$ lorsqu'il est soumis à un champ magnétique extérieur $\vec{B}$. Expliquer succinctement pourquoi le tube d'air ionisé se contracte sur lui-même, se comprimant fortement et générant une grande quantité de chaleur. 
+
+\end{itemize}
+
+\newpage
+
 \section*{Étude d'un colloïde $\bigstar\bigstar$}
 
 Un colloïde est une solution constituée d'un solvant (de l'eau et des ions) et de particules solides en suspension dont la taille peut varier de 10 à 100nm et qui s'ionisent dans le solvant. Par exemple, en agronomie, on étudie les propriétés d'un sol en disolvant un échantillon de terre dans de l'eau. Après traitement, la solution qui en résulte est \textit{une solution colloïdale}, composée des particules d'argile (silice) en suspension dans une eau contenant des ions minéaraux. 
@@ -420,19 +501,6 @@ On représente l'ensemble Terre-ionosphère comme un volumineux condensateur sph
 	
 	\textit{Données} : Rayon de la Terre, $R_T=6370$km. Permittivité du vide, $\varepsilon=8,85\cdot10^{-12}$F.m$^{-1}$.
 	
-\end{itemize}
-
-\newpage
-
-\section*{Champ magnétique dans un cylindre parcouru par un courant orthoradial $\bigstar$}
-
-On considère un cylindre conducteur de rayon $a$ et de longueur $L\gg a$ selon l'axe $O_z$, dans lequel circule une densité volumique de courant $\vec{j}(r)=j_0\vec{e}_r$.
-
-\begin{itemize}
-
-	\item[$\circ$] Déterminer l'expression du champ magnétique $\vec{B}(r)$ en fonction de la valeur du champ magnétique en $r=0$.
-	\item[$\circ$] Quel est l'expression du champ magnétique $\vec{B}(r)$ si on impose un champ exterieur $\vec{B}_{ext}$ de sorte à ce que  $\vec{B}(r=a)=\vec{0}$ ?
-
 \end{itemize}
 
 \newpage

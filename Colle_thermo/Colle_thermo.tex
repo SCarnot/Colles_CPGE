@@ -2,7 +2,7 @@
  
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}      
-\usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=4.0cm]{geometry}
+\usepackage[top=2.0cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath,esint }
 \usepackage{amssymb}
@@ -86,43 +86,46 @@ Ce cycle de fonctionnement a l'avantage de pouvoir faire varier la puissance rap
 
 \section*{Exercice 2}
 
-On étudie l'écoulement d'un gaz dans une tuyère horizontale isolée thermiquement du milieu extérieur.
+On étudie l'écoulement d'un gaz dans un conduit horizontal isolé thermiquement du milieu extérieur. En régime permanent, dans une section droite, les vitesses d'écoulement sont égales et normales à la section. La pression et la température sont supposées indépendantes du temps et uniformes.
 
-En régime permanent, dans une section droite de la tuyère les vitesses d'écoulement sont égales et normales à la section. La pression et la température sont indépendantes du temps et uniformes :
-\begin{itemize}
-\item[-]à l'entrée de la tuyère, $x=x_{1}$ : $P_{1} = 3$ bars; $T_{1} = 300$ K;
-\item[-]à la sortie de la tuyère, $x=x_{2}$ : $P_{2} = 1$ bars; $T_{2} = 250$ K
-\end{itemize}
-
-Soit $H_{m}(x)$ l'enthalpie molaire du gaz à l'abscisse $x$ et $M$ la masse molaire du gaz. 
+On note $H_{m}(x)$ l'enthalpie molaire du gaz à l'abscisse $x$ et $M$ la masse molaire du gaz. 
 
 \begin{itemize}
-\item[•] Montrer que pour une mole de gaz passant dans la tuyère, on peut écrire $H_{m}(x)+\frac{1}{2}Mv^{2}(x)= cste$.
-\item[•] On suppose que $v(x_{1})$ négligeable, calculer $v(x_{2})$. On supposera le gaz parfait. 
-\end{itemize}
 
-\textit{Données : $M = 32g.mol^{-1}$ et $\gamma=1.4$}
+\item[•] A l'aide du premier principe de la thermodynamique, montrer que pour une mole de gaz passant dans le conduit, on peut écrire $H_{m}(x)+\frac{1}{2}Mv^{2}(x)= cste$.
+
+\end{itemize}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.4\linewidth]{turbine.pdf}
 \end{figure}
 
-\subsubsection*{Étude d'une turbine}
+\subsubsection*{Cas d'une tuyère}
+
+Le conduit dans lequel s'écoule le gaz est supposé être une tuyère. Après la combustion du carburant, les gaz produits sont supposés être :
+\begin{itemize}
+\item[-] à l'entrée de la tuyère, $x=x_{1}$ : $P_{1} = 3$ bars; $T_{1} = 300$ K;
+\item[-] à la sortie de la tuyère, $x=x_{2}$ : $P_{2} = 1$ bars; $T_{2} = 250$ K.
+\end{itemize}
+
+\begin{itemize}
+\item[•] En supposant $v(x_{1})$ négligeable, calculer $v(x_{2})$. On supposera le gaz parfait. 
+
+\end{itemize}
+
+\subsubsection*{Cas d'une turbine à gaz}
+
 On suppose que le gaz est utilisé à la sortie pour actionner une turbine située dans la tuyère. A l'entrée, il a une vitesse $v_{2}$, une température $T_{2}$ et une pression $P_{2}$. A la sortie, la pression et la température sont inchangées, mais la vitesse est nulle. 
 \begin{itemize}
+
+\item[•] Comment est modifiée la relation trouvée dans la première question ?
+
 \item[•] Calculer le travail récupéré par la turbine lors du passage d'une mole de gaz.
 
 \end{itemize}
 
-\subsubsection*{Étude d'une fusée}
-
-On suppose désormais que la tuyère est celle d'un propulseur spatial, équipant une fusée de masse $M_0$ à vide, contenant une masse $m_0$ de gaz carburant. Le gaz est stocké sous pression à une température initiale $T_1$ et est éjecté à une température $T_2$. On négligera les différences entre le cas où la tuyère est horizontale ou verticale et toute force de frottement sur la fusée. 
-
-\begin{itemize}
-	\item[•] Comment relier la vitesse d'éjection des gaz $v_2$ avec la variation de la vitesse $\frac{d}{dt} V(t)$ de la fusée ? 
-	\item[•] Quelle est la vitesse de la fusée lorsque tout le gaz a été éjecté ?
-\end{itemize}
+\textit{Données : $M = 32g.mol^{-1}$ et $\gamma=1.4$}
 
 \newpage
 
@@ -186,6 +189,38 @@ En déduire les solutions physiquement acceptables pour $T_{5}$ et $T_{10}$.
 Si les transformations sont en fait irréversibles, quel les inégalités satisfaites par $T_{5}$ et $T_{10}$, si l'on suppose $T_{4}>T_{9}$ ?
 
 \item[•] On définit l'efficacité comme étant : $e=\frac{T_{5}-T{4}}{T_{9}-T{4}}$ en considérant la canalisation 4-5. Montrer qu'on obtient la même efficacité en considérant la canalisation 9-10.
+\end{itemize}
+
+\newpage
+
+\section*{Echangeur à gaz}
+
+On considère un échangeur de chaleur représenté sur le schéma ci-dessous. Il comporte deux canalisations dans lesquelles le même gaz (supposé parfait) circule avec le même débit mais dans des sens opposés. Les températures d'entrées, supposées connues, seront notées $T_{4}$ et $T_{9}$ et les températures de sorties respectives $T_{5}$ et $T_{10}$. Dans chaque canalisation, la pression est constante. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.3\linewidth]{echangeur.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\bullet$] Démontrer l'expression du premier principe de la thermodynamique appliqué sur un fluide en écoulement.
+	
+	\item[$\bullet$] Montrer alors que les températures vérifient la relation suivante :
+	\begin{align*}
+		T_{10}+ T_5 = T_4+T_9
+	\end{align*}
+	Commenter cette relation.
+	
+	\item[$\bullet$] Démontrer l'expression du second principe de la thermodynamique appliqué sur un fluide en écoulement.
+	
+	\item[$\bullet$] En supposant que toutes les transformations à l'intérieur des canalisations sont adiabatiques et réversibles, montrer que :
+	\begin{align*}
+		T_5\times T_{10}=T_4\times T_9
+	\end{align*}
+	On admettra que la variation de l'entropie d'une mole de gaz parfait lors d'une transformation isobare s'écrit $\Delta_1^2 S = \frac{\gamma R}{\gamma-1}\ln\frac{T_2}{T_1}$
+	\item[$\bullet$] Quelles sont les solutions physiquement acceptables pour les températures de sortie ?
+
 \end{itemize}
 
 \newpage
@@ -297,7 +332,7 @@ On note $T_0$, $P_0$ et $c_0$ la température, la pression et la vitesse du gaz 
 	
 	\item[$\triangle$] Pour simplifier le problème, on considère que la vitesse du gaz est quasi-nulle, de sorte à ce que $c_0=c(z)=0$. Montrer que la température obéit alors à la loi suivante :
 	\begin{align*}
-		T(z)=T_0(1-\frac{z}{H})
+		T(z)=T_0\left( 1-\frac{z}{H}\right) 
 	\end{align*}
 	Expliciter $H$ en fonction de $\gamma$, $g$ et la masse molaire du gaz $M$. Donner une estimation numérique.
 	
@@ -357,5 +392,22 @@ On supposera que le régime est stationnaire, que l'énergie potentielle de pesa
 \end{itemize}
 
 \textit{Données :} $C_p=1,0\times10^3$J.kg$^{-1}$.K$^{-1}$, $\gamma=1,4$
+
+\newpage
+
+\section*{Cuisson du bacon avec un fusil semi-automatique}
+
+L'actuel sénateur du Texas, Ted Cruz, a réalisé une vidéo dans laquelle il fait cuire son \textit{bacon} dominical sur le canon de son fusil d'assaut, en tirant plusieurs cartouches. Pour cela, il enroule 4 tranches de bacon sur le canon de son fusil, elles-mêmes enroulées sous du papier aluminium (la cuisson sera considérée comme adiabatique par rapport à l'air ambiant). Combien Ted doit-il tirer de cartouches pour obtenir un bacon bien croquant, c'est-à-dire exposé à une température de 300$^\circ$C ?
+
+\textit{Données} : 
+\begin{itemize}
+
+	\item[-] Energie de combustion de la poudre : 5700 J
+	\item[-] Pression maximale atteinte dans le canon : 4300 bar
+	\item[-] Volume de la cartouche : 350 mm$^3$
+	\item[-] Capacité calorifique du canon : 365 J.K$^{-1}$
+	\item[-] Capacité calorifique massique du bacon : 2750 J.K$^{-1}$.kg$^{-1}$
+
+\end{itemize}
 
 \end{document}
