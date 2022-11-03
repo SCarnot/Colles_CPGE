@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}      
 \usepackage[top=3.5cm, bottom=3cm, left=3.0cm, right=3.0cm]{geometry}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \graphicspath{{figures/}{../figures}}
 
 \begin{document}
@@ -313,12 +314,51 @@ En très grosse approximation, on peut donc dire que :
 \newpage
 
 \section*{Exercice 4 $\bullet\bullet\circ$}
+
 \begin{itemize}
 \item[$\star$] Explicitez la fonction de transfert de ce filtre, puis calculez son gain et sa phase. On notera $\omega_0$ sa pulsation caractéristique. Quel est son rôle ?
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\linewidth]{circuit_.pdf}
 \end{figure}
+
+\item[$\star$]
+Pour quelles conditions sur le circuit et le signal d'entrée trouve t-on que le circuit retarde un signal périodique sans le déformer, c'est-à-dire que $U_{s}(t)=U_{e}(t-\tau)$ ? Exprimez alors ce retard $\tau$ en fonction de $R$ et $C$.
+
+On pourra utiliser la décomposition en série de Fourier du signal d'entrée :
+\begin{equation}
+U_e(t) = \sum_n C_n\cos(n\omega t + \varphi_n)
+\end{equation}
+
+\item[$\star$] On envoie en entrée le signal suivant :
+\begin{equation}
+U_{e}(t) = U_{0}\cos^{3}(\omega t)
+\end{equation}
+
+Décrire l'effet du filtre sur ce signal pour $\omega = \frac{\omega_{0}}{3}$ et $\omega=10^{-2}\omega_0$, et donner l'allure du signal de sortie. On donne $\arctan(1/3)\simeq\pi/10$.
+
+\item[$\star$]
+On suppose le condensateur déchargé à $t=0$. On envoie un échelon de tension $E$ en entrée. Quelle est la sortie ? Commenter.
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 4 (MP) $\bullet\bullet\circ$}
+
+On considère le filtre ci-dessous, où l'amplificateur opérationnel (AO) est supposé fonctionner en régime linéaire. On rappelle qu'en régime linéaire, l'AO idéal suit les propriétés suivantes :
+\begin{itemize}
+	\item[-] les tensions d'entrées sont égales $u_+=u_-$ ;
+	\item[-] les courants d'entrées sont nuls $i_+=i_-=0$ ;
+\end{itemize}
+L'AO ajuste à tout instant la tension $u_s$ et l'intensité $i_s$ de sortie pour que ces deux conditions soient en permanence vérifiées.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\linewidth]{circuit_.pdf}
+\end{figure}
+
+\begin{itemize}
+\item[$\star$] Explicitez la fonction de transfert de ce filtre, puis calculez son gain et sa phase. On notera $\omega_0$ sa pulsation caractéristique. Quel est son rôle ?
 
 \item[$\star$]
 Pour quelles conditions sur le circuit et le signal d'entrée trouve t-on que le circuit retarde un signal périodique sans le déformer, c'est-à-dire que $U_{s}(t)=U_{e}(t-\tau)$ ? Exprimez alors ce retard $\tau$ en fonction de $R$ et $C$.
@@ -445,6 +485,61 @@ On considère le montage ci-dessous :
 	\end{equation}
 	avec $H_0=\frac{\mu_0RC}{\tau+RC}=-5,9\cdot10^3$ et $Q = \frac{\sqrt{(1+\mu_0)RC\tau}}{\tau+RC}=74$
 	Ce filtre est dérivateur pour $x$ petit, cad $H\approx \frac{j\omega}{Q\omega_0}$. Cette condition est vérifiée jusqu'à $x\approx0,9$ cad $f=2\pi\omega\approx11$kHz.
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 6}
+
+On étudie le montage ci-dessous dans lequel l'amplificateur opérationnel est supposé idéal et fonctionner en régime linéaire. On rappelle qu'en régime linéaire, l'AO idéal suit les propriétés suivantes :
+\begin{itemize}
+	\item[-] les tensions d'entrées sont égales $u_+=u_-$ ;
+	\item[-] les courants d'entrées sont nuls $i_+=i_-=0$ ;
+\end{itemize}
+L'AO ajuste à tout instant la tension $u_s$ et l'intensité $i_s$ de sortie pour que ces deux conditions soient en permanence vérifiées.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\linewidth]{circuit_12.png}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\star$] Montrer que la fonction de transfert peut se mettre sous la forme canonique :
+	\begin{align*}
+		H=\frac{H_0}{1+jQ\left(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega} \right) }
+	\end{align*}
+Préciser l'expression de $\omega_0$ et de $Q$. 
+
+	\item[$\star$] Etudier les variations du gain (diagramme de Bode) en fonction de la fréquence. Quel est le rôle de ce filtre ?
+	
+	\item[$\star$] On met en entrée de ce cricuit une fonction créneau $e(t)$ positive de fréquence $f=3$kHz et de valeur maximale $E=10$V. Tracer l'allure du signal de sortie si le circuit est réglé pour $f_0=3$kHz et $Q=20$.
+\end{itemize}
+
+\newpage	
+
+\section*{\textit{Correction Exercice 6}}
+
+\begin{itemize}
+
+	\item[$\star$] On applique le théorème de Millman (ou loi des noeuds officiellement...) aux points $A$ et $B$ :
+	\begin{align*}
+		&\frac{e-V_A}{R_1}-\frac{V_A}{R_2}+jC_1\omega(s-V_A)+jC_1\omega(V_B-V_A)=0 \\
+		&\frac{s-V_B}{2R_1}+jC_1\omega( V_A-V_B) = 0
+	\end{align*}
+	Il faut une troisième équation : on a la condition $V_B=0$. On obtient donc :
+	\begin{align*}
+		H=\frac{-1}{1+jR_1C_1\omega+\frac{1}{jR_eC_1\omega}}
+	\end{align*}
+	avec $R_e=\frac{2R_1R_2}{R_1+R_2}$. On trouve donc $Q+\sqrt{R_1/R_e}$ et $\omega=\sqrt{R_1R_e}C_1$.
+
+	\item[$\star$] C'est un passe bande d'ordre 2 de bande passante $\Delta\omega=\omega_0/Q$.
+	
+	\item[$\star$] Le signal d'entrée a pour coefficients de Fourier : $c_{p+1}=\frac{2E}{(2p+1)\pi}$ avec $p$ entier. Le fondamental vaut $c_0=E/2$. Le circuit étant accordé sur une fréquence de 3kHz avec une bande passante de 0,15kHz, il ne reste que la première harmonique. Le signal en sortie en donc purement sinusoïdal : 
+	\begin{align*}
+		s(t)=\frac{2E}{\pi}\sin(\omega t)
+	\end{align*}
+	
 \end{itemize}
 
 \end{document}
