@@ -16,156 +16,69 @@
 
 \begin{document}
 
-\section*{Modèle de Drude $\bigstar\bigstar\bigstar$}
+\section*{Volatiles sur une ligne à haute tension}
 
-En 1900, Paul Drude proposa un modèle permettant d'expliquer les propriétés de conduction électrique et thermique des métaux. Dans ce modèle, on considère que les électrons de conduction forment un gaz de particules classiques de masse $m$ et de charge $-e$, auquel on applique les méthodes issues de la théorie cinétique des gaz. Les électrons effectuent des collisions, considérées comme instantanées. Ils sont supposés indépendants (pas d'interaction électron-électron entre les collisions). Drude attribua les collisions aux chocs entre les électrons et les ions, plutôt qu'aux chocs entre les électrons entre eux comme pour un gaz ordinaire. À l'issue d'une collision, la vitesse de l'électron a une direction aléatoire (pas de direction privilégiée), et une valeur liée à la température à l'endroit où a lieu la collision.
-
-\vspace{0,4cm}
-
-Le paramètre fondamental introduit par Drude est un temps de relaxation, $\tau$ : pour un électron donné, la probabilité de subir une collision pendant un intervalle de temps infinitésimal $dt$ est $dt/\tau$. L'objectif de cet exercice est d'estimer la conductivité d'un métal en fonction de ce temps $\tau$ et de la densité électronique $n$, propres à chaque métal. 
-
-\begin{itemize}
-	
-	\item[$\spadesuit$]	 On note $N_0$ le nombre total d'électrons dans le métal. Montrer que le nombre d'électrons n'ayant subi aucune collision à un instant $t$ s'écrit $N(t)=N_0\cdot\exp(-t/\tau)$.
-	
-	\item[$\spadesuit$]	 Montrer que la probabilité pour un électron de subir son premier choc entre $t$ et $t+dt$ est $dp=\frac{dt}{\tau}\cdot\exp(-t/\tau)$. En déduire que $\tau$ correspond au temps moyen entre deux collisions.
-	
-	\item[$\spadesuit$] On soumet le métal à un champ de force extérieur, et on note $\vec{F}(t)$ la force subie par chaque électron. Comment varie la quantité de mouvement de la totalité des électrons $\vec{P}(t)$ entre $t$ et $t+dt$ ?
-	
-	\item[$\spadesuit$] En déduire une équation différentielle vérifiée la vitesse moyenne d'un électron $\vec{v}=\vec{P}/(mN_0)$. Quel est l'effet moyen des collisions sur la trajectoire d'un électron ?
-	
-	\item[$\spadesuit$] On applique au métal un champ électrique uniforme de pulsation $\omega_0$, que l'on note en notation complexe : $\vec{E}(t)=E_0\exp(-i\omega_0t)$. En appliquant le résultat précédent, calculer la densité de courant $\vec{j}$ en fonction de $m$, $e$, $\tau$ et du nombre d'électrons par unité de volume $n$. En déduire l'expression de la conductivité $\gamma(\omega)$ du métal.
-	
-	\item[$\spadesuit$] En admettant que chaque atome du métal libère un électron de conduction, calculer un ordre de grandeur de $n$.
-	
-	\item[$\spadesuit$] La résistivité statique du cuivre est mesurée à 273K est $\rho=1,56\cdot10^{-8}\Omega$.m. Calculer le temps de relaxation $\tau$. 
-	
-	\item[$\spadesuit$] A $t=0$, on applique un champ $\vec{E}$ constant aux électrons du conducteur. Quelle est l'évolution de la vitesse moyenne au cours du temps ? 
-\end{itemize}
-
-\newpage
-
-\section*{Conduction électrique dans un semiconducteur bidimensionnel $\bigstar\bigstar$}
- 
-Les techniques récentes de microfabrication permettent de créer à partir de semiconducteurs dopés (cristaux d'arsenure de gallium) des conducteurs où les électrons sont quantiquement confinés dans un plan : leur déplacement, et donc la condution électrique, sont parfaitement bidimensionnels. On s'intéresse au conducteur 2D rectangulaire de largeur $W$ et de longueur $L$ ci-dessous, contenant un total de $N_0=n_s\times W\times L$ électrons, où $n_s$ est la densité surfacique d'électron.
-
-\begin{figure}[h!]
-\centering
-		\includegraphics[scale=0.5]{2DEG_square.pdf}
-\end{figure}
-
-On admet que les électrons dans ce plan se comportent comme un gaz parfait : ils n'interagissent pas entre eux et ne sont soumis qu'à champ électrique $\vec{E}$ uniforme lorsque un opérateur impose une différence de potentiel $V_1-V_2$. Ils subissent néanmoins des collisions avec les impuretés du réseau cristallin, à l'issue desquelles ils ont une direction et une vitesse aléatoire. On admet que durant un temps $dt$, la probabilité pour un électron de subir une collision est $dp = dt/\tau$, où $\tau$ est un paramètre imposé par la qualité du réseau cristallin.
-
-L'objectif de l'exercice est de déterminer les propriétés de conduction d'un tel matériau, en fonction de ses caractéristiques $n_s$ et $\tau$.
+L'étourneau sansonnet est une espèce d'oiseau sociale, se déplaçant par groupe de centaines, voire de milliers d'individus. On peut les apercevoir suspendus sur des lignes électriques avant leur envol. Pour notre étude, on peut modéliser l'étourneau comme une sphère de rayon $R=10$cm parfaitement conductrice (les tissus biologiques étant de bons conducteurs électriques). 
 
 \begin{itemize}
 
-	\item[$\bowtie$] Relier le courant surfacique $\vec{j_s}$ à la densité surfacique $n_s$ d'électron et leur vitesse moyenne $\vec{v}$. Relier ensuite $\vec{j_s}$ avec $I$ et $W$.
-
-	\item[$\bowtie$] A l'instant $t$, $P(t)=mN_0v(t)$ la quantité de mouvement totale des électrons. En effectuant un bilan de quantité de mouvement, montrer qu'en régime permanent on a :
-	\begin{align*}
-		\vec{v}=-\frac{e\tau}{m}\vec{E}
-	\end{align*}
+	\item[$\bigvee$] Un étourneau se pose sur une ligne électrique au potentiel $V=50$kV. Quelle charge $Q$ va t-il porter à ce potentiel ? \textit{NB} : Les lignes électriques n'ont pas de revêtement isolant.
 	
-	\item[$\bowtie$] L'opérateur impose une différence de potentiel $U=V_1-V_2$, générant un courant total $I$ réparti uniformément dans le conducteur. En déduire la résistance $R$ du conducteur en fonction de $n_s$, $\tau$, $L$ et $W$.
+	\item[$\bigvee$] En réalité, la tension est alternative, à la fréquence $f=50$ Hz. Sachant que l'intensité létale est d'environ 10mA, l'étourneau prend-il un risque à se poser dessus ?
 	
-	\item[$\bowtie$] Pourquoi appelle t-on $R_\boxdot=\frac{m}{e^2\tau n_s}$ résistance par carré ?
-	
-\end{itemize}
+	\item[$\bigvee$] Un nuée de 1000 étourneaux se pose instantanément sur cette ligne électrique. Quelle va être la diminution de puissance électrique (temporaire) au bout de la ligne ?
 
-On s'interesse à un conducteur bidimensionnel avec une géométrie en "sablier", proposée sur le schéma ci-dessous. Il s'agit d'un "quantum point contact", un dispositif permettant d'étudier les propriétés quantiques des électrons dans les conducteurs.
-
-\begin{figure}[h!]
-\centering
-		\includegraphics[scale=0.5]{2DEG_QPC.pdf}
-\end{figure}
-
-\begin{itemize}
-
-	\item[$\bowtie$] En supposant que la densité de courant est uniforme dans la largeur du conducteur 2D, calculer la résistance totale $R$ de ce conducteur.
-	
-	\item[$\bowtie$] Calculer la puissance surfacique locale dissipée par effet Joule, $p_s=\vec{j_s}\cdot\vec{E}$, puis la puissance totale $P_J$ dissipée dans le conducteur. A t-on $P_J=RI^2$ ?
-
-\end{itemize}
-
-\newpage
-
-\section*{Résistance d'une plaque infinie $\bigstar\bigstar\bigstar$}
-
-On considère une plaque métallique de conductivité $\gamma$, infinie dans le plan $xy$ et d'épaisseur $e$ selon $z$. Cette plaque est connectée à deux fils de même métal (et donc de même conductivité $\gamma$) en $A$ et $B$, séparés l'un de l'autre de la distance $d$. Ces deux fils peuvent être assimilés à des cylindres de rayon $a$ et de longueur $l$. 
-
-\begin{figure}[h!]
-\centering
-		\includegraphics[scale=0.3]{plaque.pdf}
-\end{figure}
-
-\begin{itemize}
-
-	\item[$\heartsuit$] Quelle est la résistance de chaque fil ? 
-	
-	\item[$\heartsuit$] A l'aide des symétries du problème, proposez une expression pour la densité de courant à l'intérieur de la plaque. 
-	
-	\item[$\heartsuit$] En déduire la résistance équivalente entre les points $A$ et $B$. Quelle est la résistance totale du dispositif ?
-	
-	\item[$\heartsuit$] On considère désormais que les fils sont reliés ne sont plus reliés à une plaque mais à un volume du même métal, c'est-à-dire, $e\longrightarrow\infty$. Par le même raisonnement, en déduire la résistance équivalente. 
-
-\end{itemize}
-
-\newpage
-
-\section*{Paratonnere $\bigstar$}
-
-Lorsque le courant de foutre d'un impact direct sur un paratonnerre s'écoule par la prise de terre d'une installation, de fortes surtensions peuvent apparaître. La résistance de prise de terre ne doit pas dépasser 30$\Omega$. Considérons une prise de terre constituée d'une demi-sphère métallique pleine, de rayon $a$ et placée dans un sol de conductivité $\gamma\approx10^{-2}$S.m$^{-1}$. Le courant de foudre d'intensité $I$ arrive sur la tige paratonnerre fixée au centre $C$ de l'hémisphère.
-
-\begin{figure}[h!]
-\centering
-		\includegraphics[scale=1.5]{EM1.pdf}
-\end{figure}
-
-\begin{itemize}
-	
-	\item[$\diamondsuit$] Quelle est la densité de courant $\vec{j}$ dans le sol pour $r>a$ ? Déterminer alors le potentiel $V(r)$, en supposnat que celui-ci est nul à l'infini. 
-	
-	\item[$\diamondsuit$] Déterminer la valeur du rayon $a$ pour laquelle la valeur de la résistance de la prise de terre ne dépasse pas 30$\Omega$.
-	
-	\item[$\diamondsuit$] La tension de pas est définie comme la différence de potentiel entre 2 points de la surface du sol distants de 1 mètre et situés sur la même droite issue du centre $C$ de l'hémisphère. Calculer cette tension de pas $V_p$ pour un courant de 50kA, à une distance de 10m puis de 100m.
-	
-	\item[$\diamondsuit$] Sachant que la résistance entre les deux pieds d'une personne est de l'ordre de 2500$\Omega$, et que l'intensité létale pour un corps humais est de 25mA, une personne est-elle en sécurité à 10m ? A 100m ? 
-	
 \end{itemize} 
 
 \newpage
 
-\section*{Champ dans une cavité $\bigstar\bigstar$}
+\section*{\textit{Correction Volatiles sur une ligne à haute tension}}
 
+\begin{itemize}
+
+	\item[$\bigvee$] L'oiseau est une sphère de rayon $R$ portée au potentiel $V$ par rapport au sol, supposé très loin. Le potentiel est alors (à redémontrer par l'élève) :
+	\begin{align*}
+		V=\frac{Q}{4\pi\varepsilon_0 R}
+	\end{align*}
+	Il se charge donc d'une charge $Q=V\times 4\pi\varepsilon_0R=5,6\times10^{-7}$C.
+	
+	\item[$\bigvee$] Le courant étant alternatif, l'oiseau se charge et se décharge de $Q$ 50 fois par seconde. Il est donc parcouru par une intensité au minimum de $I=Qf=27\mu$A. On est loin du poulet rôti...
+	
+	\item[$\bigvee$] Lorsque les oiseaux se posent, il y a instantément une déviation de courant qui s'opèrent vers eux pour les monter à la charge $Q$. Il y a donc $N$ fois le courant $I$ qui est dévié le temps d'une période de charge, soit 27mA. Les ampérages circulant dans les lignes étant typiquement de l'ordre de l'ampère, on est loin d'avoir des problèmes liés à ces volatiles.
+
+\end{itemize} 
+
+\newpage		
+
+\section*{Champ dans une cavité $\bullet\bullet\circ$}
 
 Une boule de centre $O_1$ et de rayon $a$ portant une charge volumique uniforme $\rho$ possède une cavité sphérique de centre $O_2$ de rayon $b$ vide de charges. Déterminer le champ électrique $\vec{E}$ et le potentiel $V$ associé dans la cavité.
 
 \newpage
 
-\section*{Champ créé par deux sphères $\bigstar$}
+\section*{Champ créé par deux sphères $\bullet\circ\circ$}
 
-On considère deux sphères de rayon $R$, situées respectivement en $O_1$ et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$, avec $d\gg R$. La sphère située en $O_1$ porte une charge $+Q_1$, celle en $O_2$ porte une charge $-Q_2$, charges que l'on supposera uniformément réparties. 
+On considère deux sphères de rayon $R$, situées respectivement en $O_1$ et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$, avec $d\gg R$. La sphère située en $O_1$ porte une charge $+Q_1$, celle en $O_2$ porte une charge $Q_2$, charges que l'on supposera uniformément réparties. 
 
 \begin{itemize}
 
 	\item[$\oplus$] Quel est le champ électrique $\vec{E}_1$ créé par la sphère 1 ? Quel est le champ créé par les deux sphères ? On admettra que le champ électrique des sphères est équivalent à celui d'une particule ponctuelle portant la même charge.
 	
-	\item[$\oplus$] En déduire le potentiel électrique $V_1$ créé par la sphère 1, puis le potentiel total $V(r)$ créé par les deux sphères. Le potentiel est supposé nul à l'infini.
+	\item[$\oplus$] En déduire le potentiel électrique $V_1(\vec{r})$ créé par la sphère 1, puis le potentiel total $V(\vec{r})$ créé par les deux sphères. Le potentiel est supposé nul à l'infini. On exprimera le résultat en coordonnées cartésiennes.
 	
 	\item[$\oplus$] Tracer sur un schéma les lignes de champs et les équipotentielles. 
 	
-	\item[$\oplus$] Une charge $+e$ est évacuée de la surface de la sphère 1, au niveau de l'axe $\vv{O_1O_2}$, avec une vitesse initiale $\vec{v}=v_0\vec{e}_x$. A quelle vitesse arrive t-elle sur la sphère 2 ?  On simplifiera le résultat en prenant $Q_1=Q_2$.
+	\item[$\oplus$] Une charge $+e$ est évacuée de la surface de la sphère 1, au niveau de l'axe $\vv{O_1O_2}$, avec une vitesse initiale $\vec{v}=v_0\vec{e}_x$. A quelle vitesse arrive t-elle sur la sphère 2 ? On simplifiera le résultat en prenant $Q_1=-Q_2=+Q$.
 	
-	\item[$\oplus$] Que se passe t-il si la sphère 2 porte une charge désormais $+Q_2$ ? Quelle est la nature du mouvement ?
+	\item[$\oplus$] Que se passe t-il si la sphère 2 porte une charge désormais $Q_2=+Q$ ? Quelle est la nature du mouvement ?
 
 \end{itemize}
 
 \newpage
 
-\section*{Champ créé par deux fils infinis $\bigstar$}
+\section*{Champ créé par deux fils infinis $\bullet\circ\circ$}
 
-On considère deux fils d'axe directeur $\vec{e}_z$, de rayon $R$ et très long $L\gg R$. Ils situés respectivement en $O_1$ et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$, avec $d\gg R$. Le fil situé en $O_1$ porte une charge $+Q_1$, celui en $O_2$ porte une charge $-Q_2$, charges que l'on supposera uniformément réparties. 
+On considère deux fils d'axe directeur $\vec{e}_z$, de rayon $R$ et très long $L\gg R$. Ils situés respectivement en $O_1$ et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$, avec $d\gg R$. Le fil situé en $O_1$ porte une charge $Q_1$, celui en $O_2$ porte une charge $Q_2$, charges que l'on supposera uniformément réparties. 
 
 \begin{itemize}
 
@@ -180,21 +93,21 @@ On admet que le champ électrique créé par un fil infini de charge linéique $
 
 \begin{itemize}
 
-	\item[$\oplus$] En déduire le potentiel électrique $V_1$ créé par le fil 1, puis le potentiel total $V(r)$ créé par les deux fils.
+	\item[$\oplus$] En déduire le potentiel électrique $V_1$ créé par le fil 1, puis le potentiel total $V(\vec{r})$ créé par les deux fils. On écrira le résultat en coordonnées cartésiennes.
 	
 	\item[$\oplus$] Tracer sur un schéma les lignes de champs et les équipotentielles. 
 	
-	\item[$\oplus$] Une charge $+e$ est évacuée du fil 1, au niveau de l'axe $\vv{O_1O_2}$, avec une vitesse initiale $\vec{v}=v_0\vec{e}_x$. A quelle vitesse arrive t-elle sur le fil 2 ? On simplifiera le résultat en prenant $Q_1=Q_2$.
+	\item[$\oplus$] Une charge $+e$ est évacuée du fil 1, au niveau de l'axe $\vv{O_1O_2}$, avec une vitesse initiale $\vec{v}=v_0\vec{e}_x$. A quelle vitesse arrive t-elle sur le fil 2 ? On simplifiera le résultat en prenant $Q_1=-Q_2=+Q$.
 	
-	\item[$\oplus$] Que se passe t-il si le fil 2 porte une charge désormais $+Q_2$ ? Quelle est la nature du mouvement ? 
+	\item[$\oplus$] Que se passe t-il si le fil 2 porte une charge désormais $Q_2=+Q$ ? Quelle est la nature du mouvement ? 
 
 \end{itemize}
 
 \newpage
 
-\section*{Champ créé par deux plans infinis $\bigstar$}
+\section*{Champ créé par deux plans infinis $\bullet\circ\circ$}
 
-On considère deux plans "épais" de vecteur normal $\vec{e}_x$, d'épaisseur $e$, de surface $S$ très grande : $S\gg e$. Ils situés respectivement en $O_1$ et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$. Le plan situé en $O_1$ porte une charge $+Q_1$, celui en $O_2$ porte une charge $-Q_2$, charges que l'on supposera uniformément réparties. 
+On considère deux plans "épais" de vecteur normal $\vec{e}_x$, d'épaisseur $e$, de surface $S$ très grande : $S\gg e$. Ils situés respectivement en $O_1$ et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$. Le plan situé en $O_1$ porte une charge $+Q_1$, celui en $O_2$ porte une charge $Q_2$, charges que l'on supposera uniformément réparties. 
 
 \begin{itemize}
 
@@ -213,15 +126,15 @@ On admet que le champ électrique créé par un plan infini de charge surfacique
 	
 	\item[$\oplus$] Tracer sur un schéma les lignes de champs et les équipotentielles. 
 	
-	\item[$\oplus$] Une charge $+e$ est évacuée de la surface du plan 1, au niveau de l'axe $\vv{O_1O_2}$, avec une vitesse initiale $\vec{v}=v_0\vec{e}_x$. A quelle vitesse arrive t-elle sur le plan 2 ? On simplifiera le résultat en prenant $Q_1=Q_2$.
+	\item[$\oplus$] Une charge $+e$ est évacuée de la surface du plan 1, au niveau de l'axe $\vv{O_1O_2}$, avec une vitesse initiale $\vec{v}=v_0\vec{e}_x$. A quelle vitesse arrive t-elle sur le plan 2 ? On simplifiera le résultat en prenant $Q_1=-Q_2=+Q$.
 	
-	\item[$\oplus$] Que se passe t-il si le plan 2 porte une charge désormais $+Q_2$ ? Quelle est la nature du mouvement ? 
+	\item[$\oplus$] Que se passe t-il si le plan 2 porte une charge désormais $Q_2=+Q$ ? Quelle est la nature du mouvement ? 
 
 \end{itemize}
 
 \newpage
 
-\section*{Champ créé par deux plans infinis $\bigstar\bigstar$}
+\section*{Champ créé par deux plans infinis $\bullet\bullet\circ$}
 
 On considère deux plans "épais" de vecteur normal $\vec{e}_x$, d'épaisseur $e$, de surface $S$ très grande : $S\gg e$. Ils situés respectivement en $O_1=O$ (où $O$ est l'origine du repère de coordonnées carthésiennes) et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$. Le plan situé en $O_1$ porte une charge $+Q_1$, celui en $O_2$ porte une charge $-Q_2$, charges que l'on supposera uniformément réparties. 
 

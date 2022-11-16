@@ -17,9 +17,9 @@
 
 \section*{Petits et gros mammifères $\bullet\circ\circ$}
 
-Les mammifères sont des animaux à sang chaud, dont la chaleur est produite par le fonctionnement du métabolisme, qui dégage une puissance thermique $p_{th}$ par unité de volume. Cette puissance et la circulation sanguine permettent de maintenir une température $T_1$ à peu près uniforme et constante à l'intérieur du corps. Pour se prémunir contre les variations de température extérieur, les mammifères peuvent avoir une couche d'isolant (fourure ou graisse) autour de leur corps. On souhaite connaitre la variation de cette épaisseur en fonction de la taille des mammifère. 
+Les mammifères sont des animaux à sang chaud, dont la chaleur est produite par le fonctionnement du métabolisme, qui dégage une puissance thermique $p_{th}$ par unité de volume. Cette puissance et la circulation sanguine permettent de maintenir une température $T_1$ à peu près uniforme et constante à l'intérieur du corps. Pour se prémunir contre les variations de température extérieur, les mammifères peuvent avoir une couche d'isolant (fourrure ou graisse) autour de leur corps. On souhaite connaitre la variation de cette épaisseur en fonction de la taille des mammifères. 
 
-Pour simplifier, on considère que les mammifère sont des animaux sphériques de rayon $R$ recouverts d'une couche d'isolant d'épaisseur $e$ de capacité calorifique $c$, d emasse volumique $\rho$ et de conductivité thermique $\lambda$. On notera $T(r)$ et$\vec{j}(r)$ le champ de température et le vecteur densité volumique de puissance en coordonnées sphériques, $r$ étant le rayon par rapport au centre de l'animal.
+Pour simplifier, on considère que les mammifères sont des animaux sphériques de rayon $R$ recouverts d'une couche d'isolant d'épaisseur $e$ de capacité calorifique $c$, d emasse volumique $\rho$ et de conductivité thermique $\lambda$. On notera $T(r)$ et $\vec{j}(r)$ le champ de température et le vecteur densité volumique de puissance en coordonnées sphériques, $r$ étant le rayon par rapport au centre de l'animal.
 
 \begin{itemize}
 
@@ -38,7 +38,7 @@ Pour simplifier, on considère que les mammifère sont des animaux sphériques d
 
 	\item[$\odot$] On se place en régime permament. Résoudre cette équation avec les conditions aux limites.
 	
-	\item[$\odot$] On introduit $\Phi=4\pi r^2j_r(r)$. Que représente cette quantité ? Dépent-elle de $r$ ? Montrer que $\Phi=4/3\pi R^3p_{th}$. En déduire :
+	\item[$\odot$] On introduit $\Phi=4\pi r^2j_r(r)$. Que représente cette quantité ? Dépend-elle de $r$ ? Montrer que $\Phi=4/3\pi R^3p_{th}$. En déduire :
 	\begin{align*}
 		\frac{R^2p_{th}}{3}=\frac{\lambda (R+e)}{e}(T_1-T_0)
 	\end{align*}
@@ -84,6 +84,68 @@ Pour simplifier, on considère que les mammifère sont des animaux sphériques d
 		\frac{e}{R}=\frac{1}{\frac{R^2p_{th}}{3\lambda(T_1-T_0)}-1}
 	\end{align*}
 	Ce rapport diminue d'autant plus que la taille de l'animal augmente.
+
+\end{itemize}
+
+\newpage
+
+\section*{Ailettes de refroidissement $\bullet\circ\circ$}
+
+Certains moteurs à essence utilisent des ailettes métalliques pour se refroidir avec l'air ambiant (on parle de refroidissement à air). Si ce système est beaucoup plus simple qu'un refroidissement liquide, la puissance de refroidissement est limitée et donc celle du moteur aussi.
+
+On modélise cette ailette de refroidissement comme un cylindre d'axe $Ox$, de longueur $L$, de rayon $R$ constitué d'un matériau de conductivité $\lambda$, en contact avec l'air extérieur de température $T_e$. En $x=0$, l'ailette est en équilibre thermique avec le moteur à la température $T_0$. Une section de l'ailette de surface $\sigma$ à la température $T$ en contact avec l'air évacue sa puissance thermique suivant la loi de Newton $P_s=h(T-T_e)\sigma$.
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\textwidth]{ailette.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\thicksim$] En faisant un bilan d'enthalpie, déterminer en régime pemranent  l'équation différentielle vérifiée par la température $T(x)$.
+	
+	\item[$\thicksim$] Donner l'expression de la température, si l'on suppose $L$ suffisament long (devant quoi ?)
+	
+	\item[$\thicksim$] Déterminer la puissance thermique évacuée par l'ailette.
+	
+	\item[$\thicksim$] Que devient cette étude si $L$ n'est pas suffisament grand ? Déterminer les nouvelles conditions aux limites.
+
+\end{itemize}
+
+\newpage
+
+\section*{Ailettes de refroidissement $\bullet\circ\circ$}
+
+\begin{itemize}
+
+	\item[$\thicksim$] On trouve :
+	\begin{align*}
+		\frac{\partial^2 T}{\partial x^2} = \frac{2h}{\lambda R}(T(x)-T_e)
+	\end{align*}
+	
+	\item[$\thicksim$] On introduit $\delta=\sqrt{\lambda R/2h}$. Les solutions sont $T(x)=Ae^{x/\delta}+Be^{-x/\delta}+T_e$. Si $L\gg\delta$, alors $A=0$. On trouv nécessairement $B=T_0-T_e$.
+	
+	\item[$\thicksim$] La puissance évacuée entre les tranches situées en $x$ et $x+dx$ est :
+	\begin{align*}
+		dP&=2\pi Rdx(T(x)-T_e) \\
+		&=\pi Rdx(T_0-T_e)e^{-x/\delta}
+	\end{align*}
+	La puissance totale évacuée est donc :
+	\begin{align*}
+		P&=\int_0^L pi Rdx(T_0-T_e)e^{-x/\delta} \\
+		&=\pi R\sqrt{2h\lambda R}(T_0-T_e)
+	\end{align*}
+	
+	\item[$\thicksim$] La condition à la limite $A=0$ n'est plus valide, on garde la solution générale. Il faut utiliser la continuité du flux thermique en $x=L$. On a alors :
+	\begin{align*}
+	& T_1=A+B+T_e \\
+	& \Phi=-\lambda\pi R^2\frac{dT}{dx}(L)=h\pi R^2(T(L)-T_e)
+	\end{align*}
+Ces deux conditions réunies, on trouve (après calculs) :
+\begin{align*}
+	A=& \frac{(T_1-T_e)\left( 1-\frac{\lambda}{h\delta}\right) }{\left( 1-\frac{\lambda}{h\delta}\right) -\left( 1+\frac{\lambda}{h\delta}\right) e^{2L\delta}} \\
+	B=&\frac{(T_1-T_e)\left( 1+\frac{\lambda}{h\delta}\right) }{\left( 1+\frac{\lambda}{h\delta}\right) -\left( 1-\frac{\lambda}{h\delta}\right) e^{-2L\delta}} 
+\end{align*}
 
 \end{itemize}
 
