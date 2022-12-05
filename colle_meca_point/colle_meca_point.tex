@@ -36,6 +36,43 @@ On se place à la surface d'une planète de rayon $R$ et de champ gravitationnel
 
 \newpage
 
+\section*{\textit{Correction - Le Petit Prince : satellisation d'une pomme}}
+
+\begin{itemize}
+\item La planète étant supposée parfaitement plane, on peut commencer par calculer l'équation du mouvement de la pomme. Soumise à la seule force de pesanteur, on obtient :
+
+\begin{align*}
+	\left\lbrace
+\begin{array}{ccc}
+ x(t) =  v_0t+x_0 \\
+ z(t) = -\frac{1}{2}gt^2+z_0 \\
+\end{array}\right.
+\end{align*}
+En supposant que $x_0$ et $z_0$ sont les coordonnées de la position initiale. On obtient donc l'équation de la trajectoire :
+\begin{align*}
+	z(x) = -\frac{g(x-x_0)^2}{2v_0^2}+z_0
+\end{align*}
+
+Lorsque la pomme avance de $dx$ par rapport à sa position initiale $x_0$, elle descend de $z_0$ à $z_0+dz$ :
+\begin{align*}
+	z(x_0+dx)=z_0+dz=-\frac{gdx^2}{2v_0^2}+z_0
+\end{align*}
+Donc $dz=-\frac{gdx^2}{2{v_0}^2}$.
+
+\item Il faut penser à la rotondité de la Terre qui n'est donc pas parfaitement plane localement : d$h=R-R\cos(\mathrm{d}\theta)=R(\mathrm{d}\theta)^2/2=(\mathrm{d}x)^2/2R$.
+
+\item Si la vitesse initiale est suffisament grande, la chute de la pomme est compensée par le fait que le sol "s'abaisse" en même temps à cause de la rotondité, cad $dh=-dz$, soit $v_0=\sqrt{gR}=\sqrt{GM_T/R}$.
+
+\item Si la pomme revient à son point de départ, c'est que la trajectoire est supposée circulaire, avec $R$ constant. On peut effectuer un PFD sur la pomme en coordonnées cylindriques, et trouver à partir de la projection sur $\vec{e}_r$ :
+
+\begin{align*}
+ -mR\dot{\theta}^2 =  -\frac{GmM_T}{R^2} 
+\end{align*}
+Soit $v_0=R\dot{\theta}=\sqrt{GM_T/R}$.
+\end{itemize}
+
+\newpage
+
 \section*{Projectile lancé à la verticale}
 
 On tire un petit projectile à la verticale, avec une vitesse initiale $v_0$. Le problème est de calculer son altitude $z$ en fonction du temps, en tenant compte de la gravité et de la résistance de l'air. Comme l'objet est petit, on supposera que la résistance de l'air est proportionnelle à la vitesse et que la force de résistance est $m\gamma v$, $m$ étant la masse de l'objet, $v$ sa vitesse et $\gamma$ une constante. Nous supposerons que la force de gravité est constante (on néglige sa variation en fonction de l'altitude). On adoptera comme origine la position du tir ($z=0$) et on supposera que le mouvement ne se produit que dans la direction $z$.
@@ -46,6 +83,39 @@ On tire un petit projectile à la verticale, avec une vitesse initiale $v_0$. Le
 \item Exprimer maintenant l'altitude $z$ en fonction du temps.
 \item Calculer l'altitude maximale atteinte par le projectile ($z_\mathrm{max}$), en fonction des paramètres $v_0$, $g$ et $\gamma$.
 \item Exprimer le résultat de la question précédente ($z_\mathrm{max}$) dans les limites de très faible résistance ($\gamma \rightarrow 0$) et de très forte résistance ($\gamma \rightarrow \infty$). Quelles modifications mineures devrait-on apporter à l'équation différentielle trouvée première question pour retrouver ces résultats plus simplement ?
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Projectile lancé à la verticale}}
+
+\section*{Projectile lancé à la verticale}
+
+\begin{itemize}
+\item Rien de bien difficile, en notant $v=\dot{z}$ :
+
+\begin{align*}
+	m\dot{v}=-\gamma mv-mg
+\end{align*}
+
+\item
+La solution de cette équation est :
+\begin{align*}
+	v(t) = \left(v_0+\frac{g}{\gamma} \right)\exp\left(-\gamma t\right)-\frac{g}{\gamma}  
+\end{align*}
+
+\item On intègre l'expression de la vitesse précédente. On trouve :
+
+\begin{align*}
+	z(t) = \frac{1}{\gamma}\left(v_0+\frac{g}{\gamma} \right) \left(1-\exp(-\gamma t) \right) -\frac{g}{\gamma}t
+\end{align*}
+\item L'altitude maximale correspond à l'instant $t_0$ où la vitesse s'annule : $v(t_0)=0$, soit $t_0 = \frac{1}{\gamma}\ln\left(\frac{1+v_0\gamma}{g} \right) $. On a donc :
+$z_\mathrm{max}=\frac{v_0}{\gamma}-\frac{g}{\gamma^2}\ln\left( 1+\frac{\gamma v_0}{g}\right).$
+
+\item Dans le cas où $\gamma\rightarrow0$, $z_\mathrm{max}\rightarrow\frac{v_0}{\gamma}-\frac{g}{\gamma^2}\frac{\gamma v_0}{g}+\frac{g}{2\gamma^2}\frac{\gamma^2 v_0^2}{g^2}=\frac{ v_0^2}{2g}$ en utilisant $\ln(1+x)\simeq 1+x-x^2/2$. Cela correspond à une chute libre ne l'absence de frottement. 
+
+Dans le cas où $\gamma\rightarrow0$, $z_\mathrm{max}\rightarrow\frac{v_0}{\gamma}$
 
 \end{itemize}
 
@@ -64,6 +134,38 @@ Une météorite arrive depuis l'infini vers la Terre avec une vitesse à l'infin
 \item La météorite n'est soumise qu'à la force gravitationnelle de la Terre. Déterminer la nature de sa trajectoire. Montrer que le mouvement est plan et déterminer une relation entre $r$ et $\dot{\theta}$.
 \item On note $N$ le point de la trajectoire où la distance qui sépare la météorite de la Terre est la plus petite. Montrer qu'en $N$, la vitesse est uniquement suivant $\vec{u}_\theta$. Déterminer une relation entre $v_N$ au point $N$, la distance $ON$, $b$ et $v_0$.
 \item En utilisant la conservation de l'énergie, montrer la relation :
+$$
+0=r^2_\mathrm{min}v_0^2+2GM_Tr_\mathrm{min}-v_0^2b^2.
+$$
+\item En déduire l'expression minimale $b_c$ du paramètre d'impact telle que pour $b<b_c$, la météorite frappe la Terre et pour $b>b_c$, la météorite évite la Terre. On pourra exprimer le résultat en fonction de la vitesse de libération $v_\mathrm{lib}$.
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Paramètre d'impact} }
+
+\begin{itemize}
+\item La météorite n'est soumise qu'à la gravitation, qui est une force centrale. On peut donc utiliser la conservation du moment cinétique (car le moment des forces est nul). Comme le moment se converve, il est dirigé ortohogonalement au plan délimité par $\vec{r_0}$ et $\vec{v_0}$ tout le long de la trajectoire. Le mouvement reste donc conscrit à ce plan.
+
+D'autre part, on a par la conservation du moment :
+\begin{align*}
+	\vec{\sigma}_O(M)=m\vec{r}\wedge\vec{v}=-mr_0v_0sin(\theta_0)=-mbv_0
+\end{align*}
+
+Et d'autre part, $\vec{v}=\dot{r}\vec{e}_r+r\dot{\theta}\vec{e}_\theta$, donc $\vec{\sigma}_O(M)=r^2\dot{\theta}=-mbv_0$.
+
+
+\item La distance $ON$ entre la météorite et la terre correspond à la coorodnnée $r$. Lorsque celle-ci est minimale, on a nécéssairement $\dot{r}=0$. La vitesse s'exprime donc $\vec{v}=\dot{r}\vec{e}_r+r\dot{\theta}\vec{e}_\theta=r\dot{\theta}\vec{e}_\theta$.
+
+A ce point, le moment cinétique est $\vec{\sigma}_O=ON\cdot v_N$. Par conservation du moment on a alors :
+\begin{align*}
+	ON\cdot v_N=bv_0
+\end{align*}
+
+\item L'énergie potentielle de gravitation s'écrit $E_p=-GM_Tm/r^2$. L'énergie mécanqiue totale du système est égale au point $N$ et à l'infini (lorsque la météorite arrive à la vitesse $v_0$), alors :
+\begin{align*}
+	\frac{1}{2}mv_N^2-\frac{GM_Tm}{r_N}
+\end{align*}
 $$
 0=r^2_\mathrm{min}v_0^2+2GM_Tr_\mathrm{min}-v_0^2b^2.
 $$
@@ -94,6 +196,63 @@ Pour stabiliser la trajectoire de l'électron, on supperpose au champ électriqu
 		\item[$\ominus$] Pour le mouvement dans le plan $(xOy)$, montrer que l'électron n'est piégé que si $B_0$ est supérieur a une certaine valeur $B_c$, à déterminer en fonction des données de l'exercice. On utilisera le changement de variable : $\rho = x+iy$.
 		
 		\item[$\ominus$] Résoudre l'équation en $\rho$ pour le cas $B_0\gg B_c$, sans chercher à mettre en évidence les constante d'intégration, mais en mettant en évidence deux pulsations, l'une voisine de $\omega_c$, notée $\omega_c'$, et une autre notée $\omega_m$, appelée pulsation magnétique. 
+		
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Piège de Penning}}
+
+\begin{itemize}
+
+	\item[$\ominus$] On applique le principe fondamental de la dynamique à l'électron :
+\begin{align*}
+	\left\lbrace
+\begin{array}{ccc}
+ m\ddot{x} &=&  e\frac{U_0}{2R^2}x \\
+ m\ddot{y} &=& e\frac{U_0}{2R^2}y \\
+ m\ddot{z} &= & -e\frac{U_0}{R^2}z \\
+\end{array}\right.
+\end{align*}
+La position est bien une position de stabilité : les forces appliquée en ce point sont nulles. Néanmoins, ce n'est pas une position stable en $x$ ou en $y$ car la solution est exponentielle. Le mouvement est stable uniquement sur $z$, avec une pulsation $\omega_z=eU_0/mR^2$.
+
+		\item[$\ominus$] LE PFD devient :
+		
+\begin{align*}
+	\left\lbrace
+\begin{array}{ccc}
+ \ddot{x} &=&  \frac{\omega_z^2}{2}x - \omega_c\dot{y}\\
+ \ddot{y} &=& \frac{\omega_z^2}{2}y + \omega_c\dot{x} \\
+ \ddot{z} &= & -\omega_z^2z \\
+\end{array}\right.
+\end{align*}
+
+Le mouvement selon $z$ est bien inchangé. 
+
+		\item[$\ominus$] En multipliant la seconde première ligne par $i$, puis en sommant ces deux lignes, on obtient :
+		\begin{align*}
+ \ddot{\rho} - \frac{\omega_z^2}{2}\rho - i\omega_c\dot{\rho}=0\\
+\end{align*}
+		
+		Le déterminant de l'équation caractéristique est $\Delta=2\omega_z^2-\omega_c^2$. Le mouvement est stable uniquement si $\Delta>0$, cad si $B_0>B_c=\sqrt{2mU_0/eR^2}$.
+		
+		\item[$\ominus$] Les solutions de l'équation caractéristiques sont :
+		\begin{align*}
+			r=i\frac{\omega_c}{2}\left( 1 \pm\sqrt{1- \frac{2\omega_z^2}{\omega_c^2}}\right) 
+		\end{align*}
+		
+		Les pulsations caractéristiques sont donc $\omega_\pm=\frac{\omega_c}{2}\left( 1 \pm\sqrt{1- \frac{2\omega_z^2}{\omega_c^2}}\right)$. Dans le cas où $B_0\gg B_c$, $\omega_c\gg\omega_z$ et on peut donc écrire :
+		\begin{align*}
+			\omega_+&=\frac{\omega_c}{2}\left( 1 +\frac{\omega_z^2}{2\omega_c^2}\right)= \omega_c'\\
+			\omega_-&=\frac{\omega_z^2}{2\omega_c}=\omega_m
+		\end{align*}
+		
+		La solution est donc :
+		\begin{align*}
+			\rho(t)=Ae^{i\omega_c'}t+Be^{i\omega_mt}
+		\end{align*}
+		
+		L'équation de la trajectoire est donnée par $x(t)=\mathrm{Re}(\rho(t))$ et $y(t)=\mathrm{Im}(\rho(t))$.
 		
 \end{itemize}
 
@@ -194,7 +353,7 @@ Finalement, on se retrouve avec globalement une chute libre classique, si ce n'e
         y'(t)=&v_0\cos(\alpha)t \\
         z'(t)=& -v_0\sin(\alpha)t+z_0
 	\end{align*}	
-La dévitation est donc $\vec{\varepsilon	}=v_0\Omega_T\sin(\lambda+\alpha)t^2\vec{e}_x--\frac{1}{2} gt^2\vec{e}_z$. Pour un temps de vol d'environ 1 seconde, on trouve que :
+La dévitation est donc $\vec{\varepsilon	}=v_0\Omega_T\sin(\lambda+\alpha)t^2\vec{e}_x-\frac{1}{2} gt^2\vec{e}_z$. Pour un temps de vol d'environ 1 seconde, on trouve que :
 \begin{align*}
 	\vec{\varepsilon}=-0,5\vec{e}_z+0,04\vec{e}_x
 \end{align*}
