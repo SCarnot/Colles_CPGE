@@ -16,7 +16,7 @@
 
 \begin{document}
 
-\section*{Volatiles sur une ligne à haute tension}
+\section*{Volatiles sur une ligne à haute tension $\bullet\circ\circ$}
 
 L'étourneau sansonnet est une espèce d'oiseau sociale, se déplaçant par groupe de centaines, voire de milliers d'individus. On peut les apercevoir suspendus sur des lignes électriques avant leur envol. Pour notre étude, on peut modéliser l'étourneau comme une sphère de rayon $R=10$cm parfaitement conductrice (les tissus biologiques étant de bons conducteurs électriques). 
 
@@ -52,7 +52,45 @@ L'étourneau sansonnet est une espèce d'oiseau sociale, se déplaçant par grou
 
 \section*{Champ dans une cavité $\bullet\bullet\circ$}
 
-Une boule de centre $O_1$ et de rayon $a$ portant une charge volumique uniforme $\rho$ possède une cavité sphérique de centre $O_2$ de rayon $b$ vide de charges. Déterminer le champ électrique $\vec{E}$ et le potentiel $V$ associé dans la cavité.
+Une boule de centre $O_1$ et de rayon $a$ portant une charge volumique uniforme $\rho$ possède une cavité sphérique de centre $O_2$ de rayon $b$ vide de charges.
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.7]{em_cavite.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\odot$] Déterminer le champ électrique $\vec{E}$ et le potentiel $V$ associé dans la cavité.
+
+\end{itemize}
+
+Désormais, on suppose que la boule est constituée d'un matériau conducteur. On suppose que pour ces matériaux, les charges ne se répartissent pas en volume ($\rho=0$) mais uniquement sur les surfaces ($\sigma\neq0$) de sorte que le champ électrique est toujours nul dans un tel matériau. 
+
+\begin{itemize}
+
+	\item[$\odot$] Montrer que le champ électrique est nul dans la cavité. Peut-il y avoir des charges sur la surface interne entre la cavité et le matériau conducteur ?
+	
+\end{itemize}
+
+On place désormais une charge $+q$ au centre de la cavité, en $O_2$. 
+
+\begin{figure}[h!]
+\centering
+		\includegraphics[scale=0.7]{em_cavite2.pdf}
+\end{figure}
+
+\begin{itemize}
+	
+	\item[$\odot$] Montrer qu'une charge surfacique $\sigma$ se répartit uniformément sur la surface interne et l'exprimer en fonction de $b$ et $q$.
+	
+	\item[$\odot$] La charge totale du matériau conducteur étant nulle, montrer qu'une charge surfacique $\sigma'$ se répartit sur la surface externe. Quel est le champ électrique à l'extérieur (pour $r>a$) ? 
+
+\end{itemize}
+
+\textit{NB} : On rappelle qu'à l'interface d'une surface chargée $\sigma$ entre 2 milieu 1 et 2, la composante normale du champ électrique n'est pas continue : $\vec{E}_{N,2}-\vec{E}_{N,1}=\frac{\sigma}{\varepsilon_0}\vec{n}_{1\rightarrow2}$, où $\vec{n}_{1\rightarrow2}$ est le vecteur normale entre l'interface 1 et 2.
+
+
 
 \newpage
 
@@ -134,9 +172,27 @@ On admet que le champ électrique créé par un plan infini de charge surfacique
 
 \newpage
 
+\section*{Capacité créée par deux fils infinis parallèles $\bullet\bullet\circ$}
+
+On considère deux cylindres infiniment longs de rayon $a$, notés 1 et 2, tous deux d'axe directeur $Oz$ et passant respectivement par $x=-d/2$ et $x=+d/2$, avec $d>a$. Ils sont uniformément chargés en volume, avec $\rho_1=-\rho_2=\rho$.
+
+\begin{itemize}
+
+	\item[$\oplus$] En déduire le potentiel électrique $V_1$ créé par le cylindre 1, puis le potentiel total $V(\vec{r})$ créé par les deux fils. On écrira le résultat en coordonnées cartésiennes.
+	
+	\item[$\oplus$] Tracer sur un schéma les lignes de champs et les équipotentielles. 
+	
+	\item[$\oplus$] En déduire la tension électrique $U$ entre la surface des deux cylindres, en supposant qu'elle sont elles-mêmes des surfaces équipotentielles.
+	
+	\item[$\oplus$] La capacité linéique $\Gamma$ est la capacité équivalent $C$ d'un condesateur d'un tronçon de longueur $L$ selon $z$ de ce dispositif, divisé par $L$, soit $C=\Gamma/L$. Déterminer $\Gamma$.
+
+\end{itemize}
+
+\newpage
+
 \section*{Champ créé par deux plans infinis $\bullet\bullet\circ$}
 
-On considère deux plans "épais" de vecteur normal $\vec{e}_x$, d'épaisseur $e$, de surface $S$ très grande : $S\gg e$. Ils situés respectivement en $O_1=O$ (où $O$ est l'origine du repère de coordonnées carthésiennes) et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$. Le plan situé en $O_1$ porte une charge $+Q_1$, celui en $O_2$ porte une charge $-Q_2$, charges que l'on supposera uniformément réparties. 
+On considère deux plans "épais" de vecteur normal $\vec{e}_x$, d'épaisseur $e$, de surface $S=L_y\times L_z$ très grande : $L_y,L_z\gg e$. Ils situés respectivement en $O_1=O$ (où $O$ est l'origine du repère de coordonnées carthésiennes) et en $O_2$, de telle sorte que $\vv{O_1O_2}=d\vec{e}_x$. Le plan situé en $O_1$ porte une charge $Q_1$, celui en $O_2$ porte une charge $Q_2$, charges que l'on supposera uniformément réparties dans le volume. 
 
 \begin{itemize}
 
@@ -154,13 +210,13 @@ On considère deux plans "épais" de vecteur normal $\vec{e}_x$, d'épaisseur $e
 
 \newpage
 
-\section*{Interaction entre un plan chargé et une charge $-q$ $\bigstar$}
+\section*{Interaction entre un plan chargé et une charge $-q$ $\bullet\circ\circ$}
 
 On considère une nappe de charge, comprise entre $x=-a/2$ et $x=a/2$, et infiniment étendue selon les axes $y$ et $z$, avec une densité volumique de charge $\rho>0$.
 
 \begin{itemize}
 
-	\item[$\heartsuit$] A l'aide des invariances et des symétries, montrer que $\vec{E}=E(x)\vec{e}_x$.
+	%\item[$\heartsuit$] A l'aide des invariances et des symétries, montrer que $\vec{E}=E(x)\vec{e}_x$.
 
 	\item[$\heartsuit$] Déterminer le champ électrique $\vec{E}$ et le potentiel $V$ en tout point de l'espace.
 	
@@ -191,7 +247,7 @@ Pourquoi un homme ne ressent-il pas cette différence de potentiel ? % corps hum
 
 \newpage
 
-\section*{Potentiel de Yukawa}
+\section*{Potentiel de Yukawa $\bullet\bullet\circ$}
 
 \`{A} une distance $r$ d'un point $O$, le potentiel électrostatique créé par une certaine distribution de charges a pour expression :
 $$
@@ -208,146 +264,49 @@ où $a_0$ est une longueur caractéristique et $e$ la charge élémentaire.
 
 \newpage
 
-\section*{Approche ontologique du champ magnétique $\bigstar\bigstar$}
+\section*{Effet d'une charge d'espace $\bullet\bullet\circ$}
 
-On considère un fil unidimensionnel de section $\Sigma$ dirigé suivant l'axe $x$. Il est constitué d'atomes séparés d'une distance $a$, de charge $+e$  et d'autant d'électrons de conduction de charge $-e$ ; on suppose que atomes et électrons sont confondus sur l'axe $x$ et uniformément répartis à travers $\Sigma$. On impose un courant $I$ dans le fil, les électrons se déplacent alors avec une vitesse $\vec{v'}=-v'\vec{e_{x}}$ uniforme le long du fil.
+Un faisceau d'ions or $Au^+$ de charge $e$ et de masse $m$ créé dans la zone $z<0$ pénètre à une vitesse négligeable dans la zone $z>0$ vide, à travers une plaque $P$ percée en $O$ et portée au potentiel nul dans le plan $xOy$. Une autre plaque, $P'$, parallèle à $P$, placée en $z=l>0$ et percée au point $I(0,l)$ est portée au pontentiel $V_0<0$. 
 
-Une particule de charge $q$ se déplace à la vitesse $\vec{v}=v\vec{e_{x}}$ à une distance $r>a$ de l'axe $x$.
-
-\begin{figure}[h!]
-\centering
-		\includegraphics[scale=0.25]{cable.pdf}
-\end{figure}
-
-On s'intéresse aux forces électromagnétiques exercées par les charges du fil sur la particule de charge $q$ par deux approches différentes.
-
-\subsubsection*{Approche en mécanique classique}
-
-\begin{itemize}
-	\item[$\clubsuit$] Quelle est la densité de charge $\rho_{+}$ (respectivement $\rho_{-}$) due aux atomes (resp. aux électrons) dans le fil ? En déduire le champ électrique $\vec{E}$ créé par cette distribution de charge pour $r>a$.
-	
-	\item[$\clubsuit$] Quelle est la densité de courant $\vec{j}$ dans le fil ? Exprimer la vitesse $\vec{v'}$ des électrons de conduction en fonction de $I$. En déduire le champ magnétique $\vec{B}$ créé par ce courant en fonction de $v'$ et des autres données de l'énoncé.
-	\item[$\clubsuit$] Exprimer la force totale s'exerçant alors sur la charge $+q$, en fonction de $q$, $v$, $v'$, $a$, $r$ et de constantes fondamentales. Quels sont les contributions des forces électriques et magnétiques sur cette particule ?
-	\item[$\clubsuit$] Que devient cette force dans le référentiel de la charge $+q$ ? En quoi est-ce une contradiction ?
-\end{itemize}
-
-\subsubsection*{Approche en mécanique relativiste}
-
-La théorie de la relativité restreinte permet de lever cette contradiction, en affirmant que tout objet se déplaçant relativement par rapport à un autre voit sa longueur contractée dans le sens du déplacement. Ainsi, Einstein a démontré en 1905 qu'un objet à la vitesse $v$ par rapport à un autre objet, voit la longueur de ce dernier contractée d'un facteur $\gamma(v)=1/\sqrt{1-v^{2}/c^{2}}$ (où $c$ est la vitesse de la lumière). Dans son référentiel, la charge $q$ voit donc la densité de charge des atomes $\rho_+$ et des électrons $\rho_-$ augmenter, mais pas dans les mêmes proportions. 
-	\begin{itemize}
-		\item[$\clubsuit$] Que deviennent les densités de charge $\rho_{+}$ et $\rho_{-}$ dans le référentiel de la particule $+q$ ? %On admettra que les électrons se déplacent à la vitesse $v'-v$ dans le référentiel de $+q$. 
-		\item[$\clubsuit$] Déterminer le champ électrique créé par cette nouvelle distribution de charges en fonction de $v$, $v'$, $a$, $r$ et de constantes fondamentales. On supposera que $v'\ll v\ll c$.
-		\item[$\clubsuit$] Quelle est la force électrique s'exerçant sur la particule $+q$ ? 
-		\item[$\clubsuit$] Comparer avec le résultat trouvé en approche classique (non relativiste). Que peut-on en dire sur la nature du champ magnétique ?
-	\end{itemize}
-			
-\textit{N.B.} : On rappelle que la vitesse de la lumière $c$ est définie comme $c^{2}=1/\epsilon_{0}\mu_{0}$, où $\epsilon_{0}$ et $\mu_{0}$ sont respectivement la permittivité électrique et la perméabilité magnétique du vide.
-
-\newpage
-
-\section*{Câble coaxial $\bigstar\bigstar$}
-
-On considère un câble coaxial constitué de deux conducteurs cylindriques de même axe, séparés par du vide, de rayon $a$ (l'âme) et $b$ (la gaine), avec $a<b$, et d'épaisseur négligeable. Le conducteur central (de rayon $a$) a une charge surfacique $\sigma_a$ répartie uniformément et est traversé par une densité surfacique de courant $\vec{j_{s,a}}$, répartie aussi uniformément sur l'âme. La longueur du câble est $L$, très grande devant les rayons $a$ et $b$.  
+Toutes les propriétés du système sont invariantes par translation dans le plan $xOy$ et on considère uniquement les mouvements de charges dans la direction $Oz$ en régime permanent. On considère de plus que le faisceau d'ions est supposé avoir une section $S$ uniforme et que le champ électrique  àl'intérieur est sous la forme $\vec{E}=E(z)\vec{e}_z$.
 
 \begin{figure}[h!]
 \centering
-		\includegraphics[scale=1]{em2.pdf}
+		\includegraphics[scale=1.3]{em4.pdf}
 \end{figure}
 
-On cherche à connaitre la capacité et l'inductance linéique du câble coaxial, pour comprendre la propagation des ondes électromagnétiques à l'intérieur. 
+Pour des jets d'ions intenses, il faut tenir compte des effets d'influences électrostatique entre les ions présents entre les plaques, où réside une charge d'espace. On appelle respectivement $\rho(z)$, $V(z)$, et $\nu(z)$ la densité volumique de charge, le potentiel électrostatique et la valeur du champ des vitesses des ions à la distance $z$ du plan $xOy$. 
 
 \begin{itemize}
 
-	\item[$\blacksquare$] Exprimer le courant $I$ circulant dans l'âme et sa charge totale $Q$ en fonction de $\vec{j_{s,a}}$ et $\sigma_a$. En déduire la charge et l'intensité surfacique de la gaine, $\sigma_b$ et $\vec{j_{s,b}}$, sachant que, sur toute la longueur du câble, le courant total à travers le câble est nul et qu'il est neutre électriquement.
+	\item[$\blacktriangle$] Rappeler l'expression de la conservation de la charge. Pourquoi le produit $\rho(z)\nu(z)$ est il indépendant de $z$ en régime permanent ? 
 	
-	\item[$\blacksquare$] Déterminer le champ électrique en tout point.
-
-	\item[$\blacksquare$] En déduire la capacité $c$ par unité de longueur de câble. 
-	
-	\item[$\blacksquare$]	 Déterminer le champ magnétique en tout point. 
-	
-	\item[$\blacksquare$] On définit l'inductance $L$ d'un circuit délimitant une surface $S$, parcouru par un courant $I$ comme  comme le rapport du flux du champ magnétique à travers $S$ avec le courant $I$ :
+	\item[$\blacktriangle$] En écrivant le théorème de Gauss sur un volume du faisceau d'ions compris entre $z$ et $z+dz$, montrer :
 	\begin{align*}
-		\Phi_B=\oiint_S \dif \vec{S}\cdot\vec{B}=LI
+		\frac{\partial^2 V}{\partial z^2}=-\frac{\rho(z)}{\varepsilon_0}
 	\end{align*}
-En choisissant soigneusement une surface $S$, déterminer l'inductance linéique $l$. 
-
-	\item[$\blacksquare$] Que vaut le produit le produit $l\times c$ ? A quoi correspond cette grandeur ?
 	
-\end{itemize}
-
-\newpage
-
-\section*{Champ magnétique entre deux nappes de courant}
-
-Deux nappes de courant identiques de très grande surface $S = L_x\times L_y$, d’épaisseur $e$, sont parallèles entre elles et séparées d’une longueur $2a$ par un matériau isolant. Elles sont parcourues par un courant permanent de vecteur densité $J\vec{e}_x$ pour la nappe supérieure 1 et $-J\vec{e}_x$ pour la nappe inférieure 2. On se place suffisament loin des bords de la nappe pour négliger les effets de bord.
-
-\begin{figure}[h!]
-\centering
-		\includegraphics[scale=0.7]{nappe_courant.png}
-\end{figure}
-
-\begin{itemize}
+	\item[$\blacktriangle$] Ecrire le théorème de l'énergie cinétique pour obtenir une autre éqution sur $V(z)$, $\rho(z)$ et $\nu(z)$. 
 	
-	\item[$\clubsuit$] Etudier la dépendance et la direction du champ magnétique à partir des symétries et invariances.
+	\item[$\blacktriangle$] En déduire l'équation différentielle satisfaite par $V(z)$. 
 	
-	\item[$\clubsuit$] Déterminer rigoureusement le champ magnétique dans tous l'espace, et le représenter sur un graphe.
-	
-\end{itemize}
-
-On définit l'inductance $L$ d'un circuit délimitant une surface $S$, parcouru par un courant $I$ comme  comme le rapport du flux du champ magnétique à travers $S$ avec le courant $I$ :
+	\item[$\blacktriangle$] Résoudre cette équation différentielle, et en déduire la relation de Child-Langmuir donnant la densité de courant $j_z$ :
 	\begin{align*}
-		\Phi_B=\oiint_S \dif \vec{S}\cdot\vec{B}=LI
-	\end{align*}
-
-\begin{itemize}
-
-	\item[$\clubsuit$] Quelle est la surface délimitée par le circuit formé par les deux nappes ? En déduire l'inductance formée par ce système. 
+		j_z =\frac{4}{9}\varepsilon_0\sqrt{\frac{2e}{m}}\frac{(-V_0)^{3/2}}{l^2}
+\end{align*}		
+On rappelle que la densité de courant $\vec{j}$ est définie par $\vec{j}=\rho\vec{\nu}$.
 	
 \end{itemize}
 
 \newpage
 
-\section*{Champ magnétique dans un cylindre parcouru par un courant orthoradial $\bigstar$}
+\section*{Étude d'un colloïde $\bullet\bullet\circ$}
 
-On considère un cylindre conducteur de rayon $a$ et de longueur $L\gg a$ selon l'axe $O_z$, dans lequel circule une densité volumique de courant $\vec{j}(r)=j_0\vec{e}_\theta$.
+Un colloïde est une solution constituée d'un solvant (de l'eau et des ions) et de particules solides, \textit{dites de colloïde}, en suspension dont la taille peut varier de 10 à 100nm et qui se chargent dans le solvant. Par exemple, du lait ou de la terre dans l'eau sont des solutions colloïdales.
 
-\begin{itemize}
+Lorsqu'on augmente la concentration ionique de la solution (en ajoutant du sel par exemple) on observe la sédimentation de la solution colloïdale (les particules de colloïde "tombent" au fond du récipient) : ce phénomène est appelé \textit{floculation} et on cherche à le décrire ici.
 
-	\item[$\circ$] Déterminer l'expression du champ magnétique $\vec{B}(r)$ en fonction de la valeur du champ magnétique en $r=0$.
-	\item[$\circ$] Quel est l'expression du champ magnétique $\vec{B}(r)$ si on impose un champ exterieur $\vec{B}_{ext}$ de sorte à ce que  $\vec{B}(r=a)=\vec{0}$ ?
-
-\end{itemize}
-
-\newpage
-
-\section*{Foudre}
-
-On modélise la foudre par un tube d'air ionisé cylindrique de rayon $a$=1m et de densité de courant uniforme $\vec{j}=j_0\vec{e}_z$. Ce sont les électrons de charge $-e$ qui sont supposés porter le courant électrique.
-
-\begin{itemize}
-
-	\item[$\wr$] Sachant que l'intensité d'un éclair peut atteindre 100 kA, quelle est la densité de courant $j_0$ associée ? 
-
-	\item[$\wr$] Etudier la dépendance et la direction du champ magnétique à partir des symétries et invariances.
-	
-	\item[$\wr$] Déterminer rigoureusement le champ magnétique dans tous l'espace, et le représenter sur un graphe. Estimer la valeur maximale que prend le champ magnétique.
-	
-	\item[$\wr$] Rappeler l'expression de la force de Lorentz pour un électron de charge $-e$ lorsqu'il est soumis à un champ magnétique extérieur $\vec{B}$. Expliquer succinctement pourquoi le tube d'air ionisé se contracte sur lui-même, se comprimant fortement et générant une grande quantité de chaleur. 
-
-\end{itemize}
-
-\newpage
-
-\section*{Étude d'un colloïde $\bigstar\bigstar$}
-
-Un colloïde est une solution constituée d'un solvant (de l'eau et des ions) et de particules solides en suspension dont la taille peut varier de 10 à 100nm et qui s'ionisent dans le solvant. Par exemple, en agronomie, on étudie les propriétés d'un sol en disolvant un échantillon de terre dans de l'eau. Après traitement, la solution qui en résulte est \textit{une solution colloïdale}, composée des particules d'argile (silice) en suspension dans une eau contenant des ions minéaraux. 
-
-Lorsqu'on augmente la concentration ionique de la solution (en ajoutant du sel par exemple) on observe la sédimentation de la solution colloïdale (les particules d'argiles "tombent" au fond du récipient) : ce phénomène est appelé \textit{floculation} et on cherche à le décrire ici. Il permet notamment de décrire les argiles présente dans la solution.
-
-%Les colloïdes sont constitués par un solvant dans lequel est introduit un corps, généralement solide, qui se disperse sous forme de particules en suspension dont la taille peut varier de 10 à 100nm. Ces particules sont des macromolécules ou des agrégats de petites molécules qui s'ionisent dans le milieu. Par exemple, le blanc d'œuf ou le plasma sanguin sont des solutions colloïdales. En agronomie, le colloïde formé par les particules d'argile (silice) et l'humus (matière organique décomposée) est fondamental pour la fertilité des sols. 
-
-Pour la décrire, on supposera que la solution colloïdale est composée de :
+Pour décrire le phénomène, on supposera que la solution colloïdale est composée de :
 \begin{itemize}
 	\item[-] des particules de colloïdes, de rayon $r_0$, portant une charge $Q$ sur leur surface. Ils sont supposés assez dilués pour considérer que le potentiel autour d'une particule colloïdale n'est créée que par elle-même et les ions du milieu ;
 	\item[-] les ions contenus dans l'eau à la concentration $N_0$, supposés ponctuels, portant une charge $\pm e$. On supposera que la concentration en cations est égale à celle en anions. Les ions (cations + ou anions -), quand il sont soumis à un potentiel extérieur $V$, se répartissent en moyenne selon la loi de Boltzmann :
@@ -388,7 +347,7 @@ En réalité, la présence de ces ions modifie le potentiel $V$ autour de la par
 
 \newpage
 
-\section*{Condensateur Terre-ionosphère $\bigstar$}
+\section*{Condensateur Terre-ionosphère $\bullet\circ\circ$}
 
 On représente l'ensemble Terre-ionosphère comme un volumineux condensateur sphérique. La Terre, de rayon $R$, se comporte comme un conducteur parfait de potentiel nul et porte une charge négative $-Q$, uniformément répartie sur sa surface, tandis que la ionosphère est représentée par une surface équipotentielle sphérique de rayon $R+z_0$, de potentiel $V$ possède une charge totale $+Q$. On suppose que la permittivité de l'atmosphère est celle du vide, soit $\varepsilon_0$. 
 
@@ -418,9 +377,9 @@ On représente l'ensemble Terre-ionosphère comme un volumineux condensateur sph
 
 \newpage
 
-\section*{Condensateur sphère-plan $\bigstar\bigstar\bigstar$}
+\section*{Condensateur sphère-plan $\bullet\bullet\bullet$}
 
-On considère un conducteur parfait plan, situé en $z=0$ et une sphère de rayon $a$, elle aussi parfaitement conductrice, dont le centre est situé en $(x=0, y=0, z=d)$. La sphère est portée au potentiel $V$ tandis que le plan est relié à la masse, c'est-à-dire u potentiel nul. Le but de l'exercice est de déterminer la capacité entre le plan et la sphère.
+On considère un conducteur parfait plan, situé en $z=0$ et une particule ponctuelle, elle aussi parfaitement conductrice, dont le centre est situé en $(x=0, y=0, z=d)$. La sphère est portée au potentiel $V$ tandis que le plan est relié à la masse, c'est-à-dire au potentiel nul. Le but de l'exercice est de déterminer la capacité entre le plan et la sphère.
 
 \begin{itemize}
 
@@ -429,74 +388,5 @@ On considère un conducteur parfait plan, situé en $z=0$ et une sphère de rayo
 \end{itemize}
 
 \newpage
-
-\section*{Exercices en pagaille}
-
-\begin{itemize}
-
-	\item[$\spadesuit$] On considère une boule métallique de rayon $R$. A l'instant $t$, on la monte instantanément au potentiel $V$. Quel est la charge $Q$ de la sphère ? Justifier qualitativement que la charge se répartit sur la surface de la sphère.
-	
-	\item[$\spadesuit$] On considère un plan infini, avec une charge surfacique $\sigma$. Quel est le champ électrique en tout point de l'espace ? Justifier la présence d'une discontinuité du champ. 
-	
-	\item[$\spadesuit$] Quel est le champ magnétique créé par une nappe de courant infiniment fine parcouru par une densité de courant $\vec{j_s}$ ? 
-	
-	\item[$\spadesuit$] A l'aide du théorème d'Ampère, déterminer le champ créé par une bobine de $N$ spires, de longueur $L$ et de rayon $R$, avec $L\gg R$.
-	
-	\item[$\spadesuit$] On considère un tube parcouru par un courant de densité uniforme $\vec{j}$. Expliquer le phénomène de magnétostriction. On rappelle l'expression de la force de Laplace : $f_{vol}=\vec{j}\dif\tau\wedge\vec{B}$
-	
-\end{itemize}
-
-\newpage
-
-\section*{Corrosion en phase acqueuse}
-
-\subsubsection*{Corrosion uniforme du zinc en milieu acide}
-
-\begin{itemize}
-
-	\item[$\clubsuit$] Donner l'allure de la courbe densité de courant - potentiel pour l'oxydation et la réduction du couple $Zn/Zn^{2+}$. Ce couple est rapide. Le potentiel standard du couple est -0,76V et on prendra une concentration initiale d'ions zinc II égale à 1 mol.L$^{-1}$.
-	
-	\item[$\clubsuit$] La courbe intensité-potentiel du couple $H^+/H_2$ dépend-elle du métal utilisé ? Expliquer pourquoi.
-	
-	\item[$\clubsuit$] On envisage la réduction du zinc par les ions $H^+$. Ecrire l'équation de la réaction. Que peut-on dire de cette oxydation par des considérations thermodynamiques ?
-
-\end{itemize}
-
-Pour des valeurs importantes de la valeur absolue de la densité de courant anodique $\mid j_a\mid$ (resp. cathodique $\mid j_c\mid$), on peut écrire : $j_a=A_a\exp(b_aE)$ et $j_c=-A_c\exp(-b_cE)$. La constante $b_a$ (resp. $b_c$) est positive et caractéristique de l'oxydant (resp. du réducteur). Les constantes $A_a$ et $A_c$ sont positives et dépendent des activités de l'oxydant et du réducteur.
-
-On envisage le phénomène de corrosion uniforme, observée lorsqu'une lame de zinc trempe dans la solution acide. On admet alors que les surfaces d'électrodes sont égales pour l'oxydation et la réduction. 
-
-\begin{itemize}
-
-	\item[$\clubsuit$] Quelle est la relation entre les intensités anodiques et cathodiques ? Que peut-on en déduire sur les densités de courants ?
-	
-	\item[$\clubsuit$] Une étude expérimentale a permis d'obtenir les lois suivantes, reliant la densité de courant et le potentiel d'électrode mesuré par rapport à l'ESH (les grandeurs sont en unités SI) :
-	\begin{itemize}
-		\item[-] Oxydation du zinc : $E=0,0774\log_{10}(j_a)-0,1956$
-		\item[-] Réduction de $H^+$ sur zinc : $E=-0,0780\log_{10}(\mid j_c\mid)-0,778$
-	\end{itemize}
-Calculer la densité de courant de corrosion uniforme $j_{corr}$ et le potentiel de corrosion $E_{corr}$.
-
-	\item[$\clubsuit$] La vitesse de corrosion est mesurée en $\mu$m par années. Exprimer littéralement $v_{corr}$ en fonction de $j_{corr}$, de la constante de Faraday $F$, de la masse atomique du zinc et de sa masse volumique. Application numérique : $M_{Zn}=65,4$g.mol$^{-1}$, $\rho_{Zn}=7140$kg.m$^{-3}$ et $F=96490$C.mol$^{-1}$.
-\end{itemize}
-
-\subsubsection*{Comparaison avec la corrosion du fer}
-
-\begin{itemize}
-	
-		\item[$\clubsuit$] On donne $E^0=-0,44$V pour le couple $Fe/Fe^{2+}$. A partir de considérations thermodynamiques, quel métal serait le plus corrodé par la même solution acide ?
-		
-	\item[$\clubsuit$] Une étude expérimentale, réalisée dans les mêmes conditions, a permis d'obtenir :
-	\begin{itemize}
-		\item[-] Oxydation du fer : $E=0,0760\log_{10}(j_a)-0,0348$
-		\item[-] Réduction de $H^+$ sur fer : $E=-0,0780\log_{10}(\mid j_c\mid)-0,476$
-	\end{itemize}
-	Calculer la densité de courant de corrosion uniforme du fer et conclure.
-		
-	\item[$\clubsuit$] Représenter grossièrement les graphes $E(\log j)$ pour l'oxydation du zinc, la réduction de $H^+$ sur zinc, l'oxydation du fer, la réduction de $H^+$ sur fer. On se limitera aux valeurs de $E$ comprises entre 0 et-1V et de $\log j$ comprises entre 0 et -5.
-	
-	\item[$\clubsuit$] Deux blocs, l'un de fer et l'autre de zinc de même surface et reliés électriquement, sont plongés dans la solution acide précédente. Décrire les phénomènes observés, indiquer quel métal sera le plus corrodé et calculer la densité de courant. Conclure. 
-	
-\end{itemize}
 
 \end{document}

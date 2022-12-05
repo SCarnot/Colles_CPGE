@@ -28,7 +28,7 @@
 	\item[$\diamond$] En utilisant la relation précédente : 
 	
 	\begin{align*}
-		p(y) = p_0+\rho g (H-z)
+		p(z) = p_0+\rho g (H-z)
 	\end{align*}
 		
 		\item[$\diamond$] Il faut faire un bilan des forces, en "zoomant" sur la paroi du barrage en un point $(x,z)$ de la surface. La force élémentaire créée par la pression est $d\vec{F}=p(x)dS\vec{n}$, où $\vec{n}$ est la normale à la surface : $\vec{n}=\sin\alpha\vec{e}_x-\cos\alpha\vec{e}_z$, en notant $\alpha$ l'angle la pente du barrage en ce point, cad $\tan\alpha=dz/dx$.
@@ -36,21 +36,21 @@
 		Pour la force horizontale, selon $\vec{e_x}$ :
 		
 	\begin{align*}
-		dF_x = p(x)\sqrt{dx^2+dz^2}L\sin\alpha=p(x)Ldz
+		dF_x = p(z)\sqrt{dx^2+dz^2}L\sin\alpha=p(z)Ldz
 	\end{align*}
 	car $dS = Ldl=\sqrt{dx^2+dz^2}L$ et $\sin\alpha=dz/dl$. On a donc :
 	\begin{align*}
-		F_x = \int_0^H p(x)Ldz=\left[  p_0+\frac{\rho g H}{2}\right] LH
+		F_x = \int_0^H p(z)Ldz=\left[ p_0+\frac{\rho g H}{2}\right] LH
 	\end{align*}
 	
 		Pour la force verticale, selon $\vec{e_z}$ :
 		
 	\begin{align*}
-		dF_z= p(x)\sqrt{dx^2+dz^2}L\cos\alpha = -p(x)Ldx
+		dF_z= p(z)\sqrt{dx^2+dz^2}L\cos\alpha = -p(z)Ldx
 	\end{align*}
 	car $\cos\alpha=dx/dl$. En posant $x_0$ tel que $H=kx_0^2$, on a donc :
 	\begin{align*}
-		F_z = \int_0^{x_0} p(x)Ldz=L\int_0^{x_0} (p_0+\rho g (H-kx^2)dz=-Lx_0p_0-\frac{2}{3}L\rho g x_0H
+		F_z = \int_0^{x_0} p(z)Ldz=L\int_0^{x_0} (p_0+\rho g (H-kx^2)dz=-Lx_0p_0-\frac{2}{3}L\rho g x_0H
 	\end{align*}
 
 \end{itemize}

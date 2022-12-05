@@ -9,6 +9,15 @@
 \usepackage{amssymb}
 \graphicspath{{figures/}{../figures}}
 
+\newcommand*{\Coordp}[3]{% 
+  \ensuremath{\overrightarrow{#1}\, 
+    \left\lvert 
+      \begin{matrix} 
+        #2\\ 
+        #3 
+      \end{matrix}  
+    \right.% Ne pas oublier le délimiteur invisible. 
+  }}
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
 \newcommand*\diver{\mathop{}\!\mathrm{div}}
 \newcommand*\grad{\mathop{}\!\mathrm{grad}}
@@ -90,7 +99,7 @@ Pour stabiliser la trajectoire de l'électron, on supperpose au champ électriqu
 
 \newpage
 
-\section*{Tir à grande distance}
+\section*{Tir à grande distance $\bullet\bullet\circ$}
 
 Dans le jeu \textit{Call of Duty 4 : Modern Warfare}, le joueur prend le rôle d'un tireur d'élite devant abattre une cible située à une distance $d=$897m à l'aide d'un fusil de précision, qui tire un projectile à une vitesse $v_0=850$m.s$^{-1}$. Le tir s'effectue depuis le dernier étage d'un immeuble d'une hauteur $H=30$m, la cible se trouvant plein nord par rapport au tireur. La scène se situe en Russie, à une latitude $\lambda=45^\circ$. Le coéquipier du joueur précise, avant le tir, qu'il faut tenir compte de l'effet de Coriolis et l'on souhaite vérifier cette affirmation.
 
@@ -98,7 +107,12 @@ On définit $R=(O,x,y,z)$ le repère situé au pied de l'immeuble où se trouve 
 
 \begin{itemize}
 
-	\item[$\dagger$] Ecrire les équations du mouvement dans le référentiel $R$ de la balle une fois que le tireur fait feu.
+	\item[$\dagger$] Montrer que les équations du mouvement dans le référentiel $R$ de la balle une fois que le tireur fait feu s'écrivent :
+	\begin{align*}
+        \ddot{x}=&2\Omega_T(\sin\lambda\dot{y}-\cos\lambda\dot{z})\\ 
+        \ddot{y}=&-2\Omega_T\sin\lambda\dot{x} \\
+        \ddot{z}=&-g+2\Omega_T\cos\lambda\dot{x}
+	\end{align*}
 	
 	\item[$\dagger$] Déterminer la solution sur $x(t)$ sans préciser les variables d'intégration.
 	
@@ -106,6 +120,86 @@ On définit $R=(O,x,y,z)$ le repère situé au pied de l'immeuble où se trouve 
 	
 	\item[$\dagger$] Que pensez-vous de l'affirmation du coéquipier ? Quel est l'écart $\vec{\varepsilon}$ de la balle par rapport à si celle-ci avait une trajectoire parfaitement rectiligne ?
 
+\end{itemize}
+
+\newpage
+
+\section*{Tir à grande distance $\bullet\bullet\bullet$}
+
+Dans le jeu \textit{Call of Duty 4 : Modern Warfare}, le joueur prend le rôle d'un tireur d'élite devant abattre une cible située à une distance $d=$897m à l'aide d'un fusil de précision, qui tire un projectile à une vitesse $v_0=850$m.s$^{-1}$. Le tir s'effectue depuis le dernier étage d'un immeuble d'une hauteur $H=30$m, la cible se trouvant plein nord par rapport au tireur. La scène se situe en Russie, à une latitude $\lambda=45^\circ$. Le coéquipier du joueur précise, avant le tir, qu'il faut tenir compte de l'effet de Coriolis et l'on souhaite vérifier cette affirmation.
+
+On définit $R=(O,x,y,z)$ le repère situé au pied de l'immeuble où se trouve le joueur, avec l'axe $\vec{e}_x$ dirigé vers l'est et l'axe $\vec{e}_y$ se dirigeant vers le nord. On notera $\vec{\Omega}_T$ le vecteur rotation de la terre. On supposera que les frottements de l'air sont négligés.
+
+\begin{itemize}
+	
+	\item[$\dagger$] Que pensez-vous de l'affirmation du coéquipier ? Quel est l'écart $\vec{\varepsilon}$ de la balle par rapport à si celle-ci avait une trajectoire parfaitement rectiligne ? On pourra donner une estimation du temps de vol avant impact $t_{impact}$ pour simplifier les équations du mouvement.
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Tir à grande distance}}
+
+\begin{itemize}
+	
+	\item[$\dagger$] On note $R'$ le référentiel du tireur, sur la terre en rotation, et $R$ le référentiel galiléen, ne tournant pas avec la terre. Le vecteur rotation de $R'/R$ s'écrit $\vec{\Omega}=\Omega_T\cdot(\cos\lambda\vec{e}_x+\sin\lambda\vec{e}_y)$ et on note le vecteur vitesse dans $R'$ : $\vec{v}=\dot{x}\vec{e}_x+\dot{y}\vec{e}_y+\dot{z}\vec{e}_z$. Une fois sortie du canon, la balle est uniquement soumise à la gravité et à la force de Coriolis (la force d'inertie d'entrainement est comprise dans $g$). Cette dernière s'écrit :
+	\begin{align*}
+		\vec{F}_c&=-2m\vec{\Omega}\wedge\vec{v} \\
+		&=2m\Omega_T\left\lvert 
+      \begin{matrix} 
+        &\sin\lambda\dot{y}-\cos\lambda\dot{z}\\ 
+        &-\sin\lambda\dot{x} \\
+         &\cos\lambda\dot{x}
+      \end{matrix}  
+    \right.
+	\end{align*}
+
+Le PFD donne donc :
+	\begin{align*}
+        \ddot{x}=&2\Omega_T(\sin\lambda\dot{y}-\cos\lambda\dot{z})\\ 
+        \ddot{y}=&-2\Omega_T\sin\lambda\dot{x} \\
+        \ddot{z}=&-g+2\Omega_T\cos\lambda\dot{x}
+	\end{align*}
+Ces équations sont toutes intégrables. On intègre la deuxième et la troisième :
+	\begin{align*}
+        \ddot{x}=&2\Omega_T(\sin\lambda\dot{y}-\cos\lambda\dot{z})\\ 
+        \dot{y}=&-2\Omega_T\sin\lambda x + \dot{y}_0 \\
+        \dot{z}=&-gt+2\Omega_T\cos\lambda x + \dot{z}_0
+	\end{align*}
+Et on injecte dans la première équation sur $x$, et en simplifiant les $\cos^2+\sin^2$ : 
+\begin{align*}
+	\ddot{x}+4\Omega_T^2=2\Omega_T(\sin\lambda\dot{y}_0-\cos\lambda\dot{z}_0)+2\Omega_T\cos\lambda gt
+\end{align*}
+	Cette équation est soluble : elle du genre $\ddot{x}+\omega_0^2=a+bt$. Néanmoins, la solution homogène en $\cos$ et $\sin$ n'est pas très intéressante : la période est celle de la journée terrestre, elle correspond en fait à ce que la balle fasse le tour de la Terre et revienne à sa position... Et en effet, comme $\Omega_T\simeq7,2\times10^{-7}$rad/s, on peut commencer à garder uniquement les termes en $\Omega_T^2$ d'ordre 1 devant les autres termes. On a donc, après simplification :
+	\begin{align*}
+        x(t)=& \frac{1}{3}\Omega_T\cos\lambda t^3+\Omega_T(\sin\lambda\dot{y}_0-\cos\lambda\dot{z}_0)t^2+\dot{x}_0t\\ 
+        y(t)=&-\Omega_T\sin\lambda \dot{x}_0t^2 + \dot{y}_0t \\
+        z(t)=&-\frac{1}{2} gt^2+\Omega_T\cos\lambda \dot{x}_0t^2 + \dot{z}_0t+z_0
+	\end{align*}	
+On a donc les équations du mouvement. Néanmoins, cela reste encore un peu dur de conclure. On peut encore essayer de simplifier certains termes, en utilisant l'estimation du temps de vol et la vitesse initiale. Le temps de vol, estimé à 1s environ, permet de comparer le premier et le deuxième terme dans l'équation sur $x(t)$ : $\frac{1}{3}gt^3\ll\dot{y}_0t^2$, durant tout le temps de vol, comme $\dot{y}_0\simeq 850$. D'autre part, comme le tir est dirigé plein nord, on a $\dot{x}_0=0$. On a alors :
+	\begin{align*}
+        x(t)=& \Omega_T(\sin\lambda\dot{y}_0-\cos\lambda\dot{z}_0)t^2\\ 
+        y(t)=&\dot{y}_0t \\
+        z(t)=&-\frac{1}{2} gt^2 + \dot{z}_0t+z_0
+	\end{align*}	
+Et en notant $\alpha$ l'angle que fait le tireur entre l'horizontale et la direction du canon (comme il est situé sur un immeuble, il y a un léger dénivellé entre lui et sa cible), on a :
+	\begin{align*}
+        x(t)=& v_0\Omega_T\sin(\lambda+\alpha)t^2\\ 
+        y(t)=&v_0\cos(\alpha)t \\
+        z(t)=&-\frac{1}{2} gt^2 -v_0\sin(\alpha)t+z_0
+	\end{align*}	
+Finalement, on se retrouve avec globalement une chute libre classique, si ce n'est un terme de déviation uniquement sur $x$, vers l'est. Si la balle partait de manière parfaitement rectiligne, sa trajectoire serait (soumise à aucune force) :
+	\begin{align*}
+        x'(t)=& 0\\ 
+        y'(t)=&v_0\cos(\alpha)t \\
+        z'(t)=& -v_0\sin(\alpha)t+z_0
+	\end{align*}	
+La dévitation est donc $\vec{\varepsilon	}=v_0\Omega_T\sin(\lambda+\alpha)t^2\vec{e}_x--\frac{1}{2} gt^2\vec{e}_z$. Pour un temps de vol d'environ 1 seconde, on trouve que :
+\begin{align*}
+	\vec{\varepsilon}=-0,5\vec{e}_z+0,04\vec{e}_x
+\end{align*}
+La balle est déviée de seulement 4cm vers l'est : Coriolis est donc négligeable. Par contre, il faut tenir compte du poids dont l'effet est bien plus marqué. 
+	
 \end{itemize}
 
 \end{document}

@@ -15,7 +15,7 @@
 
 \begin{document}
 
-\section*{Flux et divergence en coordonnées cylindriques}
+\section*{Flux et divergence en coordonnées cylindriques $\bullet\circ\circ$}
 
 On s'intéresse à l'écoulement d'un fluide incompressible en utilisant la description langrangienne. On considère un volume $d\tau$ élémentaire, situé en $P=(r,\theta,z)$ en coordonnées cylindriques. Chaque face de ce volume est indexé de 1 à 6, comme indiqué sur le schéma ci-dessous.
 
@@ -66,92 +66,64 @@ Théoèreme de Green-Ostrogradski :
 
 \newpage
 
-\section*{Force exercée sur un barrage}
+\section*{Embouteille sur une autoroute}
 
-On considère un barrage de lac rempli d'une hauteur d'eau $H$. La forme de sa paroi en contact avec l'eau est décrite par l'équation $z=kx^2$, comme indiqué sur le schéma ci-dessous. Le barrage a une longueur $L$ selon $y$.
+Sur une autoroute à 3 voies, la circulation est fluide, les véhicules se répartissent sur les 3 voies, se suivent sur chaque voie à 200m d'écart et se déplacent à $v_0=$30$m.s^{-1}$ en moyenne. Un bouchon routier se forme subitement au point kilométrique $D$. Dans le bouchon, les véhicules sont à l'arrêt à raison d'un véhicule dans un espace de 10m de long en moyenne. Déterminer la vitesse du front du bouchon.
 
-\begin{center}
-	\includegraphics[scale=1]{barrage.pdf}
-\end{center}
+\newpage
+
+\section*{Forme d'une coulée d'huile}
+
+Un bidon d'huile est muni d'une ouverture circulaire de rayon $R$ et de centre $O$, à travers laquelle l'huile tombe et s'écoule en régime permanent. On définit l'axe vertical $Oz$ dirigé vers le bas et on note $\vec{g}=g\vec{e}_z$ l'accélération de la pesanteur, la masse volumique de l'huile $\mu$, et le débit massique sortant $D$. A la côte $z$, la vitesse du fluide $\vec{v}=v(z)\vec{e}_z$ est supposée uniforme. A l'ouverture en $z=0$, l'huile a une vitesse $v_0$. Une fois sortie, la vitesse de l'huile $v(z)$ est prise égale à celle qu'aurait une bille en chute libre sans frottement lachée en $z=0$ avec une vitesse $v_0$. 
 
 \begin{itemize}
 
-	\item[$\diamond$] A partir d'un bilan de force, démontrer la relation fondamentale de la statique des fluides dans l'eau : 
-	\begin{align*}
-		\vec{\grad}(P) - \rho\vec{g}=\vec{0}
-	\end{align*}
-		où $\rho$ est la densité massique de l'eau, supposée constante et $\vec{g}$ le champ de pesanteur terrestre.
-		
-		\item[$\diamond$] Donner l'expression du champ de pression $p$ dans l'eau.
-		
-		\item[$\diamond$] Déterminer les forces horizontale et verticale exercées par le lac sur le barrage.
+	\item[$\curlyvee$] Donner l'expression de $v_0$ en fonction de $\mu$, $D$ et $R$.
+	
+	\item[$\curlyvee$] Etablir l'expression de $v(z)$.
+	
+	\item[$\curlyvee$] Déterminer le rayon $r(z)$ du filet d'huile à la côté $z$. On pourra simplifier l'expression finale en supposant $v_0\simeq0$.
+	
+	\item[$\curlyvee$] Calculer le terme $\vec{v}\cdot\mathbf{grad}(\vec{v})$. Que représente t-il (on rappelle que l'écoulement est stationnaire) ? En déduire la vitesse $\vec{V}$ d'une particule de poussière contenue dans l'huile lors de l'écoulement. Préciser ce que sont les descrptions lagrangiennes et eulériennes d'un fluide.
+	
+	\item[$\curlyvee$] Le bidon est à une hauteur $H$ du sol. On referme rapidement l'ouverture du bidon. Quelle est la masse d'huile qui reste à s'écouler sur le sol ?
 
 \end{itemize}
 
 \newpage
 
-\section*{Pression dans une étoile}
-
-Soit une étoile sphérique de rayon $R$ et de masse $M$, constituée de gaz. On note respectivement $p(r)$, $\rho(r)$ et $\vec{g}(r)$ la pression, la densité et le champ de gravitation dans l'étoile à une distance $r$ du centre. On souhaite connaître ces quantités au sein de l'étoile. 
+\section*{\textit{Correction - Forme d'une coulée d'huile}}
 
 \begin{itemize}
 
-	\item[$\spadesuit$] On admet que le champ de grvitation et la densité sont reliés par la relation :
+	\item[$\curlyvee$] On a tout simplement $v_0=D/(\pi R^2\mu$.
+	
+	\item[$\curlyvee$] On utilise le théorème de Bernouilli (ou le fait que c'est une chute libre, comme dit dans l'énoncé, ce qui revient au même) :
 	\begin{align*}
-		\mathbf{div}\vec{g}(r)=-4\pi G\rho(r)
+	\frac{v_0^2}{2} - \frac{v^2(z)}{2} = -gz
 	\end{align*}
-où $\rho$ est la constante gravitationnelle. 
-Déterminer $g(r)$ en fonction d'une intégrale de $\rho$ que l'on déterminera.
-
-	\item[$\spadesuit$] A partir d'un bilan de force, démontrer la relation fondamentale de la statique des fluides dans le gaz de l'étoile : 
+	donc $v(z)=\sqrt{v_0^2+2gz}$.
+	
+	\item[$\curlyvee$] Conservation du débit : $D=\mu v(z)\pi r^2(z)$, donc :
 	\begin{align*}
-		\vec{\grad}(p) - \rho\vec{g}=\vec{0}
+		r(z)&=\sqrt{\frac{D}{\mu \pi \sqrt{v_0^2+2gz}}}\\
+		&\simeq\sqrt{\frac{D}{\mu\pi\sqrt{2g}}}z^{-\frac{1}{4}}
 	\end{align*}
 	
-	\item[$\spadesuit$] Dans le cas où la masse volumique est une constante, cad $\rho(r)=\rho_0$, déterminer le champ de gravité $\vec{g}(r)$ et le champ de pression $p(r)$.
+	\item[$\curlyvee$] Le terme se résume ici à : $\vec{v}\cdot\mathbf{grad}(\vec{v})=v_z\frac{\partial v_z}{\partial z}=g$. Il représente l'accélération convective, c'est-à-dire à un changement du champ de vitesse dans l'espace, qui est non-nulle malgré le caractère permanent de l'écoulement. L'accélération $\dot{V}(t)$ de la particule de poussière correspond à l'altitude $z$ à ce terme d'accélération convective. Il s'agit tout simplement d'une chute libre (aussi).
 	
-	\item[$\spadesuit$] On suppose maintenant que le gaz se comprime au fur et à mesure que la pression augmente au sein de l'étoile, en suivant la loi suivante : 
+	\item[$\curlyvee$] La masse d'huile qui continue à se répandre est celle contenue dans la colonne en chute de hauteur $H$. Elle correspond à :
 	\begin{align*}
-		\frac{P}{\rho^2}= C
+		M=&\int_0^Hdz\mu \pi r^2(z) \\
+		=&\frac{D}{\sqrt{2g}}\int_0^Hdzz^{-\frac{1}{2}}\\
+		=&D\sqrt{\frac{2H}{g}}
 	\end{align*}
-	où $C$ est une constante quelconque. 
-	
-	Trouver une équation différentielle en $\rho(r)$ et la résoudre en introduisant la fonction $f(r)=r\rho(r)$.
 
 \end{itemize}
 
 \newpage
 
-\section*{Structure de l'atmosphère}
-
-La troposphère constitue la partie basse de l'atmophère dans laquelle nous vivons, du niveau de la mer jusqu'à une altitude comprise entre 8 et 15km. On peut considérer la troposphère comme un gaz parfait de coefficient thermodynamique $\gamma=7/5$, de masse molaire $M=28.965$g.mol$^{-1}$, soumis à la gravitation terrestre, modélisée par l'accélération de la pesanteur $g=9.81$m.s$^{-2}$ supposée constante avec l'altitude (représentée par la variable $z$). La pression au niveau de la mer $z=0$ est $P_0=10^5$Pa et la température est $T_0=$293K. On souhaite connaître l'évolution de la pression $P$ et de la tempérture $T$ avec l'altitude.
-
-\begin{itemize}
-
-	\item[$\vartriangle$] A partir d'un bilan de force, démontrer la relation fondamentale de la statique des fluides pour l'atmosphère : 
-	\begin{align*}
-		\vec{\grad}(P) - \rho\vec{g}=\vec{0}
-	\end{align*}
-		où $\rho$ est la densité massique de l'atmosphère.
-		
-	\item[$\vartriangle$] Redémontrer dans le cas classique de l'atmopshère isotherme ($T(z)=T_0$) l'expression de la pression $P(z)$ et $\rho(z)$. On mettra en évidence une altitude caractéristique $H$ à déterminer. En quoi ce modèle est-il limité ?
-		
-	\item[$\vartriangle$] Pour déterminer l'évolution de la pression et de la température avec l'altitude, on suppose qu'un volume $V$ d'air subit une transformation adiabatique réversible (et non plus isotherme) lorsqu'il change d'altitude. Montrer alors que la pression $P$ et la densité $\rho$ de l'air sont alors reliées par :
-	\begin{align*}
-		\rho = \frac{MP_0}{RT_0}\left(\frac{P}{P_0} \right) ^{1/\gamma}
-	\end{align*}
-
-	\item[$\vartriangle$] En déduire l'évolution de la pression avec l'altitude $P(z)$, de la densité $\rho(z)$ puis celle de la température $T(z)$. Commenter en mettant en évidence l'altitude caractéristique $H$ vue précédemment. Dans ce modèle, quelle est alors l'épaisseur de l'atmosphère ?
-	
-	\item[$\vartriangle$] De combien chute la température lorsqu'on monte à 1000m d'altitude d'après ce modèle ? Quelle est la pression et la densité de l'air au sommet de l'Everest (8848m) ?
-	
-	\item[$\vartriangle$] En réalité, le gradient de température diminue de $7.7\cdot10^{-3}$K.m$^{-1}$. Cela s'explique par le fait que une transformation thermodynamique dans l'atmosphère (comme évoqué ci-dessus) n'est pas parfaitement adiabatique et que le gaz n'est pas sec. Il peut néanmoins être modélisé par un coefficient thermodynamique $\gamma_{eff}\neq\gamma$. Estimer $\gamma_{eff}$. Commenter. 
-
-\end{itemize}
-
-\newpage
-
-\section*{Exercice 1}
+\section*{Résistance autour d'une bille $\bullet\bullet\circ$}
 
 On s'intéresse à l'écoulement stationnaire, incompressible d'un fluide de masse volumique $\rho$ et de viscosité $\eta$ autour d'une sphère de rayon $R$. La vitesse de l'écoulement loin de la sphère est $v_\infty\vec{e_z}$. On adoptera les coordonnées sphériques d'axe $Oz$, $O$ étant le centre le centre de la sphère. 
 
@@ -173,7 +145,7 @@ On donne :
 
 \newpage
 
-\section*{Exercice 2}
+\section*{Ecoulement d'un fluide en pente $\bullet\circ\circ$}
 
 On considère un fluide d'épaisseur $h$ s'écoulant lentement sur un plan infini incliné d'un angle $\alpha$ par rapport à la verticale. Le fluide a une forte viscosité $\eta$ et une masse volumique $\rho$, et il est soumis à la gravité. On est en régime permanent, et on suppose que la vitesse selon $\vec{e}_y$ est nulle.
 
@@ -299,7 +271,7 @@ On considère deux plaques infinies de verres séparées d'une épaisseur $e$ o�
 
 \newpage
 
-\section*{Boîte automatique}
+\section*{Boîte automatique $\bullet\bullet\bullet$}
 
 On s'intéresse au convertisseur de couple d'une boite automatique d'un véhicule, qui permet de se passer d'un embrayage. On le modélise comme un système de deux cylindres de même axe $\vec{e}_z$, et de rayons respectifs $R_1$ et $R_2$, de longueur $L$, où se trouve un fluide de viscosité $\eta$ élevée (\textit{schéma de gauche}). Le moteur (respectivement l'arbre de transmission) est solidaire du cylindre $1$ (resp. 2) et tourne à la vitesse $\Omega_1$ (resp. $\Omega_2$). Lorsque le moteur fournit un couple $\Gamma_1$ au cylindre 1, il entraîne le fluide situé entre $R_1$ et $R_2$, qui entraîne à son tour le cylindre 2. On souhaite étudier le fonctionnement du dispositif, et pour cela, on se placera en coordonnées cylindriques. 
 
