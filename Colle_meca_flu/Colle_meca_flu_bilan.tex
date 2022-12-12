@@ -39,7 +39,7 @@ On s'intéresse désormais au décollage de la fusée depuis la terre ferme. La 
 
 \newpage
 
-\section*{Exercice 2}
+\section*{Turbine à augets $\bullet\bullet\bullet$}
 
 Une turbine de barrage est un cylindre de rayon $a$ avec des pâles à ses extrémités, entraînées par un jet d'eau. Elle tourne autour de son axe à la vitesse angulaire $\omega$. Un jet incident, d'épaisseur négligeable, arrive avec un débit massique $D_m$ sur la turbine avec une vitesse $\vec{v_1}$ et ressort avec une vitesse $\vec{v_2}$, toutes deux tangentielles à la turbine.
 
@@ -52,6 +52,42 @@ La turbine a un moment d'inertie $J$ autour de son axe. Elle est ralentie par un
 \begin{itemize}
 
 	\item[$\spadesuit$] A l'aide de deux bilans appliqués au fluide, trouver deux relations entre $\omega$,  $\vec{v_1}$,  $\vec{v_2}$ et les données de l'énoncé.
+	
+	\item[$\spadesuit$] Trouver l'expression de $\omega_P$, la vitesse de rotation de la turbine en régime permanent, en fonction de $v_1$, $\Gamma$, $a$ et $D_m$. Quelle est la condition pour que la roue se mette en rotation ?
+	
+	\item[$\spadesuit$] La vitesse $v_1$ et $D_m$ étant données, quelle est la valeur de $\Gamma$ pour laquelle la puissance $P$ transmise à la turbine est maximale ? Commenter le résultat.
+	
+	\item[$\spadesuit$] On choisit $\Gamma$ de sorte à ce que $P$ soit maximale. La turbine est à l'arrêt à $t=0$, déterminer $\omega$ au cours du temps. Quelle est le temps caractéristique d'établissement permanent ?
+	
+	\item[$\spadesuit$] On suppose que la turbine est en bas d'un barrage de 100m de haut, obstruant le lit d'une rivière d'un débit de 100m$^3$/s. Quelle est la vitesse $v_1$ de l'eau à la sortie du barrage ? En supposant que le rendement de conversion de la puissance mécanique de la turbine à un alternateur est de 90\%, quelle puissance électrique peut-on extraire d'une telle rivière ? Retrouver ce calcul à l'aide d'une autre méthode.
+	
+	\item[$\spadesuit$] En moyenne, il pleut environ une hauteur 1000mm d'eau par an sur le territoire Français, qui fait 547 000km$^2$. Seulement 40\% de cette quantité d'eau s'écoule dans les fleuves et rivière, le reste s'écoule soit dans les nappes phréatiques, soit s'évapore. Sachant que l'altitude moyenne du pays est de 342m, en déduire le potentiel de production d'énergie hydroélectrique sur une année. Comparer avec la production actuelle qui est de 63TWh/an et la consommation d'énergie finale en France, qui est de 1629TWh/an.
+
+\end{itemize}
+
+\newpage
+
+\section*{Turbine à augets $\bullet\bullet\circ$}
+
+Une turbine de barrage est un cylindre de rayon $a$ avec des pâles à ses extrémités, entraînées par un jet d'eau. Elle tourne autour de son axe à la vitesse angulaire $\omega$. Un jet incident, d'épaisseur négligeable, arrive avec un débit massique $D_m$ sur la turbine avec une vitesse $\vec{v_1}$ et ressort avec une vitesse $\vec{v_2}$, toutes deux tangentielles à la turbine.
+
+\begin{center}
+	\includegraphics[scale=0.5]{meca_flu7.pdf}
+\end{center}
+
+La turbine a un moment d'inertie $J$ autour de son axe. Elle est ralentie par un générateur et des frottements qui opposent un couple de résistance $\Gamma$. On négligera l'action de la pesanteur.
+
+\begin{itemize}
+
+	\item[$\spadesuit$] A l'aide d'un bilan de moment cinétique appliqué au fluide, montrer que :
+	\begin{align*}
+		 J\frac{d\omega}{dt}+D_ma(v_2-v_1)=-\Gamma
+	\end{align*}
+
+	\item[$\spadesuit$] A l'aide d'un bilan d'énergie mécanique appliqué au fluide, montrer que :	
+	\begin{align*}
+		J\omega\frac{d\omega}{dt}+\frac{1}{2} D_ma(v_2^2-v_1^2)=-\Gamma\omega
+	\end{align*}
 	
 	\item[$\spadesuit$] Trouver l'expression de $\omega_P$, la vitesse de rotation de la turbine en régime permanent, en fonction de $v_1$, $\Gamma$, $a$ et $D_m$. Quelle est la condition pour que la roue se mette en rotation ?
 	

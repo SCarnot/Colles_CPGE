@@ -15,6 +15,75 @@
 
 \begin{document}
 
+\section*{Détente adiabatique dans une tuyère}
+
+Une turbine calorifugée, conçue pour travailler sans liquide, détend une vapeur d'eau sèche issue d'un surchauffeur à la température $T_e=380^\circ$C et à la pression $P_e=10$ bar jusqu'à la pression $P_s=1,0$ bar. 
+
+On donne un extrait du diagramme $(T,s)$ de l'eau pure. Les isobares (en bar) sont représentées en trait plein et les courbes de même enthalpie (en kJ/kg) en pointillé. On suppose dans un premier temps que la détente est réversible.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\linewidth]{diagramme_TS.png}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\bowtie$] Que représente la courbe en gras ?
+	
+	\item[$\bowtie$] Positionner le point $e$ représentant la valeur à l'entrée. La vapeur est-elle sèche ou saturante ?
+	
+		\item[$\bowtie$]  Tracer sur le diagramme la courbe d'évolution du fluide et le point $s$ correspond à l'état de sortie.
+		
+		\item[$\bowtie$] La vapeur de sortie est-elle sèche ? Quelle est sa température de sortie $T_s$ ? Quel est le travail massique utile de détente $w_u$ ? Jusqu'à quelle pression pourrait-on détendre isentropiquement la vapeur sans faire apparaître de liquide ?
+		
+\end{itemize}
+
+En réalité, la détente est irréversible. Les pressions d'entrée et de sortie sont encore $P_e=10$ bar et $P_s=1,0$ bar mais la température de sortie réelle est mesurée à $T'_s=150^\circ$C. 
+
+\begin{itemize}
+
+	\item[$\bowtie$] Positionner sur un diagramme le point $s'$ correspondant à l'état sortie. Mesurer l'entropie créée massique.
+	
+	\item[$\bowtie$] La vapeur en sortie est-elle sèche ? Quelle est le travail utile de détente $w'_u$ ? Commenter le résultat, définir et calculer un "rendement" isentropique de la turbine. 
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Détente adiabatique dans une tuyère}}
+
+\begin{itemize}
+
+	\item[$\bowtie$] Il s'agit de la courbe de rosée, correspondant à la vapeur juste saturante.
+	
+	\item[$\bowtie$] En $e$, la vapeur est sèche, voire surchaufée.
+	
+		\item[$\bowtie$]  $s$ est à la verticale de $e$ car la transformation est isentropique (adiabatique réversible), $s$ est également sur l'isobare $P_s=1$ bar.
+		
+		\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\linewidth]{diagramme_TS2.png}
+\end{figure}
+		
+		\item[$\bowtie$] En $s$, la vapeur est encore sèche, mais pas très loin de se condenser. L'ordonnée donne la température $T_s=108^\circ$C. Le système est en écoulement donc le premier principe entre $e$ et $s$ s'écrit : 
+		\begin{align*}
+			h_s-h_e=w_u+q
+		\end{align*}
+		En interpolant entre les deux courbes de même enthalpie, on trouve $h_s-h_e=2690-3220=-530$kJ/kg, soit $w_u=-530$kJ/kg. La turbine fournit du travail à l'extérieur $w_u<0$. On pourrait encore diminuer la pression à partir de $s$ jusqu'à la courbe de rosée qui serait atteinte pour $P=0,9$ bar.
+
+	\item[$\bowtie$] Pour tracer $s'$, on trace l'intersection de l'isobare $P_s$ avec l'horizontale $T'_s=150^\circ$C. $\Delta s= s_{s'}-s_e= s_{s'}-s_s$ et $\Delta s =s_{ech.} +  s_{créée}=s_{créée}$ car la transformation est adiabatique. La différence entre les abscisses de $s$ et $s'$ donne $s_{créée}=210$J/K/kg. 
+
+	
+	\item[$\bowtie$] $s'$ est dans le domaine de la vepur sèche. Le travail utile de détente est : $w'_u=h_{s'}-h_e$, soit $w'_u=-445$kJ/kg. Comme il fallait s'y attendre, on récupère moins de travail que dans le cas réversible : 
+	\begin{align*}
+		r=\frac{-w'_u}{-w_u}=0,84
+	\end{align*}
+	Attention il ne sagit pas du redement de la turbine, mais du rapport de ce qu'elle peut produire par rapport au cas idéal réversible.
+
+\end{itemize}
+
+\newpage
+
 \section*{Ecoulement à travers une tuyère $\bullet\circ\circ$}
 
 On étudie l'écoulement d'un gaz dans une tuyère isolée thermiquement du milieu extérieur. En régime permanent, dans une section droite, les vitesses d'écoulement sont égales et normales à la section. La pression et la température sont supposées indépendantes du temps et uniformes. On note $h_{m}(x)$ l'enthalpie molaire du gaz à l'abscisse $x$ de la tuyère et $M$ la masse molaire du gaz. A chause fois, les gaz considérés seront considérés comme parfaits.

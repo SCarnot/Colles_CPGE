@@ -72,7 +72,7 @@ Sur une autoroute à 3 voies, la circulation est fluide, les véhicules se répa
 
 \newpage
 
-\section*{Forme d'une coulée d'huile}
+\section*{Forme d'une coulée d'huile $\bullet\circ\circ$}
 
 Un bidon d'huile est muni d'une ouverture circulaire de rayon $R$ et de centre $O$, à travers laquelle l'huile tombe et s'écoule en régime permanent. On définit l'axe vertical $Oz$ dirigé vers le bas et on note $\vec{g}=g\vec{e}_z$ l'accélération de la pesanteur, la masse volumique de l'huile $\mu$, et le débit massique sortant $D$. A la côte $z$, la vitesse du fluide $\vec{v}=v(z)\vec{e}_z$ est supposée uniforme. A l'ouverture en $z=0$, l'huile a une vitesse $v_0$. Une fois sortie, la vitesse de l'huile $v(z)$ est prise égale à celle qu'aurait une bille en chute libre sans frottement lachée en $z=0$ avec une vitesse $v_0$. 
 
@@ -118,6 +118,225 @@ Un bidon d'huile est muni d'une ouverture circulaire de rayon $R$ et de centre $
 		=&\frac{D}{\sqrt{2g}}\int_0^Hdzz^{-\frac{1}{2}}\\
 		=&D\sqrt{\frac{2H}{g}}
 	\end{align*}
+
+\end{itemize}
+
+\newpage
+
+\section*{Pompe dans une nappe phréatique}
+
+Une nappe phréatique est une réserve d'eau contenue dans les porosités du sol (par exemple dans les interstices de grain de sable). Elle se remplit au gré des précipatations jusqu'à une profondeur minimale de $z_N=20m$, et on admet que la pression de l'eau dans la nappe est équivalente à celle dans une étendue d'eau de masse volumique $\rho$ à l'air libre dont la surface serait située en $z_N$.
+
+\begin{center}
+	\includegraphics[scale=1.4]{meca_flu9.pdf}
+\end{center}
+
+Au fond d'un forage de rayon $a$ et de profondeur $z_P=40m$, une pompe de puissance $\dot{w}$ est immergée dans la nappe phréatique, pour remonter l'eau à la surface (où la pression est $P_0$) dans un réseau de distribution. La pompe génère une différence de pression $\Delta P=P_P-P_{P'}$ entre les profondeurs $z_P$ et $z_{P'}$ et est supposée avoir une hauteur négligeable ($z_P \simeq z_{P'}$). Dans le forage, l'écoulement de l'eau est supposé parfait, et à la vitesse $v$. On souhaite connaitre le lien entre le débit $D$ à la sortie du forage et la surpression $\Delta P$ fournie par la pompe. On prendra l'axe $z$ comme indiqué sur le schéma, avec $z$ croissant avec la profondeur.
+
+\begin{itemize}
+
+	\item[$\circledast$] On considère un point $P_\infty$ dans la nappe phréatique loin du forage. Pourquoi la vitesse de l'eau est négligeable à ce point, même lorsque la pompe est en fonctionnement ? En déduire le champ de pression $P(z)$ loin du forage.
+
+	\item[$\circledast$] Pourquoi ne place t-on pas plutôt une pompe aspirante à la surface ?
+	
+	\item[$\circledast$] En appliquant judicieusement le théorème de Bernoulli, obtenir une relation entre la surpression $\Delta P$, la profondeur $z_N$ de la nappe et la vitesse $v$. 
+	
+	\item[$\circledast$] Quelle surpression $\Delta P =P_{min}$ doit fournir la pompe pour faire remonter l'eau jusqu'à la surface ? En déduire le débit $D$, en fonction de $\Delta P$ et $P_{min}$ dans le cas où $\Delta P >P_{min}$.
+	
+	\item[$\circledast$] A l'aide d'un bilan d'énergie mécanique, montrer que la puissance fournie par la pompe s'écrit $\dot{w}=\Delta P\times D$. 
+	
+	\item[$\circledast$] La surpression $\Delta P$ étant fixée par construction, déterminer comment varie la puissance $\dot{w}$ en fonction du débit $D$.
+	
+\end{itemize}
+	
+En réalité, l'écoulement dans la nappe (avant l'arrivée dans le forage) n'est pas parfait, et il existe une résistance hydraulique $R_h$ entrainant une chute de pression donnée par $P_\infty-P_{P'}=R_h\times D$, où $P_\infty$ est la pression d'un point situé à l'horizontale de $P'$, très loin du forage. 
+
+\begin{itemize}
+	
+	\item[$\circledast$] Donner la nouvelle relation entre le débit $D$ et la surpression $\Delta P$. Quelle est la puissance perdue par cette résistance hydraulique ? On simplifiera dans le cas où la chute de pression $R_hD$ est faible. 
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Pompe dans une nappe phréatique}}
+
+\begin{itemize}
+
+	\item[$\circledast$] On considère un point $P_\infty$ dans la nappe phréatique loin du forage. Pourquoi la vitesse de l'eau est négligeable à ce point, même lorsque la pompe est en fonctionnement ? En déduire le champ de pression $P(z)$ loin du forage.
+	
+	La surface par laquelle circule l'eau au point $P_\infty$ est considérablement plus grande qu'au niveau du forage (proportionnelle en $1/r^2$). Avec la conservation du débit, la vitesse est nécessairement bien inférieure qu'au niveau du forage. On peut donc appliquer le théorème de la statique des fluides, et on trouve que :
+	\begin{align*}
+		P(z)=P_0+\rho g (z-z_N)
+	\end{align*}
+On rappelle que dans la nappe, la pression $P_0$ se situe en $z_N$.
+
+	\item[$\circledast$] La hauteur entre la nappe et la surface est de 20m, il faut donc une pression de 2 bar pour la faire remonter jusqu'à la surface. Une pompe aspirante ne peut retirer que la pression $P_0$=1 bar. Elle ne pourra pas remonter l'eau !
+	
+	\item[$\circledast$] On suppose que le point $P_\infty$ se situe à la même pronfondeur que $P$ (pour simplifier mais ça revient au même). Entre  $P_\infty$ et $P'$ Bernoulli s'écrit donc :
+	\begin{align*}
+		P_{P'}+\rho\frac{v^2}{2}=P(z_\infty)=P_0+\rho g (z_{P'}-z_N)
+	\end{align*}
+	D'autre part, entre $P$ et la surface :
+	\begin{align*}
+		P_{P}+\rho\frac{v^2}{2}-\rho g z_{P}=P_0+\rho\frac{v^2}{2}
+	\end{align*}	
+	Et en utilisant $\Delta P=P-P'$ et en soustrayant les deux lignes précédentes :
+	\begin{align*}
+		\Delta P-\rho g z_{P}=\rho\frac{v^2}{2}-\rho g (z_{P'}-z_N)
+	\end{align*}
+	On en déduit donc :
+	\begin{align*}
+		\Delta P=\rho\frac{v^2}{2}+\rho g z_N
+	\end{align*}	
+	La pompe doit fournir un supplément de pression $\rho g z_N$ pour monter l'eau à la surface, puis $\rho\frac{v^2}{2}$ pour lui faire acquérir de la vitesse.
+	
+	\item[$\circledast$] De la question précédente, pour $v=0$ : $\Delta P =P_{min} = \rho g z_N$. On a alors :
+	\begin{align*}
+		D=\pi a^2 \sqrt{\frac{2(\Delta P-P_{min})}{\rho}}
+	\end{align*}
+	
+	\item[$\circledast$] On considère un volume de contrôle ouvert $V^\ast$ entre les points $P$ et $P'$, ainsi qu'une masse $dm$ entrant en $P$ à l'instant $t$ et resortant en $P'$ à l'instant $t+dt$. L'énergie mécanique du système ${V_C; dm}$, qui est un système fermé s'écrit :
+	\begin{align*}
+		E(t)&=E_{V^\ast}-\rho g z_P + \frac{1}{2}dm v^2 \\
+		E(t+dt)&=E_{V^\ast}-\rho g z_P + \frac{1}{2}dm v^2 \\
+	\end{align*}
+	Donc, ayant $z_C\simeq z_B$, on a $E(t+dt)-E(t)=0$. D'autre part, la variation d'énergie cinétique correspond au travail des forces de pression et de la pompe durant $dt$ :
+	\begin{align*}
+	E(t+dt)-E(t)=0=\dot{w}dt+P_{P} \pi a^2 v dt -P_{P'}\pi a^2 v dt
+	\end{align*}
+	On trouve donc la relation voulue (comme $D=\pi a^2 v$) :
+	\begin{align*}
+		\dot{w} = D\Delta P 
+	\end{align*}
+	
+	\item[$\circledast$] En utilisant les résultats précédents :
+	\begin{align*}
+		\dot{w}= \pi a^2 \Delta P \sqrt{\frac{2(\Delta P-P_{min})}{\rho}}
+	\end{align*}
+	 C'est une courbe en $\sim\Delta P^{3/2}$ qui démarre à $P_{min}$.
+	
+	\item[$\circledast$] Il suffit de réappliquer le théorème de Bernoulli en ajoutant la chute de pression dans la nappe (c'est incorrect de l'appliquer tel quel mais c'est juste quand même) :
+	\begin{align*}
+		P_{P'}+\rho\frac{v^2}{2}+R_hD=P_0+\rho g (z_{P'}-z_N)
+	\end{align*}
+	On trouve donc :
+	\begin{align*}
+		D=\pi a^2 \sqrt{\frac{2(\Delta P-P_{min}-R_hD)}{\rho}}
+	\end{align*}
+	Pour isoler $D$, il faut résoudre l'équation du second ordre en $D$. On trouve après résolution :
+	\begin{align*}
+		D=\frac{\pi^2 a^4}{\rho}\left( \sqrt{R^2+\frac{\rho(\Delta P-P_{min})}{\pi^2 a^4}}-R\right) 
+	\end{align*}
+On retrouve bien le résultat précédent lorsque $R=0$. La puissance perdue est alors :
+\begin{align*}
+	\dot{w}_P=\pi a^2 \Delta P \sqrt{\frac{2(\Delta P-P_{min})}{\rho}}-\Delta
+	 P\frac{\pi^2 a^4}{\rho}\left( \sqrt{R^2+\frac{\rho(\Delta P-P_{min})}{\pi^2 a^4}}-R\right) 
+\end{align*}
+Il faut ensuite simplifier en faisant un d.l. en $R$. Bon courage.
+
+\end{itemize}
+
+\newpage
+
+\section*{Bassin à débordement}
+
+On s'intéresse à un bassin à débordement comme schématisé sur la figure ci-dessous. Deux bassins, notés 1 et 2, (carrés de côté $L$) sont situés l'un à coté de l'autre, séparé par un mur de hauteur $H$. Le niveau d'eau du bassin 1 se situe à un niveau $h_1$ au-dessus du haut du mur de séparation (de largeur $L$), l'eau déborde et s'écoule ainsi dans le bassin 2, où le niveau de l'eau est $h_2$. 
+
+\begin{center}
+	\includegraphics[scale=1.6]{meca_flu8.pdf}
+\end{center}
+
+Une pompe, située dans une canalisation de rayon $a\ll L$, refoule ensuite l'eau du bassin 2 dans le bassin 1 pour que l'eau reste en circuit fermé. La pompe de puissance $\dot{w}$ génère une surpression $\Delta P=P_D-P_C$ entre son entrée et sa sortie, et on supposera sa hauteur négligeable ($z_C\simeq z_D$). On prendra l'axe $z$ comme indiqué sur le schéma, avec $z$ croissant avec la profondeur et on notera $\rho$ la masse volumique de l'eau et $P_0$ la pression atmosphérique.
+
+\begin{itemize}
+
+	\item[$\circledast$] L'écoulement est supposé parfait entre les lignes de courant $BC$, $DE$ et$EA$. Peut-on faire cette hypothèse sur les trajets $AB$ et $CD$ ? Conclure sur quels trajets il est possible d'appliquer le théorème de Bernoulli.
+
+	\item[$\circledast$] Déterminer les pressions $P_1(z)$ et $P_2(z)$ dans les bassins 1 et 2. On supposera que le champ de vitesse est négligeable dans les bassins, ceux-ci étant larges.
+	
+	\item[$\circledast$] En déduire la vitesse de l'eau $v(z)$ au niveau du débordement (à la verticale du point $A$), puis le débit $D$ en fonction de $h_1$. 
+	
+	\item[$\circledast$] En appliquant judicieusement le thérème de Bernoulli sur différents trajets, expliciter une relation entre $\Delta P$ et les hauteurs $h_1$, $h_2$ et $H$.  Quelle surpression $\Delta P_{min}$ minimale doit fournir la pompe pour monter le niveau de l'eau du bassin 1 jusqu'à $z=h_1$ ?
+	
+	\item[$\circledast$] A l'aide d'un bilan d'énergie mécanique, montrer que la puissance fournie par la pompe s'écrit $\dot{w}=\Delta P\times D$. 
+	
+	\item[$\circledast$] Pourquoi la somme $h_1+h_2$ est une constante (de $h_1$ et $h_2$) ? En déduire la puissance $\dot{w}$ que doit fournir la pompe pour que l'eau atteigne une hauteur $h_1$ au-dessus du mur.
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Bassin à débordement}}
+
+
+\begin{itemize}
+
+	\item[$\circledast$] Sur le trajet $AB$, l'écoulement est nécessairement turbulent pour que l'énergie cinétique de la chute soit dissipée (la vitesse en entrée de la canalisation $v_B=D/\pi a^2$ est indépendante de la vitesse de chute $\simeq\sqrt{2gH}$ puisque $H$ et la section $a$ peuvent être choisis indépendament). 
+	
+	Sur le trajet $CD$, la pompe est là et génère aussi des turbulences ainsi que de l'énergie mécanique : Bernoulli n'est pas applicable.
+
+	\item[$\circledast$] On applique la loi de la statique des fluide $P_1(z)$ et $P_2(z)$ dans les bassins 1 et 2 :
+	\begin{align*}
+		P_1(z) &= P_0+\rho g z, \quad z\in \mathrm{bassin 1} \\
+		P_2(z) &= P_0+\rho g (z - (H + h_1)), \quad z\in [H + h_1 - h_2, H + h_1], \mathrm{bassin 2}
+	\end{align*}
+	
+	\item[$\circledast$] On applique Bernoulli entre le point $A$, d'altitude $z$ au niveau du débordement, et le point $E$, situé à la même profondeur $z$, mais en plein dans le bassin. La pression en $A$ est celle de l'atmosphère, puisqu'il n'y a rien pour retenir l'eau (pas de paroi). La vitesse en $E$ est nulle, car on considère que la vitesse est négligeable dans les bassins. Enfin, $P_{E}=P_1(z)$.
+	\begin{align*}
+		\frac{\rho}{2}v_A^2+P_0=P_{1}(z)
+	\end{align*}
+	Donc, on retrouve le grand classique :
+	\begin{align*}
+		v(z) = \sqrt{2gz}
+	\end{align*}	
+	Le débit est alors :
+	\begin{align*}
+		D =& L\int_0^z\sqrt{2gz}dz \\
+		=&\frac{2\sqrt{2g}}{3}Lh_1^{3/2}
+	\end{align*}		
+	
+	\item[$\circledast$] La vitesse dans la canalisation est notée $v_c=D/\pi a^2$ par conservation du débit. \textbf{Attention : l'axe des $z$ est orienté vers le bas : il y a un signe - devant les termes en $\rho gz$}. En appliquant une premièr efois Bernoulli entre la surface du bassin 2 et le point $B$ :
+	\begin{align*}
+		 P_B-\rho g h_2 +\frac{\rho}{2}v^2 = P_0 
+	\end{align*}
+	Puis entre les trajets $BC$ et $CD$ on a les relations :
+		\begin{align*}
+		& P_B+\frac{\rho}{2}v^2-\rho g z_B = P_C+\frac{\rho}{2}v^2-\rho g z_C \\
+		& P_D= P_C+\Delta P 
+	\end{align*}
+	Enfin, on applique Bernoulli entre $D$ et le point $E$ :
+		\begin{align*}
+		& P_D+\frac{\rho}{2}v^2-\rho g z_C= P_E-\rho g z_E = P_0
+	\end{align*}	
+	car $P_E=P_0-\rho g z_E$. On en déduit donc que (avec $z_B=H+h_1$) :
+	\begin{align*}
+		\Delta P = \rho g(H+h_1-h_2)
+	\end{align*}
+	On retrouve bien le cas statique : la vitesse n'intervient pas dans notre circuit. C'est normal : l'énergie cinétique acquise en entrant dans $B$ retourne sous forme de pression en sortant en arrivant dans le bassin 1.
+	
+	Dans le cas $h_1=0$, l'eau se situe à ras bord mais ne coule pas encore. On a donc $\Delta P_{min}=\rho g(H-h_2)$.
+	
+	\item[$\circledast$] On considère un volume de contrôle ouvert $V^\ast$ entre les points $C$ et $D$, ainsi qu'une masse $dm$ entrant en $C$ à l'instant $t$ et resortant en $D$ à l'instant $t+dt$. L'énergie mécanique du système ${V_C; dm}$, qui est un système fermé s'écrit :
+	\begin{align*}
+		E(t)&=E_{V^\ast}-\rho g z_C + \frac{1}{2}dm v^2 \\
+		E(t+dt)&=E_{V^\ast}-\rho g z_D + \frac{1}{2}dm v^2 \\
+	\end{align*}
+	Donc, ayant $z_C\simeq z_B$, on a $E(t+dt)-E(t)=0$. D'autre part, la variation d'énergie cinétique correspond au travail des forces de pression et de la pompe durant $dt$ :
+	\begin{align*}
+	E(t+dt)-E(t)=0=\dot{w}dt+P_C \pi a^2 v dt -P_D\pi a^2 v dt
+	\end{align*}
+	On trouve donc la relation voulue (comme $D=\pi a^2 v$) :
+	\begin{align*}
+		\dot{w} = D\Delta P 
+	\end{align*}
+	
+	\item[$\circledast$] La quantité $L^2\times(h_1+h_2)=V$ représente le volume total du bassin, qui est constant, comme l'eau s'écoule en cycle fermé. Avec les relations précédentes :
+	\begin{align*}
+		\dot{w}&=\rho g(H+h_1-h_2)\frac{2\sqrt{2g}}{3}Lh_1^{3/2}\\
+		&=\rho g(H'+2h_1)\frac{2\sqrt{2g}}{3}Lh_1^{3/2}
+	\end{align*}
+	avec $H'=H-V/L^2$. Seule solution : résolution graphique ou numérique.
 
 \end{itemize}
 
