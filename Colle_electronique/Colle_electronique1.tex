@@ -542,4 +542,59 @@ Préciser l'expression de $\omega_0$ et de $Q$.
 	
 \end{itemize}
 
+\newpage
+
+\section*{Rejecteur de bande $\bullet\circ\circ$}
+
+On considère le quadripôle suivant :
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\linewidth]{circuit_12.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Quel est le comportement de ce filtre à basse et haute fréquence ? 
+	
+	\item[$\spadesuit$] Montrer que la fonction de transfert peut s'écrire sous la forme :
+	\begin{align*}
+		H(x) =\frac{1+(jx)^2}{1+jQx + (jx)^2}
+	\end{align*}
+	où $x=\omega/\omega_0$ avec $\omega_0$ et $Q$ une pulsation et un facteur de qualité que l'on déterminera. Tracer le diagramme de Bode correspondant. 
+	
+	\item[$\spadesuit$] On prend $Q=4$. Déterminer la bande "coupante" $\Delta\omega$, cad la plage de pulsations $\Delta\omega$ pour lesquelles $G^{dB}(\omega)\leq G^{dB}_{max} - 3$. On rappelle que $20\log\left( \sqrt{2}\right)\simeq3 $.
+	
+	\item[$\spadesuit$] On envoie le signal $U_e(t)=U_0\cos^3(\omega t)$ en entrée, avec $\omega=\omega_0/3$. Déterminer le signal de sortie $U_s(t)$. Tracer schématiquement les signaux.
+
+\end{itemize}
+
+\newpage
+
+\section*{Filtre passif $\bullet\circ\circ$}
+
+On considère le quadripôle suivant :
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\linewidth]{circuit_1.pdf}
+\end{figure}
+
+\begin{itemize}
+
+	\item[$\spadesuit$] Quel est le comportement de ce filtre à basse et haute fréquence ? 
+	
+	\item[$\spadesuit$] Montrer que la fonction de transfert peut se mettre sous la forme canonique :
+	\begin{align*}
+		H=\frac{H_0}{1+jQ\left(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega} \right) }
+	\end{align*}
+	Tracer le diagramme de Bode correspondant. 
+	
+	\item[$\spadesuit$] Déterminer la bande passante $\Delta\omega$, cad la plage de pulsations $\Delta\omega$ pour lesquelles $G^{dB}(\omega)\geq G^{dB}_{max} - 3$. On rappelle que $20\log\left( \sqrt{2}\right)\simeq3 $.
+	
+	\item[$\spadesuit$] On met en entrée de ce circuit une fonction créneau $e(t)$ positive de fréquence $f=3$kHz et de valeur maximale $E=10$V. Tracer l'allure du signal de sortie si le circuit est réglé pour $f_0=3$kHz et $Q=20$.
+
+\end{itemize}
+
+
 \end{document}
