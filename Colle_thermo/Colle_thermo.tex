@@ -15,7 +15,132 @@
 
 \begin{document}
 
-\section*{Détente adiabatique dans une tuyère}
+\section*{Questions et exercices de cours}
+
+\subsection*{Transformation adiabatique réversible - loi de Laplace}
+
+On considère une transformation sur un gaz de $n$ moles passant d'un état $P_1,V_1,T_1$ à un état $P_2,V_2,T_2$. On rappelle l'identité thermodynamique reliant lors d'une tranformation élémentaire l'évolution de l'énergie interne et l'entropie du système :
+\begin{align*}
+	dU=TdS-PdV
+\end{align*}
+Montrer que sur la tranformation, la variation d'entropie peut s'écrire :
+\begin{align*}
+	\Delta S=\frac{nR}{(\gamma-1)}\left[\gamma\ln\frac{T_2}{T_1}+(1-\gamma)\ln\frac{P_2}{P_1} \right] 
+\end{align*}
+En déduire les différentes variantes de la loi de Laplace, lorsqu'une transformation est adiabatique et réversible :
+\begin{align*}
+	&PV^\gamma=C_1 \\
+	&TV^{\gamma-1}=C_2 \\
+	&T^{\gamma}P^{1-\gamma}=C_3
+\end{align*}
+où $C_1$, $C_2$ et $C_3$ sont des constantes.
+
+
+
+
+
+\subsection*{Premier principe sur un fluide en écoulement stationnaire}
+
+Préciser les hypothèses et établir l'expression générale du premier principe pour un fluide en écoulement stationnaire à travers une machine quelconque sous la forme (les grandeurs thermodynamiques massiques sont en minuscule) :
+\begin{align*}
+	\Delta (h+e_p+e_c)=w_u+q
+\end{align*}
+Préciser la signification physique de chacun des termes et son unité.
+Même question, maintenant sous la forme :
+\begin{align*}
+	D_m\Delta (h+e_p+e_c)=P_u+P_{th}
+\end{align*}
+
+\subsection*{Second principe sur un fluide en écoulement stationnaire}
+
+Préciser les hypothèses et établir l'expression générale du second principe pour un fluide en écoulement stationnaire à travers une machine quelconque sous la forme (les grandeurs thermodynamiques massiques sont en minuscule) :
+\begin{align*}
+	\Delta s=s_{ech}+s_{créée}
+\end{align*}
+Préciser la signification physique de chacun des termes et son unité.
+Même question, maintenant sous la forme :
+\begin{align*}
+	D_m\Delta s=\dot{S}_{ech}+\dot{S}_{créée}
+\end{align*}
+
+\subsection*{Applications du principe sur un fluide en écoulement stationnaire}
+
+\subsubsection*{Pompe de relevage}
+
+Une pompe de relevage est une machine remontant un fluide d'un dénivelé $h=10$m. On supposera que les sections d'entrée et de sortie du fluide sont identiques. 
+
+\begin{itemize}
+
+	\item[$\diamond$] Rappeler les densités typiques d'un gaz et d'un liquide. Ce type de machine fonctionne pour relever des gaz ou des liquides ?
+	
+	\item[$\diamond$] Lors du passage dans la machine, y a t-il variation d'énergie cinétique, potentielle ou thermique ?
+	
+	\item[$\diamond$] Quelle est la puissance de la pompe pour un débit de $d=$1L/s ? 
+	
+	\item[$\diamond$] Le processus fonctionne de manière adiabatique. Quelle est la variation d'entropie du liquide entre l'entrée et la sortie de la pompe ?
+
+\end{itemize}
+
+\subsubsection*{Ecoulement d'un torrent}
+
+Un torrent s'écoule sur une montagne sur un dénivelé de 1000m, du fait de sa viscosité et des turbulences, la vitesse reste constante lors de son trajet. Pour simplifier, on suppose que l'écoulement est adiabatique car suffisament rapide pour pouvoir négliger les tranferts thermiques. 
+\begin{itemize}
+
+	\item[$\diamond$] Calculer l'échauffement de l'eau lors de sa descente. La capacité calorifique de l'eau est $c_P=4$kJ/K/kg. 
+
+	\item[$\diamond$] Quelle est la variation d'entropie massique de l'eau lors de sa descente ? En déduire l'entropie massique créée.
+	
+\end{itemize}
+
+On souhaite comparer de ce qui, entre l'air et l'eau, s'échauffe le plus lors de la descente en montagne. On suppose aussi qu'un écoulement d'air decend sur le même dénivelé de manière adiabatique et réversible. 
+
+\begin{itemize}
+
+	\item[$\diamond$] Montrer que la variation d'enthalpie massique de l'air peut s'écrire :
+	\begin{align*}
+		\Delta h =\frac{\gamma R}{M(\gamma -1)}\Delta T
+	\end{align*}
+	où $M=29$g/mol est la masse molaire de l'air.
+
+	\item[$\diamond$] Comparer avec la différence de température de l'air entre le haut et le bas de la montagne. Qui s'échauffe le plus entre l'eau et l'air ?
+	
+	\item[$\diamond$] Quelle est la variation d'entropie massique de cet écoulement d'air ? 
+	
+\end{itemize}
+
+\subsubsection*{Compresseur}
+
+Un compresseur augmente la pression d'un gaz parfait arrivant au débit massique $d$ de $P_1$ à $P_2$, on notera $a=P_2/P_1$ le taux de compression. La section dans laquelle circule le gaz est supposé constante. On suppose dans un premier temps que la compression est adiabatique réversible.
+
+\begin{itemize}
+
+	\item[$\diamond$] Citer deux exemples d'objet utilisant un compresseur à flux continu.
+	
+	\item[$\diamond$] Quelle est la température $T_2$ du gaz en sortie du compresseur ?
+	
+	\item[$\diamond$] En déduire le travail massique $w_u$ nécessaire pour comprimer ce gaz. Exprimer aussi la puissance $p_u$ de ce compresseur.
+
+\end{itemize}
+
+On suppose désormais que les pertes thermiques sont importantes : la compression n'est plus adiabatique, elle est isotherme. 
+
+\begin{itemize}
+
+	\item[$\diamond$] Quelle est le travail massique $w_u$ nécessaire pour comprimer ce gaz dans ce cas-là ? En déduire la chaleur massique $q$ perdue par le gaz. 
+	
+	\item[$\diamond$] Calculer la variation d'entropie massique $\Delta s$ du gaz lors de la compression.
+	
+\end{itemize}
+
+\subsubsection*{Détenteur ou tuyère}
+
+\subsubsection*{Turbine à gaz}
+
+\subsubsection*{Echangeur}
+
+\newpage
+
+\section*{Détente adiabatique dans une tuyère $\bullet\circ\circ$}
 
 Une turbine calorifugée, conçue pour travailler sans liquide, détend une vapeur d'eau sèche issue d'un surchauffeur à la température $T_e=380^\circ$C et à la pression $P_e=10$ bar jusqu'à la pression $P_s=1,0$ bar. 
 
