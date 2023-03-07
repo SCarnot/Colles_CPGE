@@ -15,6 +15,250 @@
 
 \begin{document}
 
+\section*{Divergence d'un champ électrique}
+
+On considère un champ électrique $\vec{E}$, s'écrivant en coordonnées sphériques sous la forme :
+\begin{align*}
+  \vec{E}=\frac{\alpha\vec{r}}{r^{n+1}}
+\end{align*}
+où $\vec{r}=x\vec{e}_x+y\vec{e}_y+z\vec{e}_z$ est le vecteur position et $\alpha$ une constante.
+\begin{itemize}
+
+	\item[$\ast$] Calculer la divergence de $\vec{E}$.
+	
+	\item[$\ast$] Pour quelle valeur de $n$ la divergence est nulle ? \'A quelle situation physique (cad distribution de charge) correspond ce champ ? 
+	
+	\item[$\ast$] Pour $n$ tel que $\mathrm{div}\vec{E}=0$, calculer le flux de $\vec{E}$ à travers la surface d'une sphère de rayon $R$ centrée en $O$. Le théorème de Green-Ostrogradski est-il valable ? Commenter.
+	
+	\item[$\ast$] Calculer le rotationnel de $\vec{E}$. Ce champ est-il compatible avec les équations de Maxwell ?
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Divergence d'un champ électrique}}
+
+\begin{itemize}
+
+	\item[$\ast$] En coordonnées carthésiennes :
+	\begin{align*}
+		\vec{E} = \alpha\frac{x\vec{e}_x+y\vec{e}_y+z\vec{e}_z}{\left(x^2+y^2+z^2 \right)^\frac{n+1}{2}}
+	\end{align*}
+	La dérivée par rapport à $x$ donne :
+	\begin{align*}
+		\frac{\partial E_x}{\partial x}=\alpha\frac{x^2+y^2+z^2-(n+1)x^2}{\left(x^2+y^2+z^2 \right)^\frac{n+3}{2}}
+	\end{align*}
+	La divergence donne donc :
+	\begin{align*}
+		\mathrm{div}\vec{E} &=\alpha\frac{3(x^2+y^2+z^2)-(n+1)(x^2+y^2+z^2)}{\left(x^2+y^2+z^2 \right)^\frac{n+3}{2}} \\
+		&=\alpha\frac{(2-n)(x^2+y^2+z^2)}{\left(x^2+y^2+z^2 \right)^\frac{n+3}{2}} \\
+		&=\alpha\frac{(2-n)}{r^{n+1}}
+	\end{align*}
+	
+	\item[$\ast$] La divergence est nulle pour $n=2$. Cela correcpond à un champ en $\propto 1/r^2$, c'est-à-dire un champ Coulombien : une charge ponctuelle située en $r=0$.
+	
+	\item[$\ast$] Le flux de $\vec{E}$ à travers la surface $\Sigma$ demandée est tout simplement $4\pi\alpha$. Or, l'intégrale $\iiint_\Sigma\mathrm{div}\vec{E}\cdot d\tau=0$. Le théorème de Green ici ne s'applique pas car $\vec{E}$ n'est pas une fonction dérivable en $\vec{r}=\vec{0}$. 
+	
+	\item[$\ast$] Calculons la composante suivant $\vec{e}_x$ du rotationnel :
+	\begin{align*}
+		\frac{\partial E_z}{\partial y}-\frac{\partial E_y}{\partial z}=&\frac{\partial }{\partial y}\left( \frac{z}{{\left(x^2+y^2+z^2 \right)^\frac{n+1}{2}}}\right) -\frac{\partial }{\partial z}\left( \frac{y}{{\left(x^2+y^2+z^2 \right)^\frac{n+1}{2}}}\right) \\
+		=& -\frac{(n+1)yz}{{\left(x^2+y^2+z^2 \right)^\frac{n+3}{2}}}+\frac{(n+1)zy}{{\left(x^2+y^2+z^2 \right)^\frac{n+3}{2}}} \\
+		=&0
+	\end{align*}
+	Le calcul est similaire avec les autres composantes. Ce champ est donc compatible avec les équations de Maxwell, la densité de charge étant alors :
+	\begin{align*}
+		\rho(r)=\varepsilon_0\alpha\frac{(2-n)}{r^{n+1}}
+	\end{align*}
+	
+\end{itemize}
+
+\newpage
+
+\section*{Rotationnel d'un champ magnétique}
+
+On considère un champ magnétique $\vec{B}$, s'écrivant en coordonnées cylindriques sous la forme :
+\begin{align*}
+  \vec{B}=\beta\frac{\vec{e_\theta}}{r^{n}}
+\end{align*}
+où $\vec{r}=r\vec{e}_r=x\vec{e}_x+y\vec{e}_y$ et $\beta$ est une constante.
+\begin{itemize}
+
+	\item[$\circlearrowleft$] Donner l'expression de $\vec{B}$ en coordonnées carthésiennes. 
+
+	\item[$\circlearrowleft$] Calculer le rotationnel de $\vec{B}$.
+	
+	\item[$\circlearrowleft$] Pour quelle valeur de $n$ le rotationnel est nul ? A quelle situation physique (cad distribution de courant) correspond ce champ ? 
+	
+	\item[$\circlearrowleft$] Pour $n$ tel que $\vec{\mathrm{rot}}\vec{B}=0$, calculer la circulation de $\vec{B}$ le long d'un cercle compris dans le plan ($\vec{e}_x$, $\vec{e}_y$), de rayon $r$, centré en $O$. Le théorème de Kelvin-Stockes est-il valable ? Commenter.
+	
+	\item[$\circlearrowleft$] Calculer la divergence de $\vec{B}$. Ce champ est-il compatible avec les équations de Maxwell ?
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Rotationnel d'un champ magnétique}}
+
+\begin{itemize}
+
+	\item[$\circlearrowleft$] Il faut écrire le vecteur $\vec{e}_\theta$ en coordonnées carthésiennes : $\vec{e}_\theta=-y/\sqrt{x^2+y^2}\vec{e}_x+x/\sqrt{x^2+y^2}\vec{e}_y$. Alors :
+	\begin{align*}
+		\vec{B} = -\frac{\beta y}{\left(x^2+y^2\right)^{\frac{n+1}{2}}}\vec{e}_x+\frac{\beta x}{\left(x^2+y^2\right)^{\frac{n+1}{2}}}\vec{e}_y
+	\end{align*}
+
+	\item[$\circlearrowleft$] Les composantes suivant $\vec{e}_x$ et $\vec{e}_y$ du rotationnel sont nulles :
+	\begin{align*}
+		\frac{\partial B_z}{\partial y}-\frac{\partial B_y}{\partial z}=&0 \\
+		\frac{\partial B_x}{\partial z}-\frac{\partial B_z}{\partial x}=&0
+	\end{align*}
+	
+	La composante suivant $\vec{e}_z$ donne :
+	\begin{align*}
+		\frac{\partial B_y}{\partial x}-\frac{\partial B_x}{\partial y}=&\beta\frac{\partial }{\partial x}\left( \frac{x}{{\left(x^2+y^2 \right)^\frac{n+1}{2}}}\right) -\beta\frac{\partial }{\partial y}\left( \frac{y}{{\left(x^2+y^2 \right)^\frac{n+1}{2}}}\right) \\
+		=& \beta\frac{x^2+y^2-(n+1)x^2}{{\left(x^2+y^2 \right)^\frac{n+3}{2}}}+\frac{x^2+y^2-(n+1)y^2}{{\left(x^2+y^2\right)^\frac{n+3}{2}}} \\
+		=& \beta\frac{(1-n)(x^2+y^2)}{{\left(x^2+y^2 \right)^\frac{n+3}{2}}} \\
+		=& \beta\frac{(1-n)}{{\left(x^2+y^2 \right)^\frac{n+1}{2}}} \\
+		=& \beta\frac{(1-n)}{{r^{n+1}}}
+	\end{align*}
+	
+	\item[$\circlearrowleft$] Le rotationnel est nul pour $n=1$. Cela correspond à la situation du champ magnétique créé par un fil infini suivant l'axe $\vec{e}_z$.
+	
+	\item[$\circlearrowleft$] La circulation de $\vec{B}$ pour $n=1$ s'écrit $\oint_\Gamma\vec{B}\cdot d\vec{l}=2\pi \beta$. Or le rotationnel de $\vec{B}$ étant nul, le théorème de Stockes ne s'applique pas. En effet, le champ magnétique admet une singularité (non dérivable) en $r=0$, le théorème ne s'applique pas.
+	
+	\item[$\circlearrowleft$] On trouve facilement que $\mathrm{div}\vec{B}=0$. Ce champ est donc compatible avec les équations de Maxwell, avec une densité volumique de courant :
+	\begin{align*}
+		\vec{j}=\beta\frac{(1-n)}{{\mu_0r^{n+1}}}\vec{e}_z
+	\end{align*}
+
+\end{itemize}
+
+\newpage
+
+\section*{Bille radioactive}
+
+Une bille radioactive initialement neutre de rayon $R\simeq0$ émet de façon isotrope, à partir de $t=0$, $N$ particules par seconde de charge $e$, avec une vitesse de norme $v_0$. On note $\vec{j}(r,t)=j(r,t)\vec{e}_r$ le vecteur densité de courant et $\rho(r,t)$ la densité volumique de charges en un point $M$ à la distance $r=OM$ du centre $O$ de la bille et à la date $t$.
+
+\begin{itemize}
+
+	\item[$\odot$] Justifier de l'existence, à la date $t$, d'un rayon critique $r_c(t)$ et l'exprimer.
+	
+	\item[$\odot$] Déterminer la charge $Q(t)$ de la bille à listant $t$.
+	
+	\item[$\odot$] En supposant que les particules se déplacent à une vitesse $v_0$ constante, exprimer $j(r,t)$ et $\rho(r,t)$ pour $r<r_c(t)$.
+	
+	\item[$\odot$]  Vérifier la conservation de la charge totale du système.
+	
+	\item[$\odot$] Pourquoi l'hypothèse de la constance de la vitesse des particules est-elle discutable ?
+	
+\end{itemize}
+
+\newpage
+
+\section*{Sphère radioactive}
+
+On considère une sphère de rayon $R_0$ constituée d'un matériau initialement neutre électriquement, devenant radioactif lorsqu'on le soumet à $t=0$ à un bombardement bref et intense de particules $\alpha$. A partir de ce moment-là, la sphère émet de manière isotrope des particules chargées $+e$ à la vitesse $v_0$, que l'on supposera constante. On suppose que ces particules sont émises, à un instant $t$, au rythme de $n(t)$ particules par unité de temps.
+
+\begin{itemize}
+
+	\item[$\ast$] On considère une particule émise à l'instant $t_0$. Où se situe t-elle à l'instant $t>t_0$ ? En déduire l'existence d'un rayon critique $r_c$. Donner le lien entre $t_0$ et $t$ pour $r=R_0$, $r$ quelconque et $r=r_c$.
+	
+	\item[$\ast$] Pour $R_0<r<r_c$, déterminer la densité de charge $\rho(r,t)$. On pourra dénombrer le nombre de particules comprises dans le volume compris entre les sphères de rayon $r$ et $r+dr$. 
+	
+	\item[$\ast$] De la même façon, déterminer la densité volumique de courant $\vec{j}(r,t)$. 
+	
+	\item[$\ast$] L'équation de conservation de la charge est-elle respectée ? On donne, en coordonnées sphériques, la divergence d'un vecteur : $\mathrm{div}\vec{A}=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2A_r \right)+\ldots$ 
+	
+	\item[$\ast$] Exprimer la charge $Q(r,t)$ comprise dans une sphère de rayon $r<r_c$ à l'instant $t$, en fonction de $N(t)=\int_0^t dt_0 n(t_0)$, la quantité totale de particules $+e$ émises depuis $t=0$ jusqu'à $t$.
+	
+	\item[$\ast$] Donner l'expression du champ électrique $\vec{E}(r,t)$, puis celle du champ magnétique $\vec{B}$. On pourra utiliser les symétries du problème.
+	
+	\item[$\ast$] Exprimer le vecteur de Poynting, puis l'énergie du champ électromagnétique. Etablir un bilan d'énergie électromagnétique et conclure.
+	
+		\item[$\ast$] \textit{Bonus} : La probabilité qu'un noyau atomique de la sphère émette une particule $+e$ entre $t$ et $t+dt$ est constante et vaut $dP=dt/\tau$. En déduire $n(t)$ et $N(t)$, sachant qu'il y a, à $t=0$, $N_0$ noyaux susceptibles de se désintégrer.
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Sphère radioactive}}
+
+\begin{itemize}
+
+	\item[$\ast$] Une particule en $r$ à l'instant $t$ a été émise à $t_0$ en $R_0$. On a donc $r-R_0=v_0(t-t_0)$. En $r=0$, on a donc $t=t_0$ (la particule vient juste d'être émise). Pour $t_0=0$, la particule a parcouru la plus grande distance possible (rien était émis avant), correspondant au rayon critique $r_c=v_0t$
+	
+	\item[$\ast$] Il y a entre les sphères de rayon $r$ et $r+dr$ $dN$ particules, qui ont été émises à $t_0=t-\frac{r-R_0}{v_0}$ au rythme de $n(t_0)$ particules par unité de temps :
+	\begin{align*}
+		edN=4\pi r^2dr\rho(r,t)=en(t_0)dt
+	\end{align*}
+	On a donc :
+	\begin{align*}
+		\rho(r,t)=\frac{e}{4\pi r^2 v_0}\times n\left(t-\frac{r-R_0}{v_0} \right) 
+	\end{align*}
+	
+	\item[$\ast$] Façon facile : la définition de $\vec{j}=\rho \vec{v}$ : 
+	\begin{align*}
+		\vec{j}(r,t)=\frac{e}{4\pi r^2}\times n\left(t-\frac{r-R_0}{v_0} \right) 
+	\end{align*}
+	Version plus "compliquée" : on fait un bilan sur le nombre de particules entre les sphères de rayon $r$ et $r+dr$ pendant $dt$ avec le flux $\vec{j}$.
+	
+	\item[$\ast$] On a :
+	\begin{align*}
+		\frac{\partial \rho}{\partial t}=&\frac{e}{4\pi r^2 v_0}\times \frac{d}{dt} \left[ n\left(t-\frac{r-R_0}{v_0} \right) \right] \\
+		=&\frac{e}{4\pi r^2 v_0}\times n'\left(t-\frac{r-R_0}{v_0} \right)
+	\end{align*}
+	D'autre part : 
+	\begin{align*}
+		\mathrm{div}\vec{j}(r,t)&=\frac{e}{4\pi r^2}\times\frac{d}{dr} \left[ n\left(t-\frac{r-R_0}{v_0} \right) \right] \\
+		&=-\frac{e}{4\pi r^2 v_0}\times n'\left(t-\frac{r-R_0}{v_0} \right)
+	\end{align*}
+	L'équation de conservation est bel et bien respectée.
+	
+	\item[$\ast$] On intègre d'abord la densité volumique de charge sur une boule de rayon $r$ pour avoir la charge positive :
+	\begin{align*}
+		Q_+(r,t)=&4\pi\int_{R_0}^r r'^2\rho(r',t)dr' \\
+		=& \frac{e}{v_0}\times\int_{R_0}^r dr' n\left(t-\frac{r-R_0}{v_0} \right) 
+	\end{align*}
+	On effectue le changement de variable $r'\longleftarrow t_0=t-\frac{r-R_0}{v_0}$. Physiquement, cela correspond à intégrer non plus sur l'espace, mais sur le moment durant les particules ont été émises : intégrer de $r'$ de $R_0$ à $r$ correspond à intégrer sur le moment d'émission $t_0$ de $t$ (la dernière particule émise se situe en $R_0$) à $t-\frac{r-R_0}{v_0}$ (la particule en $r$ à l'instant $t$ a été émise à $t-\frac{r-R_0}{v_0}$) :
+	\begin{align*}
+		Q_+(r,t)=&-v_0\frac{e}{v_0}\times\int_{t}^{t-\frac{r-R_0}{v_0}}dt_0 n\left(t_0\right) \\
+		=&eN(t)-eN\left( t-\frac{r-R_0}{v_0}\right) &
+	\end{align*}
+	C'est bien cohérent : $N\left( t-\frac{r-R_0}{v_0}\right)$ correspond aux charges dans le volume entre $r$ et $r_c$. 
+	
+	Il faut aussi tenir compte du fait que la sphère radioactive a perdu des charges (elle était neutre à l'origine), plus précisément elle en a perdu $eN(t)$. On a donc :
+	\begin{align*}
+		Q(t)&=Q_+(r,t)-eN(t)\\
+		&=-eN\left( t-\frac{r-R_0}{v_0}\right)		
+	\end{align*}
+	
+	\item[$\ast$] On peut utiliser soit le théorème de Gauss, soit l'équation de Maxwell-Gauss (attention à la constante d'intégration). On trouve alors :
+	\begin{align*}
+		\vec{E}(r,t) = -\frac{e}{4\pi r^2\varepsilon_0}N\left( t-\frac{r-R_0}{v_0}\right)\vec{e}_r
+	\end{align*}
+	
+	Par les symétries, on a nécessairement un champ magnétique nul :
+	\begin{align*}
+		\vec{B}=\vec{0}
+	\end{align*}
+	
+	\item[$\ast$] Le champ magnétique étant nul, on a :
+	\begin{align*}
+		\vec{\Pi}=\vec{0}
+	\end{align*}
+	Il n'y a pas de propagation de l'énergie électromagnétique. Pour l'énergie électromagnétique, il n'y a uniquement le terme électrique :
+	\begin{align*}
+		\varepsilon_m=-\frac{e^2}{32\pi r^4\varepsilon_0}N\left( t-\frac{r-R_0}{v_0}\right)^2
+	\end{align*}
+	On peut alors vérifier que le bilan d'énergie électromagnétique est cohérent :
+		\begin{align*}
+		\frac{\partial \varepsilon_m}{\partial t}=-\frac{e^2}{16\pi r^4\varepsilon_0}n\left( t-\frac{r-R_0}{v_0}\right)N\left( t-\frac{r-R_0}{v_0}\right)
+	\end{align*}
+	On trouve bien que c'est égal au produit scalaire $-\vec{j}\cdot\vec{E}$. La variation de l'énergie électromagnétique se transmet intégralement aux charges.
+
+\end{itemize}
+
+\newpage
+
 \section*{Sphère radioactive}
 
 On considère une sphère composée d'aluminium de rayon $R_0$, bombardée par un rayonnement de particules $\alpha$ très intense et bref. Sous le bombardement des particules $\alpha$, l'aluminium se transforme en phosphore radioactif, qui se désintègre lui-même en silicium, avec l'émission d'un positron $e^+$ et d'un neutrino électronique $\nu_e$ :

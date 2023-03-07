@@ -15,7 +15,158 @@
 
 \begin{document}
 
-\section*{Réflexion d'une onde électromagnétique sur des plans métalliques en incidence oblique}
+\section*{Onde cylindrique}
+
+A partir d'un fil source d'axe $Oz$, est émise une dans le vide une onde dont le champ est donné en coordonnées cylindriques par :
+\begin{align*}
+	\vec{E}=E(r)e^{i(\omega t-\vec{k}\cdot\vec{r})}\vec{e}_z
+\end{align*}
+
+\begin{itemize}
+
+	\item[$\circ$] Trouver le champ magnétique correspondant. Commenter.
+	
+	\item[$\circ$] Déterminer le vecteur de Poynting instantané $\vec{\Pi}$, puis sa moyenne temporelle.
+	
+	\item[$\circ$] Quelle est la puissance moyenne rayonnée à travers un cylindre d'axe $Oz$, de rayon $r$ et de hauteur $h$ ? En déduire la dépendance $E(r)$. 
+	
+	\item[$\circ$] Quelle est l'expression de $\vec{B}$ à grande distance ? Commenter.
+	
+\end{itemize}
+
+\newpage
+
+\section*{Réflexion d'une onde polarisée}
+
+Une onde plane électromagnétique se propageant dans le vide dans le demi-espace $x<0$ vers les $x$ croissants tombe en incidence normale, en $x=0$, sur un métal remplissant le demi espace $x>0$ à partir du plan $yOz$. Le métal est supposé parfait.
+
+\begin{itemize}
+
+	\item[$\circlearrowright$] Qu'est-ce qu'un métal parfait ? En déduire les conséquences sur l'onde transmise. 
+
+\end{itemize}
+
+Le champ électrique de l'onde incidente s'écrit :
+\begin{align*}
+	\vec{E}_i=E_0\cos(\omega t -kx)\vec{e}_y+E_0\sin(\omega t -kx)\vec{e}_z
+\end{align*}
+
+\begin{itemize}
+
+	\item[$\circlearrowright$] Quelle est la polarisation de cette onde? Justifier. 
+	
+	\item[$\circlearrowright$] En déduire le champ électrique réfléchi $\vec{E}_r$. On rappelle qu'à l'interface en $x=0$, la composante tangentielle du champ électrique est continue.
+	
+	\item[$\circlearrowright$] Quelle est la polarisation de l'onde réfléchie ? 
+	
+	\item[$\circlearrowright$] Déterminer l'expression du champ électrique total $\vec{E}$.
+	
+	\item[$\circlearrowright$] Donner l'expression du champ magnétique incident $\vec{B}_i$ et réfléchi $\vec{B}_r$. Le champ magnétique est-il continu en $x=0$ ? Expliquer. 
+
+\end{itemize}
+
+\newpage
+
+\section*{\textit{Correction - Réflexion d'une onde polarisée}}
+
+\begin{itemize}
+
+	\item[$\circlearrowright$] Conductivité infinie, le champ électromagnétique ne pénètre pas dans le métal, les courants sont uniquement en surface.
+
+\end{itemize}
+
+Le champ électrique de l'onde incidente s'écrit :
+\begin{align*}
+	\vec{E}_i=E_{0_i}\cos(\omega t -kx)\vec{e}_y+E_{0_i}\sin(\omega t -kx)\vec{e}_z
+\end{align*}
+
+\begin{itemize}
+
+	\item[$\circlearrowright$] C'est une onde polarisée circulairement : la pointe du vecteur $\vec{E}$ décrit à une position fixée un cercle au cours du temps. Dans ce cas, il tourne dans le sens trigonométrique lorsqu'on regarde l'onde arriver vers nous. 
+	
+	\item[$\circlearrowright$] Comme le champ électrique est continu (car uniquement tangentiel), on a en $x=0$ :
+	\begin{align*}
+		\vec{E}_i(x=0)+\vec{E}_r(x=0)=\vec{0}
+	\end{align*}
+	Donc :
+	\begin{align*}
+		\vec{E}_r(x=0)=-E_{0_i}\cos(\omega t)\vec{e}_y-E_0\sin(\omega t)\vec{e}_z
+	\end{align*}	
+	Comme l'onde réfléchie se propage suivant les $x$ décroissant, son expression est alors nécessairement de la forme :
+	\begin{align*}
+		\vec{E}_r=-E_{0_i}\cos(\omega t+kx)\vec{e}_y-E_{0_i}\sin(\omega t +kx)\vec{e}_z
+	\end{align*}	
+	
+	\item[$\circlearrowright$] Elle est aussi polarisée circulairement mais elle tourne dans l'autre sens : elle tourne dans le même sens que l'onde incidente, mais se propage dans la direction opposée. Elle tourne donc dans le sens horaire lorsqu'on regarde l'onde arriver vers nous. 
+	
+	\item[$\circlearrowright$] On additionne le champ incident et réfléchi : 
+	\begin{align*}
+		\vec{E}=2E_{0_i}\sin(\omega t)\sin(kx)\vec{e}_y-2E_{0_i}\sin(kx)\cos(\omega t)\vec{e}_z
+	\end{align*}
+	\item[$\circlearrowright$] On utilise la relation de structure, avec $\vec{k}_i=\omega/c\vec{e}_x$ :
+	\begin{align*}
+		\vec{B}_i=&\frac{\vec{k}_i\wedge\vec{E}_i}{\omega} \\
+		=&\frac{E_{0_i}}{c}\cos(\omega t -kx)\vec{e}_y+\frac{E_{0_i}}{c}\sin(\omega t -kx)\vec{e}_z
+	\end{align*}
+	Même chose pour le champ réfléchi, avec $\vec{k}_r=-\omega/c\vec{e}_x$ :
+	\begin{align*}
+		\vec{B}_r=&\frac{\vec{k}_r\wedge\vec{E}_r}{\omega} \\
+		=&\frac{E_{0_i}}{c}\cos(\omega t +kx)\vec{e}_y+\frac{E_{0_i}}{c}\sin(\omega t +kx)\vec{e}_z
+	\end{align*}
+	On remarque qu'en $x=0$, on a :
+	\begin{align*}
+		\vec{B}(x=0)=\frac{2E_{0_i}}{c}\cos(\omega t)\vec{e}_y+\frac{2E_{0_i}}{c}\sin(\omega t)\vec{e}_z
+	\end{align*}
+	La composante transverse du champ magnétique n'est pas systématiquement continue : dans le cas de la présence de courants surfaciques, il ne l'est pas, ce qui est le cas ici.
+
+\end{itemize}
+
+\newpage
+
+\section*{Réflexion d'une onde électromagnétique sur des plans métalliques en incidence oblique $\bullet\bullet\circ$}
+
+On considère une onde plane progressive se propageant dans le vide, selon le vecteur d'onde $\vec{k}=k\cos\theta\vec{u_x}+k\sin\theta\vec{u_y}$ et à la pulsation $\omega$. Elle arrive sur un plan métallique infiniment conducteur situé sur le demi-espace $x>0$. On notera $\vec{E_i}$ et $\vec{B_i}$ respectivement le champ électrique et le champ magnétique incidents. Le champ électrique incident est polarisé rectilignement selon $Oz$ et son amplitude est $E_0$.
+
+\begin{itemize}
+		
+	\item[$\heartsuit$]	Retrouver l'équation de propagation des champs électrique et magnétique. Quelle est la relation de dispersion associée ? 
+	
+	\item[$\heartsuit$] Expliciter les expressions des champs $\vec{E_i}$ et $\vec{B_i}$.
+	
+\end{itemize}
+
+En arrivant sur l'interface, les relations de passage du champ électromagnétique imposent l'apparition d'une onde réfléchie, dont on notera $\vec{E_r}$ et $\vec{B_r}$ les champ électrique et magnétique. On supposera que $\vec{E_r}$ s'écrit sous la forme : 
+\begin{align*}
+	\vec{E_r}=\vec{E_0'}\exp(i\vec{k_r}\cdot\vec{r}-\omega t)
+\end{align*}
+avec $\vec{k_r}=-k\cos\theta\vec{u_x}+k\sin\theta\vec{u_y}$ est le vecteur d'onde de l'onde réfléchi.
+\begin{itemize}
+	
+	\item[$\heartsuit$] Que valent les champs $\vec{E}$ et $\vec{B}$ à l'intérieur de la plaque ? Justifier.
+	
+	\item[$\heartsuit$] Déterminer $\vec{E_0'}$. On rappelle que la composante tangentielle du champ électrique est toujours continue, même sur une interface.
+	
+	\item[$\heartsuit$] En déduire l'expression du champ magnétique réfléchi, $\vec{B_r}$.
+	
+	\item[$\heartsuit$] Quelle est alors l'expression du champ électrique $\vec{E}$ résultant pour $x<0$ ? De quel type d'onde s'agit-il ?
+	
+	\item[$\heartsuit$] 	On place une seconde plaque métallique en $x=-L$. Montrer que la présence de la seconde plaque impose une discrétisation du spectre, c'est-à-dire que seules des fréquences $\omega$ discrètes peuvent se propager pour un angle $\theta$ donné. Tracer les valeurs prises par $\omega$ en fonction de $\theta$. 
+	\item[$\heartsuit$] Quelle est la valeur minimale que peut prendre $\omega$ ? Justifier. 
+	
+	\item[$\heartsuit$] Démontrer que $k_y=\vec{k}\cdot\vec{u_y}$ vérifie l'équation dite de dispersion des modes d'une onde transverse électrique : 
+	\begin{equation}
+		k_y^2=\frac{\omega^2}{c^2}-\left(\frac{n\pi}{a} \right)^2 
+	\end{equation}
+	
+	\item[$\heartsuit$] Quel est le courant surfacique à la surface de la plaque ?
+	
+	\item[$\heartsuit$] Calculer l'expression du champ magnétique résultant $\vec{B}$ entre les deux plaques et en déduire l'expression du vecteur de Poyting. Commenter. 
+	
+\end{itemize}
+
+\newpage
+
+\section*{Réflexion d'une onde électromagnétique sur des plans métalliques en incidence oblique $\bullet\bullet\bullet$}
 
 On considère une onde plane progressive se propageant dans le vide, selon le vecteur d'onde $\vec{k}=k\cos\theta\vec{u_x}+k\sin\theta\vec{u_y}$ et à la pulsation $\omega$. Elle arrive sur un plan métallique infiniment conducteur situé sur le demi-espace $x>0$. On notera $\vec{E_i}$ et $\vec{B_i}$ respectivement le champ électrique et le champ magnétique incidents. Le champ électrique incident est polarisé rectilignement selon $Oz$ et son amplitude est $E_0$.
 
@@ -224,7 +375,7 @@ Un milieu conducteur de conductivité $\gamma=6\cdot10^7\Omega^{-1}$m$^{-1}$ occ
 	\vec{E}_i=\vec{E}_{0,i}\exp[i(\omega t-k_iz)]
 \end{align*}
 en notant $\vec{E}_{0,i}$ son amplitude.
-A l'interface $z=0$, elle donne naissance à une onde réfléchie et une onde transmise s'écrivant respectivement $\vec{E}_r=\vec{E}_{0,r}\exp[i(\omega t-k_rz)]$ et $\vec{E}_t=\vec{E}_{0,t}\exp[i(\omega t+k_tz)]$, toutes de même pulsation $\omega$. On admet que les amplitudes des champs éléectriques appartiennent au plan $xOy$.
+A l'interface $z=0$, elle donne naissance à une onde réfléchie et une onde transmise s'écrivant respectivement $\vec{E}_r=\vec{E}_{0,r}\exp[i(\omega t+k_rz)]$ et $\vec{E}_t=\vec{E}_{0,t}\exp[i(\omega t-k_tz)]$, toutes de même pulsation $\omega$. On admet que les amplitudes des champs éléectriques appartiennent au plan $xOy$.
 
 \begin{itemize}
 	
