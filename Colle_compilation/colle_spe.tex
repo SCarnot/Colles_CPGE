@@ -1,0 +1,77 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{biblatex}
+
+\usepackage[top=2.0cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath,esint}
+\usepackage{amssymb}
+\usepackage{esvect}
+\graphicspath{{figures/}{../figures}}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{mdframed}
+
+\AtBeginDocument{
+\addtocontents{toc}{\protect\label{toc}}}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\diver{\mathop{}\!\mathrm{div}}
+\newcommand*\grad{\mathop{}\!\mathrm{grad}}
+
+\title{Exercices de colle - seconde année de CPGE - MP/PC/PSI}
+\author{Matthieu Santin}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{Exercices de colles}
+\fancyhead[R]{Matthieu Santin}
+\fancyfoot[C]{\thepage/\pageref{LastPage}  \hyperref[toc]{$\uparrow$}}
+\fancyfoot[R]{}
+
+\mdfdefinestyle{stylecorrection}{%
+middlelinewidth=0pt,
+roundcorner=1pt,
+backgroundcolor=seagreen,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+leftmargin=0pt,
+rightmargin=0pt,
+skipabove=0pt}
+
+\definecolor{seagreen}{RGB}{215,244,238}
+\newenvironment{correction}
+{\noindent\begin{mdframed}[style=stylecorrection]
+%\begin{small}
+\small\setlength{\parindent}{0pt}
+\noindent\textit{\textbf{\underline{Corrigé} :}\newline}
+}
+{%\end{small}
+\end{mdframed}
+}
+
+\begin{document}
+\frontmatter
+\include{front}
+
+% =========================
+\mainmatter
+\include{electronique}
+\include{thermodynamique_sup}
+\include{thermodynamique_spe}
+\include{diffusion}
+\include{mecanique}
+\include{onde_meca}
+\include{optique}
+\appendix
+\include{append}
+
+% ========================
+%\backmatter
+%\printbibliography
+%\newpage
+%\input{backcover}
+\end{document}

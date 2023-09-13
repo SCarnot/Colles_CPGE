@@ -1,0 +1,112 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {french}{}
+\defcounter {refsection}{0}\relax 
+\label {toc}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Electronique}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Puissance consomm\IeC {\'e}e par un AO $\bullet \circ \circ \circ $}{2}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Montage passe-bas $\bullet \bullet \circ \circ $}{4}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Filtre passif $\bullet \bullet \bullet \bullet $}{7}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Filtre avec ALI $\bullet \bullet \circ $}{10}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Etude de deux bobines d'\IeC {\'e}lectroaimant}{12}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Thermodynamique (sup)}{15}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Chute d'une masse sur un piston $\bullet \bullet \bullet \circ $}{16}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Entropie d'une chute libre $\bullet \bullet \bullet \circ $}{19}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Machine de Stirling $\bullet \bullet \circ \circ $}{21}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Cycle de Beau de Rochas $\bullet \bullet \circ \circ $}{23}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Compression brutale $\bullet \bullet \circ \circ $}{26}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Compresseur \IeC {\`a} deux \IeC {\'e}tages $\bullet \bullet \circ \circ $}{28}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Puissance d'une arme \IeC {\`a} feu $\bullet \bullet \bullet \bullet $}{31}{section.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Thermodynamique (sp\IeC {\'e})}{33}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Premier principe sur un fluide en \IeC {\'e}coulement stationnaire $\bullet \circ \circ \circ $}{34}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Second principe sur un fluide en \IeC {\'e}coulement stationnaire $\bullet \circ \circ \circ $}{35}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Pompe de relevage $\bullet \circ \circ \circ $}{36}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Ecoulement d'un torrent}{38}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Compresseur}{40}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Tuy\IeC {\`e}re}{41}{section.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.7}Formation du brouillard $\bullet \circ \circ $}{43}{section.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.8}Etude d'un turbor\IeC {\'e}cteur $\bullet \bullet \circ \circ $}{44}{section.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.9}Etude d'un turbor\IeC {\'e}cteur $\bullet \bullet \bullet \bullet $}{45}{section.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Diffusion}{47}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Petits et gros mammif\IeC {\`e}res $\bullet \bullet \circ \circ $}{48}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Ailettes de refroidissement $\bullet \bullet \circ \circ $}{50}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Lac gel\IeC {\'e} $\bullet \bullet \bullet \bullet $}{52}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Transfert thermique et entropie $\bullet \bullet \circ \circ $}{55}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Transfert thermique et entropie $\bullet \bullet \bullet \circ $}{56}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Combustion d'une poutre de bois $\bullet \bullet \bullet \circ $}{59}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Temp\IeC {\'e}rature dans une plan\IeC {\`e}te naine $\bullet \bullet \circ \circ $}{60}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}Une tente au soleil $\bullet \bullet \bullet \bullet $}{62}{section.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.9}Diffusion de particules dans un r\IeC {\'e}cipent en rotation $\bullet \bullet \bullet \circ $}{63}{section.4.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.10}Diffusion \IeC {\`a} contre-courant $\bullet \bullet \bullet \circ $}{66}{section.4.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.11}Evaporation de l'\IeC {\'e}ther $\bullet \bullet \circ \circ $}{68}{section.4.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}M\IeC {\'e}canique}{71}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Le Petit Prince : satellisation d'une pomme $\bullet \bullet \circ \circ $}{72}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Projectile lanc\IeC {\'e} \IeC {\`a} la verticale $\bullet \circ \circ \circ $}{74}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Param\IeC {\`e}tre d'impact $\bullet \bullet \circ \circ $}{76}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Pi\IeC {\`e}ge de Penning $\bullet \bullet \bullet \circ $}{78}{section.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Tir \IeC {\`a} grande distance $\bullet \bullet \circ \circ $}{80}{section.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}Tir \IeC {\`a} grande distance $\bullet \bullet \bullet \bullet $}{81}{section.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}Frottement d'une corde et d'une poutre en bois $\bullet \bullet \circ \circ $}{84}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.8}Frottement d'une corde et d'une poutre en bois $\bullet \bullet \bullet \circ $}{85}{section.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Ondes m\IeC {\'e}caniques}{87}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Longueur d'un son}{88}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Optique}{91}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Fentes d'Young en montage Fraunhofer $\bullet \circ \circ $}{92}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Anneaux de Newton}{93}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Miroir de Fresnel}{95}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.4}Fentes d'Young \IeC {\'e}largies}{97}{section.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.5}R\IeC {\'e}flexion sur un CD}{98}{section.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.6}D\IeC {\'e}termination de l'\IeC {\'e}paisseur d'une bulle de silicone}{99}{section.7.6}

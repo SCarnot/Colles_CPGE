@@ -19,20 +19,20 @@
 
 Les mammifères sont des animaux à sang chaud, dont la chaleur est produite par le fonctionnement du métabolisme, qui dégage une puissance thermique $p_{th}$ par unité de volume. Cette puissance et la circulation sanguine permettent de maintenir une température $T_1$ à peu près uniforme et constante à l'intérieur du corps. Pour se prémunir contre les variations de température extérieur, les mammifères peuvent avoir une couche d'isolant (fourrure ou graisse) autour de leur corps. On souhaite connaitre la variation de cette épaisseur en fonction de la taille des mammifères. 
 
-Pour simplifier, on considère que les mammifères sont des animaux sphériques de rayon $R$ recouverts d'une couche d'isolant d'épaisseur $e$ de capacité calorifique $c$, d emasse volumique $\rho$ et de conductivité thermique $\lambda$. On notera $T(r)$ et $\vec{j}(r)$ le champ de température et le vecteur densité volumique de puissance en coordonnées sphériques, $r$ étant le rayon par rapport au centre de l'animal.
+Pour simplifier, on considère que les mammifères sont des animaux sphériques de rayon $R$ recouverts d'une couche d'isolant d'épaisseur $e$ de capacité calorifique $c$, de masse volumique $\rho$ et de conductivité thermique $\lambda$. On notera $T(r)$ et $\vec{j}(r)$ le champ de température et le vecteur densité volumique de puissance en coordonnées sphériques, $r$ étant le rayon par rapport au centre de l'animal.
 
 \begin{itemize}
 
 	\item[$\odot$] La température extérieure étant $T_{0}$ et celle dans le mammifère étant maintenue dans tout son métabolisme à $T_1$, écrire les deux conditions aux limites vérifiées par la témpérature.
 	
-	\item[$\odot$] En faisant un bilan d'enthalpie entre deux sphères concentriques de rayon $r$ et $r+dr$ situées dans la couche d'isolant, montrer la relation suivante :
+	\item[$\odot$] En faisant un bilan d'énergie entre deux sphères concentriques de rayon $r$ et $r+dr$ situées dans la couche d'isolant, montrer la relation suivante :
 	\begin{align*}
 		\frac{1}{r^2}\frac{\partial }{\partial r}\left( r^2j_r\right) =-\rho c\frac{\partial T}{\partial t}
 	\end{align*}
 	
 	\item[$\odot$] Après avoir rappelé la loi de Fourier, montrer alors que la température vérifie, dans la couche d'isolant, la relation suivante :
 	\begin{align*}
-		\frac{\partial T}{\partial t}=\frac{\lambda}{\mu c_p r^2}\frac{\partial }{\partial r}\left( r^2\frac{\partial T}{\partial r}\right) 	
+		\frac{\partial T}{\partial t}=\frac{\lambda}{\rho c_p r^2}\frac{\partial }{\partial r}\left( r^2\frac{\partial T}{\partial r}\right) 	
 	\end{align*}
 	Comment s'appelle cette équation ?
 
@@ -102,7 +102,7 @@ On modélise cette ailette de refroidissement comme un cylindre d'axe $Ox$, de l
 
 \begin{itemize}
 
-	\item[$\thicksim$] En faisant un bilan d'enthalpie, déterminer en régime permanent  l'équation différentielle vérifiée par la température $T(x)$.
+	\item[$\thicksim$] En faisant un bilan d''énergie, déterminer en régime permanent l'équation différentielle vérifiée par la température $T(x)$.
 	
 	\item[$\thicksim$] Donner l'expression de la température, si l'on suppose $L$ suffisament long (devant quoi ?)
 	

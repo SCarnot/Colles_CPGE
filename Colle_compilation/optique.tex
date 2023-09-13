@@ -1,0 +1,242 @@
+\chapter{Optique}
+
+\newpage
+
+\section{Fentes d'Young en montage Fraunhofer $\bullet\circ\circ$}
+
+Le schéma ci-dessous représente une expérience d’interférences par trous de Young. La source est ponctuelle, placée en $F_1$ et monochromatique de longueur d’onde $\lambda$. Elle éclaire une lentille $L_1$, puis une plaque contenant deux trous séparés d'une distance $2a$. On projette l'image sur un écran à tranvers une lentille $L_2$.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=0.6]{optique_fraunhofer.png}
+\end{figure}
+
+\begin{enumerate}
+
+	\item Déterminer la différence de marche $\delta(M)$ pour les deux rayons arrivant en $M$, chacun issu d'un trou de la plaque. La distance entre la plaque et l'écran a t-elle une influence sur $\delta(M)$ ?
+	
+	\item En déduire l'intensité sur l'écran $I(M)$. Décrire ce que l'on observe sur l'écran.
+	
+	\item On décale désormais la source $F_1$ d'une distance $X$ parallèlement à l'axe $x$ de l'écran. Que devient $\delta(M)$ puis l'intensité ? 
+	
+	\item La source $F_1$ n'est plus monochromatique mais possède une deuxième longueur d'onde $\lambda'=\lambda+\Delta \lambda$. A quel distance $x$ commence t-on à voir un brouillage des interférences ?
+
+\end{enumerate}
+
+\newpage
+
+\section{Anneaux de Newton}
+
+Une lentille plan-convexe de diamètre $D=OC$, fragment d'une bille de verre d'indice $n$ de rayon $R$ et de contre $C$ est posée sur un miroir plan, le contact ponctuel se trouvant en $O$ (cf figure). On éclaire le dispositif sous incidence normale en lumière monochromatique de longueur d'onde dans le vide $\lambda$.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=1.2]{optique_newton.pdf}
+\end{figure}
+
+On observe des interférences sur la face sphérique de la lentille et on souhaite comprendre leur origine et en avoir une description détaillée. On supposera dans tout l'exercice que la lentille est mince, c'est-à-dire que $R\ll D$. 
+
+\begin{enumerate}
+
+	\item A l'aide d'un schéma précis, décrire le trajet d'un rayon lumineux traversant la lentille au niveau du point $P$, se réfléchissant au point $M$. Pourquoi voit-on des interférences lumineuses ? On pourra supposer que le rayon n'est pas dévié lorsqu'il sort de la lentille (pourquoi ?).
+	
+	\item  Expliciter la relation entre l'épaisseur $\varepsilon=PM$ en fonction de $x=OM$ de la couche d'air au point P. 
+	
+	\item  Montrer que les franges d'interférences sont des cercles concentriques, préciser le rayon de la $n$-ième frange brillante et celui de la $n$-ième frange sombre, en considérant qu'un point central est une frange et en numérotant du centre vers la périphérie.
+	
+	\item Décrire ce que l'on observe en lumière blanche.
+
+\end{enumerate}
+
+\newpage
+
+\begin{correction}
+
+\begin{enumerate}
+
+	\item Le rayon arrivant au point $P$ et se réfléchissant au point $M$ interfère avec lui-même lorsqu'il est réfléchi sur le miroir. Les interférences étant visibles au niveau de la face sphérique de la lentille, la différence de marche correspond à deux fois l'épaisseur d'air entre la lentille et le miroir (plus le déphasage à la réflexion).
+	
+	\item L'équation de la surface de la lentille s'écrit $(\varepsilon-R)^2+x^2=R^2$. On a alors $\varepsilon=R-\sqrt{R^2-x^2}$ (car on est côté inférieur du cercle), et comme $x<D\ll R$, on a aussi $\varepsilon\simeq x^2/2R$.
+	
+	\item Ce sont des cercles concentriques car la lentille à une symétrie par rotation autour de l'axe $OC$ (il suffirait de remplacer $x$ par $r$ ou $\sqrt{x^2+y^2}$). La différence de marche correspond à $\delta=2\varepsilon$. Le déphasage total est donc (avec celui du miroir) :
+	\begin{align*}
+		\Delta \varphi = \frac{4\pi\varepsilon}{\lambda}+\pi
+	\end{align*}
+	Pour $x=0$, on a $\Delta \varphi = \pi$, et alors $I=0$ : on a une frange sombre au centre de la lentille. En notant $n$ la $n$-ième frange sombre on a : $\Delta\varphi_n=2n\pi+\pi=\frac{4\pi\varepsilon_n}{\lambda}+\pi$, donc :
+	\begin{align*}
+		x_n=\sqrt{R\lambda n}
+	\end{align*}
+	De la même façon, en notant $p$ les franges brillantes, on a :
+	$\Delta\varphi_p=2(p+1)\pi=\frac{4\pi\varepsilon_p}{\lambda}+\pi$, donc :
+	\begin{align*}
+		x_p=\sqrt{R\lambda \left( p+\frac{1}{2}\right) }
+	\end{align*}
+	
+	\item Le centre est une tâche sombre quelque soit la valeur de $\lambda$. La plus petite des franges brillantes est celle correspondant au $\lambda$ le plus petit, donc c'est la couleur bleu/violet. toutes les autres couleurs s'allument ensuite : on a donc des cercles concentriques irrisés. 
+
+\end{enumerate}
+
+\end{correction}
+
+\newpage
+
+\section{Miroir de Fresnel}
+
+Un dispositif interférentiel est constitué de deux miroirs plans $M_1$ et $M_2$ de même surface, faisant entre eux un angle $\varepsilon$. Il est éclairé par une une fente parallèle à l'arête centrale qui sépare les deux miroirs. La lumière émise par cette fente est supposée monochromatique de longueur d'onde $\lambda$. La source $S$ est placée à une distance $d$ de l'arête entre les deux miroirs, dans une position repérée par l'angle $\alpha$ par rapport au plan horizontal. Les angles $\varepsilon$ et $\alpha$ sont supposés très petits. On observe l'image issue des miroirs sur un écran placé à une distance $D$ de l'arête.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=0.25]{optique_fresnel.pdf}
+\end{figure}
+
+\begin{enumerate}
+
+	\item Montrer que l'on peut mettre en évidence deux sources secondaires $S_1$ et $S_2$ correspondant à l'image de la source $S$ dans chaque miroir et donner leur coordonnées. Construire les rayons issus de S arrivant en M.
+	
+	\item Montrer que l'on peut considérer ce dispositif comme équivalent à des fentes d'Young. Calculer l'intensité $I$ sur l'écran. En déduire la figure d'interférence.
+	
+	\item Déterminer l'interfrange.
+	
+	\item Décrire ce que l'on observe en lumière blanche.
+
+\end{enumerate}
+
+\newpage
+
+\begin{correction}
+
+\begin{enumerate}
+
+	\item $S_1$ est le symétrique de $S$ par rapport au miroir $M_1$ et $S_2$ est le symétrique de $S$ par rapport au miroir $M_2$. 
+	
+\includegraphics[scale=1.0]{optique_fresnel_cor.pdf}
+
+Par construction, et en prenant l'origine $O$ sur l'arête, $S_1=(-d\cos\alpha,-d\sin\alpha)$ et $S_2=(-d\cos(\alpha-2\varepsilon),-d\sin((\alpha-2\varepsilon))$
+	
+	\item On a donc deux sources secondaires cohérentes. On prend directement $\cos(\alpha)\simeq1$ et $\sin\alpha\simeq\alpha$. Comme $M=(x+d,y)$, on peut calculer la différence de marche :
+	\begin{align*}
+		\delta &= S_1M-S_2M \\
+		&=\sqrt{•}
+	\end{align*}
+	
+	\item Déterminer l'interfrange.
+	
+	\item Décrire ce que l'on observe en lumière blanche.
+
+\end{enumerate}
+
+\end{correction}
+
+\newpage
+
+\section{Fentes d'Young élargies}
+
+On s'intéresse à un dispositif de fente d'young comme représenté sur le schéma ci-dessous. Une source lumineuse, ponctuelle (d'intensité $I$), monochromatique (longueur d'onde $\lambda$), est située à une distance $Y$ de l'origine du plan $(O_1,X,Y)$. Celui-ci est placé à une distance $d$ d'un plan opaque sur lequel deux petits trous sont distants de $a$ suivant l'axe $Y$, symétriques par rapport à l'axe $O_1O_2$.A une distance $D$ de ce plan, on observe l'intensité lumineuse sur un écran, repéré par le plan $(O_2,x,y)$. On supposera que $d$ et $D$ sont gr	ands devant les autres distances.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=1.0]{optique_young1.pdf}
+\end{figure}
+
+\begin{enumerate}
+
+\item
+
+\begin{enumerate}
+
+	\item Exprimer la différence de marche $\delta$ pour deux rayons lumineux arrivant au point $M$ sur l'écran. En déduire l'intensité $I(x,y)$.
+	
+	\item Quelle est l'allure des franges d'interférences ? Comment évoluent celles-ci évoluent en fonction de $Y$ ?
+
+\end{enumerate}
+
+\item On suppose désormais que la source lumineuse n'est plus ponctuelle, mais a une largeur $b$ (uniquement suivant $O_1Y$) et est placée symétriquement par rapport à l'axe $O_1O_2$. La puissance de la source est homogène, c'est-à-dire que tous ses points emettent une intensité par unité de longueur identique.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=1.0]{optique_young2.pdf}
+\end{figure}
+
+\begin{enumerate}
+
+	\item Quelle est l'intensité $dI(x,y)$ sur l'écran dû à un point de la source de largeur $dy$ situé à une distance $Y$ ?
+	
+	\item En déduire l'intensité totale $I(x,y)$ sur l'écran dûe à la source dans toute sa largeur $b$. Pourquoi peut-on simplement sommer la contribution de tous les points de la source ?
+	
+	\item Exprimer le constraste $C$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\newpage
+
+\section{Réflexion sur un CD}
+
+L'information contenue dans un CD (\textit{Compact Disk}) est codée par des gravures micrométriques sur sa surface. Celle-ci est recouverte d'une fine couche métallique, on peut l'assimiler à un réseau par réflexion, comme indiqué sur le schéma ci-dessous. Pour simplifier, on considère le CD comme une succession de $N\gg1$ très fines barettes réfléchissantes très longues suivant l'axe $Oy$, espacées de $a$. \'Etant très fines, on peut considérer chaque barette comme une source lumineuse ponctuelle suivant l'axe $Ox$. 
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=1.9]{optique_CD.pdf}
+\end{figure}
+
+On éclaire le CD avec une onde plane monochromatique de longueur d'onde $\lambda$, d'angle d'incidence $i$.
+
+\begin{enumerate}
+
+	\item On souhaite observer les rayons lumineux réfléchis par le CD faisant un angle $\theta$ avec la normale. Quel dispositif doit-on alors utiliser pour observer une image sur un écran ? Justifier brièvement qu'il va y avoir des interférences, et préciser si celles-ci sont localisées ou non.
+	
+	\item L'amplitude de l'onde incidente est notée $\underline{s}=s_0e^{i\varphi_0}$, où $\varphi_0$ est une phase donnée. En déduire l'amplitude issue de la $n$-ième barette. 
+	
+	\item En déduire que l'intensité totale $I$ réfléchie par le CD s'écrit :
+	\begin{align*}
+		I=I_0\frac{\sin^2\left( \frac{\pi N a}{\lambda}(\sin\theta+\sin i)\right)} {N^2\sin^2\left( \frac{\pi a}{\lambda}(\sin\theta+\sin i)\right) }
+	\end{align*}
+	Préciser l'expression de $I_0$.
+	
+	\item Quelle est l'allure de l'intensité lorsque $N\longrightarrow\infty$ ? 
+	
+	\item En déduire que les directions $\theta_k$ (où $k$ est un entier) pour lesquelles l'intensité est non nulle correspondent à :
+	\begin{align*}
+		\sin\theta_k+\sin i=\frac{k\lambda}{a}
+	\end{align*}
+	
+	\item Calculer pour l'ordre $k=1$ les deux extrèmes $\theta_{min}$ et $\theta_{max}$ correspondant aux longueurs d'onde extrèmes du spectre visible.
+
+\end{enumerate}
+
+\newpage	
+
+\section{Détermination de l'épaisseur d'une bulle de silicone}
+
+Le polydiméthylsiloxane (PDMS) est un fluide extrèmement visqueux : une bulle se formant à sa surface à une durée de vie de plusieurs minutes, avant que le fluide s'écoulant le long de ses parois ne devienne trop fin et éclate. Pour comprendre comment évolue l'épaisseur de la paroi, on éclaire une bulle, considérée comme hémisphérique, à l'aide d'une lambe à sodium placée à la distance focale d'une lentille.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=1.1]{optique_bulle.pdf}
+\end{figure}
+
+L'onde lumineuse arrivant sur la bulle est donc une onde plane monochromatique de longueur d'onde $\lambda=549$nm, qui est en partie transmise (avec un coefficient en amplitude $t$) et réfléchie (avec un coefficient $r$) à l'interface entre le PDMS et l'air, d'indices optiques $n_{PDMS}=1,4$ et $n_{air}=1$. Le rayon lumineux incident subit ainsi une succession de réflexions/transmissions, crééant des interférences que l'on observe à l'aide d'une caméra, située dans l'axe formé par la lampe à sodium et la bulle. 
+
+\begin{figure}[h]
+\centering
+  \includegraphics[scale=0.15]{optique_bulle.jpg}
+\end{figure}
+
+On note $\underline{s}=s_0e^{i\varphi_0}$ l'amplitude de l'onde incidente (où $\varphi_0$ est une phase donnée), $I_0=|s_0|^2$ son intensité, $\chi$ l'angle d'incidence dans l'air et $\beta$ l'angle d'incidence dans le PDMS en un point donné de la bulle d'épaisseur $h$.
+
+\begin{enumerate}
+
+	\item Exprimer l'amplitude $\underline{s}_n$ du rayon transmis ayant subit $n$ réflexions dans la paroi de la bulle avant de resortir. En déduire l'amplitude totale $\underline{s}_t$ de l'onde transmise. On admettra que $r^2+t^2=1$.
+	
+	\item En déduire que l'intensité transmise $I_t=|s_t|^2$ à travers la paroi peut s'écrire : 
+	\begin{align*}
+		I_t = \frac{I_0}{1+\frac{4r^2}{1-r^2}\sin^2\left(\frac{2\pi h\sqrt{n_{PDMS}^2-n^2_{air}\sin^2(\chi)}}{\lambda}\right)  }
+	\end{align*}
+	
+	\item Quelle valeur prend l'angle incident $\chi$ lorsque le rayon éclaire la bulle sur les bords ? Tracer l'allure de $I_t$ dans cas-là, en admettant que $r\longrightarrow1$.
+	
+	\item Comment en déduire l'épaisseur de la bulle le long de sa paroi ? On admettra que la frange la plus proche du sommet correspond à l'ordre 0.
+
+\end{enumerate}
