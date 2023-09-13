@@ -1,5 +1,9 @@
 Anciennes_colles/
 cours_particuliers/
+*.bcf
+*.out
+*.toc
+*.xml
 *.aux
 *.log
 *.gz
